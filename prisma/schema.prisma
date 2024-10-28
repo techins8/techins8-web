@@ -1,0 +1,131 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum Role {
+  ADMIN
+  USER
+  SUBSCRIBER
+}
+
+enum UserJobStatus {
+  employed
+  unemployed
+  student
+  freelancer
+  apprenticeship // alternance en anglais
+  other
+}
+
+enum RemoteMode {
+  full
+  partial
+  none
+}
+
+model User {
+  id                 String          @id @default(cuid())
+  name               String?
+  email              String          @unique
+  emailVerified      DateTime?
+  image              String?
+  accounts           Account[]
+  sessions           Session[]
+  Authenticator      Authenticator[]
+  roles              Role[] 
+  newsletterConsent  Boolean @default(false)
+
+  lastname              String?
+  firstname             String?
+  job                   String?
+  bio                   String?
+  location              String?
+  jobStatus             UserJobStatus?
+  expectedJobStatus     UserJobStatus?
+  remoteMode            RemoteMode?
+  excepetedRemoteMode   RemoteMode?
+  experience            Int?
+  pay                   Float?
+
+  websiteUrl         String?
+  linkedinUrl        String?
+  githubUrl          String?
+
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+
+  userSkills     UserSkill[] // Relation avec UserSkill
+}
+
+model UserSkill {
+  id        Int     @id @default(autoincrement())
+  userId    String // Référence vers l'utilisateur
+  slug      String // Slug de la compétence
+  type      String // Type de la compétence
+  isPrimary Boolean @default(false) // Indique si c'est la compétence principale
+  isMain    Boolean @default(false)
+  user      User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  createdAt DateTime @default(now())
+
+  @@unique([userId, slug]) 
+}
+
+model Account {
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([provider, providerAccountId])
+}
+
+model Session {
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model VerificationToken {
+  identifier String
+  token      String
+  expires    DateTime
+
+  @@id([identifier, token])
+}
+
+// Optional for WebAuthn support
+model Authenticator {
+  credentialID         String  @unique
+  userId               String
+  providerAccountId    String
+  credentialPublicKey  String
+  counter              Int
+  credentialDeviceType String
+  credentialBackedUp   Boolean
+  transports           String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([userId, credentialID])
+}
