@@ -10,13 +10,9 @@ export default async function PublicLayout({
 
 
   return (
-    <div className="relative flex min-h-screen flex-col bg-[#1A110D]">
+    <div className="relative flex min-h-screen flex-col bg-[#fafaf9]">
       <div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{
-          backgroundImage: 'url("/images/illustrations/test-dots.svg")',
-          opacity: 0.1, // Ajustez cette valeur pour la visibilité du motif
-        }}
       ></div>
 
       <div className="relative z-10 flex flex-grow flex-col">
@@ -26,7 +22,7 @@ export default async function PublicLayout({
           {children}
         </main>
 
-        <footer className="bg-[#1A110D] bg-opacity-50 py-4 text-center text-white sm:py-6">
+        <footer className="py-4 text-center text-black sm:py-6">
           © 2024 TechIns8
         </footer>
       </div>
