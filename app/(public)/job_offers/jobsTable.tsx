@@ -13,7 +13,8 @@ import {
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, MapPin, Building2, Calendar } from 'lucide-react';
-import { IJob } from '../types/job';
+import { IJob } from '../../types/job';
+import Link from 'next/link';
 
 interface JobsTableProps {
   initialJobs: IJob[];
@@ -136,9 +137,15 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                     <Button
                       variant="ghost"
                       size="sm"
-                      onClick={() => window.open(job.sourceurl, '_blank')}
+                      asChild
                     >
-                      <ExternalLink className="w-4 h-4" />
+                      <Link
+                        href={job.sourceurl || ''}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <ExternalLink className="w-4 h-4" />
+                      </Link>
                     </Button>
                   )}
                 </div>

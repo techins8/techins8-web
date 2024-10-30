@@ -35,7 +35,7 @@ export default function Error({
             height="400"
             decoding="async"
             data-nimg="1"
-            src="/images/illustration/illustration-01.svg"
+            src="/images/illustrations/illustration-01.svg"
             style={{ color: "transparent" }}
           />
           <div className="mt-7.5 text-center">
@@ -47,7 +47,7 @@ export default function Error({
               or does not exist.
             </p>
 
-            <div className="flex justify-center gap-2">
+            <div className="flex justify-center gap-2 mt-6">
               <Link
                 className="mt-7.5 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-medium text-white hover:bg-opacity-90"
                 href="/"

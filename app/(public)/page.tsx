@@ -1,9 +1,10 @@
-import JobsTable from "./(public)/jobsTable";
+// app/(public)/page.tsx
 import { Suspense } from 'react';
-import { getJobsBrut } from "./actions/getJobsBrut";
+import JobsTable from './job_offers/jobsTable';
+import { getJobsBrut } from '../actions/getJobsBrut';
 
 
-export default async function JobsPage() {
+export default async function HomePage() {
   const jobs = await getJobsBrut();
 
   return (
