@@ -1,16 +1,21 @@
-// app/(public)/page.tsx
-import { Suspense } from 'react';
-// import JobsTable from './job_offers/jobsTable';
-// import { getJobsBrut } from '../actions/getJobsBrut';
-
+import { Suspense } from "react";
+import SubHeader from "./landing-page/sub-header";
+import Header from "./landing-page/header";
+import SectionProblem from "./landing-page/section-problem";
+import SectionSolution from "./landing-page/section-solution";
+import SectionSocialProof from "./landing-page/section-social-proof";
+import SectionFaq from "./landing-page/section-faq";
 
 export default async function HomePage() {
-//   const jobs = await getJobsBrut();
-
   return (
-    <div className="container mx-auto py-8">
+    <div className="container mx-auto py-8 ">
       <Suspense fallback={<div>Loading jobs...</div>}>
-        <h1 className=''>Landing Page</h1>
+        <SubHeader />
+        <Header />
+        <SectionProblem />
+        <SectionSolution />
+        <SectionSocialProof />
+        <SectionFaq />
       </Suspense>
     </div>
   );

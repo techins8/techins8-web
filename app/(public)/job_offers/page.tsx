@@ -11,7 +11,6 @@ export default async function HomePage() {
   return (
     <div className="container mx-auto py-8">
       <Suspense fallback={<div>Loading jobs...</div>}>
-        <h1 className=''>Landing Page</h1>
         <JobsTable initialJobs={jobs} />
       </Suspense>
     </div>
