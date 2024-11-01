@@ -10,10 +10,10 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { IJob } from "@/types/job";
 import { Building2, Calendar, ExternalLink, MapPin } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { IJob } from "../../types/job";
 
 interface JobsTableProps {
   initialJobs: IJob[];

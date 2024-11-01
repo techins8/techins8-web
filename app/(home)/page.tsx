@@ -1,10 +1,11 @@
 import { Suspense } from "react";
-import Header from "./landing-page/header";
-import SectionFaq from "./landing-page/section-faq";
-import SectionProblem from "./landing-page/section-problem";
-import SectionSocialProof from "./landing-page/section-social-proof";
-import SectionSolution from "./landing-page/section-solution";
-import SubHeader from "./landing-page/sub-header";
+import Header from "./header";
+import { Newsletter } from "./newsletter";
+import SectionFaq from "./section-faq";
+import SectionProblem from "./section-problem";
+import SectionSocialProof from "./section-social-proof";
+import SectionSolution from "./section-solution";
+import SubHeader from "./sub-header";
 
 export default async function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default async function HomePage() {
         <SectionSolution />
         <SectionSocialProof />
         <SectionFaq />
+        <Newsletter />
       </Suspense>
     </div>
   );
