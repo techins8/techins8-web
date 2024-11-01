@@ -7,9 +7,11 @@ type ApiOptions = {
 
 export const api = async (
   resource: string,
-  options: ApiOptions = {},
+  options: ApiOptions = {}
 ): Promise<Response> => {
-  let url = `${process.env.SCRAPPER_API_URL_LOCAL}${resource.startsWith("/") ? "" : "/"}${resource}`;
+  let url = `${process.env.SCRAPPER_API_URL}${
+    resource.startsWith("/") ? "" : "/"
+  }${resource}`;
 
   if (options.query) {
     url += `?${buildQuery(options.query)}`;

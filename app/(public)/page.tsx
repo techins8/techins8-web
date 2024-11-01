@@ -1,10 +1,10 @@
 import { Suspense } from "react";
-import SubHeader from "./landing-page/sub-header";
 import Header from "./landing-page/header";
-import SectionProblem from "./landing-page/section-problem";
-import SectionSolution from "./landing-page/section-solution";
-import SectionSocialProof from "./landing-page/section-social-proof";
 import SectionFaq from "./landing-page/section-faq";
+import SectionProblem from "./landing-page/section-problem";
+import SectionSocialProof from "./landing-page/section-social-proof";
+import SectionSolution from "./landing-page/section-solution";
+import SubHeader from "./landing-page/sub-header";
 
 export default async function HomePage() {
   return (

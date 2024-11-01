@@ -75,10 +75,8 @@ const Header = () => {
         <Image
           src="/images/dashboard.png"
           alt="Aperçu du tableau de bord"
-          layout="fixed"
           width={900}
           height={300}
-          objectFit="cover"
           className="rounded-lg shadow-[0_15px_50px_0px_rgba(0,0,0,0.2)]"
         />
       </div>

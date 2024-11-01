@@ -1,7 +1,7 @@
 "use server";
 
 import { api } from "@/lib/api";
-import { IJob } from "../types/job";
+import { IJob } from "../../types/job";
 
 const getJobsBrut = async (): Promise<IJob[]> => {
   try {

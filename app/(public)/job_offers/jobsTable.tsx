@@ -1,20 +1,19 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { useRouter } from 'next/navigation';
-import { 
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import {
   Table,
   TableBody,
   TableCell,
   TableHead,
   TableHeader,
-  TableRow 
+  TableRow,
 } from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, MapPin, Building2, Calendar } from 'lucide-react';
-import { IJob } from '../../types/job';
-import Link from 'next/link';
+import { Building2, Calendar, ExternalLink, MapPin } from "lucide-react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { IJob } from "../../types/job";
 
 interface JobsTableProps {
   initialJobs: IJob[];
@@ -25,22 +24,24 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
 
   // const formatDate = (dateString: Date | undefined) => {
   //   if (!dateString) return 'N/A';
-    
+
   //   // On utilise une chaîne ISO pour garantir la cohérence
   //   const date = new Date(dateString);
   //   const year = date.getFullYear();
   //   const month = String(date.getMonth() + 1).padStart(2, '0');
   //   const day = String(date.getDate()).padStart(2, '0');
-    
+
   //   return `${year}-${month}-${day}`;
   // };
 
   const formatSalary = (min?: number, max?: number, currency?: string) => {
-    if (!min && !max) return 'Not specified';
+    if (!min && !max) return "Not specified";
     if (min && max) {
-      return `${currency || '€'}${min.toLocaleString()} - ${currency || '€'}${max.toLocaleString()}`;
+      return `${currency || "€"}${min.toLocaleString()} - ${
+        currency || "€"
+      }${max.toLocaleString()}`;
     }
-    return `${currency || '€'}${(min || max || 0).toLocaleString()}`;
+    return `${currency || "€"}${(min || max || 0).toLocaleString()}`;
   };
 
   return (
@@ -62,24 +63,21 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               <TableCell className="py-4">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-medium text-gray-900">
-                    {job.title || 'Untitled Position'}
+                    {job.title || "Untitled Position"}
                   </h3>
                   {job.skills && job.skills.length > 0 && (
                     <div className="flex flex-wrap gap-1">
                       {job.skills.slice(0, 3).map((skill) => (
-                        <Badge 
-                          key={skill.id} 
-                          variant="secondary" 
+                        <Badge
+                          key={skill.id}
+                          variant="secondary"
                           className="text-xs"
                         >
                           {skill.name}
                         </Badge>
                       ))}
                       {job.skills.length > 3 && (
-                        <Badge 
-                          variant="secondary" 
-                          className="text-xs"
-                        >
+                        <Badge variant="secondary" className="text-xs">
                           +{job.skills.length - 3}
                         </Badge>
                       )}
@@ -87,7 +85,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                   )}
                 </div>
               </TableCell>
-              
+
               <TableCell>
                 <div className="flex flex-col gap-1">
                   {job.company && (
@@ -104,26 +102,26 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                   )}
                 </div>
               </TableCell>
-              
+
               <TableCell>
                 <span className="whitespace-nowrap">
                   {formatSalary(job.mindailypay, job.maxdailypay, job.currency)}
                 </span>
               </TableCell>
-              
+
               <TableCell>
                 <Badge variant="outline" className="capitalize">
-                  {job.jobtype || 'Not specified'}
+                  {job.jobtype || "Not specified"}
                 </Badge>
               </TableCell>
-              
+
               <TableCell>
                 <div className="flex items-center gap-1 text-gray-500">
                   <Calendar className="w-4 h-4" />
                   {/* {formatDate(job.publishedat)} */}
                 </div>
               </TableCell>
-              
+
               <TableCell>
                 <div className="flex gap-2">
                   <Button
@@ -134,13 +132,9 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                     Details
                   </Button>
                   {job.sourceurl && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      asChild
-                    >
+                    <Button variant="ghost" size="sm" asChild>
                       <Link
-                        href={job.sourceurl || ''}
+                        href={job.sourceurl || ""}
                         target="_blank"
                         rel="noopener noreferrer"
                       >

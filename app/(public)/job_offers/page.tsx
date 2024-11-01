@@ -1,9 +1,6 @@
-// app/(public)/page.tsx
-import { getJobsBrut } from '@/app/actions/getJobsBrut';
-import { Suspense } from 'react';
-import JobsTable from './jobsTable';
-
-
+import { Suspense } from "react";
+import JobsTable from "./jobsTable";
+import { getJobsBrut } from "./jobs.action";
 
 export default async function HomePage() {
   const jobs = await getJobsBrut();
