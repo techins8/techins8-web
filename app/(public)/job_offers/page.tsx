@@ -1,14 +1,15 @@
-import JobsTable from "./(public)/jobsTable";
+// app/(public)/page.tsx
+import { getJobsBrut } from '@/app/actions/getJobsBrut';
 import { Suspense } from 'react';
-import { getJobsBrut } from "./actions/getJobsBrut";
+import JobsTable from './jobsTable';
 
 
-export default async function JobsPage() {
+
+export default async function HomePage() {
   const jobs = await getJobsBrut();
 
   return (
     <div className="container mx-auto py-8">
-      <h1 className="text-3xl font-bold mb-6">Available Positions</h1>
       <Suspense fallback={<div>Loading jobs...</div>}>
         <JobsTable initialJobs={jobs} />
       </Suspense>
