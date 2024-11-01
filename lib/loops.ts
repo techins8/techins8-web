@@ -1,9 +1,9 @@
-import { env } from "@/env";
+import { env } from "./env";
 import { http, HttpOptions } from "./http";
 
 const loops = async (
   resource: string,
-  options: HttpOptions = {},
+  options: HttpOptions = {}
 ): Promise<Response> => {
   const url = env.LOOP_API_URL + resource;
 
@@ -40,7 +40,7 @@ export interface FindResponse extends LoopsUser {
 }
 
 export const find = async (
-  email: string,
+  email: string
 ): Promise<FindResponse[] | ErrorResponse> => {
   const response = await loops(`/contacts/find`, {
     query: {
@@ -53,15 +53,13 @@ export const find = async (
   return data as FindResponse[] | ErrorResponse;
 };
 
-export interface CreateRequest extends LoopsUser {}
-
 export interface CreateSuccessResponse {
   success: boolean;
   id: string;
 }
 
 export const create = async (
-  data: CreateRequest,
+  data: LoopsUser
 ): Promise<CreateSuccessResponse | ErrorResponse> => {
   const response = await loops(`/contacts/create`, {
     method: "POST",
