@@ -2,19 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect } from "react";
 
-export default function Error({
-  error,
-}: {
-  error: Error & { digest?: string };
-  reset: () => void;
-}) {
-  useEffect(() => {
-    // Log the error to an error reporting service
-    console.error(error);
-  }, [error]);
-
+export default function NotFound() {
   return (
     <div className="mx-auto max-w-screen-2xl p-4 md:p-6 2xl:p-10">
       <div className="rounded-sm border border-stroke bg-white px-5 py-10 shadow-default dark:border-strokedark dark:bg-boxdark sm:py-20">
@@ -40,11 +29,11 @@ export default function Error({
           />
           <div className="mt-7.5 text-center">
             <h2 className="mb-3 text-2xl font-bold text-black dark:text-white">
-              Sorry, the page can’t be found
+              Désolé, la page n&apos;existe pas
             </h2>
             <p className="font-medium">
-              The page you were looking for appears to have been moved, deleted
-              or does not exist.
+              La page que vous cherchez semble avoir été déplacée, supprimée ou
+              n&apos;existe pas.
             </p>
 
             <div className="flex justify-center gap-2 mt-6">
@@ -65,7 +54,7 @@ export default function Error({
                     fill=""
                   ></path>
                 </svg>
-                <span>Back to Home</span>
+                <span>Retour à l&apos;accueil</span>
               </Link>
             </div>
           </div>
