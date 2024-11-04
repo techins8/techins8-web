@@ -4,8 +4,8 @@ export const ROOT_NAMES = {
     HOME: "/",
     BLOG: "/blog",
     JOB_OFFERS: "/job_offers",
-    LEGAL: "/legal"
-
+    LEGAL: "/legal",
+    PARTNERSHIPS: "/partnerships",
   },
   PRIVATE_ROUTES: {
     DASHBOARD: "/",

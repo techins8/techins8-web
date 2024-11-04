@@ -15,7 +15,7 @@ const Footer = () => {
 
   const footerLinks = [
     { href: "/", label: "Accueil" },
-    { href: "/free-partnerships", label: "Partenariats" },
+    { href: "/partnerships", label: "Partenariats" },
     { href: "#testimonials", label: "Feedback" },
     { href: "/legal", label: "Mentions légales" },
   ];
