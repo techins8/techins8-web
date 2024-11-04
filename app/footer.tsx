@@ -1,7 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import NewsletterForm from "./(home)/newsletter-form";
 import Link from "next/link";
+
 
 const Footer = () => {
   const navigationLinks = [
@@ -13,14 +15,15 @@ const Footer = () => {
 
   const footerLinks = [
     { href: "/", label: "Accueil" },
-    { href: "#problems", label: "Problématique" },
-    { href: "#solutions", label: "Solution" },
+    { href: "/partnerships", label: "Partenariats" },
     { href: "#testimonials", label: "Feedback" },
-    { href: "/legal-mentions", label: "Mentions légales" },
+    { href: "/legal", label: "Mentions légales" },
   ];
 
   return (
     <footer className="w-full bg-background pt-16 pb-8">
+      <NewsletterForm />
+
       <div className="border-t border-border/60">
         <div className="max-w-6xl mx-auto px-4 pt-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -110,7 +113,7 @@ const Footer = () => {
             © 2024 TechIns8. Tous droits réservés.
           </div>
         </div>
-      </div>
+        </div>
     </footer>
   );
 };

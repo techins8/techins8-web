@@ -3,8 +3,9 @@ export const ROOT_NAMES = {
   PUBLIC_ROUTES: {
     HOME: "/",
     BLOG: "/blog",
-    JOB_OFFERS: "/job_offers"
-
+    JOB_OFFERS: "/job_offers",
+    LEGAL: "/legal",
+    PARTNERSHIPS: "/partnerships",
   },
   PRIVATE_ROUTES: {
     DASHBOARD: "/",

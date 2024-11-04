@@ -1,6 +1,5 @@
 import { Suspense } from "react";
 import Header from "./header";
-import { Newsletter } from "./newsletter";
 import SectionFaq from "./section-faq";
 import SectionProblem from "./section-problem";
 import SectionSocialProof from "./section-social-proof";
@@ -17,7 +16,6 @@ export default async function HomePage() {
         <SectionSolution />
         <SectionSocialProof />
         <SectionFaq />
-        <Newsletter />
       </Suspense>
     </div>
   );

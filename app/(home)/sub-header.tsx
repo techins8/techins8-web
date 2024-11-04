@@ -19,9 +19,9 @@ const SubHeader = () => {
           </svg>
         </div>
         <div className="flex items-center">
-          <div className="w-[27px] flex items-center">
+          <div className="w-[35px] flex items-center">
             <div>
-              <span>550</span>
+              <span>1000</span>
             </div>
           </div>
           +&nbsp;
@@ -30,7 +30,7 @@ const SubHeader = () => {
         <div className="hidden sm:flex">
           <div className="w-[18px] flex items-center">
             <div>
-              <span>40</span>
+              <span>50</span>
             </div>
           </div>
           k+&nbsp;
@@ -43,7 +43,7 @@ const SubHeader = () => {
             </div>
           </div>
           /5&nbsp;
-          <span className="text-secondary font-normal">customer rating</span>
+          <span className="text-secondary font-normal">notes positives</span>
         </div>
       </div>
     </div>
