@@ -69,7 +69,7 @@ const testimonials = [
 
 const SectionSocialProof = () => {
   return (
-    <section className="w-full py-8 md:py-12 px-4 mt-12 md:mt-24">
+    <section className="w-full py-8 md:py-12 px-4 mt-12 md:mt-24" id="testimonials">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-primary text-2xl md:text-3xl text-center mb-12">
           La communauté tech parle de nous.

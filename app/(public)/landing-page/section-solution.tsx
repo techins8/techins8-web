@@ -17,7 +17,7 @@ const SectionSolution = () => {
       description: "Découvrez les tendances cachées du marché",
       image: "/images/screenshots/solution-2.webp",
       isComingSoon: false,
-      bgColor: "rgba(245, 197, 89, 0.8)",
+      bgColor: "rgba(89, 129, 245, 0.8)",
     },
     {
       id: 3,
@@ -25,7 +25,7 @@ const SectionSolution = () => {
       description: "Explorez la répartition géographique des offres par langage pour orienter vos choix de carrière",
       image: "/images/screenshots/solution-3.webp",
       isComingSoon: false,
-      bgColor: "rgba(89, 196, 142, 0.8)",
+      bgColor: "rgba(245, 89, 89, 0.8)",
     },
     {
       id: 4,
@@ -33,7 +33,7 @@ const SectionSolution = () => {
       description: "Identifiez les véritables opportunités fullremote et hybrides grâce à notre IA performante.",
       image: "/images/screenshots/solution-4.webp",
       isComingSoon: true,
-      bgColor: "rgba(89, 129, 245, 0.8)",
+      bgColor: "rgb(219, 219, 217)",
     },
     {
       id: 5,
@@ -41,7 +41,7 @@ const SectionSolution = () => {
       description: "Boostez votre carrière de freelance avec nos données exclusives",
       image: "/images/screenshots/solution-4.webp",
       isComingSoon: true,
-      bgColor: "rgba(245, 89, 89, 0.8)",
+      bgColor: "rgb(219, 219, 217)",
     }
   ];
 

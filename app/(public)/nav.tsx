@@ -127,7 +127,7 @@ const Nav = () => {
             Se Connecter
           </Link>
           <Link 
-            href="/https://dashboard.techins8.com/"
+            href="https://dashboard.techins8.com/"
             className="bg-accent-foreground text-background px-4 py-2 rounded-md transition-colors text-sm hover:bg-[#fa471198]"
           >
             Essayer gratuitement
