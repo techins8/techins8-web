@@ -3,7 +3,6 @@ import { z } from "zod";
 
 export const env = createEnv({
   server: {
-    DATABASE_URL: z.string().url(),
     LOOPS_API_URL: z.string().min(1).url(),
     LOOPS_API_KEY: z.string().min(1),
     SCRAPPER_API_URL: z.string().url().min(1),
