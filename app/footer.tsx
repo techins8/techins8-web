@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import NewsletterForm from "./landing-page/newsletter-form";
+import NewsletterForm from "./(home)/newsletter-form";
+import Link from "next/link";
 
 
 const Footer = () => {

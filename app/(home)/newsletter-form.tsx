@@ -4,8 +4,8 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { subscribeToNewsletter } from "@/app/actions/newsletter.action";
 import { validate } from "@dahoom/disposable-email";
+import { subscribeToNewsletter } from "./newsletter.action";
 
 
 interface NewsletterState {
