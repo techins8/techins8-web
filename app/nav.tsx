@@ -35,8 +35,8 @@ const Nav = () => {
     <>
       {/* Image de fond */}
       <div className="absolute left-0 top-0 -z-10 overflow-hidden">
-        <img 
-          src="/images/illustrations/top-header-left.svg" 
+        <Image
+          src="/images/illustrations/top-header-left.svg"
           alt="Illustration"
           className="w-full h-auto"
         />
@@ -54,7 +54,10 @@ const Nav = () => {
         {/* Content div that stays clear */}
         <div className="relative flex items-center justify-between w-full max-w-[1170px] px-4 py-3">
           {/* Logo */}
-          <Link className="font-display flex items-center text-3xl z-50" href="/">
+          <Link
+            className="font-display flex items-center text-3xl z-50"
+            href="/"
+          >
             <div className="flex flex-col text-secondary lg:flex-row">
               <Image
                 src={logoSrc}
@@ -161,8 +164,8 @@ const Nav = () => {
         </div>
       </nav>
       <div className="absolute right-0 top-0 -z-10 overflow-hidden">
-        <img 
-          src="/images/illustrations/bottom-header-right.svg" 
+        <Image
+          src="/images/illustrations/bottom-header-right.svg"
           alt="Illustration"
           className="w-full h-auto"
         />
