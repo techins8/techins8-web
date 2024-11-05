@@ -31,7 +31,7 @@ export const BlogCard = ({ article }: { article: Article }) => {
             <AvatarImage
               src={`/authors/${
                 article.author?.toLowerCase() ?? "default"
-              }.jpeg`}
+              }.webp`}
               alt={article.author ?? "Auteur par défaut"}
             />
           </Avatar>
