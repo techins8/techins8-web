@@ -35,12 +35,10 @@ const Nav = () => {
     <>
       {/* Image de fond */}
       <div className="absolute left-0 top-0 -z-10 overflow-hidden">
-        <Image 
-          src="/images/illustrations/top-header-left.svg" 
-          width={500} 
-          height={500} 
-          alt="Background illustration"
-          className="object-contain opacity-70"
+        <img 
+          src="/images/illustrations/top-header-right.svg" 
+          alt="Illustration"
+          className="w-full h-auto"
         />
       </div>
       <nav className="fixed left-0 top-0 w-full flex flex-col items-center z-50">
@@ -163,12 +161,10 @@ const Nav = () => {
         </div>
       </nav>
       <div className="absolute right-0 top-0 -z-10 overflow-hidden">
-        <Image 
+        <img 
           src="/images/illustrations/bottom-header-right.svg" 
-          width={500} 
-          height={500} 
-          alt="Background illustration"
-          className="object-contain opacity-70"
+          alt="Illustration"
+          className="w-full h-auto"
         />
       </div>
     </>
