@@ -41,6 +41,16 @@ const partnerships: Partnership[] = [
       "Je te partage la méthode puissante qui m'a permis de recevoir des réponses positives à mes candidatures et de décrocher mon premier poste de développeur grâce à LinkedIn.",
     link: "https://www.switchtodev.com/?sa=sa011375833410fe7d6b99c122a6615040ed62cb30",
   },
+  {
+    id: 4,
+    title: "Looking For Techs",
+    author: "Ronan Jaffré",
+    videoUrl: "",
+    image: "/images/affiliation/ronan_looking_for_techs_banniere.webp",
+    description:
+      "La plateforme innovante qui facilite l’entraide entre professionnels de la tech et stimule les opportunités d’apport d’affaires, permettant à chacun de développer son réseau et de collaborer efficacement entre techs.",
+    link: "https://lookingfortechs.fr/",
+  },
 ];
 
 const PartnershipCard = ({ partnership }: { partnership: Partnership }) => {
@@ -99,7 +109,7 @@ const PartnershipCard = ({ partnership }: { partnership: Partnership }) => {
 
 const PartnershipsPage = () => {
   return (
-    <div className="p-6 h-screen">
+    <div className="p-6">
       <div className="mx-auto max-w-6xl">
         <h1 className="mb-8 text-3xl font-bold text-black">Nos Partenariats</h1>
 

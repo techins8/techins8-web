@@ -8,7 +8,7 @@ import SubHeader from "./sub-header";
 
 export default async function HomePage() {
   return (
-    <div className="container mx-auto py-8 ">
+    <div className="container mx-auto py-8 px-6 sm:px-8">
       <Suspense fallback={<div>Loading jobs...</div>}>
         <SubHeader />
         <Header />

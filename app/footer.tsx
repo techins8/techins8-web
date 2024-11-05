@@ -3,6 +3,7 @@
 import Image from "next/image";
 import NewsletterForm from "./(home)/newsletter-form";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 
 const Footer = () => {
@@ -97,12 +98,18 @@ const Footer = () => {
                       />
                     </a>
                   </div>
-                  <Link
-                    href="https://dashboard.techins8.com/"
-                    className="inline-block bg-accent-foreground text-background px-4 py-2 rounded-md transition-colors text-sm hover:bg-[#fa471198] mt-4"
+                    <p className="text-muted-foreground">
+                      Nous sommes là pour vous aider !
+                    </p>
+                  
+                  <Button
+                    asChild
+                    className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198] "
                   >
-                    Essayer gratuitement
-                  </Link>
+                    <a href="mailto:contact@techins8.com?subject=Contact_Landing">
+                      Nous contacter
+                    </a>
+                  </Button>
                 </div>
               </div>
             </div>

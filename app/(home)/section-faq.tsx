@@ -2,9 +2,7 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
-// Type pour les questions FAQ
 type FAQItem = {
   question: string;
   answer: string;
@@ -74,32 +72,6 @@ const SectionFaq = () => {
           {faqs.map((faq, index) => (
             <FAQItem key={index} {...faq} />
           ))}
-        </div>
-
-        {/* Contact Section */}
-        <div className="text-center bg-accent/5 rounded-lg p-8">
-          <div className="mb-6">
-            <h3 className="text-xl font-semibold text-primary mb-2">
-              Vous n&apos;avez pas trouvé la réponse à votre question ?
-            </h3>
-            <p className="text-muted-foreground">
-              Si vous ne trouvez pas votre réponse ici, n&apos;hésitez pas à nous contacter. <br/>
-              Nous sommes là pour vous aider !
-            </p>
-          </div>
-          
-          <Button
-            asChild
-            className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198] "
-          >
-            <a href="mailto:contact@techins8.com?subject=Contact_Landing">
-              Nous contacter
-            </a>
-          </Button>
-          
-          <div className="mt-4 text-sm text-muted-foreground">
-            contact@techins8.com
-          </div>
         </div>
       </div>
     </section>
