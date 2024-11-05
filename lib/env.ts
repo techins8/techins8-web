@@ -7,6 +7,8 @@ export const env = createEnv({
     LOOPS_API_KEY: z.string().min(1),
     SCRAPPER_API_URL: z.string().url().min(1),
     SCRAPPER_API_TOKEN: z.string().min(1),
+    NOTION_API_KEY: z.string().min(1),
+    NOTION_BLOG_DATABASE_ID: z.string().min(1),
   },
 
   /**

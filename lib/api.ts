@@ -1,3 +1,5 @@
+import { env } from "./env";
+
 type ApiOptions = {
   query?: Record<string, string | Array<string>>;
   method?: "GET" | "POST" | "PUT" | "DELETE";
@@ -9,7 +11,7 @@ export const api = async (
   resource: string,
   options: ApiOptions = {}
 ): Promise<Response> => {
-  let url = `${process.env.SCRAPPER_API_URL}${
+  let url = `${env.SCRAPPER_API_URL}${
     resource.startsWith("/") ? "" : "/"
   }${resource}`;
 
@@ -25,7 +27,7 @@ export const api = async (
     headers: {
       accept: "application/json",
       "Content-Type": "application/json",
-      Authorization: `Bearer ${process.env.SCRAPPER_API_TOKEN}`,
+      Authorization: `Bearer ${env.SCRAPPER_API_TOKEN}`,
       ...options.headers,
     },
   });
