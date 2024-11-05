@@ -36,7 +36,7 @@ const Nav = () => {
       {/* Image de fond */}
       <div className="absolute left-0 top-0 -z-10 overflow-hidden">
         <img 
-          src="/images/illustrations/top-header-right.svg" 
+          src="/images/illustrations/top-header-left.svg" 
           alt="Illustration"
           className="w-full h-auto"
         />
