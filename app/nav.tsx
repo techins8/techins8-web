@@ -39,6 +39,8 @@ const Nav = () => {
           src="/images/illustrations/top-header-left.svg"
           alt="Illustration"
           className="w-full h-auto"
+          width={100}
+          height={100}
         />
       </div>
       <nav className="fixed left-0 top-0 w-full flex flex-col items-center z-50">
@@ -168,6 +170,8 @@ const Nav = () => {
           src="/images/illustrations/bottom-header-right.svg"
           alt="Illustration"
           className="w-full h-auto"
+          width={100}
+          height={100}
         />
       </div>
     </>
