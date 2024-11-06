@@ -7,7 +7,7 @@ export interface HttpOptions {
 
 export const http = async (
   url: string,
-  options: HttpOptions = {},
+  options: HttpOptions = {}
 ): Promise<Response> => {
   if (options.query) {
     url += `?${buildQuery(options.query)}`;
@@ -24,7 +24,9 @@ export const http = async (
   });
 };
 
-const buildQuery = (query: Record<string, string | Array<string>>): string => {
+export const buildQuery = (
+  query: Record<string, string | Array<string>>
+): string => {
   const params = new URLSearchParams();
 
   for (const [key, value] of Object.entries(query)) {
