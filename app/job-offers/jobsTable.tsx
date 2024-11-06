@@ -1,7 +1,6 @@
 "use client";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import {
   Table,
   TableBody,
@@ -11,52 +10,40 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { IJob } from "@/types/job";
-import { Building2, Calendar, ExternalLink, MapPin } from "lucide-react";
+import { formatDistance } from "date-fns";
+import { ExternalLink } from "lucide-react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 
 interface JobsTableProps {
   initialJobs: IJob[];
 }
 
 const JobsTable = ({ initialJobs }: JobsTableProps) => {
-  const router = useRouter();
-
-  // const formatDate = (dateString: Date | undefined) => {
-  //   if (!dateString) return 'N/A';
-
-  //   // On utilise une chaîne ISO pour garantir la cohérence
-  //   const date = new Date(dateString);
-  //   const year = date.getFullYear();
-  //   const month = String(date.getMonth() + 1).padStart(2, '0');
-  //   const day = String(date.getDate()).padStart(2, '0');
-
-  //   return `${year}-${month}-${day}`;
-  // };
-
-  const formatSalary = (min?: number, max?: number, currency?: string) => {
-    if (!min && !max) return "Not specified";
-    if (min && max) {
-      return `${currency || "€"}${min.toLocaleString()} - ${
-        currency || "€"
-      }${max.toLocaleString()}`;
-    }
-    return `${currency || "€"}${(min || max || 0).toLocaleString()}`;
+  const getPublishedAt = (job: IJob) => {
+    const publishedAt: string | undefined = job.publishedat ?? job.createdat;
+    if (!publishedAt) return "---";
+    return formatDistance(new Date(publishedAt), new Date(), {
+      addSuffix: true,
+    });
   };
 
+  console.log(initialJobs);
+
   return (
-    <div className="bg-white rounded-lg shadow overflow-hidden">
+    <div className="bg-white rounded-lg shadow overflow-hidden p-4">
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead>Position</TableHead>
-            <TableHead>Company & Location</TableHead>
-            <TableHead>Salary</TableHead>
+            <TableHead>Titre</TableHead>
+            <TableHead>Lieu</TableHead>
+            <TableHead>Entreprise</TableHead>
+            <TableHead>Salaire</TableHead>
             <TableHead>Type</TableHead>
-            <TableHead>Published</TableHead>
+            <TableHead>Publié le</TableHead>
             <TableHead>Action</TableHead>
           </TableRow>
         </TableHeader>
+
         <TableBody>
           {initialJobs.map((job) => (
             <TableRow key={job.id} className="hover:bg-gray-50">
@@ -65,19 +52,20 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                   <h3 className="font-medium text-gray-900">
                     {job.title || "Untitled Position"}
                   </h3>
+
                   {job.skills && job.skills.length > 0 && (
                     <div className="flex flex-wrap gap-1">
                       {job.skills.slice(0, 3).map((skill) => (
                         <Badge
                           key={skill.id}
-                          variant="secondary"
+                          variant="techins8"
                           className="text-xs"
                         >
                           {skill.name}
                         </Badge>
                       ))}
                       {job.skills.length > 3 && (
-                        <Badge variant="secondary" className="text-xs">
+                        <Badge variant="techins8" className="text-xs">
                           +{job.skills.length - 3}
                         </Badge>
                       )}
@@ -87,25 +75,20 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               </TableCell>
 
               <TableCell>
-                <div className="flex flex-col gap-1">
-                  {job.company && (
-                    <div className="flex items-center gap-1">
-                      <Building2 className="w-4 h-4 text-gray-500" />
-                      <span>{job.company.name}</span>
-                    </div>
-                  )}
-                  {job.location && (
-                    <div className="flex items-center gap-1 text-gray-500">
-                      <MapPin className="w-4 h-4" />
-                      <span>{job.location.name}</span>
-                    </div>
-                  )}
+                <div className="flex items-center gap-1 text-gray-500">
+                  <span>{job.location?.city ?? job.location?.shortlabel}</span>
+                </div>
+              </TableCell>
+
+              <TableCell>
+                <div className="flex items-center gap-1">
+                  <span>{job.company?.name ?? "---"}</span>
                 </div>
               </TableCell>
 
               <TableCell>
                 <span className="whitespace-nowrap">
-                  {formatSalary(job.mindailypay, job.maxdailypay, job.currency)}
+                  {job.annualsalary ?? job.dailysalary}
                 </span>
               </TableCell>
 
@@ -117,30 +100,26 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
 
               <TableCell>
                 <div className="flex items-center gap-1 text-gray-500">
-                  <Calendar className="w-4 h-4" />
-                  {/* {formatDate(job.publishedat)} */}
+                  {getPublishedAt(job)}
                 </div>
               </TableCell>
 
               <TableCell>
                 <div className="flex gap-2">
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    onClick={() => router.push(`/jobs/${job.id}`)}
+                  {/* <Link
+                    href={`/job-offers/${job.id}`}
+                    className="text-sm font-medium text-primary"
                   >
                     Details
-                  </Button>
+                  </Link> */}
                   {job.sourceurl && (
-                    <Button variant="ghost" size="sm" asChild>
-                      <Link
-                        href={job.sourceurl || ""}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="w-4 h-4" />
-                      </Link>
-                    </Button>
+                    <Link
+                      href={job.sourceurl || ""}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <ExternalLink className="w-4 h-4" />
+                    </Link>
                   )}
                 </div>
               </TableCell>

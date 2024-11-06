@@ -1,6 +1,6 @@
 "use server";
 
-import { env } from "@/app/env";
+import { env } from "@/lib/env";
 import { http } from "@/lib/http";
 
 interface CreateNewsletterResponse {
@@ -14,7 +14,9 @@ interface NewsletterRequest {
   lastName?: string;
 }
 
-export async function subscribeToNewsletter(data: NewsletterRequest): Promise<CreateNewsletterResponse> {
+export async function subscribeToNewsletter(
+  data: NewsletterRequest
+): Promise<CreateNewsletterResponse> {
   try {
     const response = await http(`${env.LOOPS_API_URL}/contacts/create`, {
       method: "POST",
@@ -42,11 +44,12 @@ export async function subscribeToNewsletter(data: NewsletterRequest): Promise<Cr
           message: "Cette adresse email est déjà inscrite à notre newsletter.",
         };
       }
-      
+
       // Autres erreurs
       return {
         success: false,
-        message: "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+        message:
+          "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
       };
     }
 
@@ -55,12 +58,12 @@ export async function subscribeToNewsletter(data: NewsletterRequest): Promise<Cr
       success: true,
       message: "Inscription réussie ! Bienvenue dans notre newsletter.",
     };
-
   } catch (error) {
     console.error("Newsletter subscription error:", error);
     return {
       success: false,
-      message: "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+      message:
+        "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
     };
   }
 }

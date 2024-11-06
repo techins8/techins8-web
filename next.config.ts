@@ -21,13 +21,12 @@ const nextConfig: NextConfig = {
         hostname: "www.techins8.com",
       },
     ],
-    domains: ['www.techins8.com'], // Ajoute votre domaine
+    domains: ["www.techins8.com"], // Ajoute votre domaine
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    formats: ['image/avif', 'image/webp'], // Ajoute le support pour les formats modernes
+    formats: ["image/avif", "image/webp"], // Ajoute le support pour les formats modernes
   },
   reactStrictMode: true, // Active le mode strict de React
-  swcMinify: true, // Utilise SWC pour la minification
   typescript: {
     ignoreBuildErrors: false, // Force la vérification des types TypeScript
   },
