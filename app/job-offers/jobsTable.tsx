@@ -27,8 +27,6 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
     });
   };
 
-  console.log(initialJobs);
-
   return (
     <div className="bg-white rounded-lg shadow overflow-hidden p-4">
       <Table>
