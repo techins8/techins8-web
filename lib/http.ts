@@ -24,8 +24,10 @@ export const http = async (
   });
 };
 
+type scalar = string | boolean | number | undefined;
+
 export const buildQuery = (
-  query: Record<string, string | Array<string>>
+  query: Record<string, scalar | Array<scalar>>
 ): string => {
   const params = new URLSearchParams();
 
@@ -33,11 +35,11 @@ export const buildQuery = (
     if (Array.isArray(value)) {
       for (const item of value) {
         if (!item) continue;
-        params.append(key, item);
+        params.append(key, item.toString());
       }
     } else {
       if (!value) continue;
-      params.append(key, value);
+      params.append(key, value.toString());
     }
   }
 

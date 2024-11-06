@@ -40,9 +40,6 @@ export default async function HomePage({
     const query = buildQuery({
       ...params,
       ...newParams,
-      page: params.page.toString(),
-      size: params.size.toString(),
-      onlyPublished: params.onlyPublished.toString(),
     });
     return `/job-offers?${query}`;
   };
