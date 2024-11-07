@@ -3,6 +3,10 @@ import { Inter, Poppins } from "next/font/google";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { env } from "@/lib/env";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -71,6 +75,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
+        <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_GA_ID} />
         <div className="relative flex min-h-screen flex-col bg-background">
           <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
 
@@ -82,6 +87,8 @@ export default function RootLayout({
             <Footer />
           </div>
         </div>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

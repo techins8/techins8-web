@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@dahoom/disposable-email": "^0.3.253",
+    "@next/third-parties": "^15.0.3",
     "@notionhq/client": "^2.2.15",
     "@prisma/client": "5.21.1",
     "@radix-ui/react-avatar": "^1.1.1",
@@ -25,8 +26,7 @@
     "dotenv": "^16.4.5",
     "env": "^0.0.2",
     "lucide-react": "^0.454.0",
-    "next": "^15.0.2",
-    "nextjs-google-analytics": "^2.3.7",
+    "next": "^15.0.3",
     "react": "19.0.0-rc-fb9a90fa48-20240614",
     "react-dom": "19.0.0-rc-fb9a90fa48-20240614",
     "react-twc": "^1.4.2",
