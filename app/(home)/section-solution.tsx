@@ -14,7 +14,7 @@ const SectionSolution = () => {
     {
       id: 2,
       title: "Analyse des tendances en temps réel",
-      description: "Découvrez les tendances cachées du marché",
+      description: "Comparez deux langages de votre choix afin de mieux comprendre les attentes du marché.",
       image: "/images/screenshots/solution-2.webp",
       isComingSoon: false,
       bgColor: "rgba(89, 129, 245, 0.8)",
@@ -22,7 +22,7 @@ const SectionSolution = () => {
     {
       id: 3,
       title: "Cartographie des opportunités",
-      description: "Explorez la répartition géographique des offres par langage pour orienter vos choix de carrière",
+      description: "Explorez la répartition géographique des offres par langage pour orienter vos choix de carrière.",
       image: "/images/screenshots/solution-3.webp",
       isComingSoon: false,
       bgColor: "rgba(245, 89, 89, 0.8)",

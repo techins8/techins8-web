@@ -1,36 +1,39 @@
 import { Card, CardContent } from "@/components/ui/card";
-import { Zap, Clock, GitBranch } from "lucide-react";
+import Image from "next/image";
 
 const SectionProblem = () => {
   const problems = [
     {
       id: 1,
-      icon: <Zap className="w-6 h-6 text-accent-foreground" />,
+      iconPath: "/images/icons/problem-1.svg",
+      alt: "icône code",
       text: (
         <>
-          Le marché évolue plus <strong>vite</strong> que votre{" "}
-          <strong>stack</strong>.
+          Le marché évolue plus <strong className="text-[#F57F59]">vite</strong> que votre{" "}
+          <strong className="text-[#F57F59]">stack</strong>.
         </>
       ),
     },
     {
       id: 2,
-      icon: <Clock className="w-6 h-6 text-accent-foreground" />,
+      iconPath: "/images/icons/problem-2.svg",
+      alt: "icône sablier",
       text: (
         <>
-          Pendant que vous cherchez, les <strong>meilleurs postes</strong> sont
-          déjà <strong>pourvus</strong>.
+          Pendant que vous cherchez, les <strong className="text-[#F57F59]">meilleurs postes</strong> sont
+          déjà <strong className="text-[#F57F59]">pourvus</strong>.
         </>
       ),
     },
     {
       id: 3,
-      icon: <GitBranch className="w-6 h-6 text-accent-foreground" />,
+      iconPath: "/images/icons/problem-3.svg",
+      alt: "icône barre",
       text: (
         <>
-          <strong>Python</strong> ? <strong>PHP</strong> ? <strong>Java</strong>{" "}
-          ? Chaque <strong>mauvais choix</strong> vous coûte des{" "}
-          <strong>années</strong>
+          <strong className="text-[#F57F59]">Python</strong> ? <strong className="text-[#F57F59]">PHP</strong> ? <strong className="text-[#F57F59]">Java</strong>{" "}
+          ? Chaque <strong className="text-[#F57F59]">mauvais choix</strong> vous coûte des{" "}
+          <strong className="text-[#F57F59]">années</strong>
         </>
       ),
     },
@@ -44,7 +47,7 @@ const SectionProblem = () => {
           <br /> un véritable casse-tête.
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {problems.map(({ id, icon, text }) => (
+          {problems.map(({ id, alt, iconPath, text }) => (
             <Card
               key={id}
               className="relative p-6 border-none hover:shadow-none bg-white group transition-colors duration-300"
@@ -52,10 +55,18 @@ const SectionProblem = () => {
               <CardContent className="p-0">
                 <div className="flex items-start space-x-4">
                   {/* Icon */}
-                  <div className="p-2 bg-accent/10 rounded-lg">{icon}</div>
+                  <div className="bg-accent/10 rounded-lg absolute top-0 right-0  ">
+                    <Image 
+                      src={iconPath}
+                      alt={alt}
+                      width={80}
+                      height={80}
+                      className="text-accent-foreground"
+                    />
+                  </div>
 
                   {/* Number */}
-                  <div className="absolute top-4 right-6 text-6xl font-bold text-muted-foreground/20 transition-colors duration-300 group-hover:text-muted-foreground/50">
+                  <div className="top-4 left-3 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100/80 text-gray-400 font-bold text-2xl transition-colors duration-300 group-hover:bg-gray-200/90 group-hover:text-gray-500">
                     {id}
                   </div>
                 </div>
