@@ -165,7 +165,7 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      <div className="absolute right-0 top-0 -z-10 overflow-hidden">
+      <div className="absolute right-0 top-96 -z-10 overflow-hidden">
         <Image
           src="/images/illustrations/bottom-header-right.svg"
           alt="Illustration"
