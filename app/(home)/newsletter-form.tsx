@@ -27,7 +27,7 @@ export default function NewsletterForm() {
     if (!state.email) return;
 
     // Vérification de l'email jetable
-    if (await validate(state.email)) {
+    if (!await validate(state.email)) {
         setState({
           ...state,
           status: 'error',
