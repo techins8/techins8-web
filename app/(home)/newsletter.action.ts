@@ -6,7 +6,7 @@ import { http } from "@/lib/http";
 interface CreateNewsletterResponse {
   success: boolean;
   message: string;
-  error?: any;  // Pour le debugging
+  error?: string;  // Pour le debugging
 }
 
 interface NewsletterRequest {
