@@ -27,19 +27,19 @@ export default function NewsletterForm() {
     if (!state.email) return;
 
     // Vérification de l'email jetable
-    if (!await validate(state.email)) {
-        setState({
-          ...state,
-          status: 'error',
-          message: 'Veuillez utiliser une adresse email permanente.'
-        });
+    //if (!await validate(state.email)) {
+      //  setState({
+        //  ...state,
+          //status: 'error',
+      //    message: 'Veuillez utiliser une adresse email permanente.'
+     //   });
         
-        setTimeout(() => {
-          setState(prev => ({ ...prev, status: 'idle', message: '' }));
-        }, 3000);
-        
-        return;
-    }
+     //   setTimeout(() => {
+     //     setState(prev => ({ ...prev, status: 'idle', message: '' }));
+     //   }, 3000);
+     //   
+     //   return;
+   // }
 
     setState(prev => ({ ...prev, status: 'loading' }));
 
