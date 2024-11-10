@@ -1,8 +1,11 @@
+export type scalar = string | boolean | number | undefined;
+
 export interface HttpOptions {
-  query?: Record<string, string | Array<string>>;
+  query?: Record<string, scalar | Array<scalar>>;
   method?: "GET" | "POST" | "PUT" | "DELETE";
   body?: object;
   headers?: object;
+  next?: NextFetchRequestConfig;
 }
 
 export const http = async (
@@ -23,8 +26,6 @@ export const http = async (
     },
   });
 };
-
-type scalar = string | boolean | number | undefined;
 
 export const buildQuery = (
   query: Record<string, scalar | Array<scalar>>
