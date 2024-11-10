@@ -40,7 +40,7 @@ const nextConfig: NextConfig = {
           { key: "Access-Control-Allow-Credentials", value: "true" },
           { 
             key: "Access-Control-Allow-Origin", 
-            value: "https://app.loops.so" // Ajustez selon vos besoins
+            value: "https://app.loops.so"
           },
           {
             key: "Access-Control-Allow-Methods",
@@ -58,18 +58,17 @@ const nextConfig: NextConfig = {
               "Content-Type",
               "Date",
               "X-Api-Version",
-              "Authorization"  // Important pour les appels API authentifiés
+              "Authorization"
             ].join(", ")
           }
         ]
       },
       {
-        // Configuration globale pour les requêtes externes
         source: "/:path*",
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*"  // Ou spécifiez vos domaines spécifiques
+            value: "*"
           },
           {
             key: "Access-Control-Allow-Methods",
@@ -93,18 +92,6 @@ const nextConfig: NextConfig = {
         ]
       }
     ];
-  },
-
-  // Ajout de la configuration des redirections si nécessaire
-  async rewrites() {
-    return {
-      beforeFiles: [
-        {
-          source: "/api/:path*",
-          destination: "https://app.loops.so/api/:path*"
-        }
-      ]
-    };
   }
 };
 
