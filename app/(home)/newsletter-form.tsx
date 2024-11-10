@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { validate } from "@dahoom/disposable-email";
+// import { validate } from "@dahoom/disposable-email";
 import { subscribeToNewsletter } from "./newsletter.action";
 
 
