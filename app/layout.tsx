@@ -1,12 +1,13 @@
+import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/lib/env";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { env } from "@/lib/env";
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -89,6 +90,13 @@ export default function RootLayout({
         </div>
         <Analytics />
         <SpeedInsights />
+        <Toaster
+          expand={false}
+          position="top-right"
+          closeButton
+          richColors
+          duration={2000}
+        />
       </body>
     </html>
   );

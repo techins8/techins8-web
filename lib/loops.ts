@@ -13,7 +13,7 @@ export interface LoopsUser {
   subscribed: boolean;
   source?: string;
   userGroup: string;
-  userId: string;
+  userId?: string;
   mailingList: object;
 }
 
@@ -32,33 +32,24 @@ const loops = async (
   resource: string,
   options: HttpOptions = {}
 ): Promise<Response> => {
-  try {
-    const url = env.LOOPS_API_URL + resource;
+  const url = env.LOOPS_API_URL + resource;
 
-    const response = await http(url, {
-      ...options,
-      headers: {
-        Authorization: `Bearer ${env.LOOPS_API_KEY}`,
-        "Content-Type": "application/json",
-        accept: "application/json",
-        ...options.headers, // Permet d'ajouter des headers supplémentaires si nécessaire
-      },
-    });
+  const response = await http(url, {
+    ...options,
+    headers: {
+      Authorization: `Bearer ${env.LOOPS_API_KEY}`,
+      "Content-Type": "application/json",
+      accept: "application/json",
+    },
+  });
 
-    if (!response.ok) {
-      const error = await response
-        .json()
-        .catch(() => ({ message: "Unknown error" }));
-      throw new Error(
-        error.message || `HTTP error! status: ${response.status}`
-      );
-    }
-
-    return response;
-  } catch (error) {
-    console.error("Loops API Error:", error);
-    throw error;
+  if (!response.ok) {
+    const error = await response
+      .json()
+      .catch(() => ({ message: "Unknown error" }));
+    throw new Error(error.message || `HTTP error! status: ${response.status}`);
   }
+  return response;
 };
 
 export const find = async (

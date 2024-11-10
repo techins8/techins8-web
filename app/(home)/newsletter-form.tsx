@@ -1,74 +1,98 @@
-'use client';
+"use client";
 
-import { useState } from "react";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Alert, AlertDescription } from "@/components/ui/alert";
-// import { validate } from "@dahoom/disposable-email";
+import { validate } from "@dahoom/disposable-email";
+import { useState } from "react";
+import { toast } from "sonner";
+import { z } from "zod";
 import { subscribeToNewsletter } from "./newsletter.action";
-
 
 interface NewsletterState {
   email: string;
-  status: 'idle' | 'loading' | 'success' | 'error';
+  status: "idle" | "loading" | "success" | "error";
   message: string;
 }
 
+const newsletterSchema = z.object({
+  email: z.string().email(),
+});
+
 export default function NewsletterForm() {
+  const [loading, setLoading] = useState(false);
   const [state, setState] = useState<NewsletterState>({
-    email: '',
-    status: 'idle',
-    message: '',
+    email: "",
+    status: "idle",
+    message: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    if (!state.email) return;
+    setLoading(true);
+    const result = newsletterSchema.safeParse({ email: state.email });
+
+    if (!result.success || !state.email) {
+      setState({
+        ...state,
+        status: "error",
+        message: "Email invalide",
+      });
+    }
 
     // Vérification de l'email jetable
-    //if (!await validate(state.email)) {
-      //  setState({
-        //  ...state,
-          //status: 'error',
-      //    message: 'Veuillez utiliser une adresse email permanente.'
-     //   });
-        
-     //   setTimeout(() => {
-     //     setState(prev => ({ ...prev, status: 'idle', message: '' }));
-     //   }, 3000);
-     //   
-     //   return;
-   // }
+    if (!(await validate(state.email))) {
+      toast.error("Veuillez utiliser une adresse email permanente.");
+      setState({
+        ...state,
+        status: "error",
+        message: "Veuillez utiliser une adresse email permanente.",
+      });
 
-    setState(prev => ({ ...prev, status: 'loading' }));
+      setTimeout(() => {
+        setState((prev) => ({ ...prev, status: "idle", message: "" }));
+      }, 3000);
+      setLoading(false);
+      return;
+    }
 
     try {
       const response = await subscribeToNewsletter({ email: state.email });
 
       if (response.success) {
+        toast.success("Merci de votre inscription ! 🎉");
         setState({
-          email: '',
-          status: 'success',
-          message: 'Merci de votre inscription ! 🎉'
+          email: "",
+          status: "success",
+          message: "Merci de votre inscription ! 🎉",
         });
       } else {
         throw new Error(response.message);
       }
 
       setTimeout(() => {
-        setState(prev => ({ ...prev, status: 'idle', message: '' }));
+        setState((prev) => ({ ...prev, status: "idle", message: "" }));
       }, 3000);
     } catch (error) {
+      toast.error(
+        error instanceof Error
+          ? error.message
+          : "Une erreur est survenue lors de l'inscription"
+      );
       setState({
         ...state,
-        status: 'error',
-        message: error instanceof Error ? error.message : 'Une erreur est survenue lors de l\'inscription'
+        status: "error",
+        message:
+          error instanceof Error
+            ? error.message
+            : "Une erreur est survenue lors de l'inscription",
       });
 
       setTimeout(() => {
-        setState(prev => ({ ...prev, status: 'idle', message: '' }));
+        setState((prev) => ({ ...prev, status: "idle", message: "" }));
       }, 3000);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -93,29 +117,29 @@ export default function NewsletterForm() {
               className="flex-1"
               required
               value={state.email}
-              onChange={(e) => setState(prev => ({ ...prev, email: e.target.value }))}
-              disabled={state.status === 'loading'}
+              onChange={(e) =>
+                setState((prev) => ({ ...prev, email: e.target.value }))
+              }
+              disabled={state.status === "loading"}
             />
             <Button
               type="submit"
               className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198]"
-              disabled={state.status === 'loading'}
+              disabled={state.status === "loading"}
             >
-              {state.status === 'loading' ? 'Inscription...' : 'S\'inscrire'}
+              {loading ? "Inscription..." : "S'inscrire"}
             </Button>
           </div>
 
-          {state.status !== 'idle' && state.message && (
+          {state.status !== "idle" && state.message && (
             <Alert
               className={`mt-4 ${
-                state.status === 'success' 
-                  ? 'bg-green-50 text-green-700 border-green-200'
-                  : 'bg-red-50 text-red-700 border-red-200'
+                state.status === "success"
+                  ? "bg-green-50 text-green-700 border-green-200"
+                  : "bg-red-50 text-red-700 border-red-200"
               }`}
             >
-              <AlertDescription>
-                {state.message}
-              </AlertDescription>
+              <AlertDescription>{state.message}</AlertDescription>
             </Alert>
           )}
 
