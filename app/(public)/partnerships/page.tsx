@@ -39,7 +39,7 @@ const partnerships: Partnership[] = [
     image: "/images/affiliation/mathieu_banniere.webp",
     description:
       "Je te partage la méthode puissante qui m'a permis de recevoir des réponses positives à mes candidatures et de décrocher mon premier poste de développeur grâce à LinkedIn.",
-    link: "https://www.switchtodev.com/?sa=sa011375833410fe7d6b99c122a6615040ed62cb30",
+    link: "taap.it/switch-to-dev-techins8",
   },
   {
     id: 4,
