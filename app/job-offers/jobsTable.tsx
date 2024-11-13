@@ -48,7 +48,9 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               <TableCell className="py-4">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-medium text-gray-900">
-                    {job.title || "Untitled Position"}
+                    <Link href={`job-offers/${job.id}`}>
+                      {job.title || "Untitled Position"}
+                    </Link>
                   </h3>
 
                   {job.skills && job.skills.length > 0 && (
@@ -86,7 +88,9 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
 
               <TableCell>
                 <span className="whitespace-nowrap">
-                  {job.annualsalary ?? job.dailysalary}
+                  {job.annualsalary}
+                  {job.annualsalary && job.dailysalary && " / "}
+                  {job.dailysalary}
                 </span>
               </TableCell>
 

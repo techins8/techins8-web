@@ -5,19 +5,18 @@ import NewsletterForm from "./(home)/newsletter-form";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-
 const Footer = () => {
   const navigationLinks = [
     { href: "/job_offers", label: "Jobs" },
     { href: "/about", label: "À propos" },
     { href: "/blog", label: "Blog" },
-    { href: "/login", label: "Se Connecter" },
+    { href: "https://dashboard.techins8.com", label: "Se Connecter" },
   ];
 
   const footerLinks = [
     { href: "/", label: "Accueil" },
     { href: "/partnerships", label: "Partenariats" },
-    { href: "#testimonials", label: "Feedback" },
+    { href: "/#testimonials", label: "Feedback" },
     { href: "/legal", label: "Mentions légales" },
   ];
 
@@ -98,15 +97,18 @@ const Footer = () => {
                       />
                     </a>
                   </div>
-                    <p className="text-muted-foreground">
-                      Nous sommes là pour vous aider !
-                    </p>
-                  
+                  <p className="text-muted-foreground">
+                    Nous sommes là pour vous aider !
+                  </p>
+
                   <Button
                     asChild
                     className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198] "
                   >
-                    <a href="mailto:contact@techins8.com?subject=Contact_Landing">
+                    <a
+                      href="mailto:contact@techins8.com?subject=Contact_Landing"
+                      target="_blank"
+                    >
                       Nous contacter
                     </a>
                   </Button>
@@ -120,7 +122,7 @@ const Footer = () => {
             © 2024 TechIns8. Tous droits réservés.
           </div>
         </div>
-        </div>
+      </div>
     </footer>
   );
 };

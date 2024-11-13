@@ -17,7 +17,11 @@ export interface ISkill {
 export interface ICompany {
   id: number;
   name?: string;
+  logo?: string;
+  description: string;
   jobs?: IJob[];
+  locality?: string;
+  country?: string;
 }
 
 // Interface pour Location
@@ -26,6 +30,7 @@ export interface ILocation {
   region?: string;
   postalcode?: string;
   shortlabel?: string;
+  label?: string;
   jobs?: IJob[];
   country?: string;
   city?: string;

@@ -76,7 +76,7 @@ export const getJobsBrut = async ({
 };
 
 export const getJob = async ({ id }: { id: string }) => {
-  const response = await api(`/jobs-brut/${id}`);
+  const response = await api(`/jobs-brut/job-${id}`);
   const data = (await response.json()) as IJob;
   return data;
 };
