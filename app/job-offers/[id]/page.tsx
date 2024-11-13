@@ -1,4 +1,5 @@
 import { getJob } from "../jobs.query";
+import JobDetail from "./job-detail";
 
 export default async function JobOfferPage({
   params,
@@ -7,5 +8,8 @@ export default async function JobOfferPage({
 }) {
   const { id } = await params;
   const job = await getJob({ id });
-  return <div>{job?.title}</div>;
+
+  if (!job) throw new Error("Job not found");
+
+  return <JobDetail job={job} />;
 }
