@@ -75,8 +75,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
+      <head>
         <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_GA_ID} />
+        <script defer src="http://umami-cog44sko0swsw88sk408w4gw.91.108.113.83.sslip.io/script.js" data-website-id="23b0e7bf-5bf9-401f-876a-925f8a79b439"></script>
+      </head>
+      <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
         <div className="relative flex min-h-screen flex-col bg-background">
           <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
 
