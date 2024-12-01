@@ -120,7 +120,7 @@ const Nav = () => {
                 Blog
               </Link>
               <Link
-                href="/https://dashboard.techins8.com/"
+                href="https://dashboard.techins8.com"
                 className="bg-accent-foreground text-background px-2 py-3 rounded-md transition-colors text-lg w-60 text-center hover:bg-[#fa471198]"
                 onClick={closeMenu}
               >
@@ -156,7 +156,7 @@ const Nav = () => {
               Blog
             </Link>
             <Link
-              href="https://dashboard.techins8.com/"
+              href="https://dashboard.techins8.com"
               target="_parent"
               className="bg-accent-foreground text-background px-4 py-2 rounded-md transition-colors text-sm hover:bg-[#fa471198]"
             >
