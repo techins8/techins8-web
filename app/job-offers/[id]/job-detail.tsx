@@ -131,6 +131,7 @@ export default function JobDetails({ job }: { job: IJob }) {
           {job.sourceurl && (
             <Link
               href={job?.sourceurl}
+              target="_blank"
               className={cn(
                 "w-full sm:w-auto",
                 buttonVariants({ variant: "techins8" })
