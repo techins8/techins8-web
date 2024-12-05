@@ -61,7 +61,12 @@ export const BlogCard = ({ article }: { article: Article }) => {
           </div>
         </div>
         <h2 className="mt-4 text-xl font-semibold">{article.title}</h2>
-        <p className="mt-2 text-gray-600">{article.teaser}</p>
+        <p
+          className="mt-2 text-gray-600 h-32 line-clamp-4"
+          title={article.teaser}
+        >
+          {article.teaser}
+        </p>
         <div className="flex items-center mt-4 space-x-2">
           {article.tags.multi_select.map((tag) => (
             <Badge

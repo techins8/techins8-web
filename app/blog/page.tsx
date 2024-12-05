@@ -1,9 +1,17 @@
+"use client";
+
 import { getArticles } from "@/query/article.query";
 import Link from "next/link";
 import { BlogCard } from "./BlogCard";
+import { useState, useEffect } from "react";
+import { Article } from "@/query/article.query";
 
-export default async function BlogPage() {
-  const articles = await getArticles();
+export default function BlogPage() {
+  const [articles, setArticles] = useState<Article[]>([]);
+
+  useEffect(() => {
+    getArticles().then(setArticles);
+  }, []);
 
   return (
     <div className="min-h-screen">

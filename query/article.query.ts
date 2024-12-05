@@ -1,3 +1,5 @@
+"use server";
+
 import { notion } from "@/lib/notion";
 import type {
   BlockObjectResponse,
@@ -65,14 +67,27 @@ export const getArticles = async (): Promise<Article[]> => {
     },
   });
 
-  return response.results.map((result) => makeArticle(result as NotionArticle));
+  const articles = response.results.map((result) =>
+    makeArticle(result as NotionArticle)
+  );
+
+  articles.sort((a, b) => {
+    const dateA = a.publishedAt ?? a.createdTime;
+    const dateB = b.publishedAt ?? b.createdTime;
+    return dateB.getTime() - dateA.getTime();
+  });
+
+  return articles;
 };
 
 const makeArticle = (notionArticle: NotionArticle): Article => {
-  const cover =
-    notionArticle.cover.type === "external"
-      ? notionArticle.cover.external?.url
-      : notionArticle.cover.file?.url;
+  let cover: string | null = "/images/default-cover.jpg";
+  if (notionArticle.cover) {
+    cover =
+      notionArticle.cover.type === "external"
+        ? notionArticle.cover.external?.url
+        : notionArticle.cover.file?.url;
+  }
 
   const startDate: string | undefined =
     notionArticle.properties.publishedAt.date?.start;
