@@ -14,7 +14,7 @@ export default function BlogPage() {
   }, []);
 
   return (
-    <div className="min-h-screen">
+    <div className="max-w-6xl mx-auto px-4 mb-16">
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
         <p className="text-gray-600">
