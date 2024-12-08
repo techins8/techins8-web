@@ -13,6 +13,7 @@ import { IJob } from "@/types/job";
 import { formatDistance } from "date-fns";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
+import { SourceIcon } from "./source-icon";
 
 interface JobsTableProps {
   initialJobs: IJob[];
@@ -48,8 +49,12 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               <TableCell className="py-4">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-medium text-gray-900">
-                    <Link href={`job-offers/${job.id}`}>
-                      {job.title || "Untitled Position"}
+                    <Link
+                      href={`job-offers/${job.id}`}
+                      className="flex items-center gap-2"
+                    >
+                      <SourceIcon source={job.source} />
+                      <span>{job.title || "Untitled Position"}</span>
                     </Link>
                   </h3>
 
