@@ -11,10 +11,11 @@ import {
 import { cn } from "@/lib/utils";
 import { IJob } from "@/types/job";
 import { formatDistance } from "date-fns";
-import { Briefcase, Building2, Clock, Euro, MapPin } from "lucide-react";
+import { fr } from "date-fns/locale";
+import { Briefcase, Building2, Clock, Euro, Globe, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
+import { SourceIcon } from "../source-icon";
 export default function JobDetails({ job }: { job: IJob }) {
   const publishedAt: string | undefined = job.publishedat ?? job.createdat;
 
@@ -23,12 +24,38 @@ export default function JobDetails({ job }: { job: IJob }) {
   }
 
   return (
-    <div className="p-4 md:p-6 lg:p-8">
+    <div id="job-detail" className="p-4 md:p-6 lg:p-8">
+      <style>
+        {`
+          #job-detail {
+            p {
+              margin-bottom: 1rem;
+            }
+            br {
+              margin-bottom: 0.5rem;
+              display: block;
+              content: "";
+              height: 0.1rem;
+            }
+            ul {
+              margin-left: 1rem;
+              margin-bottom: 1rem;
+              li {
+                margin-bottom: 0.5rem;
+                list-style-type: disc;
+              }
+            }
+          }
+        `}
+      </style>
       <Card>
         <CardHeader className="space-y-6">
           <div className="flex flex-col md:flex-row md:items-start justify-between gap-4">
             <div className="space-y-2">
-              <h1 className="text-2xl md:text-3xl font-bold">{job.title}</h1>
+              <h1 className="text-2xl md:text-3xl font-bold flex items-center gap-2">
+                <SourceIcon source={job.source} />
+                <span>{job.title}</span>
+              </h1>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Building2 className="w-4 h-4" />
                 <span>{job.company?.name}</span>
@@ -72,6 +99,18 @@ export default function JobDetails({ job }: { job: IJob }) {
                 <span>{job.dailysalary} par jour</span>
               </div>
             )}
+            {job.remotemode && (
+              <div className="flex items-center gap-2">
+                <Globe className="w-4 h-4 text-muted-foreground" />
+                <span>Télétravail : {job.remotemode}</span>
+              </div>
+            )}
+            {job.experience && (
+              <div className="flex items-center gap-2">
+                <Briefcase className="w-4 h-4 text-muted-foreground" />
+                <span>Expérience : {job.experience}</span>
+              </div>
+            )}
             <div className="flex items-center gap-2">
               <Briefcase className="w-4 h-4 text-muted-foreground" />
               <span>{job.jobtype}</span>
@@ -83,6 +122,7 @@ export default function JobDetails({ job }: { job: IJob }) {
                   <span>
                     Publié il y a{" "}
                     {formatDistance(new Date(publishedAt), new Date(), {
+                      locale: fr,
                       addSuffix: false,
                     })}
                   </span>
@@ -100,7 +140,7 @@ export default function JobDetails({ job }: { job: IJob }) {
               />
             </section>
 
-            <section className="space-y-4">
+            <section className="space-y-4 border-t pt-6">
               <h2 className="text-xl font-semibold">
                 A propos de l&apos;entreprise
               </h2>
