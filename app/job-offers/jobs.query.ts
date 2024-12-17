@@ -37,7 +37,7 @@ export const getJobsBrut = async ({
   sort = [],
 }: IGetJobsBrutParams): Promise<IGetJobsBrutResponse> => {
   try {
-    const response = await api(`/`, {
+    const response = await api(`/jobs`, {
       query: {
         page: page.toString(),
         page_size: size.toString(),
@@ -76,7 +76,7 @@ export const getJobsBrut = async ({
 };
 
 export const getJob = async ({ id }: { id: string }) => {
-  const response = await api(`/job-${id}`);
+  const response = await api(`/jobs/job-${id}`);
   const data = (await response.json()) as IJob;
   return data;
 };
