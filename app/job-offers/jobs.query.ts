@@ -47,6 +47,9 @@ export const getJobsBrut = async ({
         companies: companies,
         sort: sort,
       },
+      headers: {
+        "x-providers": "FreeWork, WelcomeToTheJungle",
+      },
     });
 
     if (!response.ok) {
