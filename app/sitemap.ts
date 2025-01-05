@@ -39,5 +39,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily",
       priority: 0.5,
     },
+    {
+      url: "https://techins8.com/legal",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
+    {
+      url: "https://techins8.com/cgv",
+      lastModified: new Date(),
+      changeFrequency: "daily",
+      priority: 0.5,
+    },
   ];
 }

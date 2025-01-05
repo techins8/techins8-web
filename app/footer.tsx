@@ -18,6 +18,7 @@ const Footer = () => {
     { href: "/partnerships", label: "Partenariats" },
     { href: "/#testimonials", label: "Feedback" },
     { href: "/legal", label: "Mentions légales" },
+    { href: "/cgv", label: "CGV" },
   ];
 
   return (
@@ -119,7 +120,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-            © 2024 TechIns8. Tous droits réservés.
+            © 2025 TechIns8. Tous droits réservés.
           </div>
         </div>
       </div>
