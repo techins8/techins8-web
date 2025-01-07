@@ -55,7 +55,7 @@ const Problem = () => {
         Les fausses annonces vous coûtent des heures de recherche inutiles
       </h2>
       <p className="text-center text-gray-600 mb-12 font-body">
-        Des milliers d'annonces, des dizaines de job boards mais pas de confiance.
+        Des milliers d&apos;annonces, des dizaines de job boards mais pas de confiance.
       </p>
 
       <div className="grid grid-cols-1 gap-6 max-w-[1200px] mx-auto">
