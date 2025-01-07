@@ -14,19 +14,19 @@ const SubHeader = () => {
         </div>
         <div className="flex items-center">
           <div className="flex items-center pr-1">
-              <p>+1000 </p>
+              <p>+1800 </p>
           </div>
           <p className="text-secondary font-normal">Développeurs Inscrits</p>
         </div>
         <div className="hidden sm:flex">
           <div className="flex items-center pr-1">
-              <span>+50K</span>
+              <span>+100K</span>
           </div>
           <span className="text-secondary font-normal">Annonces</span>
         </div>
         <div className="hidden sm:flex">
           <div className="flex items-center pr-1">
-              <span>+900</span>
+              <span>+1200</span>
           </div>
           <span className="text-secondary font-normal">Inscrits à la Newsletter</span>
         </div>

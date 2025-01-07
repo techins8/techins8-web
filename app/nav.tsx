@@ -36,7 +36,7 @@ const Nav = () => {
       {/* Image de fond */}
       <div className="absolute left-0 top-0 -z-10 overflow-hidden">
         <Image
-          src="/images/illustrations/top-header-left.svg"
+          src="/images/illustrations/hero-shape-1.svg"
           alt="Illustration"
           className="w-full h-auto"
           width={100}
@@ -165,9 +165,9 @@ const Nav = () => {
           </div>
         </div>
       </nav>
-      <div className="absolute right-0 top-96 -z-10 overflow-hidden">
+      <div className="absolute right-0 -z-10 overflow-hidden">
         <Image
-          src="/images/illustrations/bottom-header-right.svg"
+          src="/images/illustrations/hero-shape-2.svg"
           alt="Illustration"
           className="w-full h-auto"
           width={100}

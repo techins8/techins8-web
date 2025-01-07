@@ -62,7 +62,7 @@ module.exports = {
   		},
   		fontFamily: {
   			sans: ["var(--font-sans)", ...fontFamily.sans],
-			heading: ['var(--font-poppins)'],
+			heading: ['var(--font-poppins)', ...fontFamily.sans],
 			body: ['var(--font-sf-pro)'],
   		},
   		keyframes: {
