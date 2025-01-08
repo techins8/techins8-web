@@ -2,7 +2,7 @@
 
 import { usePathname, useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
-import * as fbq from '@/lib/fpixel';
+import { pageview } from '@/lib/fpixel';
 
 export default function RouteChangeTracker() {
   const pathname = usePathname();
@@ -10,7 +10,7 @@ export default function RouteChangeTracker() {
 
   useEffect(() => {
     // Trigger a page view every time the route changes
-    fbq.pageview();
+    pageview();
   }, [pathname, searchParams]);
 
   return null;

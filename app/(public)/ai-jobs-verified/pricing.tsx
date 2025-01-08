@@ -1,7 +1,5 @@
 'use client';
 
-import { events } from '@/lib/fpixel';
-
 export default function Pricing() {
   const plans = [
     {
@@ -46,10 +44,6 @@ export default function Pricing() {
       bestValue: true
     }
   ];
-
-  const handleSubscription = (planPrice: number) => {
-    events.subscribe(planPrice, 'EUR');
-  };
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -100,7 +94,7 @@ export default function Pricing() {
                 ))}
               </ul>
               <button
-                onClick={() => handleSubscription(plan.price)}
+                onClick={() => (plan.price)}
                 className={`mt-8 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                   plan.popular || plan.bestValue
                     ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-indigo-600'
