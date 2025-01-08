@@ -9,6 +9,7 @@ import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
+import MetaPixel from "@/components/MetaPixel";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -85,6 +86,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_GA_ID} />
+        <MetaPixel />
       </head>
       <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
         <div className="relative flex min-h-screen flex-col bg-background">

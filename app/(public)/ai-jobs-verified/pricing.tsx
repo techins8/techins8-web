@@ -1,8 +1,12 @@
+'use client';
+
+import { events } from '@/lib/fpixel';
+
 export default function Pricing() {
   const plans = [
     {
       name: "MENSUEL",
-      price: "14,90€",
+      price: 14.90,
       period: "/mois",
       features: [
         "Accès complet à l'analyse IA",
@@ -14,7 +18,7 @@ export default function Pricing() {
     },
     {
       name: "ANNUEL",
-      price: "119€",
+      price: 119,
       period: "/an",
       subPrice: "Soit 9,92€/mois",
       discount: "Économisez 25%",
@@ -28,7 +32,7 @@ export default function Pricing() {
     },
     {
       name: "2 ANS",
-      price: "159€",
+      price: 159,
       subPrice: "Soit 6,63€/mois",
       discount: "Économisez 55%",
       features: [
@@ -42,6 +46,10 @@ export default function Pricing() {
       bestValue: true
     }
   ];
+
+  const handleSubscription = (planPrice: number) => {
+    events.subscribe(planPrice, 'EUR');
+  };
 
   return (
     <div className="bg-white py-24 sm:py-32">
@@ -68,7 +76,7 @@ export default function Pricing() {
                 </p>
               )}
               <div className="flex items-baseline gap-x-2">
-                <span className="text-4xl font-bold tracking-tight text-gray-900">{plan.price}</span>
+                <span className="text-4xl font-bold tracking-tight text-gray-900">{plan.price}€</span>
                 {plan.period && (
                   <span className="text-sm font-semibold leading-6 text-gray-600">
                     {plan.period}
@@ -91,8 +99,8 @@ export default function Pricing() {
                   </li>
                 ))}
               </ul>
-              <a
-                href="#"
+              <button
+                onClick={() => handleSubscription(plan.price)}
                 className={`mt-8 block rounded-md px-3 py-2 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 ${
                   plan.popular || plan.bestValue
                     ? 'bg-indigo-600 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline-indigo-600'
@@ -100,7 +108,7 @@ export default function Pricing() {
                 }`}
               >
                 {plan.cta}
-              </a>
+              </button>
             </div>
           ))}
         </div>
