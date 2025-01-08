@@ -1,5 +1,3 @@
-import { env } from "./env";
-
 type FacebookPixelEvent = 
   | 'PageView' 
   | 'AddToCart' 
@@ -36,8 +34,6 @@ declare global {
     _fbq: FacebookPixel;
   }
 }
-
-export const FB_PIXEL_ID = env.FACEBOOK_PIXEL_ID as string;
 
 export const pageview = () => {
     window.fbq('track', 'PageView');
