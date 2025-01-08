@@ -10,7 +10,6 @@ import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
 import MetaPixel from "@/components/MetaPixel";
-import RouteChangeTracker from "@/components/RouteChangeTracker";
 import { Suspense } from "react";
 
 // Configuration de Poppins
@@ -93,7 +92,6 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_GA_ID} />
-        <MetaPixel />
       </head>
       <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
         <div className="relative flex min-h-screen flex-col bg-background">
@@ -103,7 +101,7 @@ export default function RootLayout({
             <Nav />
             <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 flex-1">
               <Suspense>
-                <RouteChangeTracker />
+                <MetaPixel />
               </Suspense>
               {children}
             </main>

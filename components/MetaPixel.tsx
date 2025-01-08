@@ -1,11 +1,38 @@
+'use client';
+
 import { env } from '@/lib/env';
 import Script from 'next/script';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { usePathname, useSearchParams } from 'next/navigation';
+import { pageview } from '@/lib/fpixel';
+
+function FacebookPixelTracking() {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+
+  useEffect(() => {
+    pageview();
+  }, [pathname, searchParams]);
+
+  return null;
+}
 
 export default function MetaPixel() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    if (!loaded) return;
+    pageview();
+  }, [loaded]);
+
   return (
     <>
-      <Script id="fb-pixel" strategy="afterInteractive">
+      <Script 
+        id="fb-pixel" 
+        strategy="afterInteractive"
+        onLoad={() => setLoaded(true)}
+      >
         {`
           !function(f,b,e,v,n,t,s)
           {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -16,7 +43,6 @@ export default function MetaPixel() {
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
           fbq('init', '${env.FACEBOOK_PIXEL_ID}');
-          fbq('track', 'PageView');
         `}
       </Script>
       <noscript>
@@ -29,6 +55,7 @@ export default function MetaPixel() {
           unoptimized
         />
       </noscript>
+      <FacebookPixelTracking />
     </>
   );
 }
