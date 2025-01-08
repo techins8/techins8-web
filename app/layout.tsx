@@ -10,6 +10,8 @@ import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
 import MetaPixel from "@/components/MetaPixel";
+import RouteChangeTracker from "@/components/RouteChangeTracker";
+import { Suspense } from "react";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -25,7 +27,6 @@ export const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
 });
 
-
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -33,9 +34,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Techins8 - Les données pour les acteurs de la tech !",
-  description:
-    "TechIns8 est un tableau de bord destiné aux professionnels du secteur technologique français, offrant un accès à diverses données sur l'état du marché.",
+  metadataBase: new URL('https://techins8.com'),
+  title: {
+    default: 'TechIns8 - Votre partenaire en recrutement tech',
+    template: '%s | TechIns8'
+  },
+  description: 'TechIns8 est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.',
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://techins8.com',
+    siteName: 'TechIns8',
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'TechIns8'
+      }
+    ]
+  },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@techins8',
+    creator: '@techins8'
+  },
   applicationName: "TechIns8",
   keywords: [
     "TechIns8",
@@ -50,22 +73,6 @@ export const metadata: Metadata = {
     },
     { name: "Fahari Hamada Sidi", url: "https://www.linkedin.com/in/fahari/" },
   ],
-  openGraph: {
-    title: "TechIns8 - Les données pour les acteurs de la tech !",
-    description:
-      "TechIns8 est un tableau de bord destiné aux professionnels du secteur technologique français, offrant un accès à diverses données sur l'état du marché.",
-    images: [
-      {
-        url: "/images/logo/logo-color.png",
-        width: 300,
-        height: 100,
-      },
-    ],
-    siteName: "Techins8",
-    locale: "fr-FR",
-    type: "website",
-    url: "https://techins8.com",
-  },
   robots: {
     index: true,
     follow: true,
@@ -94,7 +101,10 @@ export default function RootLayout({
 
           <div className="relative z-10 flex flex-grow flex-col">
             <Nav />
-            <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16">
+            <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 flex-1">
+              <Suspense>
+                <RouteChangeTracker />
+              </Suspense>
               {children}
             </main>
             <Footer />

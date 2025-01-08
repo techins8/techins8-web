@@ -1,3 +1,5 @@
+import { env } from "./env";
+
 type FacebookPixelEvent = 
   | 'PageView' 
   | 'AddToCart' 
@@ -35,16 +37,14 @@ declare global {
   }
 }
 
+export const FB_PIXEL_ID = env.FACEBOOK_PIXEL_ID as string;
+
 export const pageview = () => {
-  if (typeof window.fbq === 'function') {
     window.fbq('track', 'PageView');
-  }
 };
 
 export const event = (name: FacebookPixelEvent, options: FacebookPixelOptions = {}) => {
-  if (typeof window.fbq === 'function') {
-    window.fbq('track', name, options);
-  }
+    window.fbq('track', name, options)
 };
 
 // Common events you might want to track
