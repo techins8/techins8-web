@@ -10,14 +10,13 @@ export const env = createEnv({
     NOTION_API_KEY: z.string().min(1),
     NOTION_BLOG_DATABASE_ID: z.string().min(1),
     GOOGLE_ANALYTICS_GA_ID: z.string().min(2),
-    FACEBOOK_PIXEL_ID: z.string().min(1),
   },
 
   /**
    * The prefix that client-side variables must have. This is enforced both at
    * a type-level and at runtime.
    */
-  clientPrefix: "",
+  clientPrefix: "NEXT_PUBLIC_",
 
   client: {},
 
@@ -30,15 +29,12 @@ export const env = createEnv({
   /**
    * By default, this library will feed the environment variables directly to
    * the Zod validator.
-   *
-   * This means that if you have an empty string for a value that is supposed
-   * to be a number (e.g. `PORT=` in a ".env" file), Zod will incorrectly flag
-   * it as a type mismatch violation. Additionally, if you have an empty string
-   * for a value that is supposed to be a string with a default value (e.g.
-   * `DOMAIN=` in an ".env" file), the default value will never be applied.
-   *
-   * In order to solve these issues, we recommend that all new projects
-   * explicitly specify this option as true.
    */
+  skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
 });
+
+// Export public env variables
+export const publicEnv = {
+  FACEBOOK_PIXEL_ID: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
+};

@@ -1,6 +1,6 @@
 'use client';
 
-import { env } from '@/lib/env';
+import { publicEnv } from '@/lib/env';
 import Script from 'next/script';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
@@ -42,7 +42,7 @@ export default function MetaPixel() {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', '${env.FACEBOOK_PIXEL_ID}');
+          fbq('init', '${publicEnv.FACEBOOK_PIXEL_ID}');
         `}
       </Script>
       <noscript>
@@ -50,7 +50,7 @@ export default function MetaPixel() {
           height={1}
           width={1}
           style={{ display: 'none' }}
-          src={`https://www.facebook.com/tr?id=${env.FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
+          src={`https://www.facebook.com/tr?id=${publicEnv.FACEBOOK_PIXEL_ID}&ev=PageView&noscript=1`}
           alt=""
           unoptimized
         />
