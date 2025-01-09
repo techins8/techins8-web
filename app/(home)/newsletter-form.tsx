@@ -8,7 +8,6 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { subscribeToNewsletter } from "./newsletter.action";
-import { events } from "@/lib/fpixel";
 
 interface NewsletterState {
   email: string;
@@ -62,8 +61,6 @@ export default function NewsletterForm() {
 
       if (response.success) {
         // Track successful newsletter subscription
-        events.lead();
-        
         toast.success("Merci de votre inscription ! ");
         setState({
           email: "",

@@ -1,7 +1,4 @@
 import { Toaster } from "@/components/ui/sonner";
-import { env } from "@/lib/env";
-import { GoogleAnalytics } from "@next/third-parties/google";
-import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
 import { Inter, Poppins, Nunito_Sans } from "next/font/google";
@@ -9,8 +6,6 @@ import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
-import MetaPixel from "@/components/MetaPixel";
-import { Suspense } from "react";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -91,7 +86,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <GoogleAnalytics gaId={env.GOOGLE_ANALYTICS_GA_ID} />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
@@ -119,15 +113,11 @@ export default function RootLayout({
           <div className="relative z-10 flex flex-grow flex-col">
             <Nav />
             <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 flex-1">
-              <Suspense>
-                <MetaPixel />
-              </Suspense>
               {children}
             </main>
             <Footer />
           </div>
         </div>
-        <Analytics />
         <SpeedInsights />
         <Toaster
           expand={false}

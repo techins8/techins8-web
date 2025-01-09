@@ -9,14 +9,13 @@ export const env = createEnv({
     SCRAPPER_API_TOKEN: z.string().min(1),
     NOTION_API_KEY: z.string().min(1),
     NOTION_BLOG_DATABASE_ID: z.string().min(1),
-    GOOGLE_ANALYTICS_GA_ID: z.string().min(2),
   },
 
   /**
    * The prefix that client-side variables must have. This is enforced both at
    * a type-level and at runtime.
    */
-  clientPrefix: "NEXT_PUBLIC_",
+  clientPrefix: "",
 
   client: {},
 
@@ -33,8 +32,3 @@ export const env = createEnv({
   skipValidation: !!process.env.SKIP_ENV_VALIDATION,
   emptyStringAsUndefined: true,
 });
-
-// Export public env variables
-export const publicEnv = {
-  FACEBOOK_PIXEL_ID: process.env.NEXT_PUBLIC_FACEBOOK_PIXEL_ID
-};
