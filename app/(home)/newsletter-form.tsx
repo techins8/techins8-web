@@ -110,6 +110,7 @@ export default function NewsletterForm() {
         <form
           onSubmit={handleSubmit}
           className="flex flex-col gap-3 items-center"
+          id="newsletter-form"
         >
           <div className="flex flex-col sm:flex-row gap-3 max-w-md w-full">
             <Input
