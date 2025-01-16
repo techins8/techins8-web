@@ -113,7 +113,7 @@ export default function NewsletterForm() {
 
       <div className="max-w-3xl pl-0 sm:pl-12">
         <h2 className="text-2xl sm:text-4xl font-bold text-background mb-4">
-          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur l'abonnement annuel<br className="hidden sm:block" />
+          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur l&apos;abonnement annuel<br className="hidden sm:block" />
           en vous inscrivant à la newsletter.
         </h2>
         
@@ -151,7 +151,7 @@ export default function NewsletterForm() {
                   : "bg-red-50 text-red-700 border-red-200"
               }`}
             >
-              <AlertDescription className="text-sm sm:text-base">{state.message}</AlertDescription>
+              <AlertDescription className="text-sm sm:text-base">{state.message.replace("'", "&apos;")}</AlertDescription>
             </Alert>
           )}
         </form>

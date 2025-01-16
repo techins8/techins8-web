@@ -66,7 +66,7 @@ const PricingSection = () => {
       <div className="max-w-[1120px] mx-auto">
         <div className="flex flex-col items-center justify-center text-center text-muted mb-8 sm:mb-14">
           <h2 className="text-3xl md:text-4xl text-title font-bold mb-6 max-w-[350px] sm:max-w-[650px]">
-            Démarrez dès maintenant avec l'<span className="text-primary">offre premium</span>.
+            Démarrez dès maintenant avec l&apos;<span className="text-primary">offre premium</span>.
           </h2>
           <div className="relative inline-flex items-center rounded-full p-1 mb-8">
             <span className={`px-3 text-sm sm:text-base text-title ${!isMonthly ? '' : 'opacity-40'}`}>Annuel</span>

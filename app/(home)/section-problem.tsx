@@ -17,8 +17,8 @@ const Problem = () => {
         <Card className="border overflow-hidden">
           <CardContent className="flex flex-col md:flex-row items-stretch p-0">
             <div className="flex-1 space-y-6 p-6 sm:p-10">
-              <h3 className="font-bold text-xl sm:text-2xl text-title !leading-tight">
-                <span className="text-primary">D'innombrables heures perdues </span>
+              <h3 className="font-bold text-2xl text-title !leading-tight">
+                <span className="text-primary">D&apos;innombrables heures perdues </span>
                 à filtrer des offres trompeuses.
               </h3>
               <ul className="space-y-4">
@@ -30,7 +30,7 @@ const Problem = () => {
                     height={21}
                     className="mt-1 sm:mt-0"
                   />
-                  <span>Vous découvrez les vraies conditions de travail lors de l'entretien.</span>
+                  <span>Vous découvrez les vraies conditions de travail lors de l&apos;entretien.</span>
                 </li>
                 <li className="flex items-start sm:items-center gap-3 text-muted">
                   <Image

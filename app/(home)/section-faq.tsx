@@ -15,24 +15,32 @@ const faqs: FAQItem[] = [
     question: "Qu'est-ce qui différencie TechIns8 des autres job boards ?",
     answer: (
       <div>
-        <p>TechIns8 n'est pas un simple job board, c'est votre assistant personnel de recherche d'emploi :</p>
+        <p>TechIns8 n&apos;est pas un simple job board, c&apos;est votre assistant personnel de recherche d&apos;emploi :</p>
         <ul className="list-disc pl-6 mt-2 space-y-2">
-          <li>Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s'assure que "full remote" signifie VRAIMENT full remote.</li>
+          <li>Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s&apos;assure que &quot;full remote&quot; signifie VRAIMENT full remote.</li>
           <li>Plus besoin de jongler entre les plateformes : toutes vos recherches, toutes vos offres, au même endroit.</li>
         </ul>
       </div>
     )
   },
   {
-    question: "Comment être sûr que l'analyse IA est fiable ?",
-    answer: "Notre IA a analysé des milliers d'offres et détecte automatiquement les incohérences. Pour chaque annonce, tu vois ce qui a été vérifié et corrigé."
+    question: "Comment fonctionne l'analyse des offres ?",
+    answer: "Notre IA analyse chaque offre d'emploi pour vérifier la cohérence des informations. Elle s'assure notamment que les conditions de travail annoncées sont réelles et que les compétences requises sont cohérentes."
+  },
+  {
+    question: "Quelles sont les sources d'offres d'emploi ?",
+    answer: "Nous agrégeons les offres de &quot;FreeWork&quot; et &quot;Welcome To The Jungle&quot; pour vous offrir une vue complète du marché. Notre IA analyse et enrichit chaque offre pour une meilleure transparence."
+  },
+  {
+    question: "Comment est calculé le TJM ?",
+    answer: "Le TJM est calculé en fonction des données du marché et des informations fournies dans l'offre. Notre IA vérifie la cohérence des montants annoncés avec les compétences et l'expérience requises."
   },
   {
     question: "J'ai déjà des alertes sur LinkedIn, pourquoi payer pour TechIns8 ?",
     answer: (
       <div>
         <p>LinkedIn et les autres plateformes vous envoient toutes les offres correspondant à vos mots-clés, sans vérification.</p>
-        <p className="mt-2">Ces alertes sont souvent truffées de fausses offres "full remote", de TJM irréalistes, ou pire, d'annonces qui ne correspondent pas du tout à tes compétences.</p>
+        <p className="mt-2">Ces alertes sont souvent truffées de fausses offres &quot;full remote&quot;, de TJM irréalistes, ou pire, d&apos;annonces qui ne correspondent pas du tout à tes compétences.</p>
         <p className="mt-2">Résultat ? Vous perdez du temps à filtrer manuellement. TechIns8 fait ce travail pour vous, en regroupant les offres de plusieurs sources et en vérifiant leur qualité.</p>
       </div>
     )

@@ -34,7 +34,7 @@ const SectionSolution = () => {
             Arrêtez cette perte de temps dès <span className="text-primary">maintenant</span>.
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-[600px] mx-auto px-4">
-            Boostez votre recherche d'emploi avec <span className="font-medium">Techins8 Premium</span>, votre assistant IA pour un recrutement rapide et sans faux pas !
+            Boostez votre recherche d&apos;emploi avec <span className="font-medium">Techins8 Premium</span>, votre assistant IA pour un recrutement rapide et sans faux pas !
           </p>
         </div>
         

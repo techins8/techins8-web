@@ -1,8 +1,6 @@
 'use client';
 
-import Image from "next/image";
 import Script from "next/script";
-import Link from "next/link";
 
 const SectionSocialProof = () => {
   return (
@@ -11,7 +9,7 @@ const SectionSocialProof = () => {
         <h2 className="font-bold text-center text-3xl sm:text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-12 sm:mb-4">
           La communauté <br/>tech parle de nous.
         </h2>
-
+        
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative">
         
           <Script 
