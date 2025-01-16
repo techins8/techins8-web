@@ -2,28 +2,48 @@
 
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 type FAQItem = {
   question: string;
-  answer: string;
+  answer: React.ReactNode;
 };
 
 const faqs: FAQItem[] = [
   {
-    question: "Combien coûte TechIns8 ?",
-    answer: "TechIns8 est entièrement gratuit ! Nous mettons à la disposition des développeur ce dashboard d'analytics pour étudier au quotidien l'offre de missions free-lances et d'emplois."
+    question: "Qu'est-ce qui différencie TechIns8 des autres job boards ?",
+    answer: (
+      <div>
+        <p>TechIns8 n'est pas un simple job board, c'est votre assistant personnel de recherche d'emploi :</p>
+        <ul className="list-disc pl-6 mt-2 space-y-2">
+          <li>Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s'assure que "full remote" signifie VRAIMENT full remote.</li>
+          <li>Plus besoin de jongler entre les plateformes : toutes vos recherches, toutes vos offres, au même endroit.</li>
+        </ul>
+      </div>
+    )
   },
   {
-    question: "Qui est derrière Techins8 ?",
-    answer: "Nous sommes 3 développeurs, free-lances, salariés et entrepreneurs. Étudier le marché en permanence est fastidieux, c'est pourquoi nous vous avons proposé un outil pour simplifier l'accès à une étude simple, mais complète."
+    question: "Comment être sûr que l'analyse IA est fiable ?",
+    answer: "Notre IA a analysé des milliers d'offres et détecte automatiquement les incohérences. Pour chaque annonce, tu vois ce qui a été vérifié et corrigé."
   },
   {
-    question: "D'où proviennent les données fournis par TechIns8 ?",
-    answer: "Nous récoltons les offres sur FreeWork de manière quotidienne. Notre travail consiste ensuite à croiser les données entre-elles de sorte à vous offrir des graphiques vous permettant d'optimiser votre carrière."
+    question: "J'ai déjà des alertes sur LinkedIn, pourquoi payer pour TechIns8 ?",
+    answer: (
+      <div>
+        <p>LinkedIn et les autres plateformes vous envoient toutes les offres correspondant à vos mots-clés, sans vérification.</p>
+        <p className="mt-2">Ces alertes sont souvent truffées de fausses offres "full remote", de TJM irréalistes, ou pire, d'annonces qui ne correspondent pas du tout à tes compétences.</p>
+        <p className="mt-2">Résultat ? Vous perdez du temps à filtrer manuellement. TechIns8 fait ce travail pour vous, en regroupant les offres de plusieurs sources et en vérifiant leur qualité.</p>
+      </div>
+    )
   },
   {
-    question: "J'aimerais analyser des aspects spécifiques sur les offres d'emplois, comment faire ?",
-    answer: "Nous fournissons un certain nombre de filtres sur nos graphiques qui vous permettent d'adapter les données que vous souhaitez consulter à votre besoin. Si vous souhaitez plus de filtres ou plus de graphiques, merci de nous contacter à l'adresse suivante : contact@techins8.com"
+    question: "Est-ce que je peux annuler mon abonnement ?",
+    answer: "Oui, vous pouvez annuler à tout moment. Si vous n'êtes pas satisfait dans les 30 premiers jours, nous vous remboursons intégralement, sans question."
+  },
+  {
+    question: "Combien de nouvelles offres sont ajoutées ?",
+    answer: "Chaque jour, nous mettons à jour notre base. Actuellement, nous analysons les offres de FreeWork et Welcome To The Jungle, et d'autres sources seront ajoutées prochainement."
   }
 ];
 
@@ -31,47 +51,83 @@ const FAQItem = ({ question, answer }: FAQItem) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-border/40 last:border-none">
+    <div className="bg-white rounded-lg shadow-sm mb-4">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full py-6 flex justify-between items-center text-left"
+        className="w-full py-6 px-10 flex justify-between items-center text-left gap-4"
       >
-        <span className="text-lg font-medium text-primary">{question}</span>
+        <span className="text-lg font-semibold text-title">
+          {question}
+        </span>
         <ChevronDown 
-          className={`h-5 w-5 text-primary transition-transform duration-200 ${
+          className={`h-8 w-8 text-primary flex-shrink-0 transition-transform duration-200 ${
             isOpen ? 'transform rotate-180' : ''
           }`}
         />
       </button>
       <div
         className={`overflow-hidden transition-all duration-200 ease-in-out ${
-          isOpen ? 'max-h-96 mb-6' : 'max-h-0'
+          isOpen ? 'max-h-[500px]' : 'max-h-0'
         }`}
       >
-        <p className="text-muted-foreground">
+        <div className="pl-10 pr-24 pb-6 text-muted-foreground leading-relaxed">
           {answer}
-        </p>
+        </div>
       </div>
+    </div>
+  );
+};
+
+const DiscordCard = () => {
+  return (
+    <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
+      <div className="mx-auto mb-8 flex items-center justify-center">
+        <Image
+          src="/images/logo/discord.svg"
+          alt="Discord"
+          width={104}
+          height={104}
+        />
+      </div>
+      <h3 className="text-xl font-medium mb-8 text-primary-foreground">
+        Besoin de poser vos questions aux utilisateurs ?
+      </h3>
+      <p className="mb-8 text-primary-foreground">
+        Rejoignez notre communauté sur Discord !
+      </p>
+      <Link
+        href="https://discord.gg/your-invite-link"
+        target="_blank"
+        className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+      >
+        REJOINDRE LA COMMUNAUTÉ
+      </Link>
     </div>
   );
 };
 
 const SectionFaq = () => {
   return (
-    <section className="w-full py-12 px-4 mt-24">
-      <div className="max-w-3xl mx-auto">
+    <section className="w-full py-24 px-4 bg-popover">
+      <div className="max-w-[1120px] mx-auto ">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-primary mb-4">FAQ</h2>
-          <p className="text-lg text-muted-foreground">
-            Vous vous posez sans doute encore des questions, laissez-nous y répondre
-          </p>
+          <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
+            Vous avez des questions ?
+          </h2>
         </div>
 
-        {/* FAQ Items */}
-        <div className="mb-12">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} {...faq} />
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* FAQ Items */}
+          <div className="lg:col-span-2">
+            {faqs.map((faq, index) => (
+              <FAQItem key={index} {...faq} />
+            ))}
+          </div>
+          
+          {/* Discord Card */}
+          <div className="lg:col-span-1">
+            <DiscordCard />
+          </div>
         </div>
       </div>
     </section>

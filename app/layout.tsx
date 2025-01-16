@@ -112,7 +112,7 @@ export default function RootLayout({
 
           <div className="relative z-10 flex flex-grow flex-col">
             <Nav />
-            <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 flex-1">
+            <main>
               {children}
             </main>
             <Footer />

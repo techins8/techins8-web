@@ -8,6 +8,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { subscribeToNewsletter } from "./newsletter.action";
+import Image from "next/image";
 
 interface NewsletterState {
   email: string;
@@ -60,7 +61,6 @@ export default function NewsletterForm() {
       const response = await subscribeToNewsletter({ email: state.email });
 
       if (response.success) {
-        // Track successful newsletter subscription
         toast.success("Merci de votre inscription ! ");
         setState({
           email: "",
@@ -98,25 +98,35 @@ export default function NewsletterForm() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 mb-16">
-      <div className="max-w-2xl mx-auto text-center">
-        <p className="text-lg text-primary mb-8">
-          Reçois une étude de marché{" "}
-          <span className="text-accent">gratuitement </span>
-          dans ta boite mail, toutes les{" "}
-          <span className="text-accent">semaines</span>.
+    <div className="w-full bg-primary rounded-2xl px-6 sm:px-8 py-8 sm:py-12 relative overflow-hidden max-w-[1120px] mx-auto mb-12 sm:mb-24">
+      <div className="absolute right-4 sm:right-16 top-6 sm:top-12">
+        <div className="relative">
+          <Image
+            src="/images/icons/newsletter.svg"
+            alt="Newsletter"
+            width={48}
+            height={32}
+            className="sm:w-[72px] sm:h-[48px]"
+          />
+        </div>
+      </div>
+
+      <div className="max-w-3xl pl-0 sm:pl-12">
+        <h2 className="text-2xl sm:text-4xl font-bold text-background mb-4">
+          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur l'abonnement annuel<br className="hidden sm:block" />
+          en vous inscrivant à la newsletter.
+        </h2>
+        
+        <p className="text-background text-base sm:text-lg mb-6 sm:mb-8">
+          Recevez une étude de marché gratuite par mail, toutes les semaines.
         </p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="flex flex-col gap-3 items-center"
-          id="newsletter-form"
-        >
-          <div className="flex flex-col sm:flex-row gap-3 max-w-md w-full">
+        <form onSubmit={handleSubmit} className="space-y-4" id="newsletter-form">
+          <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
             <Input
               type="email"
-              placeholder="exemple@exemple.com"
-              className="flex-1"
+              placeholder="Votre adresse Email..."
+              className="flex-1 !py-3 sm:py-6 bg-background opacity-80 border-0 text-title placeholder:text-muted-foreground text-sm sm:text-base"
               required
               value={state.email}
               onChange={(e) =>
@@ -126,10 +136,10 @@ export default function NewsletterForm() {
             />
             <Button
               type="submit"
-              className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198]"
+              className="px-8  bg-title text-white hover:bg-title/90 font-semibold text-sm sm:text-base whitespace-nowrap"
               disabled={state.status === "loading"}
             >
-              {loading ? "Inscription..." : "S'inscrire"}
+              {loading ? "Inscription..." : "JE M'INSCRIS"}
             </Button>
           </div>
 
@@ -141,13 +151,9 @@ export default function NewsletterForm() {
                   : "bg-red-50 text-red-700 border-red-200"
               }`}
             >
-              <AlertDescription>{state.message}</AlertDescription>
+              <AlertDescription className="text-sm sm:text-base">{state.message}</AlertDescription>
             </Alert>
           )}
-
-          <p className="text-sm text-secondary mt-3">
-            Promis, il n&apos;y aura pas de spam
-          </p>
         </form>
       </div>
     </div>

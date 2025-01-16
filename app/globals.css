@@ -8,10 +8,7 @@ body {
 
 @layer base {
   :root {
-    --background: 60, 9%, 98%;
     --foreground: 0 0% 3.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
     --primary: 18, 100%, 2%;
@@ -33,6 +30,29 @@ body {
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
+
+    --button-background: 14, 86%, 55%; /* #FF4D22 */
+    --button-foreground: 43, 35%, 96%; /* #F7F4EF */
+  
+    --text-primary-foreground: 240, 3%, 5%; /* #0D0D0E */
+    --text-accent-foreground: 14, 86%, 55%; /* #FF4D22 */
+  
+    --heading-foreground: 221, 39%, 11%, 1; /* #111827 */
+  
+    --subtitle-foreground: 220, 6%, 37%; /* #4B5563 */
+    --text-secondary-foreground: 220, 6%, 37%; /* #4B5563 */
+  
+    --accent-light-background: 14, 86%, 88%; /* #FFDED2 */
+  
+    --background: 60, 9%, 98%; /* #FAFAF9 */
+    --background-2: 60, 7%, 94%; /* #F1F1EF */
+  
+    --accent-2-background: 223, 100%, 57%, 1; /* #2361FF */
+    --accent-2-foreground: 43, 35%, 96%; /* #F7F4EF */
+  
+    --card-title-foreground: 222, 6%, 3%; /* #020915 */
+    --card-background: 0, 0%, 100%; /* #FFFFFF */
+    --card-border: 0, 0%, 90%; /* #E5E5E5 */
   }
   .dark {
     --background: 0 0% 3.9%;
@@ -96,8 +116,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
 }
 
-h1.home {
-  font-size: 44px;
-  line-height: 48px;
-  letter-spacing: -1.1px;
+.button-nav {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
 }
