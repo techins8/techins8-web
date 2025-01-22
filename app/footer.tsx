@@ -1,16 +1,19 @@
 "use client";
 
-import Image from "next/image";
-import NewsletterForm from "./(home)/newsletter-form";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
+import Link from "next/link";
+import NewsletterForm from "./(home)/newsletter-form";
 
 const Footer = () => {
   const navigationLinks = [
     { href: "/job_offers", label: "Jobs" },
     { href: "/about", label: "À propos" },
     { href: "/blog", label: "Blog" },
-    { href: "https://dashboard.techins8.com", label: "Se Connecter" },
+    {
+      href: process.env.NEXT_PUBLIC_DASHBOARD_URL ?? "",
+      label: "Se Connecter",
+    },
   ];
 
   const footerLinks = [
@@ -51,7 +54,9 @@ const Footer = () => {
               <div className="grid grid-cols-3 gap-8">
                 {/* Main Navigation */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">Navigation</h3>
+                  <h3 className="text-background text-base font-semibold">
+                    Navigation
+                  </h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {navigationLinks.map((link) => (
                       <Link
@@ -67,7 +72,9 @@ const Footer = () => {
 
                 {/* Footer Links */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">Liens utiles</h3>
+                  <h3 className="text-background text-base font-semibold">
+                    Liens utiles
+                  </h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {footerLinks.map((link) => (
                       <Link
@@ -84,20 +91,21 @@ const Footer = () => {
                 {/* Social & CTA */}
                 <div className="space-y-6">
                   <div className="flex justify-between">
-                    <h3 className="text-background text-base font-semibold">Nous suivre</h3>
+                    <h3 className="text-background text-base font-semibold">
+                      Nous suivre
+                    </h3>
                     <a
-                        href="https://www.linkedin.com/company/techins8/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mr-10"
-                      >
-                        <Image
-                          src="/images/logo/linkedin-logo-light.svg"
-                          alt="Logo LinkedIn"
-                          width={24}
-                          height={24}
-                          loading="lazy"
-                        />
+                      href="https://www.linkedin.com/company/techins8/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mr-10"
+                    >
+                      <Image
+                        src="/images/logo/linkedin-logo-light.svg"
+                        alt="Logo LinkedIn"
+                        width={24}
+                        height={24}
+                      />
                     </a>
                   </div>
                   <div className="space-y-4">

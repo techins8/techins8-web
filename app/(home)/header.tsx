@@ -17,7 +17,7 @@ const Header = () => {
         <SubHeader />
         <button className="mt-10">
           <Link
-            href="https://dashboard.techins8.com/"
+            href={process.env.NEXT_PUBLIC_DASHBOARD_URL ?? ""}
             target="_parent"
             className=" bg-primary text-primary-foreground font-semibold  px-5 py-2 rounded-md transition-colors button-nav"
           >
