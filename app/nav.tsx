@@ -120,7 +120,7 @@ const Nav = () => {
                 Blog
               </Link>
               <Link
-                href="https://dashboard.techins8.com"
+                href={process.env.NEXT_PUBLIC_DASHBOARD_URL ?? ""}
                 className="bg-accent-foreground text-background px-2 py-3 rounded-md transition-colors text-lg w-60 text-center hover:bg-[#fa471198]"
                 onClick={closeMenu}
               >
@@ -159,7 +159,7 @@ const Nav = () => {
 
           <div className="hidden lg:flex">
             <Link
-              href="https://dashboard.techins8.com"
+              href={process.env.NEXT_PUBLIC_DASHBOARD_URL ?? ""}
               target="_parent"
               className=" bg-primary text-primary-foreground font-semibold  px-5 py-2 rounded-md transition-colors button-nav"
             >
