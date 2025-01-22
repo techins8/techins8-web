@@ -6,7 +6,7 @@ export default function AboutPage() {
     <main className="min-h-screen bg-background py-16">
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-4 mb-16 text-center">
-        <h1 className="text-4xl font-bold text-primary mb-6">Notre Histoire</h1>
+        <h1 className="text-4xl font-bold text-title mb-6">Notre Histoire</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
           TechIns8 est née de la rencontre de deux passionnés du développement,
           unis par une vision commune : rendre le freelancing accessible et
@@ -26,10 +26,11 @@ export default function AboutPage() {
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
+                loading="lazy"
               />
-              <h2 className="text-2xl font-semibold text-primary">
+              <h2 className="text-2xl font-semibold text-title">
                 Lucien Arbieu
-                <span className="text-accent-foreground ml-2 block text-lg">
+                <span className="text-muted ml-2 block text-lg">
                   Fondateur
                 </span>
               </h2>
@@ -41,7 +42,7 @@ export default function AboutPage() {
               </p>
 
               <div className="bg-accent/5 p-4 rounded-md">
-                <h3 className="font-medium text-primary mb-2">
+                <h3 className="font-medium text-title mb-2">
                   Vision & Engagement
                 </h3>
                 <p>
@@ -71,10 +72,11 @@ export default function AboutPage() {
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
+                loading="lazy"
               />
-              <h2 className="text-2xl font-semibold text-primary">
+              <h2 className="text-2xl font-semibold text-title">
                 Fahari
-                <span className="text-accent-foreground ml-2 block text-lg">
+                <span className="text-muted ml-2 block text-lg">
                   Co-Fondateur
                 </span>
               </h2>
@@ -85,7 +87,7 @@ export default function AboutPage() {
                 d&apos;expérience dans le secteur.
               </p>
               <div className="bg-accent/5 p-4 rounded-md">
-                <h3 className="font-medium text-primary mb-2">
+                <h3 className="font-medium text-title mb-2">
                   Vision & Engagement
                 </h3>
                 <p>
@@ -109,7 +111,7 @@ export default function AboutPage() {
 
       {/* Values Section */}
       <section className="max-w-6xl mx-auto px-4 mt-36">
-        <h2 className="text-3xl font-bold text-primary text-center mb-12">
+        <h2 className="text-3xl font-bold text-title text-center mb-12">
           Nos Valeurs
         </h2>
         <div className="grid md:grid-cols-4 gap-8">

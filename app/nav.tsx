@@ -41,6 +41,7 @@ const Nav = () => {
           className="w-full h-auto"
           width={100}
           height={100}
+          loading="lazy"
         />
       </div>
       <nav className="fixed left-0 top-0 w-full flex flex-col items-center z-50">
@@ -67,6 +68,7 @@ const Nav = () => {
                 width={152}
                 height={100}
                 className="object-contain max-w-[200px] sm:max-w-none"
+                loading="lazy"
               />
             </div>
           </Link>
@@ -175,6 +177,7 @@ const Nav = () => {
           className="w-full h-auto"
           width={100}
           height={100}
+          loading="lazy"
         />
       </div>
     </>

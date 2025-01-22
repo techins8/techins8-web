@@ -81,7 +81,7 @@ export const getArticles = async (): Promise<Article[]> => {
 };
 
 const makeArticle = (notionArticle: NotionArticle): Article => {
-  let cover: string | null = "/images/default-cover.jpg";
+  let cover: string | null = "/images/default-cover.webp";
   if (notionArticle.cover) {
     cover =
       notionArticle.cover.type === "external"

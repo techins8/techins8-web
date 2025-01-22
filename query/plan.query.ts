@@ -14,20 +14,20 @@ export type Plan = {
 };
 
 export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
-  const response = await fetch(`${env.DASHBOARD_URL}/api/plans`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
+  // const response = await fetch(`${env.DASHBOARD_URL}/api/plans`, {
+  //   method: "GET",
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // });
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch plans`);
-  }
+  // if (!response.ok) {
+  //   throw new Error(`Failed to fetch plans`);
+  // }
 
-  const plans = await response.json();
+  // const plans = await response.json();
 
-  console.log({ plans: plans.data });
+  // console.log({ plans: plans.data });
 
   return [
     {

@@ -14,6 +14,7 @@ export default function NotFound() {
             height={400}
             alt="illustration"
             className="my-10"
+            loading="lazy"
           />
         </div>
         <div className="mx-auto max-w-[410px]">

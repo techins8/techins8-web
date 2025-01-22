@@ -37,6 +37,7 @@ const Footer = () => {
                 alt="TechIns8 Logo"
                 width={150}
                 height={40}
+                loading="lazy"
               />
               <p className="text-background text-sm">
                 TechIns8 est un tableau de bord destiné aux professionnels du
@@ -95,6 +96,7 @@ const Footer = () => {
                           alt="Logo LinkedIn"
                           width={24}
                           height={24}
+                          loading="lazy"
                         />
                     </a>
                   </div>
@@ -142,6 +144,7 @@ const Footer = () => {
               alt="TechIns8 Footer Pattern"
               width={950}
               height={200}
+              loading="lazy"
             />
           </div>
         </div>

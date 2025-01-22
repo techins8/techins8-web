@@ -151,6 +151,7 @@ export default function JobDetails({ job }: { job: IJob }) {
                     alt={job.company?.name ?? ""}
                     width={40}
                     height={40}
+                    loading="lazy"
                   />
                 )}
                 <div className="flex items-center gap-2 text-muted-foreground font-bold">

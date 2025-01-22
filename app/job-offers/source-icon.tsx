@@ -5,16 +5,17 @@ export const SourceIcon = ({ source }: { source?: string }) => {
 
   if (source.toLowerCase() === "freework")
     return (
-      <Image src="/images/icons/fw.ico" alt="Freework" width={16} height={16} />
+      <Image src="/images/icons/fw.ico" alt="Freework" width={16} height={16} loading="lazy" />
     );
 
   if (source.toLowerCase() === "welcometothejungle")
     return (
       <Image
-        src="/images/icons/wttj.png"
-        alt="Welcometothejungle"
+        src="/images/icons/wttj.ico"
+        alt="Welcome to the jungle"
         width={16}
         height={16}
+        loading="lazy"
       />
     );
 

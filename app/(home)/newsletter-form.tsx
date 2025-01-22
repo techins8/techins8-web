@@ -107,6 +107,7 @@ export default function NewsletterForm() {
             width={48}
             height={32}
             className="sm:w-[72px] sm:h-[48px]"
+            loading="lazy"
           />
         </div>
       </div>
