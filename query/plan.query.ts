@@ -14,7 +14,7 @@ export type Plan = {
 };
 
 export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
-  const response = await fetch(`${env.DASHBOARD_URL}/api/plans`, {
+  /*const response = await fetch(`${env.NEXT_PUBLIC_DASHBOARD_URL}/api/plans`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -27,7 +27,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
 
   const plans = await response.json();
 
-  console.log({ plans: plans.data });
+  console.log({ plans: plans.data });*/
 
   return [
     {
@@ -46,7 +46,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
         },
       ],
       cta: "ESSAYER GRATUITEMENT",
-      link: `${env.DASHBOARD_URL}`,
+      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}`,
       tags: [],
     },
     {
@@ -67,7 +67,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
         },
       ],
       cta: "COMMENCER MAINTENANT",
-      link: `${env.DASHBOARD_URL}/signin?plan=${
+      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=${
         isMonthly ? "premium-mensuel" : "premium-annuel"
       }`,
       tags: [
@@ -90,7 +90,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
           included: true,
         },
       ],
-      link: `${env.DASHBOARD_URL}/signin?plan=premium-2-ans`,
+      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
       cta: "COMMENCER MAINTENANT",
       tags: [
         { text: "ÉCONOMISEZ 55%", color: "bg-secondary" },
