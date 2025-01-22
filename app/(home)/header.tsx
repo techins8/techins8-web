@@ -26,11 +26,12 @@ const Header = () => {
         </button>
         <div className="mt-12 sm:max-w-[900px] mb-12 mx-6">
           <Image
-            src="/images/dashboard.png"
+            src="/images/dashboard.webp"
             alt="Aperçu du tableau de bord"
             width={900}
             height={300}
             className="rounded-lg shadow-[0_15px_50px_0px_rgba(0,0,0,0.2)]"
+            loading="lazy"
           />
         </div>
       </div>

@@ -1,0 +1,42 @@
+User-agent: *
+Allow: /
+
+# Block job offer detail pages with IDs
+Disallow: /job-offers/*[0-9]
+Disallow: /job-offers/*.html
+
+# Block API routes
+Disallow: /api/
+
+# Block query parameters
+Disallow: /*?*
+
+# Block temporary or development content
+Disallow: /tmp/
+Disallow: /temp/
+Disallow: /test/
+Disallow: /dev/
+
+# Block admin and private areas
+Disallow: /admin/
+Disallow: /private/
+
+# Block specific file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+
+# Allow static assets
+Allow: /*.js$
+Allow: /*.css$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+
+# Crawl delay to prevent server overload
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://techins8.com/sitemap.xml

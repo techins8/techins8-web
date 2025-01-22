@@ -49,6 +49,7 @@ const SectionSolution = () => {
                     width={48}
                     height={48}
                     className="w-12 h-12 mb-4"
+                    loading="lazy"
                   />
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-bold">{solution.title}</h3>

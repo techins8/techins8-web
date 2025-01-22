@@ -21,11 +21,11 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
     },
   });
 
-  if (!response.ok) {
-    throw new Error(`Failed to fetch plans`);
-  }
+  // if (!response.ok) {
+  //   throw new Error(`Failed to fetch plans`);
+  // }
 
-  const plans = await response.json();
+  // const plans = await response.json();
 
   console.log({ plans: plans.data });*/
 

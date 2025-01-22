@@ -50,8 +50,11 @@ export default async function page({
         <span>Written by {article.author ?? "TechIns8"}</span>
         <Avatar className="w-8 h-8">
           <AvatarImage
-            src={`/authors/${article.author?.toLowerCase() ?? "default"}.jpeg`}
+            src={`/images/authors/${
+              article.author?.toLowerCase() ?? "default"
+            }.webp`}
             alt={article.author ?? "Auteur par défaut"}
+            loading="lazy"
           />
         </Avatar>
       </div>

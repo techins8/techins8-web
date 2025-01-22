@@ -72,6 +72,7 @@ const Problem = () => {
                       width={48}
                       height={48}
                       className="object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <p className="text-lg font-heading leading-relaxed">{problems[0].text}</p>
@@ -118,6 +119,7 @@ const Problem = () => {
                     alt="Waiting animation"
                     fill
                     className="object-cover rounded-xl"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -138,6 +140,7 @@ const Problem = () => {
                     width={48}
                     height={48}
                     className="object-contain"
+                    loading="lazy"
                   />
                 </div>
                 <div>
@@ -150,6 +153,7 @@ const Problem = () => {
                       alt="Remote work animation"
                       fill
                       className="object-cover rounded-xl"
+                      loading="lazy"
                     />
                   </div>
                 </div>
@@ -168,6 +172,7 @@ const Problem = () => {
                       width={48}
                       height={48}
                       className="object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-2 flex-1">
@@ -186,6 +191,7 @@ const Problem = () => {
                       width={48}
                       height={48}
                       className="object-contain"
+                      loading="lazy"
                     />
                   </div>
                   <div className="space-y-2 flex-1">

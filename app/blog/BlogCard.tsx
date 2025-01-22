@@ -20,9 +20,10 @@ export const BlogCard = ({ article }: { article: Article }) => {
         <Image
           src={article.imageCover}
           alt={article.title}
-          className="w-full h-full object-cover"
-          width={500}
-          height={500}
+          width={400}
+          height={200}
+          className="w-full h-48 object-cover rounded-t-lg"
+          loading="lazy"
         />
       </div>
       <div className="p-6 pt-2">
@@ -33,6 +34,7 @@ export const BlogCard = ({ article }: { article: Article }) => {
                 article.author?.toLowerCase() ?? "default"
               }.webp`}
               alt={article.author ?? "Auteur par défaut"}
+              loading="lazy"
             />
           </Avatar>
           <div className="overflow-hidden">

@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter, Nunito_Sans, Poppins } from "next/font/google";
+import { Nunito_Sans, Poppins } from "next/font/google";
 import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
@@ -19,12 +19,6 @@ export const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-nunito-sans",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  display: "swap",
-  variable: "--font-inter",
 });
 
 export const metadata: Metadata = {
@@ -75,7 +69,7 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
-    apple: "/apple-touch-icon.png",
+    apple: "/apple-touch-icon.webp",
   },
 };
 
@@ -85,7 +79,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="fr" className={`${poppins.variable}`}>
       <head>
         {/* Google Tag Manager */}
         <script
@@ -98,8 +92,48 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager */}
+        <Script
+          id="schema-markup"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "TechIns8",
+              "url": "https://techins8.com",
+              "description": "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+              "potentialAction": {
+                "@type": "ViewAction",
+                "target": "https://dashboard.techins8.com/"
+              },
+              "offers": {
+                "@type": "AggregateOffer",
+                "priceCurrency": "EUR",
+                "offers": [
+                  {
+                    "@type": "Offer",
+                    "name": "Gratuit",
+                    "price": "0",
+                    "priceCurrency": "EUR",
+                    "description": "Accès limité aux fonctionnalités de base"
+                  },
+                  {
+                    "@type": "Offer",
+                    "name": "Premium",
+                    "description": "Accès complet à toutes les fonctionnalités"
+                  }
+                ]
+              },
+              "sameAs": [
+                "https://www.linkedin.com/company/techins8"
+              ]
+            })
+          }}
+        />
       </head>
-      <body className={`${poppins.variable}  ${inter.variable} antialiased`}>
+      <body
+        className={`${poppins.className} min-h-screen bg-background antialiased`}
+      >
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{

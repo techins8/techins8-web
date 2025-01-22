@@ -26,7 +26,7 @@ const partnerships: Partnership[] = [
     title: "From Code To Cash",
     author: "Ramzi B.",
     videoUrl: "",
-    image: "/images/affiliation/ramzi_banniere.png",
+    image: "/images/affiliation/ramzi_banniere.webp",
     description:
       "Le protocole qui m'a permis de faire plus de 8k€ le premier mois avec des landing pages. En 2023 j'ai lancé mon agence web. Le premier mois, j'ai closé 6 clients et fait 8k+ de CA grâce à la puissance du cold call.",
     link: "https://www.ramzib.pro?ref=techins8",
@@ -82,6 +82,7 @@ const PartnershipCard = ({ partnership }: { partnership: Partnership }) => {
               layout="fill"
               objectFit="cover"
               className="rounded-md"
+              loading="lazy"
             />
           )}
         </div>
