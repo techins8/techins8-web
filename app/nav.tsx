@@ -54,7 +54,7 @@ const Nav = () => {
         />
 
         {/* Content div that stays clear */}
-        <div className="relative flex items-center justify-between w-full max-w-[1170px] px-4 py-3">
+        <div className="relative flex items-center justify-between w-full max-w-[1150px] px-7 py-5">
           {/* Logo */}
           <Link
             className="font-display flex items-center text-3xl z-50"
@@ -64,7 +64,7 @@ const Nav = () => {
               <Image
                 src={logoSrc}
                 alt="Logo"
-                width={120}
+                width={152}
                 height={100}
                 className="object-contain max-w-[200px] sm:max-w-none"
               />
@@ -74,13 +74,13 @@ const Nav = () => {
           {/* Hamburger Menu Button - Only visible on mobile */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="z-50 lg:hidden p-2 hover:bg-gray-100 rounded-md transition-colors"
+            className="z-50 lg:hidden p-2 bg-primary rounded-md transition-colors"
             aria-label="Toggle menu"
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-secondary" />
+              <X className="h-6 w-6 text-background" />
             ) : (
-              <Menu className="h-6 w-6 text-secondary" />
+              <Menu className="h-6 w-6 text-background" />
             )}
           </button>
 
@@ -94,27 +94,27 @@ const Nav = () => {
             <div className="flex flex-col space-y-6 items-center">
               <Link
                 href="/job-offers"
-                className="text-secondary text-lg nav-link hover:text-primary transition-colors"
+                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
                 onClick={closeMenu}
               >
                 Jobs
               </Link>
               <Link
                 href="/about"
-                className="text-secondary text-lg nav-link hover:text-primary transition-colors"
+                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
                 onClick={closeMenu}
               >
                 À propos
               </Link>
               <Link
                 href="/partnerships"
-                className="text-secondary text-lg nav-link hover:text-primary transition-colors"
+                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
               >
                 Partenariats
               </Link>
               <Link
                 href="/blog"
-                className="text-secondary text-lg nav-link hover:text-primary transition-colors"
+                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
                 onClick={closeMenu}
               >
                 Blog
@@ -130,37 +130,40 @@ const Nav = () => {
           </div>
 
           {/* Desktop Navigation - Hidden on mobile */}
-          <div className="hidden lg:flex items-center space-x-5">
+          <div className="hidden lg:flex items-center space-x-12">
             <Link
               href="/job-offers"
-              className="text-secondary nav-link hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               Jobs
             </Link>
             <Link
               href="/about"
-              className="text-secondary nav-link hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               À propos
             </Link>
             <Link
               href="/partnerships"
-              className="text-secondary nav-link hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               Partenariats
             </Link>
             <Link
               href="/blog"
-              className="text-secondary nav-link hover:text-primary transition-colors"
+              className="text-foreground hover:text-primary transition-colors"
             >
               Blog
             </Link>
+          </div>
+
+          <div className="hidden lg:flex">
             <Link
               href="https://dashboard.techins8.com"
               target="_parent"
-              className="bg-accent-foreground text-background px-4 py-2 rounded-md transition-colors text-sm hover:bg-[#fa471198]"
+              className=" bg-primary text-primary-foreground font-semibold  px-5 py-2 rounded-md transition-colors button-nav"
             >
-              Essayer gratuitement
+              ESSAYER GRATUITEMENT
             </Link>
           </div>
         </div>

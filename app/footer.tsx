@@ -22,22 +22,23 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-background pt-16 pb-8">
-      <NewsletterForm />
+    <footer className="w-full bg-background relative">
+      <div className="mx-4 my-16">
+        <NewsletterForm />
+      </div>
 
-      <div className="border-t border-border/60">
-        <div className="max-w-6xl mx-auto px-4 pt-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="bg-title">
+        <div className="max-w-[1120px] mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-16 py-16">
             {/* Company Info */}
-            <div className="space-y-4">
+            <div className="md:col-span-4 space-y-6">
               <Image
-                src="/images/logo/logo-techins8-dark.svg"
+                src="/images/logo/logo-techins8-light.svg"
                 alt="TechIns8 Logo"
                 width={150}
                 height={40}
-                className="mb-4"
               />
-              <p className="text-muted-foreground">
+              <p className="text-background text-sm">
                 TechIns8 est un tableau de bord destiné aux professionnels du
                 secteur technologique français, offrant un accès à diverses
                 données sur l&apos;état du marché.
@@ -45,17 +46,17 @@ const Footer = () => {
             </div>
 
             {/* Navigation Links */}
-            <div className="md:col-span-2">
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-8">
+            <div className="md:col-span-8">
+              <div className="grid grid-cols-3 gap-8">
                 {/* Main Navigation */}
-                <div className="space-y-4">
-                  <h3 className="font-medium text-primary">Navigation</h3>
-                  <div className="flex flex-col space-y-2">
+                <div className="space-y-6">
+                  <h3 className="text-background text-base font-semibold">Navigation</h3>
+                  <div className="flex flex-col space-y-4 text-sm">
                     {navigationLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="text-secondary hover:text-primary transition-colors"
+                        className="text-background transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -64,14 +65,14 @@ const Footer = () => {
                 </div>
 
                 {/* Footer Links */}
-                <div className="space-y-4">
-                  <h3 className="font-medium text-primary">Liens utiles</h3>
-                  <div className="flex flex-col space-y-2">
+                <div className="space-y-6">
+                  <h3 className="text-background text-base font-semibold">Liens utiles</h3>
+                  <div className="flex flex-col space-y-4 text-sm">
                     {footerLinks.map((link) => (
                       <Link
                         key={link.href}
                         href={link.href}
-                        className="text-secondary hover:text-primary transition-colors"
+                        className="text-background"
                       >
                         {link.label}
                       </Link>
@@ -80,47 +81,68 @@ const Footer = () => {
                 </div>
 
                 {/* Social & CTA */}
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-4">
-                    <h3 className="font-medium text-primary">Nous suivre</h3>
+                <div className="space-y-6">
+                  <div className="flex justify-between">
+                    <h3 className="text-background text-base font-semibold">Nous suivre</h3>
                     <a
-                      href="https://www.linkedin.com/company/techins8/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-secondary hover:text-primary transition-colors"
-                    >
-                      <Image
-                        src="/images/logo/linkedin-logo.svg"
-                        alt="Logo LinkedIn"
-                        width={24}
-                        height={24}
-                        className="rounded group-hover:opacity-100 transition-opacity"
-                      />
+                        href="https://www.linkedin.com/company/techins8/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mr-10"
+                      >
+                        <Image
+                          src="/images/logo/linkedin-logo-light.svg"
+                          alt="Logo LinkedIn"
+                          width={24}
+                          height={24}
+                        />
                     </a>
                   </div>
-                  <p className="text-muted-foreground">
-                    Nous sommes là pour vous aider !
-                  </p>
+                  <div className="space-y-4">
+                    <div className="flex flex-col gap-4">
+                      <p className="text-background text-sm">
+                        Nous sommes là pour vous aider !
+                      </p>
+                    </div>
 
-                  <Button
-                    asChild
-                    className="bg-accent-foreground text-primary-foreground hover:bg-[#fa471198] "
-                  >
-                    <a
-                      href="mailto:contact@techins8.com?subject=Contact_Landing"
-                      target="_blank"
+                    <Button
+                      asChild
+                      className="w-full font-bold bg-accent-foreground text-primary-foreground hover:bg-[#fa471198]"
                     >
-                      Nous contacter
-                    </a>
-                  </Button>
+                      <a
+                        href="mailto:contact@techins8.com?subject=Contact_Landing"
+                        target="_blank"
+                      >
+                        NOUS CONTACTER
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* Copyright */}
-          <div className="mt-12 pt-8 border-t border-border/40 text-center text-sm text-muted-foreground">
-            © 2025 TechIns8. Tous droits réservés.
+      <div className="relative bg-title">
+        <div className="max-w-[1120px] mx-auto px-4">
+          <div className="border-t border-muted"></div>
+        </div>
+
+        <div className="pt-8">
+          <div className="max-w-[1120px] mx-auto px-4 relative z-10">
+            <p className="text-center text-sm text-muted mb-8">
+              2025 TechIns8. Tous droits réservés.
+            </p>
+          </div>
+
+          <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
+            <Image
+              src="/images/logo/footer-icon-techins8.svg"
+              alt="TechIns8 Footer Pattern"
+              width={950}
+              height={200}
+            />
           </div>
         </div>
       </div>

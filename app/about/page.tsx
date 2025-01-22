@@ -1,4 +1,4 @@
-import { Users, Zap, Target, Handshake } from "lucide-react";
+import { Handshake, Target, Users, Zap } from "lucide-react";
 import Image from "next/image";
 
 export default function AboutPage() {

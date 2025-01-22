@@ -1,7 +1,7 @@
 import { Toaster } from "@/components/ui/sonner";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { Inter, Poppins, Nunito_Sans } from "next/font/google";
+import { Inter, Nunito_Sans, Poppins } from "next/font/google";
 import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
@@ -28,30 +28,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://techins8.com'),
+  metadataBase: new URL("https://techins8.com"),
   title: {
-    default: 'TechIns8 - Votre partenaire en recrutement tech',
-    template: '%s | TechIns8'
+    default: "TechIns8 - Votre partenaire en recrutement tech",
+    template: "%s | TechIns8",
   },
-  description: 'TechIns8 est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.',
+  description:
+    "TechIns8 est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.",
   openGraph: {
-    type: 'website',
-    locale: 'fr_FR',
-    url: 'https://techins8.com',
-    siteName: 'TechIns8',
+    type: "website",
+    locale: "fr_FR",
+    url: "https://techins8.com",
+    siteName: "TechIns8",
     images: [
       {
-        url: '/og-image.jpg',
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: 'TechIns8'
-      }
-    ]
+        alt: "TechIns8",
+      },
+    ],
   },
   twitter: {
-    card: 'summary_large_image',
-    site: '@techins8',
-    creator: '@techins8'
+    card: "summary_large_image",
+    site: "@techins8",
+    creator: "@techins8",
   },
   applicationName: "TechIns8",
   keywords: [
@@ -112,9 +113,7 @@ export default function RootLayout({
 
           <div className="relative z-10 flex flex-grow flex-col">
             <Nav />
-            <main className="container mx-auto flex-grow max-w-[1170px] px-0 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16 flex-1">
-              {children}
-            </main>
+            <main className="mt-20">{children}</main>
             <Footer />
           </div>
         </div>

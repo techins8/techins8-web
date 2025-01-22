@@ -1,110 +1,74 @@
 import Image from "next/image";
-import { Badge } from "@/components/ui/badge";
+import { Card, CardContent } from "@/components/ui/card";
 
 const SectionSolution = () => {
   const solutions = [
     {
       id: 1,
-      title: "Suivi des salaires et TJM",
-      description: "Visualisez l'évolution des rémunérations dans le temps et positionnez-vous stratégiquement.",
-      image: "/images/screenshots/solution-1.webp",
-      isComingSoon: false,
-      bgColor: "rgba(245, 127, 89, 0.8) ",
+      title: "Fini les mauvaises surprises en entretien",
+      description: "Notre IA analyse chaque détail des offres d'emploi pour vous garantir des informations fiables sur les TJM, le télétravail, la localisation et les compétences requises.",
+      image: "/images/illustrations/solution-1.svg",
+      icon: "/images/icons/solution-1.svg"
     },
     {
       id: 2,
-      title: "Analyse des tendances en temps réel",
-      description: "Comparez deux langages de votre choix afin de mieux comprendre les attentes du marché.",
-      image: "/images/screenshots/solution-2.webp",
-      isComingSoon: false,
-      bgColor: "rgba(89, 129, 245, 0.8)",
+      title: "Toutes vos opportunités au même endroit",
+      description: "Notre plateforme centralise et enrichit automatiquement les meilleures offres de FreeWork et Welcome To The Jungle pour vous faire gagner du temps dans votre recherche.",
+      image: "/images/illustrations/solution-2.svg",
+      icon: "/images/icons/solution-2.svg"
     },
     {
       id: 3,
-      title: "Cartographie des opportunités",
-      description: "Explorez la répartition géographique des offres par langage pour orienter vos choix de carrière.",
-      image: "/images/screenshots/solution-3.webp",
-      isComingSoon: false,
-      bgColor: "rgba(245, 89, 89, 0.8)",
-    },
-    {
-      id: 4,
-      title: "Filtrage intelligent des offres",
-      description: "Identifiez les véritables opportunités fullremote et hybrides grâce à notre IA performante.",
-      image: "/images/screenshots/solution-4.webp",
-      isComingSoon: true,
-      bgColor: "rgb(219, 219, 217)",
-    },
-    {
-      id: 5,
-      title: "Découvrez les entreprises qui embauchent en freelances",
-      description: "Boostez votre carrière de freelance avec nos données exclusives",
-      image: "/images/screenshots/solution-4.webp",
-      isComingSoon: true,
-      bgColor: "rgb(219, 219, 217)",
+      title: "Une expérience fluide et transparente",
+      description: "Notre dashboard intuitif vous permet de filtrer les offres selon vos critères précis et de visualiser clairement les analyses de notre IA.",
+      image: "/images/illustrations/solution-3.svg",
+      icon: "/images/icons/solution-3.svg"
     }
   ];
 
   return (
-    <section className="w-full py-8 md:py-12 px-4 mt-12 md:mt-24">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-primary text-2xl md:text-3xl text-center mb-12">
-          Décuplez votre potentiel <br className="hidden md:block"/>et gardez une longueur d&apos;avance.
-        </h2>
+    <section className="w-full py-12 md:py-24 mt-32 mb-20">
+      <div className="max-w-[1120px] mx-auto px-4">
+        <div className="text-center mb-12">
+          <h2 className="font-bold text-center text-3xl sm:text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
+            Arrêtez cette perte de temps dès <span className="text-primary">maintenant</span>.
+          </h2>
+          <p className="text-muted-foreground text-base sm:text-lg max-w-[600px] mx-auto px-4">
+            Boostez votre recherche d&apos;emploi avec <span className="font-medium">Techins8 Premium</span>, votre assistant IA pour un recrutement rapide et sans faux pas !
+          </p>
+        </div>
         
-        <div className="flex flex-col gap-16 md:gap-24">
+        <div className="flex flex-col gap-6">
           {solutions.map((solution, index) => (
-            <div 
-              key={solution.id}
-              className={`flex flex-col md:grid ${
-                index % 2 === 0 ? 'md:grid-cols-2' : 'md:grid-cols-2'
-              } gap-6 md:gap-16 items-center`}
-            >
-              {/* Content - Toujours en premier sur mobile */}
-              <div className={`space-y-4 ${
-                index % 2 === 0 ? 'md:order-1' : 'md:order-2'
-              }`}>
-                <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3">
-                  <h3 className="text-xl md:text-2xl font-medium text-primary">
-                    {solution.title}
-                  </h3>
-                  {solution.isComingSoon && (
-                    <Badge 
-                      variant="secondary" 
-                      className="bg-[#f5c6593d] text-accent-foreground text-center max-w-24"
-                    >
-                      Bientôt disponible
-                    </Badge>
-                  )}
-                </div>
-                <p className="text-base md:text-lg text-muted-foreground">
-                  {solution.description}
-                </p>
-              </div>
-
-              {/* Image - Toujours en dernier sur mobile */}
-              <div className={`relative w-full ${
-                index % 2 === 0 ? 'md:order-2' : 'md:order-1'
-              }`}>
-                <div 
-                  className={`rounded-lg overflow-hidden ${solution.isComingSoon ? 'opacity-65' : ''}`}
-                  style={{ backgroundColor: solution.bgColor }}
-                >
-                  <div className="p-4 md:p-6">
-                    <Image
-                      src={solution.image}
-                      alt={solution.title}
-                      width={500}
-                      height={400}
-                      className="w-auto h-auto object-contain max-h-60 md:max-h-80 rounded mx-auto"
-                    />
+            <Card key={solution.id} className="border overflow-hidden">
+              <CardContent className="flex flex-col md:flex-row items-stretch p-0">
+                <div className="flex-1 space-y-6 p-6 sm:p-10">
+                  <Image
+                    src={solution.icon}
+                    alt={`${solution.title} icon`}
+                    width={48}
+                    height={48}
+                    className="w-12 h-12 mb-4"
+                  />
+                  <div className="space-y-4">
+                    <h3 className="text-xl sm:text-2xl font-bold">{solution.title}</h3>
+                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
+                      {solution.description}
+                    </p>
                   </div>
                 </div>
-                {solution.isComingSoon && (
-                  <div className="absolute inset-0 bg-background/5 backdrop-blur-[2px] rounded-lg" />
-                )}
-              </div>
-            </div>
+                <div className="flex-1">
+                  <Image
+                    src={solution.image}
+                    alt={solution.title}
+                    width={500}
+                    height={400}
+                    className="w-full h-full object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

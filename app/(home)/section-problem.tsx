@@ -1,85 +1,124 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
 
-const SectionProblem = () => {
-  const problems = [
-    {
-      id: 1,
-      iconPath: "/images/icons/problem-1.svg",
-      alt: "icône code",
-      text: (
-        <>
-          Le marché évolue plus <strong className="text-[#F57F59]">vite</strong> que votre{" "}
-          <strong className="text-[#F57F59]">stack</strong>.
-        </>
-      ),
-    },
-    {
-      id: 2,
-      iconPath: "/images/icons/problem-2.svg",
-      alt: "icône sablier",
-      text: (
-        <>
-          Pendant que vous cherchez, les <strong className="text-[#F57F59]">meilleurs postes</strong> sont
-          déjà <strong className="text-[#F57F59]">pourvus</strong>.
-        </>
-      ),
-    },
-    {
-      id: 3,
-      iconPath: "/images/icons/problem-3.svg",
-      alt: "icône barre",
-      text: (
-        <>
-          <strong className="text-[#F57F59]">Python</strong> ? <strong className="text-[#F57F59]">PHP</strong> ? <strong className="text-[#F57F59]">Java</strong>{" "}
-          ? Chaque <strong className="text-[#F57F59]">mauvais choix</strong> vous coûte des{" "}
-          <strong className="text-[#F57F59]">années</strong>
-        </>
-      ),
-    },
-  ];
-
+const Problem = () => {
   return (
-    <section className="w-full py-12 px-4 mt-24">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-primary text-3xl text-center mb-12">
-          Gérer sa carrière dev est devenu
-          <br /> un véritable casse-tête.
+    <section className="mt-44">
+      <div className="mb-12 max-w-[650px] flex flex-col mx-auto px-4">
+        <h2 className="font-bold text-center text-3xl sm:text-4xl text-title !leading-tight">
+          Les
+          <span className="text-primary"> fausses annonces </span>
+          vous font perdre un temps considérable.
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {problems.map(({ id, alt, iconPath, text }) => (
-            <Card
-              key={id}
-              className="relative p-6 border-none hover:shadow-none bg-white group transition-colors duration-300"
-            >
-              <CardContent className="p-0">
-                <div className="flex items-start space-x-4">
-                  {/* Icon */}
-                  <div className="bg-accent/10 rounded-lg absolute top-0 right-0  ">
-                    <Image 
-                      src={iconPath}
-                      alt={alt}
-                      width={80}
-                      height={80}
-                      className="text-accent-foreground"
-                    />
-                  </div>
+      </div>
 
-                  {/* Number */}
-                  <div className="top-4 left-3 flex items-center justify-center w-12 h-12 rounded-full bg-gray-100/80 text-gray-400 font-bold text-2xl transition-colors duration-300 group-hover:bg-gray-200/90 group-hover:text-gray-500">
-                    {id}
-                  </div>
-                </div>
+      <div className="grid grid-cols-1 gap-6 max-w-[1120px] mx-auto px-4">
+        {/* Top large card */}
+        <Card className="border overflow-hidden">
+          <CardContent className="flex flex-col md:flex-row items-stretch p-0">
+            <div className="flex-1 space-y-6 p-6 sm:p-10">
+              <h3 className="font-bold text-2xl text-title !leading-tight">
+                <span className="text-primary">D&apos;innombrables heures perdues </span>
+                à filtrer des offres trompeuses.
+              </h3>
+              <ul className="space-y-4">
+                <li className="flex items-start sm:items-center gap-3 text-muted">
+                  <Image
+                    src="/images/icons/orange-cross.svg"
+                    alt="Orange cross"
+                    width={21}
+                    height={21}
+                    className="mt-1 sm:mt-0"
+                  />
+                  <span>Vous découvrez les vraies conditions de travail lors de l&apos;entretien.</span>
+                </li>
+                <li className="flex items-start sm:items-center gap-3 text-muted">
+                  <Image
+                    src="/images/icons/orange-cross.svg"
+                    alt="Orange cross"
+                    width={21}
+                    height={21}
+                    className="mt-1 sm:mt-0"
+                  />
+                  <span>Vous passez des heures à trier manuellement les offres.</span>
+                </li>
+                <li className="flex items-start sm:items-center gap-3 text-muted">
+                  <Image
+                    src="/images/icons/orange-cross.svg"
+                    alt="Orange cross"
+                    width={21}
+                    height={21}
+                    className="mt-1 sm:mt-0"
+                  />
+                  <span>Vous perdez du temps avec des annonces en doublon.</span>
+                </li>
+                <li className="flex items-start sm:items-center gap-3 text-muted">
+                  <Image
+                    src="/images/icons/orange-cross.svg"
+                    alt="Orange cross"
+                    width={21}
+                    height={21}
+                    className="mt-1 sm:mt-0"
+                  />
+                  <span>Les conditions de travail ne sont pas précises.</span>
+                </li>
+              </ul>
+            </div>
+            <div className="flex-1">
+              <Image 
+                src="/images/illustrations/problem-1.svg" 
+                alt="illustration of the first problem" 
+                width={500}
+                height={400}
+                className="w-full h-full object-cover"
+                priority
+              />
+            </div>
+          </CardContent>
+        </Card>
 
-                {/* Text */}
-                <p className="mt-6 text-lg font-medium text-primary">{text}</p>
+        {/* Two columns grid */}
+        <div className="grid md:grid-cols-2 gap-6">
+          {/* Left card - Full remote */}
+          <Card className="border overflow-hidden">
+            <CardContent className="flex flex-col md:flex-column items-stretch p-0">
+              <h3 className="font-bold text-lg sm:text-xl flex-1 space-y-6 p-6 sm:p-10">
+                Des offres <span className="text-primary">full remote</span> qui cachent 3 jours de présentiel.
+              </h3>
+              
+              <div className="relative w-full h-[180px]">
+                <Image
+                  src="/images/illustrations/problem-2.svg"
+                  alt="Remote work illustration"
+                  width={500}
+                  height={400}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </CardContent>
+          </Card>
+
+          {/* Right column - Stacked cards */}
+          <div className="space-y-6 flex flex-col h-full">
+            <Card className="border overflow-hidden flex-1">
+              <CardContent className="p-6 sm:p-8 h-full flex flex-col justify-center">
+                <h3 className="font-bold text-lg sm:text-xl">
+                  Des <span className="text-primary">faux TJM</span> qui varient de 100€ à 700€ par jour.
+                </h3>
               </CardContent>
             </Card>
-          ))}
+            <Card className="border overflow-hidden flex-1">
+              <CardContent className="p-6 sm:p-8 h-full flex flex-col justify-center">
+                <h3 className="font-bold text-lg sm:text-xl">
+                  Des descriptions incohérentes où <span className="text-primary">React côtoie COBOL</span>.
+                </h3>
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
     </section>
   );
 };
 
-export default SectionProblem;
+export default Problem;
