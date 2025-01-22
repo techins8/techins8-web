@@ -9,6 +9,7 @@ export const env = createEnv({
     SCRAPPER_API_TOKEN: z.string().min(1),
     NOTION_API_KEY: z.string().min(1),
     NOTION_BLOG_DATABASE_ID: z.string().min(1),
+    DASHBOARD_URL: z.string().min(1).url(),
   },
 
   /**
