@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import SubHeader from "./sub-header";
 
@@ -24,16 +23,17 @@ const Header = () => {
             ESSAYER GRATUITEMENT
           </Link>
         </button>
-        <div className="mt-12 sm:max-w-[900px] mb-12 mx-6">
-          <Image
-            src="/images/dashboard.webp"
-            alt="Aperçu du tableau de bord"
-            width={900}
-            height={300}
-            className="rounded-lg shadow-[0_15px_50px_0px_rgba(0,0,0,0.2)]"
-            loading="lazy"
-          />
-        </div>
+          <div className="mt-12 sm:max-w-[900px] mb-12 mx-6">
+            <iframe
+              src="https://www.youtube.com/embed/VPS8ig3p0Yc"
+              title="TechIns8 Video"
+              width="420" 
+              height="230"
+              className="w-full sm:w-[780px] sm:h-[600px] rounded-lg shadow-[0_15px_50px_0px_rgba(0,0,0,0.5)]"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
       </div>
     </section>
   );
