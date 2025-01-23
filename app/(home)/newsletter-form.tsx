@@ -4,11 +4,11 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { validate } from "@dahoom/disposable-email";
+import Image from "next/image";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { subscribeToNewsletter } from "./newsletter.action";
-import Image from "next/image";
 
 interface NewsletterState {
   email: string;
@@ -113,16 +113,20 @@ export default function NewsletterForm() {
       </div>
 
       <div className="max-w-3xl pl-0 sm:pl-12">
-        <h2 className="text-2xl sm:text-4xl font-bold text-background mb-4">
-          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur l&apos;abonnement annuel<br className="hidden sm:block" />
-          en vous inscrivant à la newsletter.
+        <h2 className="text-2xl sm:text-[2.25rem] font-bold text-background mb-4 max-w-2xl">
+          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur
+          l&apos;abonnement annuel en vous inscrivant à la newsletter.
         </h2>
-        
+
         <p className="text-background text-base sm:text-lg mb-6 sm:mb-8">
           Recevez une étude de marché gratuite par mail, toutes les semaines.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-4" id="newsletter-form">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-4"
+          id="newsletter-form"
+        >
           <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
             <Input
               type="email"
@@ -152,7 +156,9 @@ export default function NewsletterForm() {
                   : "bg-red-50 text-red-700 border-red-200"
               }`}
             >
-              <AlertDescription className="text-sm sm:text-base">{state.message.replace("'", "&apos;")}</AlertDescription>
+              <AlertDescription className="text-sm sm:text-base">
+                {state.message.replace("'", "&apos;")}
+              </AlertDescription>
             </Alert>
           )}
         </form>
