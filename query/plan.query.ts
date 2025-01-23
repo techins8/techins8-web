@@ -56,7 +56,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       price: isMonthly ? "19,90" : "6,20",
       originalPrice: isMonthly ? undefined : "12,40",
       discount: isMonthly ? undefined : 69,
-      period: isMonthly ? "€/mois" : "€",
+      period: "€/mois",
       description: isMonthly
         ? "Soit 19,90€ facturé tous les mois"
         : "Soit 74,90€ facturé à l'année au lieu de 199€.",
