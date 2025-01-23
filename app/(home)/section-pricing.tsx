@@ -23,7 +23,7 @@ const PricingSection = () => {
   return (
     <section className="w-full py-24 px-4 bg-popover">
       <div className="max-w-[1120px] mx-auto">
-        <div className="flex flex-col items-center justify-center text-center text-muted mb-8 sm:mb-14">
+        <div className="flex flex-col items-center justify-center text-center text-muted mb-2 ">
           <h2 className="text-3xl md:text-4xl text-title font-bold mb-6 max-w-[350px] sm:max-w-[650px]">
             Démarrez dés maintenant avec l&apos;
             <span className="text-primary">offre premium</span>.
@@ -58,6 +58,12 @@ const PricingSection = () => {
               Mensuel
             </span>
           </div>
+        </div>
+
+        <div className="max-w-[450px] mx-auto sm:max-w-[750px] px-8 py-2 mb-20 flex flex-col items-center justify-center text-center  bg-white rounded-lg border border-primary">
+          <p className="text-lg font-medium text-title py-2">
+            Offre de lancement exclusive : -50% en + sur TechIns8 Premium 🚀
+          </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-8 mb-12">

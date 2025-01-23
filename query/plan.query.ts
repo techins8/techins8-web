@@ -5,6 +5,8 @@ import { env } from "@/lib/env";
 export type Plan = {
   name: string;
   price: string;
+  originalPrice?: string;
+  discount?: number;
   period: string;
   description: string;
   features: { name: string; included: boolean }[];
@@ -50,12 +52,14 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       tags: [],
     },
     {
-      name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
-      price: isMonthly ? "19,90" : "12,40",
+      name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
+      price: isMonthly ? "19,90" : "6,20",
+      originalPrice: isMonthly ? undefined : "12,40",
+      discount: isMonthly ? undefined : 69,
       period: isMonthly ? "€/mois" : "€",
       description: isMonthly
         ? "Soit 19,90€ facturé tous les mois"
-        : "Soit 149 € facturé à l'année.",
+        : "Soit 74,90€ facturé à l'année au lieu de 199€.",
       features: [
         { name: "Fonctionnalités de base", included: true },
         { name: "Accès complet à l'analyse IA", included: true },
@@ -71,15 +75,17 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
         isMonthly ? "premium-mensuel" : "premium-annuel"
       }`,
       tags: [
-        { text: "ÉCONOMISEZ 25%", color: "bg-secondary" },
+        { text: isMonthly ? "OFFRE STARTER" : "-69% DE RÉDUCTION", color: "bg-secondary" },
         { text: "OFFRE POPULAIRE", color: "bg-primary" },
       ],
     },
     {
       name: "Abonnement 2 ans",
-      price: "8,30",
+      price: "4,15",
+      originalPrice: "8,30",
+      discount: 79,
       period: "€/mois",
-      description: "Soit 199 € facturé tous les 2 ans.",
+      description: "Soit 99 € facturé tous les 2 ans au lieu de 199.",
       features: [
         { name: "Fonctionnalités de base", included: true },
         { name: "Accès complet à l'analyse IA", included: true },
@@ -93,7 +99,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
       cta: "COMMENCER MAINTENANT",
       tags: [
-        { text: "ÉCONOMISEZ 55%", color: "bg-secondary" },
+        { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
         { text: "MEILLEURE OFFRE", color: "bg-primary" },
       ],
     },
