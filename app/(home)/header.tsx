@@ -6,7 +6,7 @@ const Header = () => {
     <section className="mt-28">
       <div className="flex items-center flex-col justify-center mt-14">
         <h1 className="font-bold text-center text-4xl sm:text-5xl lg:text-6xl max-w-[720px] text-title !leading-tight mx-4">
-          Le premier job board boosté par l&apos;IA pour les{" "}
+          Le premier site d&apos;emploi boosté par l&apos;IA pour les{" "}
           <span className="text-primary">développeurs</span>.
         </h1>
         <div className="mt-4 text-base sm:text-[18px] sm:leading-[27px] text-muted font-[450] text-center max-w-[520px] mx-4">

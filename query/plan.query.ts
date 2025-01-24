@@ -52,7 +52,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       tags: [],
     },
     {
-      name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
+      name: "Offre Business",
       price: isMonthly ? "19,90" : "6,20",
       originalPrice: isMonthly ? undefined : "12,40",
       discount: isMonthly ? undefined : 69,
@@ -80,7 +80,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       ],
     },
     {
-      name: "Abonnement 2 ans",
+      name: "Offre Expert Freelance",
       price: "4,15",
       originalPrice: "8,30",
       discount: 79,

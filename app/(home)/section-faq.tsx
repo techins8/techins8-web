@@ -12,10 +12,10 @@ type FAQItem = {
 
 const faqs: FAQItem[] = [
   {
-    question: "Qu'est-ce qui différencie TechIns8 des autres job boards ?",
+    question: "Qu'est-ce qui différencie TechIns8 des autres sites d'emploi ?",
     answer: (
       <div>
-        <p>TechIns8 n&apos;est pas un simple job board, c&apos;est votre assistant personnel de recherche d&apos;emploi :</p>
+        <p>TechIns8 n&apos;est pas un simple site d&apos;emploi, c&apos;est votre assistant personnel de recherche d&apos;emploi :</p>
         <ul className="list-disc pl-6 mt-2 space-y-2">
           <li>Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s&apos;assure que &quot;full remote&quot; signifie VRAIMENT full remote.</li>
           <li>Plus besoin de jongler entre les plateformes : toutes vos recherches, toutes vos offres, au même endroit.</li>
