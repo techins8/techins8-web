@@ -38,7 +38,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       period: "€",
       description: "Testez gratuitement.",
       features: [
-        { name: "Fonctionnalités de base", included: true },
+        { name: "Analytics marché IT & tech", included: true },
         { name: "Accès complet à l'analyse IA", included: false },
         { name: "Agrégation multi-sources", included: false },
         { name: "Mises à jour quotidiennes", included: false },
@@ -52,16 +52,40 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       tags: [],
     },
     {
-      name: "Offre Business",
+      name: "Abonnement 2 ans",
+      price: "4,15",
+      originalPrice: "8,30",
+      discount: 79,
+      period: "€/mois",
+      description: "99€/2 ans (au lieu de 199€)",
+      features: [
+        { name: "Analytics marché IT & tech", included: true },
+        { name: "Accès complet à l'analyse IA", included: true },
+        { name: "Agrégation multi-sources", included: true },
+        { name: "Mises à jour quotidiennes", included: true },
+        {
+          name: "Accès prioritaire aux nouvelles fonctionnalités",
+          included: true,
+        },
+      ],
+      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
+      cta: "COMMENCER MAINTENANT",
+      tags: [
+        { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
+        { text: "MEILLEURE OFFRE", color: "bg-primary" },
+      ],
+    },
+    {
+      name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
       price: isMonthly ? "19,90" : "6,20",
       originalPrice: isMonthly ? undefined : "12,40",
       discount: isMonthly ? undefined : 69,
       period: "€/mois",
       description: isMonthly
         ? "Soit 19,90€ facturé tous les mois"
-        : "Soit 74,90€ facturé à l'année au lieu de 199€.",
+        : "74,50€/an (au lieu de 149€)",
       features: [
-        { name: "Fonctionnalités de base", included: true },
+        { name: "Analytics marché IT & tech", included: true },
         { name: "Accès complet à l'analyse IA", included: true },
         { name: "Agrégation multi-sources", included: true },
         { name: "Mises à jour quotidiennes", included: true },
@@ -77,30 +101,6 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
       tags: [
         { text: isMonthly ? "OFFRE STARTER" : "-69% DE RÉDUCTION", color: "bg-secondary" },
         { text: "OFFRE POPULAIRE", color: "bg-primary" },
-      ],
-    },
-    {
-      name: "Offre Expert Freelance",
-      price: "4,15",
-      originalPrice: "8,30",
-      discount: 79,
-      period: "€/mois",
-      description: "Soit 99 € facturé tous les 2 ans au lieu de 199.",
-      features: [
-        { name: "Fonctionnalités de base", included: true },
-        { name: "Accès complet à l'analyse IA", included: true },
-        { name: "Agrégation multi-sources", included: true },
-        { name: "Mises à jour quotidiennes", included: true },
-        {
-          name: "Accès prioritaire aux nouvelles fonctionnalités",
-          included: true,
-        },
-      ],
-      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
-      cta: "COMMENCER MAINTENANT",
-      tags: [
-        { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
-        { text: "MEILLEURE OFFRE", color: "bg-primary" },
       ],
     },
   ];

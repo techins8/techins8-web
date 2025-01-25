@@ -87,7 +87,7 @@ const PricingSection = () => {
               )}
               <Card
                 className={`overflow-hidden ${
-                  index === 2 ? "bg-title text-white" : "bg-white"
+                  index === 1 ? "bg-title text-white" : "bg-white"
                 } ${
                   index === 1
                     ? "scale-110 border-primary border-2 shadow-lg"
@@ -104,7 +104,7 @@ const PricingSection = () => {
                   </div>
                   <p
                     className={`mb-8 text-xs sm:text-sm ${
-                      index === 2 ? "text-white" : "text-muted-foreground"
+                      index === 1 ? "text-white" : "text-muted-foreground"
                     } `}
                   >
                     {plan.description}
@@ -131,14 +131,14 @@ const PricingSection = () => {
                         key={featureIndex}
                         className="flex items-start sm:items-center gap-3"
                       >
-                        {index === 2 ? (
+                        {index === 1 ? (
                           <Image
                             src="/images/icons/pricing-white-ok.svg"
                             alt="White check"
                             width={21}
                             height={21}
                           />
-                        ) : index === 1 ? (
+                        ) : index === 2 ? (
                           <Image
                             src={
                               featureIndex === plan.features.length - 1
@@ -175,7 +175,7 @@ const PricingSection = () => {
                         )}
                         <span
                           className={`text-sm sm:text-base ${
-                            index === 2
+                            index === 1
                               ? "text-gray-300"
                               : "text-muted-foreground"
                           }`}
