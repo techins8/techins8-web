@@ -3,16 +3,21 @@ import {
   TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { Text } from "./Text";
-export const Heading1 = ({
-  heading,
-}: {
+
+interface Heading1Props {
   heading: Heading1BlockObjectResponse;
-}) => {
+}
+
+export function Heading1({ heading }: Heading1Props) {
+  const richText = heading.heading_1.rich_text[0];
+
   return (
-    <h1 className="text-2xl font-bold">
-      {heading.heading_1.rich_text.map((text) => (
-        <Text key={text.plain_text} text={text as TextRichTextItemResponse} />
-      ))}
+    <h1 className="text-4xl font-bold mb-6 mt-8">
+      {richText.type === "text" && (
+        <Text text={richText as TextRichTextItemResponse} />
+      )}
+      {richText.type === "mention" && richText.plain_text}
+      {richText.type === "equation" && richText.plain_text}
     </h1>
   );
-};
+}
