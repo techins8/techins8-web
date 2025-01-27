@@ -95,13 +95,6 @@ const Nav = () => {
           >
             <div className="flex flex-col space-y-6 items-center">
               <Link
-                href="/job-offers"
-                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
-                onClick={closeMenu}
-              >
-                Jobs
-              </Link>
-              <Link
                 href="/about"
                 className="text-foreground text-lg nav-link hover:text-primary transition-colors"
                 onClick={closeMenu}
@@ -133,12 +126,6 @@ const Nav = () => {
 
           {/* Desktop Navigation - Hidden on mobile */}
           <div className="hidden lg:flex items-center space-x-12">
-            <Link
-              href="/job-offers"
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              Jobs
-            </Link>
             <Link
               href="/about"
               className="text-foreground hover:text-primary transition-colors"
