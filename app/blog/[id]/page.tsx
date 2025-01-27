@@ -8,9 +8,14 @@ import { ActionBar } from "../ActionBar";
 import { Metadata } from "next";
 
 // Générer les métadonnées dynamiquement pour chaque article
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const article = await getArticle(params.id);
-  
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}): Promise<Metadata> {
+  const { id } = await params;
+  const article = await getArticle(id);
+
   return {
     title: article.title,
     description: article.teaser || "Article sur TechIns8",
@@ -18,7 +23,7 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
       title: article.title,
       description: article.teaser || "Article sur TechIns8",
       type: "article",
-      url: `https://techins8.com/blog/${params.id}`,
+      url: `https://techins8.com/blog/${id}`,
       images: [
         {
           url: article.imageCover || "/og-image.jpg",
