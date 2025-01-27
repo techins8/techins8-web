@@ -1,0 +1,34 @@
+/* Styles pour l'article de blog */
+
+.article-content {
+    @apply max-w-none space-y-8;
+}
+
+.article-content p {
+    @apply text-lg leading-[1.8] mb-10;
+}
+
+.article-content h1 {
+    @apply text-3xl font-light mb-6;
+}
+
+.article-content h2 {
+    @apply text-2xl font-light mb-6;
+}
+
+.article-content h3 {
+    @apply text-2xl font-light mb-6;
+}
+
+.article-content ul,
+.article-content ol {
+    @apply ml-6 mb-3 space-y-3;
+}
+
+.article-content img {
+    @apply rounded-lg my-6 w-full;
+}
+
+.article-content a {
+    @apply text-[#0073e6] no-underline hover: underline;
+}
