@@ -1,34 +1,25 @@
 // app/[...page]/layout.tsx
 import { Metadata } from "next";
-import { DEFAULT_IMAGE, SEO_DATA, WEBSITE_URL } from "../seo";
 import React from "react";
+import { DEFAULT_IMAGE, SEO_DATA, WEBSITE_URL } from "../seo";
 
-interface PageParams {
-  page: string[];
-}
-
-interface LayoutProps {
-  params: PageParams;
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
-
-export async function generateMetadata(
-  props: LayoutProps
-): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ page: string[] }>;
+}): Promise<Metadata> {
   try {
-    const { page } = props.params;
+    const { page } = await params;
     const path = "/" + page.join("/");
-    
+
     console.log("Layout path:", path);
-    
+
     const seoData = SEO_DATA.find((route) => route.path === path);
 
     if (!seoData) {
       console.log("No SEO data found for path:", path);
       return {};
     }
-
-    console.log("Found SEO data:", seoData);
 
     return {
       title: seoData.title,
