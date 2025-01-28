@@ -94,7 +94,7 @@ export default function RootLayout({
                 e.src=q+c._hjSettings.hjid+u;
                 r.appendChild(e);
               })(window,document,'https://static.hj.contentsquare.net/c/csq-','.js');
-            `
+            `,
           }}
         />
         {/* Google Tag Manager */}
@@ -115,35 +115,34 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "TechIns8",
-              "url": "https://techins8.com",
-              "description": "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
-              "potentialAction": {
+              name: "TechIns8",
+              url: "https://techins8.com",
+              description:
+                "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+              potentialAction: {
                 "@type": "ViewAction",
-                "target": "https://dashboard.techins8.com/"
+                target: "https://dashboard.techins8.com/",
               },
-              "offers": {
+              offers: {
                 "@type": "AggregateOffer",
-                "priceCurrency": "EUR",
-                "offers": [
+                priceCurrency: "EUR",
+                offers: [
                   {
                     "@type": "Offer",
-                    "name": "Gratuit",
-                    "price": "0",
-                    "priceCurrency": "EUR",
-                    "description": "Accès limité aux fonctionnalités de base"
+                    name: "Gratuit",
+                    price: "0",
+                    priceCurrency: "EUR",
+                    description: "Accès limité aux fonctionnalités de base",
                   },
                   {
                     "@type": "Offer",
-                    "name": "Premium",
-                    "description": "Accès complet à toutes les fonctionnalités"
-                  }
-                ]
+                    name: "Premium",
+                    description: "Accès complet à toutes les fonctionnalités",
+                  },
+                ],
               },
-              "sameAs": [
-                "https://www.linkedin.com/company/techins8"
-              ]
-            })
+              sameAs: ["https://www.linkedin.com/company/techins8"],
+            }),
           }}
         />
       </head>
