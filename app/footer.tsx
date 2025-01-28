@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
 import NewsletterForm from "./(home)/newsletter-form";
+import { SEO_DATA } from "./seo";
 
 const Footer = () => {
   const navigationLinks = [
@@ -130,6 +131,26 @@ const Footer = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer links */}
+      <div className="relative bg-title pb-12">
+        <div className="max-w-[1120px] mx-auto px-4">
+          <h3 className="text-background text-base font-semibold mb-4">
+            Liens internes
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {SEO_DATA.map((link) => (
+              <Link
+                key={link.path}
+                href={link.path}
+                className=" text-xs text-background"
+              >
+                {link.footerText}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
