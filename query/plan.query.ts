@@ -69,7 +69,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
         },
       ],
       link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
-      cta: "COMMENCER MAINTENANT",
+      cta: "7 JOURS GRATUITS",
       tags: [
         { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
         { text: "MEILLEURE OFFRE", color: "bg-primary" },
@@ -94,7 +94,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
           included: false,
         },
       ],
-      cta: "COMMENCER MAINTENANT",
+      cta: "7 JOURS GRATUITS",
       link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=${
         isMonthly ? "premium-mensuel" : "premium-annuel"
       }`,
