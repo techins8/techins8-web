@@ -1,7 +1,7 @@
 // app/developpeurs/[...slug]/page.tsx
 import { notFound } from "next/navigation";
-import { SEO_DATA } from "../../seo";
 import HomePage from "../../(home)/page";
+import { SEO_DATA } from "../../seo";
 
 interface PageProps {
   params: Promise<{
@@ -9,9 +9,7 @@ interface PageProps {
   }>;
 }
 
-export default async function DynamicPage({
-  params,
-}: PageProps) {
+export default async function DynamicPage({ params }: PageProps) {
   try {
     // Wait for params
     const { slug } = await params;
@@ -21,10 +19,10 @@ export default async function DynamicPage({
     }
 
     // Construct the path using "développeurs"
-    const path = !slug.length 
-      ? "/développeurs"
-      : `/développeurs-${slug.join("-")}`;
-    
+    const path = !slug.length
+      ? "/developpeurs"
+      : `/developpeurs/${slug.join("-")}`;
+
     const seoData = SEO_DATA.find((route) => route.path === path);
 
     if (!seoData) {
@@ -40,10 +38,10 @@ export default async function DynamicPage({
 }
 
 export function generateStaticParams() {
-  return SEO_DATA
-    .filter(route => route.path.startsWith("/développeurs"))
-    .map(route => {
-      const slug = route.path.replace("/développeurs-", "").split("-");
+  return SEO_DATA.filter((route) => route.path.startsWith("/developpeurs")).map(
+    (route) => {
+      const slug = route.path.replace("/developpeurs/", "").split("-");
       return { slug: slug.length > 0 ? slug : [] };
-    });
+    }
+  );
 }

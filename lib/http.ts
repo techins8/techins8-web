@@ -16,8 +16,6 @@ export const http = async (
     url += `?${buildQuery(options.query)}`;
   }
 
-  console.info(url);
-
   return await fetch(url, {
     method: options.method ?? "GET",
     body: options.body ? JSON.stringify(options.body) : undefined,

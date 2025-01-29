@@ -85,6 +85,13 @@ export const getJobsBrut = async ({
 
 export const getJob = async ({ id }: { id: string }) => {
   const response = await api(`/jobs/job-${id}`);
+
+  if (!response.ok) {
+    const errorData = await response.json();
+    console.error("Error while fetching job", { errorData });
+    throw new Error("Error while fetching job");
+  }
+
   const data = (await response.json()) as IJob;
   return data;
 };

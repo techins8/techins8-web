@@ -8,8 +8,6 @@ export const api = async (
 ): Promise<Response> => {
   const url = `${apiUrl}${resource.startsWith("/") ? "" : "/"}${resource}`;
 
-  console.log("API URL:", url);
-
   options.headers = {
     accept: "application/json",
     "Content-Type": "application/json",

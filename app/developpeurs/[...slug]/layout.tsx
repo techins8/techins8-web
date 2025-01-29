@@ -1,7 +1,7 @@
 // app/developpeurs/[...slug]/layout.tsx
-import React from "react";
 import { Metadata } from "next";
-import { SEO_DATA, WEBSITE_URL, DEFAULT_IMAGE } from "../../seo";
+import React from "react";
+import { DEFAULT_IMAGE, SEO_DATA, WEBSITE_URL } from "../../seo";
 
 interface LayoutProps {
   params: Promise<{
@@ -10,9 +10,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export async function generateMetadata(
-  props: LayoutProps
-): Promise<Metadata> {
+export async function generateMetadata(props: LayoutProps): Promise<Metadata> {
   try {
     // Extract and wait for params
     const { slug } = await props.params;
@@ -22,10 +20,10 @@ export async function generateMetadata(
     }
 
     // Construct the path using "développeurs"
-    const path = !slug.length 
-      ? "/développeurs"
-      : `/développeurs-${slug.join("-")}`;
-        
+    const path = !slug.length
+      ? "/developpeurs"
+      : `/developpeurs-${slug.join("-")}`;
+
     const seoData = SEO_DATA.find((route) => route.path === path);
 
     if (!seoData) {

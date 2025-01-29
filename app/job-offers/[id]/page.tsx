@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import { getJob } from "../jobs.query";
 import JobDetail from "./job-detail";
 
@@ -34,9 +35,12 @@ export default async function JobOfferPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const job = await getJob({ id });
 
-  if (!job) throw new Error("Job not found");
-
-  return <JobDetail job={job} />;
+  try {
+    const job = await getJob({ id });
+    return <JobDetail job={job} />;
+  } catch (error) {
+    console.error("Error while fetching job", { error });
+    notFound();
+  }
 }
