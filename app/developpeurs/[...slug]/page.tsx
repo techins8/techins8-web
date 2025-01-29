@@ -1,32 +1,81 @@
 // app/developpeurs/[...slug]/page.tsx
+import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import HomePage from "../../(home)/page";
-import { SEO_DATA } from "../../seo";
+import {
+  DEFAULT_IMAGE,
+  getSeoDataFromSlug,
+  SEO_DATA,
+  WEBSITE_URL,
+} from "../../seo";
 
-interface PageProps {
-  params: Promise<{
-    slug: string[];
-  }>;
-}
-
-export default async function DynamicPage({ params }: PageProps) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   try {
-    // Wait for params
+    // Extract and wait for params
     const { slug } = await params;
 
-    if (!slug) {
-      notFound();
-    }
-
-    // Construct the path using "développeurs"
-    const path = !slug.length
-      ? "/developpeurs"
-      : `/developpeurs/${slug.join("-")}`;
-
-    const seoData = SEO_DATA.find((route) => route.path === path);
+    const seoData = getSeoDataFromSlug({
+      type: "developpeurs",
+      slug: slug === "%2Fdeveloppeurs" ? "" : slug,
+    });
 
     if (!seoData) {
-      console.log("No SEO data found for path:", path);
+      console.log("No SEO data found for path:", { slug });
+      return {};
+    }
+
+    return {
+      title: seoData.title,
+      description: seoData.description,
+      keywords: seoData.metaKeywords,
+      openGraph: {
+        title: seoData.title,
+        description: seoData.description,
+        url: `${WEBSITE_URL}${seoData.path}`,
+        siteName: "TechIns8",
+        images: [
+          {
+            url: DEFAULT_IMAGE,
+            width: 1200,
+            height: 630,
+            alt: seoData.title,
+          },
+        ],
+      },
+      twitter: {
+        card: "summary_large_image",
+        site: "@techins8",
+        creator: "@techins8",
+      },
+      alternates: {
+        canonical: `${WEBSITE_URL}${seoData.path}`,
+      },
+    };
+  } catch (error) {
+    console.error("Error in generateMetadata:", error);
+    return {};
+  }
+}
+
+export default async function DynamicPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  try {
+    const { slug } = await params;
+
+    const seoData = getSeoDataFromSlug({
+      type: "developpeurs",
+      slug: slug === "%2Fdeveloppeurs" ? "" : slug,
+    });
+
+    if (!seoData) {
+      console.log("No SEO data found for path:", { slug });
       notFound();
     }
 

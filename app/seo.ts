@@ -348,3 +348,18 @@ export const getMetaDescription = (page: { description: string }) => {
 export const getCanonicalUrl = (page: { path: string }) => {
   return `${WEBSITE_URL}${page.path}`;
 };
+
+export const getSeoDataFromSlug = ({
+  type,
+  slug,
+}: {
+  type: string;
+  slug?: string | string[];
+}) => {
+  const id: string = `${type}-${Array.isArray(slug) ? slug.join("-") : slug}`;
+  const seo = SEO_DATA.find((route) => route.id === id);
+
+  if (!seo) return null;
+
+  return seo;
+};

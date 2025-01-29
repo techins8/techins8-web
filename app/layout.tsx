@@ -82,7 +82,8 @@ export default function RootLayout({
     <html lang="fr" className={`${poppins.variable}`}>
       <head>
         {/* HotJar */}
-        <script
+        <Script
+          id="hotjar"
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,s,q,u,a,r,e){
@@ -98,7 +99,8 @@ export default function RootLayout({
           }}
         />
         {/* Google Tag Manager */}
-        <script
+        <Script
+          id="google-tag-manager"
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -175,6 +177,7 @@ export default function RootLayout({
           duration={2000}
         />
         <Script
+          id="umami"
           defer
           src="https://umami.clf.techins8.com/script.js"
           data-website-id="23b0e7bf-5bf9-401f-876a-925f8a79b439"
