@@ -1,6 +1,7 @@
 "use server";
 
 import { api } from "@/lib/api";
+import { env } from "@/lib/env";
 import { IJob } from "@/types/job";
 
 interface IGetJobsBrutResponse {
@@ -37,20 +38,24 @@ export const getJobsBrut = async ({
   sort = [],
 }: IGetJobsBrutParams): Promise<IGetJobsBrutResponse> => {
   try {
-    const response = await api(`/jobs`, {
-      query: {
-        page: page.toString(),
-        page_size: size.toString(),
-        onlyPublished: onlyPublished.toString(),
-        locations: locations,
-        skills: skills,
-        companies: companies,
-        sort: sort,
+    const response = await api(
+      `/jobs`,
+      {
+        query: {
+          page: page.toString(),
+          page_size: size.toString(),
+          onlyPublished: onlyPublished.toString(),
+          locations: locations,
+          skills: skills,
+          companies: companies,
+          sort: sort,
+        },
+        headers: {
+          "x-providers": "FreeWork, WelcomeToTheJungle",
+        },
       },
-      headers: {
-        "x-providers": "FreeWork, WelcomeToTheJungle",
-      },
-    });
+      env.SCRAPPER_BRUT_API_URL
+    );
 
     if (!response.ok) {
       const errorData = await response.json();

@@ -8,7 +8,7 @@ import { SEO_DATA } from "./seo";
 
 const Footer = () => {
   const navigationLinks = [
-    { href: "/job_offers", label: "Jobs" },
+    { href: "/job-offers", label: "Jobs" },
     { href: "/about", label: "À propos" },
     { href: "/blog", label: "Blog" },
     {

@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="rounded-sm border border-stroke bg-white px-5 py-10 shadow-default dark:border-strokedark dark:bg-boxdark sm:py-20">
         <div className="flex items-center justify-center">
           <Image
-            src="/images/logo/logo-color.png"
+            src="/images/logo/logo-techins8-dark.svg"
             width={300}
             height={400}
             alt="illustration"

@@ -3,11 +3,12 @@ import { http, HttpOptions } from "./http";
 
 export const api = async (
   resource: string,
-  options: HttpOptions = {}
+  options: HttpOptions = {},
+  apiUrl: string = env.SCRAPPER_API_URL
 ): Promise<Response> => {
-  const url = `${env.SCRAPPER_API_URL}${
-    resource.startsWith("/") ? "" : "/"
-  }${resource}`;
+  const url = `${apiUrl}${resource.startsWith("/") ? "" : "/"}${resource}`;
+
+  console.log("API URL:", url);
 
   options.headers = {
     accept: "application/json",

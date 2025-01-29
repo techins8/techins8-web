@@ -24,6 +24,7 @@ export const http = async (
     headers: {
       ...options.headers,
     },
+    next: options.next,
   });
 };
 
