@@ -17,7 +17,7 @@ interface HomePageProps {
 export default function HomePage({ seoData }: HomePageProps) {
 
   return (
-    <div className="container">
+    <div>
       <Suspense fallback={<div>Loading jobs...</div>}>
         <Header 
           heroTitle={seoData?.heroTitle}
