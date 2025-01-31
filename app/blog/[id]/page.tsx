@@ -7,18 +7,24 @@ import { Clock } from "lucide-react";
 import { ActionBar } from "../ActionBar";
 import { Metadata } from "next";
 
-// Générer les métadonnées dynamiquement pour chaque article
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
+
 export async function generateMetadata({
   params,
-}: {
-  params: Promise<{ id: string }>;
-}): Promise<Metadata> {
+}: PageProps): Promise<Metadata> {
   const { id } = await params;
   const article = await getArticle(id);
+  const publishedTime = article.publishedAt ?? article.createdTime;
 
   return {
     title: article.title,
     description: article.teaser || "Article sur TechIns8",
+    authors: [{ name: article.author }],
+    publisher: "TechIns8",
     openGraph: {
       title: article.title,
       description: article.teaser || "Article sur TechIns8",
@@ -32,6 +38,8 @@ export async function generateMetadata({
           alt: article.title,
         },
       ],
+      publishedTime: publishedTime.toISOString(),
+      authors: article.author,
     },
     twitter: {
       card: "summary_large_image",
@@ -39,14 +47,13 @@ export async function generateMetadata({
       description: article.teaser || "Article sur TechIns8",
       images: [article.imageCover || "/og-image.jpg"],
     },
+    alternates: {
+      canonical: `https://techins8.com/blog/${id}`,
+    },
   };
 }
 
-export default async function page({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function BlogPost({ params }: PageProps) {
   const { id } = await params;
   const article = await getArticle(id);
   const publishedAt = article.publishedAt ?? article.createdTime;

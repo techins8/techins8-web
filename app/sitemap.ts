@@ -1,9 +1,10 @@
 import type { MetadataRoute } from "next";
 import { SEO_DATA, WEBSITE_URL } from "./seo";
+import { getArticles } from "@/query/article.query";
 
 type ChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   // Base routes
   const baseRoutes: MetadataRoute.Sitemap = [
     {
@@ -59,6 +60,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  // Combine and return all routes
-  return [...baseRoutes, ...seoRoutes];
+  // Fetch blog articles
+  try {
+    const articles = await getArticles();
+    const blogRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+      url: `${WEBSITE_URL}/blog/${article.id}`,
+      lastModified: new Date(article.publishedAt ?? article.createdTime).toISOString(),
+      changeFrequency: "weekly" as ChangeFrequency,
+      priority: 0.8,
+      images: article.imageCover ? [article.imageCover] : undefined,
+    }));
+
+    // Return combined routes
+    return [...baseRoutes, ...seoRoutes, ...blogRoutes];
+  } catch (error) {
+    console.error('Error fetching blog articles for sitemap:', error);
+    // Return base routes even if blog fetching fails
+    return [...baseRoutes, ...seoRoutes];
+  }
 }
