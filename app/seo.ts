@@ -32,11 +32,11 @@ export const DEFAULT_IMAGE =
 
 export const SEO_DATA = [
   {
-    id: "developpeurs",
-    name: "développeurs",
+    id: "developpeurs-emploi",
+    name: "développeurs emploi",
     title:
       "Offres d'Emploi Développeurs | 36 000+ Postes Tech Vérifiés | TechIns8",
-    path: "/developpeurs",
+    path: "/developpeurs/emploi",
     description:
       "Accédez à plus de 36 000 offres d'emploi développeurs vérifiées par IA. TJM transparents, stack technique validée, conditions de travail analysées. Trouvez votre prochain poste tech en quelques clics.",
     footerLink: "Offres développeurs",
