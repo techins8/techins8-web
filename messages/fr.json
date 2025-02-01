@@ -1,0 +1,210 @@
+{
+  "HomePage": {
+    "Nav": {
+      "links": {
+        "about": "À propos",
+        "partnerships": "Partenariats",
+        "blog": "Blog"
+      },
+      "cta": "ESSAYER GRATUITEMENT",
+      "mobileMenu": {
+        "ariaLabel": "Basculer le menu"
+      },
+      "images": {
+        "logoAlt": "Logo",
+        "shapeOneAlt": "Illustration",
+        "shapeTwoAlt": "Illustration"
+      }
+    },
+    "Header": {
+      "titlePrefix": "Le premier site d'emploi boosté par l'IA pour les",
+      "titleSuffix": ".",
+      "defaultType": "développeurs",
+      "subtitle": "Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+      "ctaButton": "ESSAYER GRATUITEMENT",
+      "jobsCount": "+ {count} offres actuellement analysées"
+    },
+    "Problem": {
+      "mainTitle": {
+        "prefix": "Les",
+        "highlight": "fausses annonces",
+        "suffix": "vous font perdre un temps considérable."
+      },
+      "mainCard": {
+        "title": {
+          "highlight": "D'innombrables heures perdues",
+          "suffix": "à filtrer des offres trompeuses."
+        },
+        "bulletPoints": [
+          "Vous découvrez les vraies conditions de travail lors de l'entretien.",
+          "Vous passez des heures à trier manuellement les offres.",
+          "Vous perdez du temps avec des annonces en doublon.",
+          "Les conditions de travail ne sont pas précises."
+        ]
+      },
+      "secondaryCards": {
+        "remote": {
+          "prefix": "Des offres",
+          "highlight": "full remote",
+          "suffix": "qui cachent 3 jours de présentiel."
+        },
+        "rates": {
+          "prefix": "Des",
+          "highlight": "faux TJM",
+          "suffix": "qui varient de 100€ à 700€ par jour."
+        },
+        "skills": {
+          "prefix": "Des descriptions incohérentes où",
+          "highlight": "React côtoie COBOL",
+          "suffix": "."
+        }
+      }
+    },
+    "Solution": {
+      "title": {
+        "prefix": "Arrêtez cette perte de temps dès",
+        "highlight": "maintenant",
+        "suffix": "."
+      },
+      "subtitle": {
+        "prefix": "Boostez votre recherche d'emploi avec",
+        "highlight": "Techins8 Premium",
+        "suffix": ", votre assistant IA pour un recrutement rapide et sans faux pas !"
+      },
+      "solutions": [
+        {
+          "id": 1,
+          "title": "Fini les mauvaises surprises en entretien",
+          "description": "Notre IA analyse chaque détail des offres d'emploi pour vous garantir des informations fiables sur les TJM, le télétravail, la localisation et les compétences requises."
+        },
+        {
+          "id": 2,
+          "title": "Toutes vos opportunités au même endroit",
+          "description": "Notre plateforme centralise et enrichit automatiquement les meilleures offres de FreeWork et Welcome To The Jungle pour vous faire gagner du temps dans votre recherche."
+        },
+        {
+          "id": 3,
+          "title": "Une expérience fluide et transparente",
+          "description": "Notre dashboard intuitif vous permet de filtrer les offres selon vos critères précis et de visualiser clairement les analyses de notre IA."
+        }
+      ]
+    },
+    "plans": {
+      "discovery": {
+        "name": "Offre découverte",
+        "description": "Testez gratuitement."
+      },
+      "monthly": {
+        "name": "Abonnement au mois",
+        "description": "Soit 9,90€ facturé tous les mois"
+      },
+      "yearly": {
+        "name": "Abonnement à l'année",
+        "description": "49,50€/an (au lieu de 99€)"
+      },
+      "twoYears": {
+        "name": "Abonnement 2 ans",
+        "description": "74,50€/2 ans (au lieu de 149€)"
+      },
+      "features": {
+        "analytics": "Analytics marché IT & tech",
+        "aiAnalysis": "Accès complet à l'analyse IA",
+        "multiSource": "Agrégation multi-sources",
+        "dailyUpdates": "Mises à jour quotidiennes",
+        "priorityAccess": "Accès prioritaire aux nouvelles fonctionnalités"
+      },
+      "cta": {
+        "tryFree": "ESSAYER GRATUITEMENT"
+      },
+      "tags": {
+        "discount79": "-79% DE RÉDUCTION",
+        "discount69": "-69% DE RÉDUCTION",
+        "bestOffer": "MEILLEURE OFFRE",
+        "starter": "OFFRE STARTER",
+        "popular": "OFFRE POPULAIRE"
+      }
+    },
+    "Pricing": {
+      "title": {
+        "prefix": "Get started now with the",
+        "highlight": "premium",
+        "suffix": "offer."
+      },
+      "toggle": {
+        "annual": "Annual",
+        "monthly": "Monthly"
+      },
+      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀"
+    },
+    "SocialProof": {
+      "title": {
+        "part1": "La communauté",
+        "part2": "tech parle de nous."
+      }
+    },
+    "FAQ": {
+      "title": "Vous avez des questions ?",
+      "questions": {
+        "difference": {
+          "question": "Qu'est-ce qui différencie TechIns8 des autres sites d'emploi ?",
+          "intro": "TechIns8 n'est pas un simple site d'emploi, c'est votre assistant personnel de recherche d'emploi :",
+          "points": [
+            "Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s'assure que \"full remote\" signifie VRAIMENT full remote.",
+            "Plus besoin de jongler entre les plateformes : toutes vos recherches, toutes vos offres, au même endroit."
+          ]
+        },
+        "analysis": {
+          "question": "Comment fonctionne l'analyse des offres ?",
+          "answer": "Notre IA analyse chaque offre d'emploi pour vérifier la cohérence des informations. Elle s'assure notamment que les conditions de travail annoncées sont réelles et que les compétences requises sont cohérentes."
+        },
+        "sources": {
+          "question": "Quelles sont les sources d'offres d'emploi ?",
+          "answer": "Nous agrégeons les offres de \"FreeWork\" et \"Welcome To The Jungle\" pour vous offrir une vue complète du marché. Notre IA analyse et enrichit chaque offre pour une meilleure transparence."
+        },
+        "tjm": {
+          "question": "Comment est calculé le TJM ?",
+          "answer": "Le TJM est calculé en fonction des données du marché et des informations fournies dans l'offre. Notre IA vérifie la cohérence des montants annoncés avec les compétences et l'expérience requises."
+        },
+        "linkedin": {
+          "question": "J'ai déjà des alertes sur LinkedIn, pourquoi payer pour TechIns8 ?",
+          "part1": "LinkedIn et les autres plateformes vous envoient toutes les offres correspondant à vos mots-clés, sans vérification.",
+          "part2": "Ces alertes sont souvent truffées de fausses offres \"full remote\", de TJM irréalistes, ou pire, d'annonces qui ne correspondent pas du tout à tes compétences.",
+          "part3": "Résultat ? Vous perdez du temps à filtrer manuellement. TechIns8 fait ce travail pour vous, en regroupant les offres de plusieurs sources et en vérifiant leur qualité."
+        },
+        "cancel": {
+          "question": "Est-ce que je peux annuler mon abonnement ?",
+          "answer": "Oui, vous pouvez annuler à tout moment. Si vous n'êtes pas satisfait dans les 30 premiers jours, nous vous remboursons intégralement, sans question."
+        },
+        "updates": {
+          "question": "Combien de nouvelles offres sont ajoutées ?",
+          "answer": "Chaque jour, nous mettons à jour notre base. Actuellement, nous analysons les offres de FreeWork et Welcome To The Jungle, et d'autres sources seront ajoutées prochainement."
+        }
+      },
+      "discord": {
+        "title": "Besoin de poser vos questions aux utilisateurs ?",
+        "subtitle": "Rejoignez notre communauté sur Discord !",
+        "button": "REJOINDRE LA COMMUNAUTÉ"
+      }
+    },
+    "Newsletter": {
+        "title": {
+          "discount": "-10%",
+          "text": "sur l'abonnement annuel en vous inscrivant à la newsletter."
+        },
+        "subtitle": "Recevez une étude de marché gratuite par mail, toutes les semaines.",
+        "form": {
+          "emailPlaceholder": "Votre adresse Email...",
+          "submitButton": {
+            "default": "JE M'INSCRIS",
+            "loading": "Inscription..."
+          }
+        },
+        "messages": {
+          "invalidEmail": "Email invalide",
+          "disposableEmail": "Veuillez utiliser une adresse email permanente.",
+          "success": "Merci de votre inscription !",
+          "error": "Une erreur est survenue lors de l'inscription"
+        }
+      }
+  }
+}

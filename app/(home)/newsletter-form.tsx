@@ -9,6 +9,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
 import { subscribeToNewsletter } from "./newsletter.action";
+import { useTranslations } from 'next-intl';
 
 interface NewsletterState {
   email: string;
@@ -21,6 +22,7 @@ const newsletterSchema = z.object({
 });
 
 export default function NewsletterForm() {
+  const t = useTranslations('HomePage.Newsletter');
   const [loading, setLoading] = useState(false);
   const [state, setState] = useState<NewsletterState>({
     email: "",
@@ -37,17 +39,17 @@ export default function NewsletterForm() {
       setState({
         ...state,
         status: "error",
-        message: "Email invalide",
+        message: t('messages.invalidEmail'),
       });
     }
 
-    // Vérification de l'email jetable
+    // Check for disposable email
     if (!(await validate(state.email))) {
-      toast.error("Veuillez utiliser une adresse email permanente.");
+      toast.error(t('messages.disposableEmail'));
       setState({
         ...state,
         status: "error",
-        message: "Veuillez utiliser une adresse email permanente.",
+        message: t('messages.disposableEmail'),
       });
 
       setTimeout(() => {
@@ -61,11 +63,11 @@ export default function NewsletterForm() {
       const response = await subscribeToNewsletter({ email: state.email });
 
       if (response.success) {
-        toast.success("Merci de votre inscription ! ");
+        toast.success(t('messages.success'));
         setState({
           email: "",
           status: "success",
-          message: "Merci de votre inscription ! ",
+          message: t('messages.success'),
         });
       } else {
         throw new Error(response.message);
@@ -75,18 +77,12 @@ export default function NewsletterForm() {
         setState((prev) => ({ ...prev, status: "idle", message: "" }));
       }, 3000);
     } catch (error) {
-      toast.error(
-        error instanceof Error
-          ? error.message
-          : "Une erreur est survenue lors de l'inscription"
-      );
+      const errorMessage = error instanceof Error ? error.message : t('messages.error');
+      toast.error(errorMessage);
       setState({
         ...state,
         status: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "Une erreur est survenue lors de l'inscription",
+        message: errorMessage,
       });
 
       setTimeout(() => {
@@ -114,12 +110,12 @@ export default function NewsletterForm() {
 
       <div className="max-w-3xl pl-0 sm:pl-12">
         <h2 className="text-2xl sm:text-[2.25rem] font-bold text-background mb-4 max-w-2xl">
-          <span className="text-3xl sm:text-5xl text-title">-10%</span> sur
-          l&apos;abonnement annuel en vous inscrivant à la newsletter.
+          <span className="text-3xl sm:text-5xl text-title">{t('title.discount')}</span>{' '}
+          {t('title.text')}
         </h2>
 
         <p className="text-background text-base sm:text-lg mb-6 sm:mb-8">
-          Recevez une étude de marché gratuite par mail, toutes les semaines.
+          {t('subtitle')}
         </p>
 
         <form
@@ -130,7 +126,7 @@ export default function NewsletterForm() {
           <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
             <Input
               type="email"
-              placeholder="Votre adresse Email..."
+              placeholder={t('form.emailPlaceholder')}
               className="flex-1 !py-3 sm:py-6 bg-background opacity-80 border-0 text-title placeholder:text-muted-foreground text-sm sm:text-base"
               required
               value={state.email}
@@ -141,10 +137,10 @@ export default function NewsletterForm() {
             />
             <Button
               type="submit"
-              className="px-8  bg-title text-white hover:bg-title/90 font-semibold text-sm sm:text-base whitespace-nowrap"
+              className="px-8 bg-title text-white hover:bg-slate-800 font-semibold text-sm sm:text-base whitespace-nowrap"
               disabled={state.status === "loading"}
             >
-              {loading ? "Inscription..." : "JE M'INSCRIS"}
+              {loading ? t('form.submitButton.loading') : t('form.submitButton.default')}
             </Button>
           </div>
 
