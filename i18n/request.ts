@@ -7,7 +7,7 @@ export default getRequestConfig(async () => {
   
   // Check if the Accept-Language header contains French
   const prefersFrench = acceptLanguage.toLowerCase().includes('fr');
-  const locale = prefersFrench ? 'en' : 'en';
+  const locale = prefersFrench ? 'fr' : 'en';
  
   return {
     locale,
