@@ -53,11 +53,11 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
     },
     {
       name: "Abonnement 2 ans",
-      price: "4,15",
-      originalPrice: "8,30",
+      price: "3,10",
+      originalPrice: "6,20",
       discount: 79,
       period: "€/mois",
-      description: "99€/2 ans (au lieu de 199€)",
+      description: "74,50€/2 ans (au lieu de 149€)",
       features: [
         { name: "Analytics marché IT & tech", included: true },
         { name: "Accès complet à l'analyse IA", included: true },
@@ -69,7 +69,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
         },
       ],
       link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
-      cta: "7 JOURS GRATUITS",
+      cta: "ESSAYER GRATUITEMENT",
       tags: [
         { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
         { text: "MEILLEURE OFFRE", color: "bg-primary" },
@@ -77,13 +77,13 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
     },
     {
       name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
-      price: isMonthly ? "19,90" : "6,20",
-      originalPrice: isMonthly ? undefined : "12,40",
+      price: isMonthly ? "9,90" : "4,10",
+      originalPrice: isMonthly ? undefined : "8,25",
       discount: isMonthly ? undefined : 69,
       period: "€/mois",
       description: isMonthly
-        ? "Soit 19,90€ facturé tous les mois"
-        : "74,50€/an (au lieu de 149€)",
+        ? "Soit 9,90€ facturé tous les mois"
+        : "49,50€/an (au lieu de 99€)",
       features: [
         { name: "Analytics marché IT & tech", included: true },
         { name: "Accès complet à l'analyse IA", included: true },
@@ -94,7 +94,7 @@ export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
           included: false,
         },
       ],
-      cta: "7 JOURS GRATUITS",
+      cta: "ESSAYER GRATUITEMENT",
       link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=${
         isMonthly ? "premium-mensuel" : "premium-annuel"
       }`,
