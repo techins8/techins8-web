@@ -2,106 +2,113 @@
 
 import { env } from "@/lib/env";
 
+export type PlanFeature = {
+  key: string;
+  included: boolean;
+};
+
+export type PlanTag = {
+  key: string;
+  color: string;
+};
+
 export type Plan = {
-  name: string;
+  key: string;
   price: string;
   originalPrice?: string;
   discount?: number;
   period: string;
-  description: string;
-  features: { name: string; included: boolean }[];
-  cta: string;
+  descriptionKey: string;
+  features: PlanFeature[];
+  ctaKey: string;
   link: string;
-  tags: { text: string; color: string }[];
+  tags: PlanTag[];
+};
+
+const PLANS_DATA = {
+  discovery: {
+    key: "discovery",
+    price: "0",
+    period: "€",
+    descriptionKey: "discovery.description",
+    features: [
+      { key: "analytics", included: true },
+      { key: "aiAnalysis", included: false },
+      { key: "multiSource", included: false },
+      { key: "dailyUpdates", included: false },
+      { key: "priorityAccess", included: false },
+    ],
+    ctaKey: "cta.tryFree",
+    link: `${env.NEXT_PUBLIC_DASHBOARD_URL}`,
+    tags: [],
+  },
+  twoYears: {
+    key: "twoYears",
+    price: "3,10",
+    originalPrice: "6,20",
+    discount: 79,
+    period: "€/mois",
+    descriptionKey: "twoYears.description",
+    features: [
+      { key: "analytics", included: true },
+      { key: "aiAnalysis", included: true },
+      { key: "multiSource", included: true },
+      { key: "dailyUpdates", included: true },
+      { key: "priorityAccess", included: true },
+    ],
+    link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
+    ctaKey: "cta.tryFree",
+    tags: [
+      { key: "discount79", color: "bg-secondary" },
+      { key: "bestOffer", color: "bg-primary" }
+    ],
+  },
+  monthly: {
+    key: "monthly",
+    price: "9,90",
+    period: "€/mois",
+    descriptionKey: "monthly.description",
+    features: [
+      { key: "analytics", included: true },
+      { key: "aiAnalysis", included: true },
+      { key: "multiSource", included: true },
+      { key: "dailyUpdates", included: true },
+      { key: "priorityAccess", included: false },
+    ],
+    ctaKey: "cta.tryFree",
+    link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-mensuel`,
+    tags: [
+      { key: "starter", color: "bg-secondary" },
+      { key: "popular", color: "bg-primary" }
+    ],
+  },
+  yearly: {
+    key: "yearly",
+    price: "4,10",
+    originalPrice: "8,25",
+    discount: 69,
+    period: "€/mois",
+    descriptionKey: "yearly.description",
+    features: [
+      { key: "analytics", included: true },
+      { key: "aiAnalysis", included: true },
+      { key: "multiSource", included: true },
+      { key: "dailyUpdates", included: true },
+      { key: "priorityAccess", included: false },
+    ],
+    ctaKey: "cta.tryFree",
+    link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-annuel`,
+    tags: [
+      { key: "discount69", color: "bg-secondary" },
+      { key: "popular", color: "bg-primary" },
+    ],
+  },
 };
 
 export const getPlans = async (isMonthly: boolean): Promise<Plan[]> => {
-  /*const response = await fetch(`${env.NEXT_PUBLIC_DASHBOARD_URL}/api/plans`, {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  });
-
-  // if (!response.ok) {
-  //   throw new Error(`Failed to fetch plans`);
-  // }
-
-  // const plans = await response.json();
-
-  console.log({ plans: plans.data });*/
-
   return [
-    {
-      name: "Offre découverte",
-      price: "0",
-      period: "€",
-      description: "Testez gratuitement.",
-      features: [
-        { name: "Analytics marché IT & tech", included: true },
-        { name: "Accès complet à l'analyse IA", included: false },
-        { name: "Agrégation multi-sources", included: false },
-        { name: "Mises à jour quotidiennes", included: false },
-        {
-          name: "Accès prioritaire aux nouvelles fonctionnalités",
-          included: false,
-        },
-      ],
-      cta: "ESSAYER GRATUITEMENT",
-      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}`,
-      tags: [],
-    },
-    {
-      name: "Abonnement 2 ans",
-      price: "4,15",
-      originalPrice: "8,30",
-      discount: 79,
-      period: "€/mois",
-      description: "99€/2 ans (au lieu de 199€)",
-      features: [
-        { name: "Analytics marché IT & tech", included: true },
-        { name: "Accès complet à l'analyse IA", included: true },
-        { name: "Agrégation multi-sources", included: true },
-        { name: "Mises à jour quotidiennes", included: true },
-        {
-          name: "Accès prioritaire aux nouvelles fonctionnalités",
-          included: true,
-        },
-      ],
-      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-2-ans`,
-      cta: "7 JOURS GRATUITS",
-      tags: [
-        { text: "-79% DE RÉDUCTION", color: "bg-secondary" },
-        { text: "MEILLEURE OFFRE", color: "bg-primary" },
-      ],
-    },
-    {
-      name: isMonthly ? "Abonnement au mois" : "Abonnement à l'année",
-      price: isMonthly ? "19,90" : "6,20",
-      originalPrice: isMonthly ? undefined : "12,40",
-      discount: isMonthly ? undefined : 69,
-      period: "€/mois",
-      description: isMonthly
-        ? "Soit 19,90€ facturé tous les mois"
-        : "74,50€/an (au lieu de 149€)",
-      features: [
-        { name: "Analytics marché IT & tech", included: true },
-        { name: "Accès complet à l'analyse IA", included: true },
-        { name: "Agrégation multi-sources", included: true },
-        { name: "Mises à jour quotidiennes", included: true },
-        {
-          name: "Accès prioritaire aux nouvelles fonctionnalités",
-          included: false,
-        },
-      ],
-      cta: "7 JOURS GRATUITS",
-      link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=${
-        isMonthly ? "premium-mensuel" : "premium-annuel"
-      }`,
-      tags: [
-        { text: isMonthly ? "OFFRE STARTER" : "-69% DE RÉDUCTION", color: "bg-secondary" },
-        { text: "OFFRE POPULAIRE", color: "bg-primary" },
-      ],
-    },
-  ];
+    PLANS_DATA.discovery,
+    PLANS_DATA[isMonthly ? "monthly" : "twoYears"],
+    isMonthly ? undefined : PLANS_DATA.yearly,
+  ].filter(Boolean) as Plan[];
 };

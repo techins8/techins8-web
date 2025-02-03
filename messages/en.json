@@ -1,0 +1,214 @@
+{
+  "HomePage": {
+    "Nav": {
+      "links": {
+        "about": "About",
+        "partnerships": "Partnerships",
+        "blog": "Blog"
+      },
+      "cta": "TRY FOR FREE",
+      "mobileMenu": {
+        "ariaLabel": "Toggle menu"
+      },
+      "images": {
+        "logoAlt": "Logo",
+        "shapeOneAlt": "Illustration",
+        "shapeTwoAlt": "Illustration"
+      }
+    },
+    "Header": {
+      "titlePrefix": "The first AI-powered job board for",
+      "titleSuffix": ".",
+      "defaultType": "developers",
+      "subtitle": "Our technology analyzes and verifies each job offer to save you valuable time in your search.",
+      "ctaButton": "TRY FOR FREE",
+      "jobsCount": "+ {count} offers currently analyzed"
+    },
+    "Problem": {
+      "mainTitle": {
+        "prefix": "The",
+        "highlight": "fake job listings",
+        "suffix": "are wasting your precious time."
+      },
+      "mainCard": {
+        "title": {
+          "highlight": "Countless hours wasted",
+          "suffix": "filtering misleading job offers."
+        },
+        "bulletPoints": [
+          "You discover the real working conditions during the interview.",
+          "You spend hours manually sorting through offers.",
+          "You waste time with duplicate listings.",
+          "Working conditions are not clearly specified."
+        ]
+      },
+      "secondaryCards": {
+        "remote": {
+          "prefix": "Supposed",
+          "highlight": "full remote",
+          "suffix": "positions hiding 3 days of office work."
+        },
+        "rates": {
+          "prefix": "Misleading",
+          "highlight": "daily rates",
+          "suffix": "ranging from €100 to €700 per day."
+        },
+        "skills": {
+          "prefix": "Inconsistent descriptions where",
+          "highlight": "React meets COBOL",
+          "suffix": "."
+        }
+      }
+    },
+    "Solution": {
+      "title": {
+        "prefix": "Stop wasting time starting",
+        "highlight": "now",
+        "suffix": "."
+      },
+      "subtitle": {
+        "prefix": "Boost your job search with",
+        "highlight": "Techins8 Premium",
+        "suffix": ", your AI assistant for quick and hassle-free recruitment!"
+      },
+      "solutions": [
+        {
+          "id": 1,
+          "title": "No more interview surprises",
+          "description": "Our AI analyzes every detail of job listings to guarantee reliable information about daily rates, remote work, location, and required skills."
+        },
+        {
+          "id": 2,
+          "title": "All your opportunities in one place",
+          "description": "Our platform automatically centralizes and enriches the best offers from FreeWork and Welcome To The Jungle to save you time in your search."
+        },
+        {
+          "id": 3,
+          "title": "A smooth and transparent experience",
+          "description": "Our intuitive dashboard allows you to filter offers according to your specific criteria and clearly visualize our AI's analyses."
+        }
+      ]
+    },
+    "Pricing": {
+      "title": {
+        "prefix": "Get started now with the",
+        "highlight": "premium offer",
+        "suffix": "."
+      },
+      "toggle": {
+        "annual": "Annual",
+        "monthly": "Monthly"
+      },
+      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀",
+      "icons": {
+        "checkAlt": "Check icon",
+        "crossAlt": "Cross icon"
+      }
+    },
+    "plans": {
+      "discovery": {
+        "name": "Discovery offer",
+        "description": "Try it for free."
+      },
+      "monthly": {
+        "name": "Monthly subscription",
+        "description": "That's €9.90 billed monthly"
+      },
+      "yearly": {
+        "name": "Yearly subscription",
+        "description": "€49.50/year (instead of €99)"
+      },
+      "twoYears": {
+        "name": "2-year subscription",
+        "description": "€74.50/2 years (instead of €149)"
+      },
+      "features": {
+        "analytics": "IT & Tech market analytics",
+        "aiAnalysis": "Full access to AI analysis",
+        "multiSource": "Multi-source aggregation",
+        "dailyUpdates": "Daily updates",
+        "priorityAccess": "Priority access to new features"
+      },
+      "cta": {
+        "tryFree": "TRY FOR FREE"
+      },
+      "tags": {
+        "discount79": "79% OFF",
+        "discount69": "69% OFF",
+        "bestOffer": "BEST OFFER",
+        "starter": "STARTER OFFER",
+        "popular": "POPULAR"
+      }
+    },
+    "SocialProof": {
+      "title": {
+        "part1": "The tech community",
+        "part2": "talks about us."
+      }
+    },
+    "FAQ": {
+      "title": "Got questions?",
+      "questions": {
+        "difference": {
+          "question": "What makes TechIns8 different from other job sites?",
+          "intro": "TechIns8 isn't just a job site, it's your personal job search assistant:",
+          "points": [
+            "Our AI acts as an HR expert: it detects false promises, verifies daily rates, and ensures that \"full remote\" REALLY means full remote.",
+            "No more juggling between platforms: all your searches, all your offers, in one place."
+          ]
+        },
+        "analysis": {
+          "question": "How does the offer analysis work?",
+          "answer": "Our AI analyzes each job offer to verify the consistency of information. It specifically ensures that the advertised working conditions are real and that the required skills are consistent."
+        },
+        "sources": {
+          "question": "What are the sources of job offers?",
+          "answer": "We aggregate offers from \"FreeWork\" and \"Welcome To The Jungle\" to give you a complete view of the market. Our AI analyzes and enriches each offer for better transparency."
+        },
+        "tjm": {
+          "question": "How is the daily rate calculated?",
+          "answer": "The daily rate is calculated based on market data and information provided in the offer. Our AI verifies the consistency of advertised amounts with required skills and experience."
+        },
+        "linkedin": {
+          "question": "I already have alerts on LinkedIn, why pay for TechIns8?",
+          "part1": "LinkedIn and other platforms send you all offers matching your keywords, without verification.",
+          "part2": "These alerts are often full of fake \"full remote\" offers, unrealistic daily rates, or worse, listings that don't match your skills at all.",
+          "part3": "Result? You waste time filtering manually. TechIns8 does this work for you, grouping offers from multiple sources and verifying their quality."
+        },
+        "cancel": {
+          "question": "Can I cancel my subscription?",
+          "answer": "Yes, you can cancel at any time. If you're not satisfied within the first 30 days, we'll refund you in full, no questions asked."
+        },
+        "updates": {
+          "question": "How many new offers are added?",
+          "answer": "We update our database daily. Currently, we analyze offers from FreeWork and Welcome To The Jungle, and more sources will be added soon."
+        }
+      },
+      "discord": {
+        "title": "Need to ask questions to users?",
+        "subtitle": "Join our community on Discord!",
+        "button": "JOIN THE COMMUNITY"
+      }
+    },
+    "Newsletter": {
+      "title": {
+        "discount": "-10%",
+        "text": "off the annual subscription by signing up for the newsletter."
+      },
+      "subtitle": "Receive a free market study by email, every week.",
+      "form": {
+        "emailPlaceholder": "Your Email address...",
+        "submitButton": {
+          "default": "SIGN UP",
+          "loading": "Signing up..."
+        }
+      },
+      "messages": {
+        "invalidEmail": "Invalid email",
+        "disposableEmail": "Please use a permanent email address.",
+        "success": "Thank you for subscribing!",
+        "error": "An error occurred during registration"
+      }
+    }
+  }
+}

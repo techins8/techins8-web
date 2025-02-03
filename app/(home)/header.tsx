@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import SubHeader from "./sub-header";
+import { useTranslations } from 'next-intl';
 
 interface HeaderProps {
   heroTitle?: string;
@@ -8,26 +9,30 @@ interface HeaderProps {
 }
 
 const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
+  const t = useTranslations('HomePage.Header');
+  
   // Function to format the title with the developer type in a span
   const formatTitle = (title: string | undefined) => {
     if (!title) {
       return (
         <>
-          Le premier site d&apos;emploi boosté par l&apos;IA pour les{" "}
-          <span className="text-primary">développeurs</span>.
+          {t.raw('titlePrefix')}
+          {" "}
+          <span className="text-primary">{t('defaultType')}</span>
+          {t.raw('titleSuffix')}
         </>
       );
     }
 
     return (
       <>
-        Le premier site d&apos;emploi boosté par l&apos;IA pour les{" "}
-        <span className="text-primary">{title}</span>.
+        {t.raw('titlePrefix')}
+        {" "}
+        <span className="text-primary">{title}</span>
+        {t.raw('titleSuffix')}
       </>
     );
   };
-
-  const defaultSubtitle = "Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.";
 
   return (
     <section className="mt-28">
@@ -36,7 +41,7 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
           {formatTitle(heroTitle)}
         </h1>
         <div className="mt-4 text-base sm:text-[18px] sm:leading-[27px] text-muted font-[450] text-center max-w-[520px] mx-4">
-          {heroSubtitle || defaultSubtitle}
+          {heroSubtitle || t('subtitle')}
         </div>
         <SubHeader />
         <button className="mt-10">
@@ -45,23 +50,24 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
             target="_parent"
             className="bg-primary text-primary-foreground font-semibold px-5 py-2 rounded-md transition-colors button-nav"
           >
-            ESSAYER GRATUITEMENT
+            {t('ctaButton')}
           </Link>
         </button>
         <div className="flex items-center justify-center gap-4 mt-12 px-4">
           <a href="https://www.uneed.best/tool/techins8">
-            <Image src="https://www.uneed.best/EMBED3.png" 
-            alt="Uneed Embed Badge" 
+            <Image src="https://www.uneed.best/POTD1.png" 
             width={250} 
-            height={54} 
-            className="w-[180px] sm:w-[250px] h-auto" />
+            height={54}  
+            className="w-[180px] sm:w-[250px] h-auto" 
+            alt="Uneed POTD1 Badge" />
           </a>
           <a href="https://www.producthunt.com/posts/techins8?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-techins8" target="_blank">
             <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680" 
             alt="TechIns8 - The first AI-powered job board for developers." 
             width={250} 
             height={54} 
-            className="w-[180px] sm:w-[250px] h-auto" />
+              className="w-[180px] sm:w-[250px] h-auto" 
+            />
           </a>
         </div>
         <div className="mt-12 sm:max-w-[900px] mb-12 mx-6">

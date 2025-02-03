@@ -32,11 +32,11 @@ export const DEFAULT_IMAGE =
 
 export const SEO_DATA = [
   {
-    id: "developpeurs",
-    name: "développeurs",
+    id: "developpeurs-emploi",
+    name: "développeurs emploi",
     title:
-      "Offres d'Emploi Développeurs | 36 000+ Postes Tech Vérifiés | TechIns8",
-    path: "/developpeurs",
+      "Offres Développeurs | 36 000+ Postes Tech | TechIns8",
+    path: "/developpeurs/emploi",
     description:
       "Accédez à plus de 36 000 offres d'emploi développeurs vérifiées par IA. TJM transparents, stack technique validée, conditions de travail analysées. Trouvez votre prochain poste tech en quelques clics.",
     footerLink: "Offres développeurs",
@@ -51,7 +51,7 @@ export const SEO_DATA = [
     id: "developpeurs-full-stack",
     name: "développeurs full stack",
     title:
-      "Offres Développeurs Full Stack | Stack Technique Vérifiée | TechIns8",
+      "Développeur Full Stack | Stack Vérifiée | TechIns8",
     path: "/developpeurs/full-stack",
     description:
       "Plus de 12 000 offres full stack vérifiées par IA. Stack technique front & back cohérente, TJM transparents. Technologies modernes et environnement de développement validé.",
@@ -96,7 +96,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-full-remote",
     name: "développeurs full remote",
-    title: "Offres Développeurs Full Remote | Télétravail 100% | TechIns8",
+    title: "Développeur Remote | 100% Télétravail | TechIns8",
     path: "/developpeurs/full-remote",
     description:
       "Découvrez plus de 5 000 opportunités en full remote vérifiées par IA. Conditions de télétravail transparentes, horaires flexibles et collaboration à distance analysés.",
@@ -156,7 +156,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-frontend",
     name: "développeurs frontend",
-    title: "Offres Développeurs Frontend | React, Vue, Angular | TechIns8",
+    title: "Développeur Frontend | React, Vue, Angular | TechIns8",
     path: "/developpeurs/frontend",
     description:
       "Plus de 8 000 missions frontend avec frameworks modernes. Stack technique React, Vue.js ou Angular vérifiée par IA. Projets innovants et interfaces performantes.",
@@ -276,7 +276,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-typescript",
     name: "développeurs typescript",
-    title: "Offres Développeurs TypeScript | Types & Patterns | TechIns8",
+    title: "Développeur TypeScript | Types & Patterns | TechIns8",
     path: "/developpeurs/typescript",
     description:
       "Plus de 4 000 missions TypeScript analysées par IA. Projets avec types statiques et patterns modernes. Architecture d'entreprise et codebases robustes.",
@@ -306,7 +306,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-gcp",
     name: "développeurs gcp",
-    title: "Offres Développeurs GCP | Google Cloud Platform Expert | TechIns8",
+    title: "Développeur GCP | Google Cloud | TechIns8",
     path: "/developpeurs/gcp",
     description:
       "Plus de 2 000 missions Google Cloud Platform vérifiées par IA. Expertise cloud-native, serverless et Kubernetes sur GCP. Certifications et projets cloud validés.",
@@ -322,7 +322,7 @@ export const SEO_DATA = [
     id: "developpeurs-react-native",
     name: "développeurs react native",
     title:
-      "Offres Développeurs React Native | Mobile Cross-Platform | TechIns8",
+      "Développeur React Native | Mobile | TechIns8",
     path: "/developpeurs/react-native",
     description:
       "Missions React Native cross-platform vérifiées par IA. Applications iOS et Android avec une base de code unique. Performance native et expertise JavaScript mobile validées.",

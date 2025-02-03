@@ -6,6 +6,8 @@ import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale, getMessages } from 'next-intl/server';
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -73,13 +75,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const locale = await getLocale();
+  const messages = await getMessages();
+
   return (
-    <html lang="fr" className={`${poppins.variable}`}>
+    <html lang={locale} className={`${poppins.variable}`}>
       <head>
         {/* HotJar */}
         <Script
@@ -159,23 +164,25 @@ export default function RootLayout({
           }}
         />
         {/* End Google Tag Manager (noscript) */}
-        <div className="relative flex min-h-screen flex-col bg-background">
-          <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
+        <NextIntlClientProvider messages={messages}>
+          <div className="relative flex min-h-screen flex-col bg-background">
+            <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
 
-          <div className="relative z-10 flex flex-grow flex-col">
-            <Nav />
-            <main className="mt-20">{children}</main>
-            <Footer />
+            <div className="relative z-10 flex flex-grow flex-col">
+              <Nav />
+              <main className="mt-20">{children}</main>
+              <Footer />
+            </div>
           </div>
-        </div>
-        <SpeedInsights />
-        <Toaster
-          expand={false}
-          position="top-right"
-          closeButton
-          richColors
-          duration={2000}
-        />
+          <SpeedInsights />
+          <Toaster
+            expand={false}
+            position="top-right"
+            closeButton
+            richColors
+            duration={2000}
+          />
+        </NextIntlClientProvider>
         <Script
           id="umami"
           defer
