@@ -54,21 +54,17 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
           </Link>
         </button>
         <div className="flex items-center justify-center gap-4 mt-12 px-4">
-          <a href="https://www.uneed.best/tool/techins8">
-            <Image src="https://www.uneed.best/POTD1.png" 
+         <Image src="https://www.uneed.best/POTD1.png" 
             width={250} 
             height={54}  
             className="w-[180px] sm:w-[250px] h-auto" 
             alt="Uneed POTD1 Badge" />
-          </a>
-          <a href="https://www.producthunt.com/posts/techins8?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-techins8" target="_blank">
-            <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680" 
-            alt="TechIns8 - The first AI-powered job board for developers." 
-            width={250} 
-            height={54} 
-              className="w-[180px] sm:w-[250px] h-auto" 
-            />
-          </a>
+          <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680" 
+          alt="TechIns8 - The first AI-powered job board for developers." 
+          width={250} 
+          height={54} 
+            className="w-[180px] sm:w-[250px] h-auto" 
+          />
         </div>
         <div className="mt-12 sm:max-w-[900px] mb-12 mx-6">
           <iframe
