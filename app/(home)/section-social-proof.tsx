@@ -14,15 +14,15 @@ const SectionSocialProof = () => {
         </h2>
                 
         <Script 
-          src="https://widget.senja.io/widget/b9e26795-a8a0-461d-bdf2-8cfc11abaada/platform.js" 
+          src="https://widget.senja.io/widget/459b0e23-11f6-48bf-934f-2d826e518b29/platform.js" 
           strategy="lazyOnload"
         />
         <div 
           className="senja-embed" 
-          data-id="b9e26795-a8a0-461d-bdf2-8cfc11abaada" 
+          data-id="459b0e23-11f6-48bf-934f-2d826e518b29" 
           data-mode="shadow" 
           data-lazyload="false" 
-          style={{ display: 'block' }}
+          style={{ display: 'block' }} 
         />
       </div>
     </section>
