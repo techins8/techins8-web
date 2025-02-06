@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
-import { useTranslations } from 'next-intl';
+import { useState } from "react";
 
 type FAQItem = {
   id: string;
@@ -14,37 +14,37 @@ type FAQItem = {
 const faqs: FAQItem[] = [
   {
     id: "difference",
-    hasHtml: true
+    hasHtml: true,
   },
   {
     id: "analysis",
-    hasHtml: false
+    hasHtml: false,
   },
   {
     id: "sources",
-    hasHtml: false
+    hasHtml: false,
   },
   {
     id: "tjm",
-    hasHtml: false
+    hasHtml: false,
   },
   {
     id: "linkedin",
-    hasHtml: true
+    hasHtml: true,
   },
   {
     id: "cancel",
-    hasHtml: false
+    hasHtml: false,
   },
   {
     id: "updates",
-    hasHtml: false
-  }
+    hasHtml: false,
+  },
 ];
 
 const FAQItem = ({ id, hasHtml }: FAQItem) => {
   const [isOpen, setIsOpen] = useState(false);
-  const t = useTranslations('HomePage.FAQ.questions');
+  const t = useTranslations("HomePage.FAQ.questions");
 
   const renderAnswer = () => {
     if (!hasHtml) {
@@ -56,8 +56,8 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
         <div>
           <p>{t(`${id}.intro`)}</p>
           <ul className="list-disc pl-6 mt-2 space-y-2">
-            <li>{t(`${id}.point1`)}</li>
-            <li>{t(`${id}.point2`)}</li>
+            <li>{t(`${id}.points.0`)}</li>
+            <li>{t(`${id}.points.1`)}</li>
           </ul>
         </div>
       );
@@ -85,15 +85,15 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
         <span className="text-lg font-semibold text-title">
           {t(`${id}.question`)}
         </span>
-        <ChevronDown 
+        <ChevronDown
           className={`h-8 w-8 text-primary flex-shrink-0 transition-transform duration-200 ${
-            isOpen ? 'transform rotate-180' : ''
+            isOpen ? "transform rotate-180" : ""
           }`}
         />
       </button>
       <div
         className={`overflow-hidden transition-all duration-200 ease-in-out ${
-          isOpen ? 'max-h-[500px]' : 'max-h-0'
+          isOpen ? "max-h-[500px]" : "max-h-0"
         }`}
       >
         <div className="pl-10 pr-24 pb-6 text-muted-foreground leading-relaxed">
@@ -105,8 +105,8 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
 };
 
 const DiscordCard = () => {
-  const t = useTranslations('HomePage.FAQ.discord');
-  
+  const t = useTranslations("HomePage.FAQ.discord");
+
   return (
     <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
       <div className="mx-auto mb-8 flex items-center justify-center">
@@ -118,31 +118,29 @@ const DiscordCard = () => {
         />
       </div>
       <h3 className="text-xl font-medium mb-8 text-primary-foreground">
-        {t('title')}
+        {t("title")}
       </h3>
-      <p className="mb-8 text-primary-foreground">
-        {t('subtitle')}
-      </p>
+      <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
       <Link
         href="https://discord.gg/your-invite-link"
         target="_blank"
         className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
       >
-        {t('button')}
+        {t("button")}
       </Link>
     </div>
   );
 };
 
 const SectionFaq = () => {
-  const t = useTranslations('HomePage.FAQ');
+  const t = useTranslations("HomePage.FAQ");
 
   return (
     <section className="w-full py-24 px-4 bg-popover">
       <div className="max-w-[1120px] mx-auto">
         <div className="text-center mb-12">
           <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
-            {t('title')}
+            {t("title")}
           </h2>
         </div>
 
@@ -152,7 +150,7 @@ const SectionFaq = () => {
               <FAQItem key={faq.id} {...faq} />
             ))}
           </div>
-          
+
           <div className="lg:col-span-1">
             <DiscordCard />
           </div>

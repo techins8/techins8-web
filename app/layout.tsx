@@ -1,15 +1,14 @@
 import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/lib/env";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 import { Nunito_Sans, Poppins } from "next/font/google";
 import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
-import { env } from "@/lib/env";
-import { getPromoteKitReferral } from "@/lib/promote-kit";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -82,21 +81,12 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const referral = getPromoteKitReferral();
-
-  console.log({ referral });
-
   const locale = await getLocale();
   const messages = await getMessages();
 
   return (
     <html lang={locale} className={`${poppins.variable}`}>
       <head>
-        <Script
-          async
-          src="https://cdn.promotekit.com/promotekit.js"
-          data-promotekit={env.PROMOTE_KIT_TOKEN}
-        ></Script>
         {/* HotJar */}
         <Script
           id="hotjar"
@@ -181,6 +171,11 @@ export default async function RootLayout({
 
             <div className="relative z-10 flex flex-grow flex-col">
               <Nav />
+              <Script
+                async
+                src="https://cdn.promotekit.com/promotekit.js"
+                data-promotekit={env.PROMOTE_KIT_TOKEN}
+              ></Script>
               <main className="mt-20">{children}</main>
               <Footer />
             </div>
