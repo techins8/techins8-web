@@ -6,10 +6,10 @@ import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
-import { env } from   "@/lib/env"; 
+import { env } from "@/lib/env";
 import { getPromoteKitReferral } from "@/lib/promote-kit";
-import { NextIntlClientProvider } from 'next-intl';
-import { getLocale, getMessages } from 'next-intl/server';
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -92,6 +92,11 @@ export default async function RootLayout({
   return (
     <html lang={locale} className={`${poppins.variable}`}>
       <head>
+        <Script
+          async
+          src="https://cdn.promotekit.com/promotekit.js"
+          data-promotekit={env.PROMOTE_KIT_TOKEN}
+        ></Script>
         {/* HotJar */}
         <Script
           id="hotjar"
