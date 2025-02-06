@@ -11,6 +11,7 @@ export const env = createEnv({
     NOTION_BLOG_DATABASE_ID: z.string().min(1),
     NEXT_PUBLIC_DASHBOARD_URL: z.string().min(1).url(),
     SCRAPPER_BRUT_API_URL: z.string().url().min(1),
+    PROMOTE_KIT_TOKEN: z.string().min(10),
   },
 
   /**
