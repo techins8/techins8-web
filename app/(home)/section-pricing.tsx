@@ -2,7 +2,6 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { getPromoteKitReferral } from "@/lib/promote-kit";
 import { getPlans, Plan } from "@/query/plan.query";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
