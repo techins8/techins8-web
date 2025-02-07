@@ -140,7 +140,6 @@ const PricingSection = () => {
                       onClick={() => window.location.replace(`${plan.link}`)}
                       className={`w-full py-2 px-4 rounded-md mb-8 font-semibold text-sm sm:text-base ${style.button}`}
                     >
-                      {getPromoteKitReferral()}
                       {t(plan.ctaKey)}
                     </button>
 
