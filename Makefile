@@ -45,7 +45,7 @@ prisma-migrate: ## Migrate prisma
 prisma-studio: ## Migrate prisma
 	pnpx prisma studio
 
-prisma-reset: ## Reset prisma
+#prisma-reset: ## Reset prisma
 	pnpx prisma migrate reset
 	pnpx prisma migrate dev
 
