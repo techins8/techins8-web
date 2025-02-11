@@ -8,11 +8,12 @@ export const fetchPartnerships = async (): Promise<Partnership[]> => {
     const response = await fetch(
       `${env.NEXT_PUBLIC_DASHBOARD_URL}/api/partnerships`
     );
+
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    console.log("Données des partenariats reçues:", data); // Pour voir les données dans la console
+
     return data as Partnership[];
   } catch (error) {
     console.error("Error fetching partnerships:", error);
