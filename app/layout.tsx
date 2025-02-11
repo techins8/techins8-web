@@ -9,6 +9,7 @@ import Script from "next/script";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
+import { PostHogProvider } from "./providers";
 
 // Configuration de Poppins
 const poppins = Poppins({
@@ -166,28 +167,30 @@ export default async function RootLayout({
         />
         {/* End Google Tag Manager (noscript) */}
         <NextIntlClientProvider messages={messages}>
-          <div className="relative flex min-h-screen flex-col bg-background">
-            <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
+          <PostHogProvider>
+            <div className="relative flex min-h-screen flex-col bg-background">
+              <div className="absolute inset-0 z-0 bg-cover bg-center"></div>
 
-            <div className="relative z-10 flex flex-grow flex-col">
-              <Nav />
-              <Script
-                async
-                src="https://cdn.promotekit.com/promotekit.js"
-                data-promotekit={env.PROMOTE_KIT_TOKEN}
-              ></Script>
-              <main className="mt-20">{children}</main>
-              <Footer />
+              <div className="relative z-10 flex flex-grow flex-col">
+                <Nav />
+                <Script
+                  async
+                  src="https://cdn.promotekit.com/promotekit.js"
+                  data-promotekit={env.PROMOTE_KIT_TOKEN}
+                ></Script>
+                <main className="mt-20">{children}</main>
+                <Footer />
+              </div>
             </div>
-          </div>
-          <SpeedInsights />
-          <Toaster
-            expand={false}
-            position="top-right"
-            closeButton
-            richColors
-            duration={2000}
-          />
+            <SpeedInsights />
+            <Toaster
+              expand={false}
+              position="top-right"
+              closeButton
+              richColors
+              duration={2000}
+            />
+          </PostHogProvider>
         </NextIntlClientProvider>
         <Script
           id="umami"
