@@ -75,17 +75,32 @@
         {
           "id": 1,
           "title": "No more interview surprises",
-          "description": "Our AI analyzes every detail of job listings to guarantee reliable information about daily rates, remote work, location, and required skills."
+          "description": [
+            "Verifies the reality of remote work conditions",
+            "Analyzes the consistency of proposed daily rates",
+            "Validates the accuracy of locations",
+            "Evaluates the relevance of required skills"
+          ]
         },
         {
           "id": 2,
           "title": "All your opportunities in one place",
-          "description": "Our platform automatically centralizes and enriches the best offers from FreeWork and Welcome To The Jungle to save you time in your search."
+          "description": [
+            "Centralizes and enriches the best offers from FreeWork and Welcome To The Jungle",
+            "Automatically eliminates duplicate listings",
+            "Instantly detects inconsistencies",
+            "Daily updates of new opportunities"
+          ]
         },
         {
           "id": 3,
           "title": "A smooth and transparent experience",
-          "description": "Our intuitive dashboard allows you to filter offers according to your specific criteria and clearly visualize our AI's analyses."
+          "description": [
+            "Ultra-precise filters according to your criteria",
+            "Clear visualization of our AI's analysis",
+            "Personalized alerts on the best offers",
+            "History of detected changes"
+          ]
         }
       ]
     },
