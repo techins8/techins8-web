@@ -91,54 +91,28 @@
     },
     "Pricing": {
       "title": {
-        "prefix": "Get started now with the",
-        "highlight": "premium offer",
-        "suffix": "."
+        "prefix": "Join over ",
+        "highlight": "+2400 users",
+        "suffix": " who save time."
       },
       "toggle": {
         "annual": "Annual",
         "monthly": "Monthly"
       },
       "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀",
-      "icons": {
-        "checkAlt": "Check icon",
-        "crossAlt": "Cross icon"
-      }
-    },
-    "plans": {
-      "discovery": {
-        "name": "Discovery offer",
-        "description": "Try it for free."
+      "card": {
+        "title": "Full access",
+        "highlight": "7 days",
+        "avantage": [
+          "IT & tech marketplace analytics",
+          "AI job offer analysis",
+          "Multi-source aggregation",
+          "Daily updates"
+        ],
+        "cta": "START FREE TRIAL"
       },
-      "monthly": {
-        "name": "Monthly subscription",
-        "description": "That's €9.90 billed monthly"
-      },
-      "yearly": {
-        "name": "Yearly subscription",
-        "description": "€49.50/year (instead of €99)"
-      },
-      "twoYears": {
-        "name": "2-year subscription",
-        "description": "€74.50/2 years (instead of €149)"
-      },
-      "features": {
-        "analytics": "IT & Tech market analytics",
-        "aiAnalysis": "Full access to AI analysis",
-        "multiSource": "Multi-source aggregation",
-        "dailyUpdates": "Daily updates",
-        "priorityAccess": "Priority access to new features"
-      },
-      "cta": {
-        "tryFree": "TRY FOR FREE"
-      },
-      "tags": {
-        "discount79": "79% OFF",
-        "discount69": "69% OFF",
-        "bestOffer": "BEST OFFER",
-        "starter": "STARTER OFFER",
-        "popular": "POPULAR"
-      }
+      "info-pricing": "After 7-day trial: €9.90/month or €99/year (-17%)",
+      "info-supply": "Keep access to analytics even without subscription"
     },
     "SocialProof": {
       "title": {

@@ -5,7 +5,7 @@ import { useTranslations } from 'next-intl';
 interface Solution {
   id: string;
   title: string;
-  description: string;
+  description: string[];
 }
 
 const SectionSolution = () => {
@@ -43,9 +43,11 @@ const SectionSolution = () => {
                   />
                   <div className="space-y-4">
                     <h3 className="text-xl sm:text-2xl font-bold">{solution.title}</h3>
-                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
-                      {solution.description}
-                    </p>
+                    <ul className="list-disc list-inside text-base sm:text-lg text-muted-foreground leading-relaxed">
+                      {solution.description.map((desc, index) => (
+                        <li key={index}>{desc}</li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
                 <div className="flex-1">
