@@ -45,7 +45,7 @@ const PricingSection = () => {
                 ))}
               </ul>
               <button
-                onClick={handlePricingClick()}
+                onClick={handlePricingClick}
                 className="w-full py-2 px-4 rounded-md mb-2 font-semibold text-sm sm:text-base bg-primary text-white"
               >
                 {pricing("card.cta")}
