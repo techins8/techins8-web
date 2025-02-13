@@ -17,44 +17,44 @@
       }
     },
     "Header": {
-      "titlePrefix": "Le premier site d'emploi boosté par l'IA pour les",
+      "titlePrefix": "Toutes les Offres Techs sans arnaques",
       "titleSuffix": ".",
-      "defaultType": "développeurs",
-      "subtitle": "Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+      "defaultType": "en 3 clics",
+      "subtitle": "Trouves un job en tant que développeur 2x plus vite.",
       "ctaButton": "ESSAYER GRATUITEMENT",
       "jobsCount": "+ {count} offres actuellement analysées"
     },
     "Problem": {
       "mainTitle": {
         "prefix": "Les",
-        "highlight": "fausses annonces",
-        "suffix": "vous font perdre un temps considérable."
+        "highlight": "job boards vous mentent",
+        "suffix": "et ça vous coûte 15 heures par mois"
       },
       "mainCard": {
         "title": {
-          "highlight": "D'innombrables heures perdues",
-          "suffix": "à filtrer des offres trompeuses."
+          "highlight": "Ces offres de mauvaise qualité ",
+          "suffix": "vous volent quotidiennement :"
         },
         "bulletPoints": [
-          "Vous découvrez les vraies conditions de travail lors de l'entretien.",
-          "Vous passez des heures à trier manuellement les offres.",
-          "Vous perdez du temps avec des annonces en doublon.",
-          "Les conditions de travail ne sont pas précises."
+          "3h en moyenne pour démêler le vrai du faux par semaine.",
+          "Des dizaines de faux espoirs quand \"full remote\" devient \"hybride\"",
+          "Un temps précieux à jongler entre +5 plateformes différentes.",
+          "Votre énergie à décrypter des descriptions interminables"
         ]
       },
       "secondaryCards": {
         "remote": {
           "prefix": "Des offres",
           "highlight": "full remote",
-          "suffix": "qui cachent 3 jours de présentiel."
+          "suffix": "qui cachent 3 jours de présentiel obligatoire."
         },
         "rates": {
           "prefix": "Des",
-          "highlight": "faux TJM",
-          "suffix": "qui varient de 100€ à 700€ par jour."
+          "highlight": "TJM fantaisistes",
+          "suffix": "qui oscillent entre 100€ & 700€ par jour sans justification."
         },
         "skills": {
-          "prefix": "Des descriptions incohérentes où",
+          "prefix": "Des stacks techniques absurdes où",
           "highlight": "React côtoie COBOL",
           "suffix": "."
         }
@@ -62,30 +62,45 @@
     },
     "Solution": {
       "title": {
-        "prefix": "Arrêtez cette perte de temps dès",
-        "highlight": "maintenant",
+        "prefix": "Reprenez le contrôle de votre",
+        "highlight": "recherche d'emploi",
         "suffix": "."
       },
       "subtitle": {
-        "prefix": "Boostez votre recherche d'emploi avec",
-        "highlight": "Techins8 Premium",
-        "suffix": ", votre assistant IA pour un recrutement rapide et sans faux pas !"
+        "prefix": "Laissez notre",
+        "highlight": "IA analyser les offres",
+        "suffix": " pendant que vous vous concentrez sur l'essentiel."
       },
       "solutions": [
         {
           "id": 1,
-          "title": "Fini les mauvaises surprises en entretien",
-          "description": "Notre IA analyse chaque détail des offres d'emploi pour vous garantir des informations fiables sur les TJM, le télétravail, la localisation et les compétences requises."
+          "title": "Une IA comme expert RH personnel",
+          "description": [
+            "Vérifie la réalité des conditions de télétravail",
+            "Analyse la cohérence des TJM proposés",
+            "Valide l'exactitude des localisations",
+            "Évalue la pertinence des compétences demandées"
+          ]
         },
         {
           "id": 2,
-          "title": "Toutes vos opportunités au même endroit",
-          "description": "Notre plateforme centralise et enrichit automatiquement les meilleures offres de FreeWork et Welcome To The Jungle pour vous faire gagner du temps dans votre recherche."
+          "title": "Fini le jonglage entre les plateformes",
+          "description": [
+            "Centralisation des meilleures offres de FreeWork et WTTJ",
+            "Élimination automatique des annonces en double",
+            "Détection instantanée des incohérences",
+            "Mise à jour quotidienne des nouvelles opportunités"
+          ]
         },
         {
           "id": 3,
           "title": "Une expérience fluide et transparente",
-          "description": "Notre dashboard intuitif vous permet de filtrer les offres selon vos critères précis et de visualiser clairement les analyses de notre IA."
+          "description": [
+            "Filtres ultra-précis selon vos critères",
+            "Visualisation claire des analyses de notre IA",
+            "Alertes personnalisées sur les meilleures offres",
+            "Historique des modifications détectées"
+          ]
         }
       ]
     },
@@ -126,15 +141,28 @@
     },
     "Pricing": {
       "title": {
-        "prefix": "Get started now with the",
-        "highlight": "premium",
-        "suffix": "offer."
+        "prefix": "Rejoignez les ",
+        "highlight": "+2400 utilisateurs",
+        "suffix": " qui gagnent du temps."
       },
       "toggle": {
-        "annual": "Annual",
-        "monthly": "Monthly"
+        "annual": "Annuel",
+        "monthly": "Mensuel"
       },
-      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀"
+      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀",
+      "card": {
+        "title": "Accès complet",
+        "highlight": "7 jours",
+        "avantage": [
+          "Analytics marketplace IT & tech",
+          "Analyse IA des offres",
+          "Agrégation multi-sources",
+          "Mises à jour quotidiennes"
+        ],
+        "cta": "COMMENCER L'ESSAI GRATUIT"
+      },
+      "info-pricing": "Après les 7 jours d'essai : 9,90€/mois ou 99€/an (-17%)",
+      "info-supply": "Gardez l'accès aux analytics même si vous ne vous abonnez pas"
     },
     "SocialProof": {
       "title": {
