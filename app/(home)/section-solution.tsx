@@ -1,6 +1,6 @@
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 interface Solution {
   id: string;
@@ -9,25 +9,26 @@ interface Solution {
 }
 
 const SectionSolution = () => {
-  const t = useTranslations('HomePage.Solution');
+  const t = useTranslations("HomePage.Solution");
 
-  const solutions = t.raw('solutions') as Solution[];
+  const solutions = t.raw("solutions") as Solution[];
 
   return (
     <section className="w-full py-12 md:py-24 mt-32 mb-20">
       <div className="max-w-[1120px] mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="font-bold text-center text-3xl sm:text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
-            {t('title.prefix')} <span className="text-primary">{t('title.highlight')}</span>
-            {t('title.suffix')}
+            {t("title.prefix")}{" "}
+            <span className="text-primary">{t("title.highlight")}</span>
+            {t("title.suffix")}
           </h2>
           <p className="text-muted-foreground text-base sm:text-lg max-w-[620px] mx-auto px-4">
-            {t('subtitle.prefix')}{' '}
-            <span className="font-medium">{t('subtitle.highlight')}</span>
-            {t('subtitle.suffix')}
+            {t("subtitle.prefix")}{" "}
+            <span className="font-medium">{t("subtitle.highlight")}</span>
+            {t("subtitle.suffix")}
           </p>
         </div>
-        
+
         <div className="flex flex-col gap-6">
           {solutions.map((solution, index) => (
             <Card key={solution.id} className="border overflow-hidden">
@@ -42,11 +43,14 @@ const SectionSolution = () => {
                     loading="lazy"
                   />
                   <div className="space-y-4">
-                    <h3 className="text-xl sm:text-2xl font-bold">{solution.title}</h3>
+                    <h3 className="text-xl sm:text-2xl font-bold">
+                      {solution.title}
+                    </h3>
                     <ul className="list-disc list-inside text-base sm:text-lg text-muted-foreground leading-relaxed">
-                      {solution.description.map((desc, index) => (
-                        <li key={index}>{desc}</li>
-                      ))}
+                      {solution.description &&
+                        solution.description.map((desc, index) => (
+                          <li key={index}>{desc}</li>
+                        ))}
                     </ul>
                   </div>
                 </div>
