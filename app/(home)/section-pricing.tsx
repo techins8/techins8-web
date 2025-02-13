@@ -4,8 +4,6 @@
 import { Card } from "@/components/ui/card";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { env } from "@/lib/env";
-
 
 const PricingSection = () => {
   const pricing = useTranslations("HomePage.Pricing");
