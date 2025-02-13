@@ -10,12 +10,6 @@ import { env } from "@/lib/env";
 const PricingSection = () => {
   const pricing = useTranslations("HomePage.Pricing");
 
-  const handlePricingClick = () => {
-    if (typeof window !== 'undefined') {
-      window.location.href = `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-mensuel`;
-    }
-  };
-
   return (
     <section className="w-full py-24 px-4 bg-popover">
       <div className="max-w-[1120px] mx-auto">
@@ -45,7 +39,7 @@ const PricingSection = () => {
                 ))}
               </ul>
               <button
-                onClick={handlePricingClick}
+                onClick={() => window.location.replace("https://dashboard.techins8.com/signin?plan=free-trial")}
                 className="w-full py-2 px-4 rounded-md mb-2 font-semibold text-sm sm:text-base bg-primary text-white"
               >
                 {pricing("card.cta")}
