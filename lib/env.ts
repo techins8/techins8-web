@@ -22,7 +22,10 @@ export const env = createEnv({
    */
   clientPrefix: "",
 
-  client: {},
+  client: {
+    NEXT_PUBLIC_GTM_ID: z.string().min(1),
+    NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().min(36),
+  },
 
   /**
    * What object holds the environment variables at runtime. This is usually
