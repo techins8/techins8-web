@@ -14,7 +14,7 @@ help: ## Outputs this help screen
 
 ## —— Npm server ———————————————————————————————————
 
-sync: clean install prisma-migrate dev
+sync: clean install dev
 
 clean:
 	rm -rf .next

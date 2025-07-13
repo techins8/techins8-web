@@ -28,7 +28,7 @@ const Nav = () => {
     }
   }, [isMenuOpen]);
 
-  const logoSrc = "/images/logo/logo-techins8-dark.svg";
+  const logoSrc = "/images/logo/logo-freematch.svg";
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -64,7 +64,7 @@ const Nav = () => {
               <Image
                 src={logoSrc}
                 alt={t('images.logoAlt')}
-                width={152}
+                width={202}
                 height={100}
                 className="object-contain max-w-[200px] sm:max-w-none"
                 loading="lazy"
