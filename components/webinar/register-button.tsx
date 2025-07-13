@@ -21,7 +21,7 @@ export function RegisterButton({ className, size = "lg", variant = "default" }: 
       onClick={scrollToForm} 
       variant={variant}
     >
-      S'inscrire maintenant
+      S&apos;inscrire maintenant
       <ArrowRight className="ml-2 h-4 w-4" />
     </Button>
   );

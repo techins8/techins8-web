@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { RegisterButton } from "./register-button";
 
 export function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -69,11 +68,11 @@ export function RegistrationForm() {
       </div>
       <div className="pt-2">
         <Button type="submit" className="w-full" size="lg">
-          S'inscrire maintenant
+          S&apos;inscrire maintenant
         </Button>
       </div>
       <p className="text-xs text-center text-muted-foreground mt-4">
-        En vous inscrivant, vous acceptez notre Politique de Confidentialité et nos Conditions d'Utilisation. Nous vous enverrons occasionnellement des mises à jour concernant FreeMatch.
+        En vous inscrivant, vous acceptez notre Politique de Confidentialité et nos Conditions d&apos;Utilisation. Nous vous enverrons occasionnellement des mises à jour concernant FreeMatch.
       </p>
     </form>
   );

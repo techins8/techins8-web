@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Clock as ClockIcon, CheckCircle, Calendar as CalendarIcon, ArrowRight, X, Globe, DollarSign, Star, Users, Award, ChevronDown, Play as PlayIcon, User as UserIcon } from "lucide-react";
+import { Clock as ClockIcon, CheckCircle, Calendar as CalendarIcon, X, Globe, DollarSign, Star, Users, Award, ChevronDown } from "lucide-react";
 import { RegisterButton } from "@/components/webinar/register-button";
 import { LearnMoreButton } from "@/components/webinar/learn-more-button";
 import { CountdownTimer } from "@/components/webinar/countdown-timer";
@@ -71,7 +71,7 @@ export default function WebinarPage() {
               Le Problème
             </div>
             <h2 className="text-3xl font-bold tracking-tighter text-title mb-4">
-              Le <span className="text-accent-foreground">cauchemar</span> de la recherche d'emploi pour les freelances tech
+              Le <span className="text-accent-foreground">cauchemar</span> de la recherche d&apos;emploi pour les freelances tech
             </h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto">
               Les freelances tech perdent en moyenne 15 heures par semaine à chercher sur plusieurs plateformes, à gérer des offres trompeuses et des attentes irréalistes.
@@ -95,7 +95,7 @@ export default function WebinarPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Offres trompeuses</h3>
               <p className="text-muted-foreground">
-                Des emplois "à distance" qui nécessitent en réalité une présence sur site ou ont des restrictions géographiques.
+                Des emplois &quot;à distance&quot; qui nécessitent en réalité une présence sur site ou ont des restrictions géographiques.
               </p>
             </div>
             
@@ -115,7 +115,7 @@ export default function WebinarPage() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Tarifs décevants</h3>
               <p className="text-muted-foreground">
-                Des projets avec des budgets bien inférieurs aux tarifs du marché pour l'expertise et l'expérience requises.
+                Des projets avec des budgets bien inférieurs aux tarifs du marché pour l&apos;expertise et l&apos;expérience requises.
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@ export default function WebinarPage() {
               Découvrez <span className="text-accent-foreground">FreeMatch</span> : Votre assistant IA de recherche de contrat
             </h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto mb-12">
-              FreeMatch révolutionne la façon dont les freelances tech trouvent leur prochain contrat en combinant une agrégation multi-plateformes et un matching propulsé par l'IA.
+              FreeMatch révolutionne la façon dont les freelances tech trouvent leur prochain contrat en combinant une agrégation multi-plateformes et un matching propulsé par l&apos;IA.
             </p>
           </div>
           
@@ -175,9 +175,9 @@ export default function WebinarPage() {
                   <path d="M3 18h18"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2">Scoring propulsé par l'IA</h3>
+              <h3 className="text-xl font-semibold mb-2">Scoring propulsé par l&apos;IA</h3>
               <p className="text-muted-foreground">
-                Notre algorithme propriétaire analyse chaque annonce et l'évalue en fonction de vos compétences, tarifs et préférences.
+                Notre algorithme propriétaire analyse chaque annonce et l&apos;évalue en fonction de vos compétences, tarifs et préférences.
               </p>
             </div>
             
@@ -214,7 +214,7 @@ export default function WebinarPage() {
               <div>
                 <h3 className="text-2xl font-bold mb-4">Le tableau de bord FreeMatch</h3>
                 <p className="text-muted-foreground mb-6">
-                  Consultez votre flux d'opportunités personnalisé, avec chaque offre évaluée et classée par notre IA en fonction de votre profil et de vos préférences.
+                  Consultez votre flux d&apos;opportunités personnalisé, avec chaque offre évaluée et classée par notre IA en fonction de votre profil et de vos préférences.
                 </p>
                 
                 <div className="space-y-3">
@@ -280,7 +280,7 @@ export default function WebinarPage() {
               Adopté par plus de 2 500 freelances tech
             </h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto mb-12">
-              Découvrez ce que les freelances disent de la façon dont FreeMatch a transformé leur processus de recherche d'emploi.
+              Découvrez ce que les freelances disent de la façon dont FreeMatch a transformé leur processus de recherche d&apos;emploi.
             </p>
           </div>
 
@@ -292,7 +292,7 @@ export default function WebinarPage() {
                 ))}
               </div>
               <p className="italic mb-6">
-                Avant FreeMatch, je passais plus de temps à chercher du travail qu'à travailler sur des projets. Maintenant, je ne vérifie que 15 minutes par jour et j'ai déjà trouvé deux excellents contrats.
+                Avant FreeMatch, je passais plus de temps à chercher du travail qu&apos;à travailler sur des projets. Maintenant, je ne vérifie que 15 minutes par jour et j&apos;ai déjà trouvé deux excellents contrats.
               </p>
               <div className="mt-auto">
                 <h4 className="font-semibold">Alexandre B.</h4>
@@ -307,7 +307,7 @@ export default function WebinarPage() {
                 ))}
               </div>
               <p className="italic mb-6">
-                Le scoring IA est parfaitement précis. Il m'a aidée à prioriser les opportunités à poursuivre, et j'ai décroché un contrat qui correspond parfaitement à mes compétences et à mes exigences tarifaires.
+                Le scoring IA est parfaitement précis. Il m&apos;a aidée à prioriser les opportunités à poursuivre, et j&apos;ai décroché un contrat qui correspond parfaitement à mes compétences et à mes exigences tarifaires.
               </p>
               <div className="mt-auto">
                 <h4 className="font-semibold">Marie L.</h4>
@@ -322,7 +322,7 @@ export default function WebinarPage() {
                 ))}
               </div>
               <p className="italic mb-6">
-                L'importation en un clic depuis Malt a tout changé. Mon profil a été configuré en quelques secondes, et les correspondances ont commencé à arriver immédiatement. Je recommande vivement !
+                L&apos;importation en un clic depuis Malt a tout changé. Mon profil a été configuré en quelques secondes, et les correspondances ont commencé à arriver immédiatement. Je recommande vivement !
               </p>
               <div className="mt-auto">
                 <h4 className="font-semibold">Thomas K.</h4>
@@ -370,7 +370,7 @@ export default function WebinarPage() {
               Ce que vous apprendrez dans ce webinaire gratuit
             </h2>
             <p className="text-muted-foreground text-lg max-w-[800px] mx-auto mb-12">
-              Rejoignez-nous pour découvrir comment FreeMatch révolutionne le processus de recherche d'emploi pour les professionnels tech.
+              Rejoignez-nous pour découvrir comment FreeMatch révolutionne le processus de recherche d&apos;emploi pour les professionnels tech.
             </p>
           </div>
           
@@ -384,8 +384,8 @@ export default function WebinarPage() {
                     <span className="text-accent-foreground font-bold">1</span>
                   </div>
                   <div>
-                    <h4 className="font-semibold">Le problème actuel de la recherche d'emploi</h4>
-                    <p className="text-muted-foreground">Pourquoi la recherche d'emploi traditionnelle fait perdre 15+ heures par semaine aux freelances tech</p>
+                    <h4 className="font-semibold">Le problème actuel de la recherche d&apos;emploi</h4>
+                    <p className="text-muted-foreground">Pourquoi la recherche d&apos;emploi traditionnelle fait perdre 15+ heures par semaine aux freelances tech</p>
                   </div>
                 </div>
                 
@@ -395,7 +395,7 @@ export default function WebinarPage() {
                   </div>
                   <div>
                     <h4 className="font-semibold">Démo de la plateforme FreeMatch</h4>
-                    <p className="text-muted-foreground">Découvrez notre système de matching propulsé par l'IA en action</p>
+                    <p className="text-muted-foreground">Découvrez notre système de matching propulsé par l&apos;IA en action</p>
                   </div>
                 </div>
                 
@@ -432,7 +432,7 @@ export default function WebinarPage() {
             </div>
             
             <div className="bg-card rounded-lg shadow-lg p-8">
-              <h3 className="text-2xl font-bold mb-6">Détails de l'événement</h3>
+              <h3 className="text-2xl font-bold mb-6">Détails de l&apos;événement</h3>
               
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
@@ -469,11 +469,11 @@ export default function WebinarPage() {
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-accent-foreground" />
-                      <span>Networking avec d'autres freelances tech</span>
+                      <span>Networking avec d&apos;autres freelances tech</span>
                     </div>
                     <div className="flex items-center gap-2">
                       <CheckCircle className="h-5 w-5 text-accent-foreground" />
-                      <span>Session Q&R avec l'équipe FreeMatch</span>
+                      <span>Session Q&R avec l&apos;équipe FreeMatch</span>
                     </div>
                   </div>
                 </div>
@@ -551,7 +551,7 @@ export default function WebinarPage() {
               </div>
               <div className="ml-3 text-sm">
                 <label htmlFor="terms" className="text-muted-foreground">
-                  J'accepte de recevoir des emails concernant FreeMatch. Je comprends que je peux me désabonner à tout moment. Consultez notre{" "}
+                  J&apos;accepte de recevoir des emails concernant FreeMatch. Je comprends que je peux me désabonner à tout moment. Consultez notre{" "}
                   <Link href="#" className="text-accent-foreground underline">
                     Politique de confidentialité
                   </Link>{" "}
@@ -591,14 +591,14 @@ export default function WebinarPage() {
             <div className="bg-card rounded-lg shadow-sm overflow-hidden">
               <details className="group" open>
                 <summary className="flex items-center justify-between p-6 cursor-pointer">
-                  <h3 className="text-lg font-semibold">Qu'est-ce que FreeMatch exactement ?</h3>
+                  <h3 className="text-lg font-semibold">Qu&apos;est-ce que FreeMatch exactement ?</h3>
                   <div className="relative ml-2 flex-shrink-0 rounded-full border group-open:rotate-180 transition-transform">
                     <ChevronDown className="h-5 w-5" />
                   </div>
                 </summary>
                 <div className="px-6 pb-6 text-muted-foreground">
                   <p>
-                    FreeMatch est une plateforme propulsée par l'IA qui agrège des opportunités de contrats tech provenant de multiples sources, les analyse et vous présente des correspondances personnalisées basées sur vos compétences, vos exigences tarifaires et vos préférences.
+                    FreeMatch est une plateforme propulsée par l&apos;IA qui agrège des opportunités de contrats tech provenant de multiples sources, les analyse et vous présente des correspondances personnalisées basées sur vos compétences, vos exigences tarifaires et vos préférences.
                   </p>
                 </div>
               </details>
@@ -614,7 +614,7 @@ export default function WebinarPage() {
                 </summary>
                 <div className="px-6 pb-6 text-muted-foreground">
                   <p>
-                    Oui, le webinaire est entièrement gratuit. Nous croyons en l'importance de fournir de la valeur d'abord et de laisser notre plateforme parler d'elle-même. Vous obtiendrez des informations pratiques, que vous décidiez ou non d'utiliser FreeMatch par la suite.
+                    Oui, le webinaire est entièrement gratuit. Nous croyons en l&apos;importance de fournir de la valeur d&apos;abord et de laisser notre plateforme parler d&apos;elle-même. Vous obtiendrez des informations pratiques, que vous décidiez ou non d&apos;utiliser FreeMatch par la suite.
                   </p>
                 </div>
               </details>
@@ -630,7 +630,7 @@ export default function WebinarPage() {
                 </summary>
                 <div className="px-6 pb-6 text-muted-foreground">
                   <p>
-                    Pas de problème ! Tous ceux qui s'inscrivent recevront un enregistrement du webinaire. Cependant, les participants en direct auront l'opportunité de participer à la session de questions-réponses et recevront des bonus exclusifs non disponibles pour ceux qui regardent uniquement l'enregistrement.
+                    Pas de problème ! Tous ceux qui s&apos;inscrivent recevront un enregistrement du webinaire. Cependant, les participants en direct auront l&apos;opportunité de participer à la session de questions-réponses et recevront des bonus exclusifs non disponibles pour ceux qui regardent uniquement l&apos;enregistrement.
                   </p>
                 </div>
               </details>
@@ -662,7 +662,7 @@ export default function WebinarPage() {
                 </summary>
                 <div className="px-6 pb-6 text-muted-foreground">
                   <p>
-                    Actuellement, oui. Nous nous sommes d'abord concentrés sur le secteur tech car c'est là que nous avons constaté le plus grand écart entre le talent et la correspondance des opportunités. Notre plateforme est optimisée pour les développeurs, les designers, les chefs de produit, les data scientists et autres rôles tech. Nous pourrons étendre à d'autres secteurs à l'avenir.
+                    Actuellement, oui. Nous nous sommes d&apos;abord concentrés sur le secteur tech car c&apos;est là que nous avons constaté le plus grand écart entre le talent et la correspondance des opportunités. Notre plateforme est optimisée pour les développeurs, les designers, les chefs de produit, les data scientists et autres rôles tech. Nous pourrons étendre à d&apos;autres secteurs à l&apos;avenir.
                   </p>
                 </div>
               </details>
@@ -678,7 +678,7 @@ export default function WebinarPage() {
                 </summary>
                 <div className="px-6 pb-6 text-muted-foreground">
                   <p>
-                    FreeMatch propose des formules gratuites et premium. Les fonctionnalités de base sont gratuites, tandis que la mise en relation avancée et l'accès prioritaire aux meilleures opportunités nécessitent un abonnement premium. Les participants au webinaire bénéficieront de tarifs spéciaux et d'offres exclusives non disponibles pour le grand public.
+                    FreeMatch propose des formules gratuites et premium. Les fonctionnalités de base sont gratuites, tandis que la mise en relation avancée et l&apos;accès prioritaire aux meilleures opportunités nécessitent un abonnement premium. Les participants au webinaire bénéficieront de tarifs spéciaux et d&apos;offres exclusives non disponibles pour le grand public.
                   </p>
                 </div>
               </details>
