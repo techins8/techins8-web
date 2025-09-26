@@ -28,7 +28,7 @@ const Nav = () => {
     }
   }, [isMenuOpen]);
 
-  const logoSrc = "/images/logo/logo-freematch.svg";
+  const logoSrc = "/images/logo/logo-freematch-2.svg";
 
   const closeMenu = () => setIsMenuOpen(false);
 

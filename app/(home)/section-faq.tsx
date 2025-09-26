@@ -144,17 +144,17 @@ const SectionFaq = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1">
           <div className="lg:col-span-2">
             {faqs.map((faq) => (
               <FAQItem key={faq.id} {...faq} />
             ))}
           </div>
 
-          <div className="lg:col-span-1">
-            <DiscordCard />
-          </div>
         </div>
+          {/* <div className="lg:col-span-1">
+            <DiscordCard />
+          </div> */}
       </div>
     </section>
   );

@@ -54,11 +54,11 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
           </Link>
         </button>
         <div className="flex items-center justify-center gap-4 mt-12 px-4">
-         <Image src="https://www.uneed.best/POTD1.png" 
+         <Image src="https://www.uneed.best/POTM1.png" 
             width={250} 
             height={54}  
             className="w-[180px] sm:w-[250px] h-auto" 
-            alt="Uneed POTD1 Badge" />
+            alt="Uneed POTM1 Badge" />
           <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680" 
           alt="TechIns8 - The first AI-powered job board for developers." 
           width={250} 
