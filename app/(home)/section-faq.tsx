@@ -2,8 +2,8 @@
 
 import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
-import Image from "next/image";
-import Link from "next/link";
+// import Image from "next/image";
+// import Link from "next/link";
 import { useState } from "react";
 
 type FAQItem = {
@@ -104,33 +104,33 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
   );
 };
 
-const DiscordCard = () => {
-  const t = useTranslations("HomePage.FAQ.discord");
+// const DiscordCard = () => {
+//   const t = useTranslations("HomePage.FAQ.discord");
 
-  return (
-    <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
-      <div className="mx-auto mb-8 flex items-center justify-center">
-        <Image
-          src="/images/logo/discord.svg"
-          alt="Discord"
-          width={104}
-          height={104}
-        />
-      </div>
-      <h3 className="text-xl font-medium mb-8 text-primary-foreground">
-        {t("title")}
-      </h3>
-      <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
-      <Link
-        href="https://discord.gg/your-invite-link"
-        target="_blank"
-        className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
-      >
-        {t("button")}
-      </Link>
-    </div>
-  );
-};
+//   return (
+//     <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
+//       <div className="mx-auto mb-8 flex items-center justify-center">
+//         <Image
+//           src="/images/logo/discord.svg"
+//           alt="Discord"
+//           width={104}
+//           height={104}
+//         />
+//       </div>
+//       <h3 className="text-xl font-medium mb-8 text-primary-foreground">
+//         {t("title")}
+//       </h3>
+//       <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
+//       <Link
+//         href="https://discord.gg/your-invite-link"
+//         target="_blank"
+//         className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+//       >
+//         {t("button")}
+//       </Link>
+//     </div>
+//   );
+// };
 
 const SectionFaq = () => {
   const t = useTranslations("HomePage.FAQ");
