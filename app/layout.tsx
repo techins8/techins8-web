@@ -26,7 +26,7 @@ export const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://freematch.com"),
+  metadataBase: new URL("https://freemat.ch"),
   title: {
     default: "FreeMatch - Votre partenaire en recrutement tech",
     template: "%s | FreeMatch",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://freematch.com",
+    url: "https://freemat.ch",
     siteName: "FreeMatch",
     images: [
       {
@@ -118,39 +118,50 @@ export default async function RootLayout({
         />
         {/* End Google Tag Manager */}
         <Script
-          id="schema-markup"
+          id="website-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
               name: "FreeMatch",
-              url: "https://freematch",
+              url: "https://freemat.ch",
               description:
                 "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
               potentialAction: {
-                "@type": "ViewAction",
-                target: "https://dashboard.freematch.com/",
-              },
-              offers: {
-                "@type": "AggregateOffer",
-                priceCurrency: "EUR",
-                offers: [
-                  {
-                    "@type": "Offer",
-                    name: "Gratuit",
-                    price: "0",
-                    priceCurrency: "EUR",
-                    description: "Accès limité aux fonctionnalités de base",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Premium",
-                    description: "Accès complet à toutes les fonctionnalités",
-                  },
-                ],
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate:
+                    "https://freemat.ch/job-offers?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
               },
               sameAs: ["https://www.linkedin.com/company/freematch"],
+            }),
+          }}
+        />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "FreeMatch",
+              alternateName: "FreeMatch - Job Board Tech",
+              url: "https://freemat.ch",
+              logo: "https://freemat.ch/images/logo/logo-techins8-dark.webp",
+              description:
+                "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+              sameAs: ["https://www.linkedin.com/company/freematch"],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "contact@freemat.ch",
+                contactType: "Customer Service",
+                areaServed: "FR",
+                availableLanguage: ["French", "English"],
+              },
             }),
           }}
         />
@@ -195,7 +206,7 @@ export default async function RootLayout({
         <Script
           id="umami"
           defer
-          src="https://umami.clf.freematch.com/script.js"
+          src="https://umami.clf.techins8.com/script.js"
           data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
         />
       </body>

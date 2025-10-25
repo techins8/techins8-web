@@ -25,4 +25,4 @@ Allow: /*.svg$
 Allow: /*.ico$
 
 # Sitemap location
-Sitemap: https://freematch.com/sitemap.xml
+Sitemap: https://freemat.ch/sitemap.xml

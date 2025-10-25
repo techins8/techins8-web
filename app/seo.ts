@@ -331,6 +331,159 @@ export const SEO_DATA = [
     metaKeywords:
       "développeur react native, react native developer, mobile react, cross-platform developer, apps react native, développeur mobile javascript, react native france",
   },
+  // City-based SEO pages - Paris
+  {
+    id: "developpeurs-full-stack-paris",
+    name: "développeurs full stack Paris",
+    title: "Développeur Full Stack Paris | +2000 Offres | FreeMatch",
+    path: "/developpeurs/full-stack/paris",
+    description:
+      "Trouvez votre emploi de développeur Full Stack à Paris. Plus de 2000 offres vérifiées par IA. Stack technique validée, salaires transparents, conditions de télétravail analysées.",
+    footerLink: "Full Stack Paris",
+    heroTitle: "développeurs Full Stack à Paris",
+    heroSubtitle:
+      "Découvrez les meilleures opportunités de développement Full Stack dans la capitale.",
+    footerText: "Missions Full Stack à Paris",
+    metaKeywords:
+      "développeur full stack paris, emploi dev full stack paris, job developer paris, recrutement tech paris, développeur paris",
+  },
+  {
+    id: "developpeurs-react-paris",
+    name: "développeurs react Paris",
+    title: "Développeur React Paris | Offres Vérifiées | FreeMatch",
+    path: "/developpeurs/react/paris",
+    description:
+      "Plus de 1500 offres React à Paris analysées par IA. Entreprises innovantes, startups tech et scale-ups. Salaires compétitifs et télétravail flexible.",
+    footerLink: "React Paris",
+    heroTitle: "développeurs React à Paris",
+    heroSubtitle:
+      "Rejoignez l'écosystème tech parisien avec les meilleures offres React.",
+    footerText: "Missions React à Paris",
+    metaKeywords:
+      "développeur react paris, react developer paris, emploi react paris, frontend paris, nextjs paris",
+  },
+  // Lyon
+  {
+    id: "developpeurs-full-stack-lyon",
+    name: "développeurs full stack Lyon",
+    title: "Développeur Full Stack Lyon | Tech Hub Auvergne | FreeMatch",
+    path: "/developpeurs/full-stack/lyon",
+    description:
+      "Explorez +800 offres Full Stack à Lyon. Écosystème tech dynamique, qualité de vie exceptionnelle. Salaires attractifs et télétravail partiel.",
+    footerLink: "Full Stack Lyon",
+    heroTitle: "développeurs Full Stack à Lyon",
+    heroSubtitle:
+      "Intégrez le hub tech lyonnais avec des conditions de travail optimales.",
+    footerText: "Opportunités Full Stack à Lyon",
+    metaKeywords:
+      "développeur full stack lyon, emploi dev lyon, tech lyon, développeur rhone alpes, job it lyon",
+  },
+  {
+    id: "developpeurs-backend-lyon",
+    name: "développeurs backend Lyon",
+    title: "Développeur Backend Lyon | Node.js, Python, Java | FreeMatch",
+    path: "/developpeurs/backend/lyon",
+    description:
+      "Plus de 600 postes Backend à Lyon. Architectures modernes, microservices et cloud. Entreprises tech et grands comptes innovants.",
+    footerLink: "Backend Lyon",
+    heroTitle: "développeurs Backend à Lyon",
+    heroSubtitle:
+      "Construisez des architectures scalables dans le deuxième hub tech français.",
+    footerText: "Missions Backend à Lyon",
+    metaKeywords:
+      "développeur backend lyon, node.js lyon, python lyon, java lyon, api developer lyon",
+  },
+  // Toulouse
+  {
+    id: "developpeurs-full-stack-toulouse",
+    name: "développeurs full stack Toulouse",
+    title: "Développeur Full Stack Toulouse | Aerospace & Tech | FreeMatch",
+    path: "/developpeurs/full-stack/toulouse",
+    description:
+      "Découvrez +500 offres Full Stack à Toulouse. Secteurs aéronautique, spatial et startups innovantes. Salaires compétitifs et cadre de vie agréable.",
+    footerLink: "Full Stack Toulouse",
+    heroTitle: "développeurs Full Stack à Toulouse",
+    heroSubtitle: "Rejoignez l'innovation tech et aérospatiale à Toulouse.",
+    footerText: "Emplois Full Stack à Toulouse",
+    metaKeywords:
+      "développeur full stack toulouse, emploi dev toulouse, tech toulouse, airbus développeur, startup toulouse",
+  },
+  {
+    id: "developpeurs-devops-toulouse",
+    name: "développeurs devops Toulouse",
+    title: "Développeur DevOps Toulouse | Cloud & Infrastructure | FreeMatch",
+    path: "/developpeurs/devops/toulouse",
+    description:
+      "Plus de 300 missions DevOps à Toulouse. Kubernetes, AWS/GCP, CI/CD. Projets d'envergure dans l'aérospatial et la tech.",
+    footerLink: "DevOps Toulouse",
+    heroTitle: "développeurs DevOps à Toulouse",
+    heroSubtitle:
+      "Gérez des infrastructures cloud pour des projets ambitieux à Toulouse.",
+    footerText: "Missions DevOps à Toulouse",
+    metaKeywords:
+      "développeur devops toulouse, kubernetes toulouse, cloud engineer toulouse, infrastructure toulouse",
+  },
+  // Nantes
+  {
+    id: "developpeurs-full-stack-nantes",
+    name: "développeurs full stack Nantes",
+    title: "Développeur Full Stack Nantes | French Tech | FreeMatch",
+    path: "/developpeurs/full-stack/nantes",
+    description:
+      "Explorez +400 offres Full Stack à Nantes. Écosystème French Tech dynamique, startups et scale-ups. Équilibre vie pro/perso optimal.",
+    footerLink: "Full Stack Nantes",
+    heroTitle: "développeurs Full Stack à Nantes",
+    heroSubtitle:
+      "Intégrez l'écosystème French Tech nantais en pleine expansion.",
+    footerText: "Offres Full Stack à Nantes",
+    metaKeywords:
+      "développeur full stack nantes, emploi dev nantes, french tech nantes, startup nantes, tech pays de loire",
+  },
+  {
+    id: "developpeurs-frontend-nantes",
+    name: "développeurs frontend Nantes",
+    title: "Développeur Frontend Nantes | React, Vue, Angular | FreeMatch",
+    path: "/developpeurs/frontend/nantes",
+    description:
+      "Plus de 350 postes Frontend à Nantes. Projets innovants, frameworks modernes. Communauté tech active et événements réguliers.",
+    footerLink: "Frontend Nantes",
+    heroTitle: "développeurs Frontend à Nantes",
+    heroSubtitle:
+      "Créez des interfaces modernes dans la ville la plus agréable de France.",
+    footerText: "Missions Frontend à Nantes",
+    metaKeywords:
+      "développeur frontend nantes, react nantes, vue nantes, angular nantes, ui developer nantes",
+  },
+  // Bordeaux
+  {
+    id: "developpeurs-full-stack-bordeaux",
+    name: "développeurs full stack Bordeaux",
+    title: "Développeur Full Stack Bordeaux | Wine & Tech | FreeMatch",
+    path: "/developpeurs/full-stack/bordeaux",
+    description:
+      "Découvrez +350 offres Full Stack à Bordeaux. Startups innovantes, scale-ups et entreprises établies. Cadre de vie exceptionnel et salaires attractifs.",
+    footerLink: "Full Stack Bordeaux",
+    heroTitle: "développeurs Full Stack à Bordeaux",
+    heroSubtitle: "Alliez carrière tech et qualité de vie dans le Sud-Ouest.",
+    footerText: "Emplois Full Stack à Bordeaux",
+    metaKeywords:
+      "développeur full stack bordeaux, emploi dev bordeaux, tech bordeaux, startup bordeaux, it gironde",
+  },
+  {
+    id: "developpeurs-mobile-bordeaux",
+    name: "développeurs mobile Bordeaux",
+    title: "Développeur Mobile Bordeaux | iOS & Android | FreeMatch",
+    path: "/developpeurs/mobile/bordeaux",
+    description:
+      "Plus de 200 opportunités Mobile à Bordeaux. Applications natives et cross-platform. Entreprises innovantes et projets ambitieux.",
+    footerLink: "Mobile Bordeaux",
+    heroTitle: "développeurs Mobile à Bordeaux",
+    heroSubtitle:
+      "Développez des apps mobiles innovantes au cœur du Sud-Ouest.",
+    footerText: "Missions Mobile à Bordeaux",
+    metaKeywords:
+      "développeur mobile bordeaux, ios bordeaux, android bordeaux, react native bordeaux, flutter bordeaux",
+  },
 ];
 
 // Fonctions utilitaires pour le SEO

@@ -4,7 +4,9 @@ import { ChevronDown } from "lucide-react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
+import Script from "next/script";
 import { useState } from "react";
+import { generateFAQSchema } from "@/lib/json-ld";
 
 type FAQItem = {
   id: string;
@@ -135,28 +137,54 @@ const DiscordCard = () => {
 const SectionFaq = () => {
   const t = useTranslations("HomePage.FAQ");
 
+  const faqItems = faqs.map((faq) => {
+    const question = t(`questions.${faq.id}.question`);
+    let answer = "";
+
+    if (!faq.hasHtml) {
+      answer = t(`questions.${faq.id}.answer`);
+    } else if (faq.id === "difference") {
+      answer = `${t(`questions.${faq.id}.intro`)} ${t(`questions.${faq.id}.points.0`)} ${t(`questions.${faq.id}.points.1`)}`;
+    } else if (faq.id === "linkedin") {
+      answer = `${t(`questions.${faq.id}.part1`)} ${t(`questions.${faq.id}.part2`)} ${t(`questions.${faq.id}.part3`)}`;
+    }
+
+    return { question, answer };
+  });
+
+  const faqSchema = generateFAQSchema(faqItems);
+
   return (
-    <section className="w-full py-24 px-4 bg-popover">
-      <div className="max-w-[1120px] mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
-            {t("title")}
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
-            {faqs.map((faq) => (
-              <FAQItem key={faq.id} {...faq} />
-            ))}
+    <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <section className="w-full py-24 px-4 bg-popover">
+        <div className="max-w-[1120px] mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
+              {t("title")}
+            </h2>
           </div>
 
-          <div className="lg:col-span-1">
-            <DiscordCard />
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="lg:col-span-2">
+              {faqs.map((faq) => (
+                <FAQItem key={faq.id} {...faq} />
+              ))}
+            </div>
+
+            <div className="lg:col-span-1">
+              <DiscordCard />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 };
 
