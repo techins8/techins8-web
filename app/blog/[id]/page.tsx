@@ -22,14 +22,14 @@ export async function generateMetadata({
 
   return {
     title: article.title,
-    description: article.teaser || "Article sur TechIns8",
+    description: article.teaser || "Article sur FreeMatch",
     authors: [{ name: article.author }],
-    publisher: "TechIns8",
+    publisher: "FreeMatch",
     openGraph: {
       title: article.title,
-      description: article.teaser || "Article sur TechIns8",
+      description: article.teaser || "Article sur FreeMatch",
       type: "article",
-      url: `https://techins8.com/blog/${id}`,
+      url: `https://freemat.ch/blog/${id}`,
       images: [
         {
           url: article.imageCover || "/og-image.jpg",
@@ -44,11 +44,11 @@ export async function generateMetadata({
     twitter: {
       card: "summary_large_image",
       title: article.title,
-      description: article.teaser || "Article sur TechIns8",
+      description: article.teaser || "Article sur FreeMatch",
       images: [article.imageCover || "/og-image.jpg"],
     },
     alternates: {
-      canonical: `https://techins8.com/blog/${id}`,
+      canonical: `https://freemat.ch/blog/${id}`,
     },
   };
 }
@@ -88,7 +88,7 @@ export default async function BlogPost({ params }: PageProps) {
           </div>
           <div className="flex flex-col">
             <span className="text-gray-900">
-              {article.author ?? "TechIns8"}
+              {article.author ?? "FreeMatch"}
             </span>
             <div className="flex items-center gap-2 text-sm text-gray-600">
               <time dateTime={publishedAt.toISOString()}>

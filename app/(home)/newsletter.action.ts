@@ -14,7 +14,7 @@ const newsletterSchema = z.object({
 });
 
 export async function subscribeToNewsletter(
-  data: z.infer<typeof newsletterSchema>
+  data: z.infer<typeof newsletterSchema>,
 ): Promise<CreateNewsletterResponse> {
   try {
     const result = newsletterSchema.safeParse(data);
@@ -29,7 +29,7 @@ export async function subscribeToNewsletter(
     const requestBody: LoopsUser = {
       email: data.email,
       subscribed: true,
-      source: "landing.techins8.com",
+      source: "landing.freemat.ch",
       userGroup: "newsletter",
       mailingList: {},
     };

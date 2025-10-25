@@ -26,7 +26,7 @@
 /**
  * DON'T FORGET TO SET THE WEBSITE URL AND THE DEFAULT IMAGE
  */
-export const WEBSITE_URL = "https://techins8.com"; //IMPORTANT: Do not include the trailing slash
+export const WEBSITE_URL = "https://freemat.ch"; //IMPORTANT: Do not include the trailing slash
 export const DEFAULT_IMAGE =
   WEBSITE_URL + "/images/logo/logo-techins8-dark.webp";
 
@@ -34,8 +34,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-emploi",
     name: "développeurs emploi",
-    title:
-      "Offres Développeurs | 36 000+ Postes Tech | TechIns8",
+    title: "Offres Développeurs | 36 000+ Postes Tech | FreeMatch",
     path: "/developpeurs/emploi",
     description:
       "Accédez à plus de 36 000 offres d'emploi développeurs vérifiées par IA. TJM transparents, stack technique validée, conditions de travail analysées. Trouvez votre prochain poste tech en quelques clics.",
@@ -50,8 +49,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-full-stack",
     name: "développeurs full stack",
-    title:
-      "Développeur Full Stack | Stack Vérifiée | TechIns8",
+    title: "Développeur Full Stack | Stack Vérifiée | FreeMatch",
     path: "/developpeurs/full-stack",
     description:
       "Plus de 12 000 offres full stack vérifiées par IA. Stack technique front & back cohérente, TJM transparents. Technologies modernes et environnement de développement validé.",
@@ -66,7 +64,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-web",
     name: "développeurs web",
-    title: "Offres Développeurs Web | Full Stack & Front-End | TechIns8",
+    title: "Offres Développeurs Web | Full Stack & Front-End | FreeMatch",
     path: "/developpeurs/web",
     description:
       "Plus de 15 000 offres de développement web analysées par IA. Stack moderne, frameworks actuels et conditions de travail transparentes. Opportunités front-end et full stack.",
@@ -81,7 +79,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-freelance",
     name: "développeurs freelance",
-    title: "Missions Freelance Développeurs | TJM Analysés | TechIns8",
+    title: "Missions Freelance Développeurs | TJM Analysés | FreeMatch",
     path: "/developpeurs/freelance",
     description:
       "Plus de 8 000 missions freelance vérifiées par IA. TJM cohérents avec l'expérience, projets innovants et conditions contractuelles transparentes. Trouvez vos prochaines missions tech.",
@@ -96,7 +94,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-full-remote",
     name: "développeurs full remote",
-    title: "Développeur Remote | 100% Télétravail | TechIns8",
+    title: "Développeur Remote | 100% Télétravail | FreeMatch",
     path: "/developpeurs/full-remote",
     description:
       "Découvrez plus de 5 000 opportunités en full remote vérifiées par IA. Conditions de télétravail transparentes, horaires flexibles et collaboration à distance analysés.",
@@ -111,7 +109,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-senior",
     name: "développeurs senior",
-    title: "Offres Développeurs Senior | +5 ans d'Expérience | TechIns8",
+    title: "Offres Développeurs Senior | +5 ans d'Expérience | FreeMatch",
     path: "/developpeurs/senior",
     description:
       "Accédez à des missions senior exigeantes avec TJM attractifs. Notre IA vérifie la cohérence entre expertise demandée, responsabilités et rémunération. Projets techniques challengeants.",
@@ -126,7 +124,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-junior",
     name: "développeurs junior",
-    title: "Offres Développeurs Junior | Premier Emploi Tech | TechIns8",
+    title: "Offres Développeurs Junior | Premier Emploi Tech | FreeMatch",
     path: "/developpeurs/junior",
     description:
       "Trouvez votre premier emploi tech parmi nos offres junior vérifiées. Environnement formateur, stack accessible et accompagnement garantis par notre analyse IA.",
@@ -141,7 +139,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-backend",
     name: "développeurs backend",
-    title: "Offres Développeurs Backend | API & Cloud | TechIns8",
+    title: "Offres Développeurs Backend | API & Cloud | FreeMatch",
     path: "/developpeurs/backend",
     description:
       "Plus de 10 000 offres backend vérifiées par IA. Expertise API, cloud et microservices. Technologies serveur modernes et architectures scalables garanties.",
@@ -156,7 +154,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-frontend",
     name: "développeurs frontend",
-    title: "Développeur Frontend | React, Vue, Angular | TechIns8",
+    title: "Développeur Frontend | React, Vue, Angular | FreeMatch",
     path: "/developpeurs/frontend",
     description:
       "Plus de 8 000 missions frontend avec frameworks modernes. Stack technique React, Vue.js ou Angular vérifiée par IA. Projets innovants et interfaces performantes.",
@@ -171,7 +169,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-mobile",
     name: "développeurs mobile",
-    title: "Offres Développeurs Mobile | iOS & Android | TechIns8",
+    title: "Offres Développeurs Mobile | iOS & Android | FreeMatch",
     path: "/developpeurs/mobile",
     description:
       "Plus de 5 000 opportunités en développement mobile vérifiées par IA. Applications iOS, Android et cross-platform. Technologies natives et frameworks hybrides validés.",
@@ -186,7 +184,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-ios",
     name: "développeurs ios",
-    title: "Offres Développeurs iOS | Swift & SwiftUI | TechIns8",
+    title: "Offres Développeurs iOS | Swift & SwiftUI | FreeMatch",
     path: "/developpeurs/ios",
     description:
       "Missions iOS avec stack technique moderne vérifiée par IA. Expertise Swift, SwiftUI et écosystème Apple. Applications natives haute performance garanties.",
@@ -201,7 +199,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-android",
     name: "développeurs android",
-    title: "Offres Développeurs Android | Kotlin & Jetpack | TechIns8",
+    title: "Offres Développeurs Android | Kotlin & Jetpack | FreeMatch",
     path: "/developpeurs/android",
     description:
       "Plus de 4 000 missions Android vérifiées. Stack technique Kotlin et Jetpack Compose. Notre IA valide l'environnement de développement et les pratiques Material Design.",
@@ -216,7 +214,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-react",
     name: "développeurs react",
-    title: "Offres Développeurs React | React & Next.js | TechIns8",
+    title: "Offres Développeurs React | React & Next.js | FreeMatch",
     path: "/developpeurs/react",
     description:
       "Plus de 6 000 missions React vérifiées par IA. Expertise React.js, Next.js et écosystème moderne. Stack technique et bonnes pratiques validées.",
@@ -231,7 +229,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-angular",
     name: "développeurs angular",
-    title: "Offres Développeurs Angular | TypeScript & RxJS | TechIns8",
+    title: "Offres Développeurs Angular | TypeScript & RxJS | FreeMatch",
     path: "/developpeurs/angular",
     description:
       "Missions Angular avec environnement TypeScript complet vérifié par IA. Expertise RxJS et architecture d'entreprise. Applications robustes et scalables.",
@@ -246,7 +244,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-vue",
     name: "développeurs vue",
-    title: "Offres Développeurs Vue.js | Vue 3 & Nuxt | TechIns8",
+    title: "Offres Développeurs Vue.js | Vue 3 & Nuxt | FreeMatch",
     path: "/developpeurs/vue",
     description:
       "Opportunités Vue.js avec stack technique moderne validée par IA. Expertise Vue 3, Nuxt et Composition API. Projets innovants garantis.",
@@ -261,7 +259,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-javascript",
     name: "développeurs javascript",
-    title: "Offres Développeurs JavaScript | Full Stack JS | TechIns8",
+    title: "Offres Développeurs JavaScript | Full Stack JS | FreeMatch",
     path: "/developpeurs/javascript",
     description:
       "Missions JavaScript full stack vérifiées par IA. Technologies Node.js, Express et frameworks modernes. Environnement ES6+ et architecture validés.",
@@ -276,7 +274,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-typescript",
     name: "développeurs typescript",
-    title: "Développeur TypeScript | Types & Patterns | TechIns8",
+    title: "Développeur TypeScript | Types & Patterns | FreeMatch",
     path: "/developpeurs/typescript",
     description:
       "Plus de 4 000 missions TypeScript analysées par IA. Projets avec types statiques et patterns modernes. Architecture d'entreprise et codebases robustes.",
@@ -291,7 +289,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-devops",
     name: "développeurs devops",
-    title: "Offres Développeurs DevOps | Cloud & CI/CD | TechIns8",
+    title: "Offres Développeurs DevOps | Cloud & CI/CD | FreeMatch",
     path: "/developpeurs/devops",
     description:
       "Accédez à plus de 3 000 missions DevOps vérifiées par IA. Expertise cloud-native, CI/CD et Infrastructure as Code. Environnement technique moderne et pratiques GitOps validés.",
@@ -306,7 +304,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-gcp",
     name: "développeurs gcp",
-    title: "Développeur GCP | Google Cloud | TechIns8",
+    title: "Développeur GCP | Google Cloud | FreeMatch",
     path: "/developpeurs/gcp",
     description:
       "Plus de 2 000 missions Google Cloud Platform vérifiées par IA. Expertise cloud-native, serverless et Kubernetes sur GCP. Certifications et projets cloud validés.",
@@ -321,8 +319,7 @@ export const SEO_DATA = [
   {
     id: "developpeurs-react-native",
     name: "développeurs react native",
-    title:
-      "Développeur React Native | Mobile | TechIns8",
+    title: "Développeur React Native | Mobile | FreeMatch",
     path: "/developpeurs/react-native",
     description:
       "Missions React Native cross-platform vérifiées par IA. Applications iOS et Android avec une base de code unique. Performance native et expertise JavaScript mobile validées.",
@@ -342,7 +339,7 @@ export const getMetaTitle = (page: { title: string }) => {
 };
 
 export const getMetaDescription = (page: { description: string }) => {
-  return `${page.description} Trouvez votre prochaine opportunité sur TechIns8.`;
+  return `${page.description} Trouvez votre prochaine opportunité sur FreeMatch.`;
 };
 
 export const getCanonicalUrl = (page: { path: string }) => {

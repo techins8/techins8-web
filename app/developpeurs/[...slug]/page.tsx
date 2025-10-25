@@ -36,7 +36,7 @@ export async function generateMetadata({
         title: seoData.title,
         description: seoData.description,
         url: `${WEBSITE_URL}${seoData.path}`,
-        siteName: "TechIns8",
+        siteName: "FreeMatch",
         images: [
           {
             url: DEFAULT_IMAGE,
@@ -91,6 +91,6 @@ export function generateStaticParams() {
     (route) => {
       const slug = route.path.replace("/developpeurs/", "").split("-");
       return { slug: slug.length > 0 ? slug : [] };
-    }
+    },
   );
 }

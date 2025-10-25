@@ -149,7 +149,7 @@
         "annual": "Annuel",
         "monthly": "Mensuel"
       },
-      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀",
+      "promo": "Exclusive launch offer: -50% extra on FreeMatch Premium 🚀",
       "card": {
         "title": "Accès complet",
         "highlight": "7 jours",
@@ -174,8 +174,8 @@
       "title": "Vous avez des questions ?",
       "questions": {
         "difference": {
-          "question": "Qu'est-ce qui différencie TechIns8 des autres sites d'emploi ?",
-          "intro": "TechIns8 n'est pas un simple site d'emploi, c'est votre assistant personnel de recherche d'emploi :",
+          "question": "Qu'est-ce qui différencie FreeMatch des autres sites d'emploi ?",
+          "intro": "FreeMatch n'est pas un simple site d'emploi, c'est votre assistant personnel de recherche d'emploi :",
           "points": [
             "Notre IA agit comme un expert RH : elle détecte les fausses promesses, vérifie les TJM et s'assure que \"full remote\" signifie VRAIMENT full remote.",
             "Plus besoin de jongler entre les plateformes : toutes vos recherches, toutes vos offres, au même endroit."
@@ -194,10 +194,10 @@
           "answer": "Le TJM est calculé en fonction des données du marché et des informations fournies dans l'offre. Notre IA vérifie la cohérence des montants annoncés avec les compétences et l'expérience requises."
         },
         "linkedin": {
-          "question": "J'ai déjà des alertes sur LinkedIn, pourquoi payer pour TechIns8 ?",
+          "question": "J'ai déjà des alertes sur LinkedIn, pourquoi payer pour FreeMatch ?",
           "part1": "LinkedIn et les autres plateformes vous envoient toutes les offres correspondant à vos mots-clés, sans vérification.",
           "part2": "Ces alertes sont souvent truffées de fausses offres \"full remote\", de TJM irréalistes, ou pire, d'annonces qui ne correspondent pas du tout à tes compétences.",
-          "part3": "Résultat ? Vous perdez du temps à filtrer manuellement. TechIns8 fait ce travail pour vous, en regroupant les offres de plusieurs sources et en vérifiant leur qualité."
+          "part3": "Résultat ? Vous perdez du temps à filtrer manuellement. FreeMatch fait ce travail pour vous, en regroupant les offres de plusieurs sources et en vérifiant leur qualité."
         },
         "cancel": {
           "question": "Est-ce que je peux annuler mon abonnement ?",
@@ -215,24 +215,24 @@
       }
     },
     "Newsletter": {
-        "title": {
-          "discount": "-10%",
-          "text": "sur l'abonnement annuel en vous inscrivant à la newsletter."
-        },
-        "subtitle": "Recevez une étude de marché gratuite par mail, toutes les semaines.",
-        "form": {
-          "emailPlaceholder": "Votre adresse Email...",
-          "submitButton": {
-            "default": "JE M'INSCRIS",
-            "loading": "Inscription..."
-          }
-        },
-        "messages": {
-          "invalidEmail": "Email invalide",
-          "disposableEmail": "Veuillez utiliser une adresse email permanente.",
-          "success": "Merci de votre inscription !",
-          "error": "Une erreur est survenue lors de l'inscription"
+      "title": {
+        "discount": "-10%",
+        "text": "sur l'abonnement annuel en vous inscrivant à la newsletter."
+      },
+      "subtitle": "Recevez une étude de marché gratuite par mail, toutes les semaines.",
+      "form": {
+        "emailPlaceholder": "Votre adresse Email...",
+        "submitButton": {
+          "default": "JE M'INSCRIS",
+          "loading": "Inscription..."
         }
+      },
+      "messages": {
+        "invalidEmail": "Email invalide",
+        "disposableEmail": "Veuillez utiliser une adresse email permanente.",
+        "success": "Merci de votre inscription !",
+        "error": "Une erreur est survenue lors de l'inscription"
       }
+    }
   }
 }

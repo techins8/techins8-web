@@ -25,4 +25,4 @@ Allow: /*.svg$
 Allow: /*.ico$
 
 # Sitemap location
-Sitemap: https://techins8.com/sitemap.xml
+Sitemap: https://freematch.com/sitemap.xml

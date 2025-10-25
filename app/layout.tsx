@@ -26,38 +26,38 @@ export const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://techins8.com"),
+  metadataBase: new URL("https://freematch.com"),
   title: {
-    default: "TechIns8 - Votre partenaire en recrutement tech",
-    template: "%s | TechIns8",
+    default: "FreeMatch - Votre partenaire en recrutement tech",
+    template: "%s | FreeMatch",
   },
   description:
-    "TechIns8 est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.",
+    "FreeMatch est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.",
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://techins8.com",
-    siteName: "TechIns8",
+    url: "https://freematch.com",
+    siteName: "FreeMatch",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TechIns8",
+        alt: "FreeMatch",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@techins8",
-    creator: "@techins8",
+    site: "@freematch",
+    creator: "@freematch",
   },
-  applicationName: "TechIns8",
+  applicationName: "FreeMatch",
   keywords: [
-    "TechIns8",
-    "TechIns8 Statistiques",
-    "TechIns8 Data",
-    "TechIns8 Dashboard",
+    "FreeMatch",
+    "FreeMatch Statistiques",
+    "FreeMatch Data",
+    "FreeMatch Dashboard",
   ],
   authors: [
     {
@@ -124,13 +124,13 @@ export default async function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "TechIns8",
-              url: "https://techins8.com",
+              name: "FreeMatch",
+              url: "https://freematch",
               description:
                 "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
               potentialAction: {
                 "@type": "ViewAction",
-                target: "https://dashboard.techins8.com/",
+                target: "https://dashboard.freematch.com/",
               },
               offers: {
                 "@type": "AggregateOffer",
@@ -150,7 +150,7 @@ export default async function RootLayout({
                   },
                 ],
               },
-              sameAs: ["https://www.linkedin.com/company/techins8"],
+              sameAs: ["https://www.linkedin.com/company/freematch"],
             }),
           }}
         />
@@ -195,7 +195,7 @@ export default async function RootLayout({
         <Script
           id="umami"
           defer
-          src="https://umami.clf.techins8.com/script.js"
+          src="https://umami.clf.freematch.com/script.js"
           data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
         />
       </body>

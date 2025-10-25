@@ -8,7 +8,7 @@ export default function AboutPage() {
       <section className="max-w-6xl mx-auto px-4 mb-16 text-center">
         <h1 className="text-4xl font-bold text-title mb-6">Notre Histoire</h1>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          TechIns8 est née de la rencontre de deux passionnés du développement,
+          FreeMatch est née de la rencontre de deux passionnés du développement,
           unis par une vision commune : rendre le freelancing accessible et
           épanouissant pour tous les développeurs.
         </p>
@@ -30,9 +30,7 @@ export default function AboutPage() {
               />
               <h2 className="text-2xl font-semibold text-title">
                 Lucien Arbieu
-                <span className="text-muted ml-2 block text-lg">
-                  Fondateur
-                </span>
+                <span className="text-muted ml-2 block text-lg">Fondateur</span>
               </h2>
             </div>
             <div className="space-y-2 text-muted-foreground">
@@ -52,7 +50,7 @@ export default function AboutPage() {
                   positionner sur le marché, non par manque de compétences, mais
                   par manque de visibilité.
                   <br />
-                  C&apos;est de cette frustration qu&apos;est né TechIns8 : un
+                  C&apos;est de cette frustration qu&apos;est né FreeMatch : un
                   outil qui donne aux développeurs une longueur d&apos;avance,
                   en leur offrant une vision claire et stratégique du marché
                   tech. Notre mission ?
@@ -98,7 +96,7 @@ export default function AboutPage() {
                   un parcours du combattant, mais une aventure entrepreneuriale
                   enrichissante et accessible.
                   <br />
-                  TechIns8 est né de cette conviction : accompagner chaque
+                  FreeMatch est né de cette conviction : accompagner chaque
                   développeur vers une carrière freelance épanouissante, en leur
                   donnant les clés pour réussir dans un marché en constante
                   évolution.
