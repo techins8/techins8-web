@@ -37,18 +37,19 @@ const Footer = () => {
             {/* Company Info */}
             <div className="md:col-span-4 space-y-6">
               <Image
-                src="/images/logo/logo-freematch-light.svg"
+                src="/images/logo/logo-light.svg"
                 alt="FreeMatch Logo"
                 width={150}
                 height={40}
                 loading="lazy"
               />
               <p className="text-background text-sm">
-                FreeMatch est un tableau de bord destiné aux professionnels du secteur technologique
-                français, offrant un accès à diverses données sur l&apos;état du marché.
+                FreeMatch est un tableau de bord destiné aux professionnels du
+                secteur technologique français, offrant un accès à diverses
+                données sur l&apos;état du marché.
               </p>
               <div className="flex items-center justify-center gap-4">
-                <a href="https://www.uneed.best/tool/freematch">
+                <a href="https://www.uneed.best/tool/techins8">
                   <Image
                     src="https://www.uneed.best/EMBED3.png"
                     alt="Uneed Embed Badge"
@@ -58,7 +59,7 @@ const Footer = () => {
                   />
                 </a>
                 <a
-                  href="https://www.producthunt.com/posts/freematch?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-freematch"
+                  href="https://www.producthunt.com/posts/techins8?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-techins8"
                   target="_blank"
                   rel="noopener"
                 >
@@ -78,7 +79,9 @@ const Footer = () => {
               <div className="grid grid-cols-3 gap-8">
                 {/* Main Navigation */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">Navigation</h3>
+                  <h3 className="text-background text-base font-semibold">
+                    Navigation
+                  </h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {navigationLinks.map((link) => (
                       <Link
@@ -94,10 +97,16 @@ const Footer = () => {
 
                 {/* Footer Links */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">Liens utiles</h3>
+                  <h3 className="text-background text-base font-semibold">
+                    Liens utiles
+                  </h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {footerLinks.map((link) => (
-                      <Link key={link.href} href={link.href} className="text-background">
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-background"
+                      >
                         {link.label}
                       </Link>
                     ))}
@@ -107,7 +116,9 @@ const Footer = () => {
                 {/* Social & CTA */}
                 <div className="space-y-6">
                   <div className="flex justify-between">
-                    <h3 className="text-background text-base font-semibold">Nous suivre</h3>
+                    <h3 className="text-background text-base font-semibold">
+                      Nous suivre
+                    </h3>
                     <a
                       href="https://www.linkedin.com/company/freematch/"
                       target="_blank"
@@ -124,7 +135,9 @@ const Footer = () => {
                   </div>
                   <div className="space-y-4">
                     <div className="flex flex-col gap-4">
-                      <p className="text-background text-sm">Nous sommes là pour vous aider !</p>
+                      <p className="text-background text-sm">
+                        Nous sommes là pour vous aider !
+                      </p>
                     </div>
 
                     <Button
@@ -150,10 +163,16 @@ const Footer = () => {
       {/* Footer links */}
       <div className="relative bg-title pb-12">
         <div className="max-w-[1120px] mx-auto px-4">
-          <h3 className="text-background text-base font-semibold mb-4">Liens internes</h3>
+          <h3 className="text-background text-base font-semibold mb-4">
+            Liens internes
+          </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {SEO_DATA.map((link) => (
-              <Link key={link.path} href={link.path} className=" text-xs text-background">
+              <Link
+                key={link.path}
+                href={link.path}
+                className=" text-xs text-background"
+              >
                 {link.footerText}
               </Link>
             ))}
@@ -175,7 +194,7 @@ const Footer = () => {
 
           <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
             <Image
-              src="/images/logo/footer-icon-freematch.svg"
+              src="/images/logo/footer-icon-techins8.svg"
               alt="FreeMatch Footer Pattern"
               width={950}
               height={200}

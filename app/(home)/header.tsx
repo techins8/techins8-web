@@ -16,7 +16,8 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
     if (!title) {
       return (
         <>
-          {t.raw("titlePrefix")} <span className="text-primary">{t("defaultType")}</span>
+          {t.raw("titlePrefix")}{" "}
+          <span className="text-primary">{t("defaultType")}</span>
           {t.raw("titleSuffix")}
         </>
       );
@@ -40,7 +41,7 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
           {heroSubtitle || t("subtitle")}
         </div>
         <SubHeader />
-        <button className="mt-10">
+        <button type="button" className="mt-10">
           <Link
             href={process.env.NEXT_PUBLIC_DASHBOARD_URL ?? ""}
             target="_parent"
