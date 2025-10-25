@@ -21,10 +21,17 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.freematch.com",
+        hostname: "www.freemat.ch",
+      },
+      {
+        protocol: "https",
+        hostname: "api.producthunt.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.uneed.best",
       },
     ],
-    domains: ["www.freematch.com"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     formats: ["image/avif", "image/webp"],
