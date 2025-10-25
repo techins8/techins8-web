@@ -2,7 +2,7 @@
 
 import { api } from "@/lib/api";
 import { env } from "@/lib/env";
-import { IJob } from "@/types/job";
+import type { IJob } from "@/types/job";
 
 interface IGetJobsBrutResponse {
   jobs: IJob[];
@@ -54,7 +54,7 @@ export const getJobsBrut = async ({
           "x-providers": "FreeWork, WelcomeToTheJungle",
         },
       },
-      env.SCRAPPER_BRUT_API_URL
+      env.SCRAPPER_BRUT_API_URL,
     );
 
     if (!response.ok) {

@@ -45,7 +45,8 @@ export function generateJobPostingSchema(data: JobPostingData) {
       logo: `${WEBSITE_URL}/images/logo/logo-techins8-dark.webp`,
     },
     datePosted: data.datePosted || new Date().toISOString(),
-    validThrough: data.validThrough || new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
+    validThrough:
+      data.validThrough || new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString(),
     employmentType: data.employmentType || "FULL_TIME",
     jobLocationType: data.location === "remote" ? "TELECOMMUTE" : undefined,
   };
@@ -107,9 +108,7 @@ export function generateOrganizationSchema() {
     logo: `${WEBSITE_URL}/images/logo/logo-techins8-dark.webp`,
     description:
       "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
-    sameAs: [
-      "https://www.linkedin.com/company/freematch",
-    ],
+    sameAs: ["https://www.linkedin.com/company/freematch"],
     contactPoint: {
       "@type": "ContactPoint",
       email: "contact@freemat.ch",

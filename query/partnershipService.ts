@@ -5,9 +5,7 @@ import { env } from "@/lib/env";
 export const fetchPartnerships = async (): Promise<Partnership[]> => {
   try {
     console.log(`${process.env.NEXT_PUBLIC_DASHBOARD_URL}/api/partnerships`);
-    const response = await fetch(
-      `${env.NEXT_PUBLIC_DASHBOARD_URL}/api/partnerships`
-    );
+    const response = await fetch(`${env.NEXT_PUBLIC_DASHBOARD_URL}/api/partnerships`);
 
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);

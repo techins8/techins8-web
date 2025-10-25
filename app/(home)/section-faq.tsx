@@ -1,10 +1,10 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { useTranslations } from "next-intl";
 import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { generateFAQSchema } from "@/lib/json-ld";
 
@@ -84,9 +84,7 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 px-10 flex justify-between items-center text-left gap-4"
       >
-        <span className="text-lg font-semibold text-title">
-          {t(`${id}.question`)}
-        </span>
+        <span className="text-lg font-semibold text-title">{t(`${id}.question`)}</span>
         <ChevronDown
           className={`h-8 w-8 text-primary flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "transform rotate-180" : ""
@@ -112,16 +110,9 @@ const DiscordCard = () => {
   return (
     <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
       <div className="mx-auto mb-8 flex items-center justify-center">
-        <Image
-          src="/images/logo/discord.svg"
-          alt="Discord"
-          width={104}
-          height={104}
-        />
+        <Image src="/images/logo/discord.svg" alt="Discord" width={104} height={104} />
       </div>
-      <h3 className="text-xl font-medium mb-8 text-primary-foreground">
-        {t("title")}
-      </h3>
+      <h3 className="text-xl font-medium mb-8 text-primary-foreground">{t("title")}</h3>
       <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
       <Link
         href="https://discord.gg/your-invite-link"

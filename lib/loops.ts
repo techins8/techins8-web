@@ -1,5 +1,5 @@
 import { env } from "@/lib/env";
-import { http, HttpOptions } from "./http";
+import { type HttpOptions, http } from "./http";
 
 export interface ErrorResponse {
   success: boolean;
@@ -28,10 +28,7 @@ export interface CreateSuccessResponse {
   id: string;
 }
 
-const loops = async (
-  resource: string,
-  options: HttpOptions = {}
-): Promise<Response> => {
+const loops = async (resource: string, options: HttpOptions = {}): Promise<Response> => {
   const url = env.LOOPS_API_URL + resource;
 
   const response = await http(url, {
@@ -44,17 +41,13 @@ const loops = async (
   });
 
   if (!response.ok) {
-    const error = await response
-      .json()
-      .catch(() => ({ message: "Unknown error" }));
+    const error = await response.json().catch(() => ({ message: "Unknown error" }));
     throw new Error(error.message || `HTTP error! status: ${response.status}`);
   }
   return response;
 };
 
-export const find = async (
-  email: string
-): Promise<FindResponse[] | ErrorResponse> => {
+export const find = async (email: string): Promise<FindResponse[] | ErrorResponse> => {
   const response = await loops(`/contacts/find`, {
     query: {
       email: email,
@@ -67,7 +60,7 @@ export const find = async (
 };
 
 export const create = async (
-  data: CreateRequest
+  data: CreateRequest,
 ): Promise<CreateSuccessResponse | ErrorResponse> => {
   const response = await loops(`/contacts/create`, {
     method: "POST",

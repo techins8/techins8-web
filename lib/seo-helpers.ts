@@ -10,21 +10,20 @@ export function getRelatedLinks(currentPath: string, limit = 6): RelatedLink[] {
   const current = SEO_DATA.find((item) => item.path === currentPath);
   if (!current) return [];
 
-  const related = SEO_DATA
-    .filter((item) => {
-      if (item.path === currentPath) return false;
+  const related = SEO_DATA.filter((item) => {
+    if (item.path === currentPath) return false;
 
-      const currentSegments = currentPath.split("/").filter(Boolean);
-      const itemSegments = item.path.split("/").filter(Boolean);
+    const currentSegments = currentPath.split("/").filter(Boolean);
+    const itemSegments = item.path.split("/").filter(Boolean);
 
-      if (currentSegments.length !== itemSegments.length) return false;
+    if (currentSegments.length !== itemSegments.length) return false;
 
-      return true;
-    })
+    return true;
+  })
     .slice(0, limit)
     .map((item) => ({
       title: item.footerLink || item.name,
-      description: item.description.substring(0, 120) + "...",
+      description: `${item.description.substring(0, 120)}...`,
       url: item.path,
     }));
 

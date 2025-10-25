@@ -27,8 +27,7 @@
  * DON'T FORGET TO SET THE WEBSITE URL AND THE DEFAULT IMAGE
  */
 export const WEBSITE_URL = "https://freemat.ch"; //IMPORTANT: Do not include the trailing slash
-export const DEFAULT_IMAGE =
-  WEBSITE_URL + "/images/logo/logo-techins8-dark.webp";
+export const DEFAULT_IMAGE = `${WEBSITE_URL}/images/logo/logo-techins8-dark.webp`;
 
 export const SEO_DATA = [
   {
@@ -356,8 +355,7 @@ export const SEO_DATA = [
       "Plus de 1500 offres React à Paris analysées par IA. Entreprises innovantes, startups tech et scale-ups. Salaires compétitifs et télétravail flexible.",
     footerLink: "React Paris",
     heroTitle: "développeurs React à Paris",
-    heroSubtitle:
-      "Rejoignez l'écosystème tech parisien avec les meilleures offres React.",
+    heroSubtitle: "Rejoignez l'écosystème tech parisien avec les meilleures offres React.",
     footerText: "Missions React à Paris",
     metaKeywords:
       "développeur react paris, react developer paris, emploi react paris, frontend paris, nextjs paris",
@@ -372,8 +370,7 @@ export const SEO_DATA = [
       "Explorez +800 offres Full Stack à Lyon. Écosystème tech dynamique, qualité de vie exceptionnelle. Salaires attractifs et télétravail partiel.",
     footerLink: "Full Stack Lyon",
     heroTitle: "développeurs Full Stack à Lyon",
-    heroSubtitle:
-      "Intégrez le hub tech lyonnais avec des conditions de travail optimales.",
+    heroSubtitle: "Intégrez le hub tech lyonnais avec des conditions de travail optimales.",
     footerText: "Opportunités Full Stack à Lyon",
     metaKeywords:
       "développeur full stack lyon, emploi dev lyon, tech lyon, développeur rhone alpes, job it lyon",
@@ -387,8 +384,7 @@ export const SEO_DATA = [
       "Plus de 600 postes Backend à Lyon. Architectures modernes, microservices et cloud. Entreprises tech et grands comptes innovants.",
     footerLink: "Backend Lyon",
     heroTitle: "développeurs Backend à Lyon",
-    heroSubtitle:
-      "Construisez des architectures scalables dans le deuxième hub tech français.",
+    heroSubtitle: "Construisez des architectures scalables dans le deuxième hub tech français.",
     footerText: "Missions Backend à Lyon",
     metaKeywords:
       "développeur backend lyon, node.js lyon, python lyon, java lyon, api developer lyon",
@@ -417,8 +413,7 @@ export const SEO_DATA = [
       "Plus de 300 missions DevOps à Toulouse. Kubernetes, AWS/GCP, CI/CD. Projets d'envergure dans l'aérospatial et la tech.",
     footerLink: "DevOps Toulouse",
     heroTitle: "développeurs DevOps à Toulouse",
-    heroSubtitle:
-      "Gérez des infrastructures cloud pour des projets ambitieux à Toulouse.",
+    heroSubtitle: "Gérez des infrastructures cloud pour des projets ambitieux à Toulouse.",
     footerText: "Missions DevOps à Toulouse",
     metaKeywords:
       "développeur devops toulouse, kubernetes toulouse, cloud engineer toulouse, infrastructure toulouse",
@@ -433,8 +428,7 @@ export const SEO_DATA = [
       "Explorez +400 offres Full Stack à Nantes. Écosystème French Tech dynamique, startups et scale-ups. Équilibre vie pro/perso optimal.",
     footerLink: "Full Stack Nantes",
     heroTitle: "développeurs Full Stack à Nantes",
-    heroSubtitle:
-      "Intégrez l'écosystème French Tech nantais en pleine expansion.",
+    heroSubtitle: "Intégrez l'écosystème French Tech nantais en pleine expansion.",
     footerText: "Offres Full Stack à Nantes",
     metaKeywords:
       "développeur full stack nantes, emploi dev nantes, french tech nantes, startup nantes, tech pays de loire",
@@ -448,8 +442,7 @@ export const SEO_DATA = [
       "Plus de 350 postes Frontend à Nantes. Projets innovants, frameworks modernes. Communauté tech active et événements réguliers.",
     footerLink: "Frontend Nantes",
     heroTitle: "développeurs Frontend à Nantes",
-    heroSubtitle:
-      "Créez des interfaces modernes dans la ville la plus agréable de France.",
+    heroSubtitle: "Créez des interfaces modernes dans la ville la plus agréable de France.",
     footerText: "Missions Frontend à Nantes",
     metaKeywords:
       "développeur frontend nantes, react nantes, vue nantes, angular nantes, ui developer nantes",
@@ -478,8 +471,7 @@ export const SEO_DATA = [
       "Plus de 200 opportunités Mobile à Bordeaux. Applications natives et cross-platform. Entreprises innovantes et projets ambitieux.",
     footerLink: "Mobile Bordeaux",
     heroTitle: "développeurs Mobile à Bordeaux",
-    heroSubtitle:
-      "Développez des apps mobiles innovantes au cœur du Sud-Ouest.",
+    heroSubtitle: "Développez des apps mobiles innovantes au cœur du Sud-Ouest.",
     footerText: "Missions Mobile à Bordeaux",
     metaKeywords:
       "développeur mobile bordeaux, ios bordeaux, android bordeaux, react native bordeaux, flutter bordeaux",
@@ -499,13 +491,7 @@ export const getCanonicalUrl = (page: { path: string }) => {
   return `${WEBSITE_URL}${page.path}`;
 };
 
-export const getSeoDataFromSlug = ({
-  type,
-  slug,
-}: {
-  type: string;
-  slug?: string | string[];
-}) => {
+export const getSeoDataFromSlug = ({ type, slug }: { type: string; slug?: string | string[] }) => {
   const id: string = `${type}-${Array.isArray(slug) ? slug.join("-") : slug}`;
   const seo = SEO_DATA.find((route) => route.id === id);
 

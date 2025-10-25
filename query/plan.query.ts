@@ -60,7 +60,7 @@ const PLANS_DATA = {
     ctaKey: "cta.tryFree",
     tags: [
       { key: "discount79", color: "bg-secondary" },
-      { key: "bestOffer", color: "bg-primary" }
+      { key: "bestOffer", color: "bg-primary" },
     ],
   },
   monthly: {
@@ -79,7 +79,7 @@ const PLANS_DATA = {
     link: `${env.NEXT_PUBLIC_DASHBOARD_URL}/signin?plan=premium-mensuel`,
     tags: [
       { key: "starter", color: "bg-secondary" },
-      { key: "popular", color: "bg-primary" }
+      { key: "popular", color: "bg-primary" },
     ],
   },
   yearly: {

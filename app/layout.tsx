@@ -1,11 +1,11 @@
-import { Toaster } from "@/components/ui/sonner";
-import { env } from "@/lib/env";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
 import { Nunito_Sans, Poppins } from "next/font/google";
 import Script from "next/script";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/lib/env";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
@@ -53,12 +53,7 @@ export const metadata: Metadata = {
     creator: "@freematch",
   },
   applicationName: "FreeMatch",
-  keywords: [
-    "FreeMatch",
-    "FreeMatch Statistiques",
-    "FreeMatch Data",
-    "FreeMatch Dashboard",
-  ],
+  keywords: ["FreeMatch", "FreeMatch Statistiques", "FreeMatch Data", "FreeMatch Dashboard"],
   authors: [
     {
       name: "Lucien Arbieu",
@@ -77,11 +72,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
   const messages = await getMessages();
 
@@ -132,8 +123,7 @@ export default async function RootLayout({
                 "@type": "SearchAction",
                 target: {
                   "@type": "EntryPoint",
-                  urlTemplate:
-                    "https://freemat.ch/job-offers?q={search_term_string}",
+                  urlTemplate: "https://freemat.ch/job-offers?q={search_term_string}",
                 },
                 "query-input": "required name=search_term_string",
               },
@@ -166,9 +156,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body
-        className={`${poppins.className} min-h-screen bg-background antialiased`}
-      >
+      <body className={`${poppins.className} min-h-screen bg-background antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -194,13 +182,7 @@ export default async function RootLayout({
               </div>
             </div>
             <SpeedInsights />
-            <Toaster
-              expand={false}
-              position="top-right"
-              closeButton
-              richColors
-              duration={2000}
-            />
+            <Toaster expand={false} position="top-right" closeButton richColors duration={2000} />
           </PostHogProvider>
         </NextIntlClientProvider>
         <Script

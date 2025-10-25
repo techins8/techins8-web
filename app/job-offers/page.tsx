@@ -1,7 +1,7 @@
-import { buildQuery } from "@/lib/http";
 import { Suspense } from "react";
+import { buildQuery } from "@/lib/http";
+import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
 import { JobsPaginations } from "./jobs-paginations";
-import { getJobsBrut, IGetJobsBrutParams } from "./jobs.query";
 import JobsTable from "./jobsTable";
 
 export default async function HomePage({
@@ -26,8 +26,8 @@ export default async function HomePage({
   } = await searchParams;
 
   const params = {
-    page: parseInt(page),
-    size: parseInt(size),
+    page: parseInt(page, 10),
+    size: parseInt(size, 10),
     onlyPublished: onlyPublished === "true",
     locations,
     skills,

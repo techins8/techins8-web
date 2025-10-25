@@ -1,26 +1,14 @@
 // app/developpeurs/[...slug]/page.tsx
-import { Metadata } from "next";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import HomePage from "../../(home)/page";
-import {
-  DEFAULT_IMAGE,
-  getSeoDataFromSlug,
-  SEO_DATA,
-  WEBSITE_URL,
-} from "../../seo";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { DeveloperProfile } from "@/components/SEOContent/DeveloperProfile";
 import { RelatedLinks } from "@/components/SEOContent/RelatedLinks";
-import {
-  generateBreadcrumbSchema,
-  generateJobPostingSchema,
-} from "@/lib/json-ld";
-import {
-  getRelatedLinks,
-  getCityFromSlug,
-  getProfileFromSlug,
-} from "@/lib/seo-helpers";
+import { generateBreadcrumbSchema, generateJobPostingSchema } from "@/lib/json-ld";
+import { getCityFromSlug, getProfileFromSlug, getRelatedLinks } from "@/lib/seo-helpers";
+import HomePage from "../../(home)/page";
+import { DEFAULT_IMAGE, getSeoDataFromSlug, SEO_DATA, WEBSITE_URL } from "../../seo";
 
 export async function generateMetadata({
   params,
@@ -76,11 +64,7 @@ export async function generateMetadata({
   }
 }
 
-export default async function DynamicPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function DynamicPage({ params }: { params: Promise<{ slug: string }> }) {
   try {
     const { slug } = await params;
 
@@ -137,10 +121,7 @@ export default async function DynamicPage({
         <HomePage seoData={seoData} />
         {profile && <DeveloperProfile profile={profile} city={city} />}
         {relatedLinks.length > 0 && (
-          <RelatedLinks
-            links={relatedLinks}
-            title="Découvrez aussi ces profils de développeurs"
-          />
+          <RelatedLinks links={relatedLinks} title="Découvrez aussi ces profils de développeurs" />
         )}
       </>
     );
@@ -151,10 +132,8 @@ export default async function DynamicPage({
 }
 
 export function generateStaticParams() {
-  return SEO_DATA.filter((route) => route.path.startsWith("/developpeurs")).map(
-    (route) => {
-      const slug = route.path.replace("/developpeurs/", "").split("/");
-      return { slug: slug.length > 0 ? slug : [] };
-    },
-  );
+  return SEO_DATA.filter((route) => route.path.startsWith("/developpeurs")).map((route) => {
+    const slug = route.path.replace("/developpeurs/", "").split("/");
+    return { slug: slug.length > 0 ? slug : [] };
+  });
 }

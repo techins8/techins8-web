@@ -1,3 +1,4 @@
+import { ChevronsLeft, ChevronsRight } from "lucide-react";
 import {
   Pagination,
   PaginationContent,
@@ -7,8 +8,7 @@ import {
   PaginationNext,
   PaginationPrevious,
 } from "@/components/ui/pagination";
-import { ChevronsLeft, ChevronsRight } from "lucide-react";
-import { IGetJobsBrutParams } from "./jobs.query";
+import type { IGetJobsBrutParams } from "./jobs.query";
 
 export const JobsPaginations = ({
   page,

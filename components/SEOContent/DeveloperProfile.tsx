@@ -5,13 +5,17 @@ interface DeveloperProfileProps {
   city?: string;
 }
 
-const profileContent: Record<string, {
-  skills: string[];
-  stats: { label: string; value: string }[];
-  description: string;
-}> = {
+const profileContent: Record<
+  string,
+  {
+    skills: string[];
+    stats: { label: string; value: string }[];
+    description: string;
+  }
+> = {
   "full-stack": {
-    description: "Les développeurs Full Stack maîtrisent à la fois le frontend et le backend, offrant une polyvalence prisée par les entreprises.",
+    description:
+      "Les développeurs Full Stack maîtrisent à la fois le frontend et le backend, offrant une polyvalence prisée par les entreprises.",
     skills: ["React", "Node.js", "TypeScript", "PostgreSQL", "Docker", "API REST"],
     stats: [
       { label: "Salaire moyen", value: "45-65k€" },
@@ -19,8 +23,9 @@ const profileContent: Record<string, {
       { label: "Télétravail", value: "85%" },
     ],
   },
-  "frontend": {
-    description: "Les développeurs Frontend créent des interfaces utilisateur modernes et performantes avec les dernières technologies web.",
+  frontend: {
+    description:
+      "Les développeurs Frontend créent des interfaces utilisateur modernes et performantes avec les dernières technologies web.",
     skills: ["React", "Vue.js", "Angular", "TypeScript", "CSS/Sass", "Webpack"],
     stats: [
       { label: "Salaire moyen", value: "40-55k€" },
@@ -28,8 +33,9 @@ const profileContent: Record<string, {
       { label: "Télétravail", value: "80%" },
     ],
   },
-  "backend": {
-    description: "Les développeurs Backend construisent l'architecture serveur, les APIs et gèrent les bases de données des applications.",
+  backend: {
+    description:
+      "Les développeurs Backend construisent l'architecture serveur, les APIs et gèrent les bases de données des applications.",
     skills: ["Node.js", "Python", "Java", "PostgreSQL", "Redis", "Microservices"],
     stats: [
       { label: "Salaire moyen", value: "45-70k€" },
@@ -37,8 +43,9 @@ const profileContent: Record<string, {
       { label: "Télétravail", value: "75%" },
     ],
   },
-  "react": {
-    description: "Les développeurs React sont spécialisés dans la création d'interfaces utilisateur dynamiques avec la bibliothèque la plus populaire.",
+  react: {
+    description:
+      "Les développeurs React sont spécialisés dans la création d'interfaces utilisateur dynamiques avec la bibliothèque la plus populaire.",
     skills: ["React", "Next.js", "TypeScript", "Redux", "React Query", "Tailwind CSS"],
     stats: [
       { label: "Salaire moyen", value: "42-60k€" },
@@ -46,8 +53,9 @@ const profileContent: Record<string, {
       { label: "Télétravail", value: "85%" },
     ],
   },
-  "mobile": {
-    description: "Les développeurs Mobile créent des applications natives ou cross-platform pour iOS et Android.",
+  mobile: {
+    description:
+      "Les développeurs Mobile créent des applications natives ou cross-platform pour iOS et Android.",
     skills: ["React Native", "Flutter", "Swift", "Kotlin", "Firebase", "App Store"],
     stats: [
       { label: "Salaire moyen", value: "45-65k€" },
@@ -55,8 +63,9 @@ const profileContent: Record<string, {
       { label: "Télétravail", value: "70%" },
     ],
   },
-  "devops": {
-    description: "Les développeurs DevOps automatisent les processus de déploiement et gèrent l'infrastructure cloud.",
+  devops: {
+    description:
+      "Les développeurs DevOps automatisent les processus de déploiement et gèrent l'infrastructure cloud.",
     skills: ["Docker", "Kubernetes", "AWS/GCP", "CI/CD", "Terraform", "Monitoring"],
     stats: [
       { label: "Salaire moyen", value: "50-75k€" },
@@ -69,9 +78,7 @@ const profileContent: Record<string, {
 export function DeveloperProfile({ profile, city }: DeveloperProfileProps) {
   const content = profileContent[profile] || profileContent["full-stack"];
 
-  const locationText = city
-    ? `à ${city.charAt(0).toUpperCase() + city.slice(1)}`
-    : "en France";
+  const locationText = city ? `à ${city.charAt(0).toUpperCase() + city.slice(1)}` : "en France";
 
   return (
     <section className="w-full py-12 px-4 bg-background">
@@ -79,15 +86,16 @@ export function DeveloperProfile({ profile, city }: DeveloperProfileProps) {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div>
             <h2 className="text-2xl font-bold text-title mb-4">
-              Profil Développeur {profile.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ")} {locationText}
+              Profil Développeur{" "}
+              {profile
+                .split("-")
+                .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                .join(" ")}{" "}
+              {locationText}
             </h2>
-            <p className="text-muted-foreground mb-6">
-              {content.description}
-            </p>
+            <p className="text-muted-foreground mb-6">{content.description}</p>
 
-            <h3 className="text-lg font-semibold text-title mb-3">
-              Compétences recherchées
-            </h3>
+            <h3 className="text-lg font-semibold text-title mb-3">Compétences recherchées</h3>
             <div className="grid grid-cols-2 gap-2">
               {content.skills.map((skill) => (
                 <div key={skill} className="flex items-center space-x-2">
@@ -100,7 +108,8 @@ export function DeveloperProfile({ profile, city }: DeveloperProfileProps) {
 
           <div>
             <h3 className="text-lg font-semibold text-title mb-4">
-              Statistiques du marché {city ? `à ${city.charAt(0).toUpperCase() + city.slice(1)}` : ""}
+              Statistiques du marché{" "}
+              {city ? `à ${city.charAt(0).toUpperCase() + city.slice(1)}` : ""}
             </h3>
             <div className="space-y-4">
               {content.stats.map((stat) => (
@@ -109,9 +118,7 @@ export function DeveloperProfile({ profile, city }: DeveloperProfileProps) {
                   className="flex justify-between items-center p-4 bg-popover rounded-lg"
                 >
                   <span className="text-muted-foreground">{stat.label}</span>
-                  <span className="text-lg font-bold text-primary">
-                    {stat.value}
-                  </span>
+                  <span className="text-lg font-bold text-primary">{stat.value}</span>
                 </div>
               ))}
             </div>

@@ -1,4 +1,4 @@
-import { Heading2BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { Heading2BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { Text } from "./Text";
 
 interface Heading2Props {

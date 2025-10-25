@@ -1,6 +1,6 @@
 import { ExternalLink, Star } from "lucide-react";
 import Image from "next/image";
-import { Partnership } from "@/query/partnershipService";
+import type { Partnership } from "@/query/partnershipService";
 
 const PartnershipCard = ({ partnership }: { partnership: Partnership }) => {
   return (
@@ -29,13 +29,9 @@ const PartnershipCard = ({ partnership }: { partnership: Partnership }) => {
         </div>
 
         <div className="mb-4">
-          <h2 className="mb-2 text-xl font-semibold text-slate-800">
-            {partnership.name}
-          </h2>
+          <h2 className="mb-2 text-xl font-semibold text-slate-800">{partnership.name}</h2>
           {partnership.description && (
-            <p className="text-sm leading-relaxed text-slate-600">
-              {partnership.description}
-            </p>
+            <p className="text-sm leading-relaxed text-slate-600">{partnership.description}</p>
           )}
         </div>
 

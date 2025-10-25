@@ -1,5 +1,5 @@
 // pages/conditions-generales-vente.tsx
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Conditions Générales de Vente - FreeMatch",
@@ -168,8 +168,7 @@ export default function CGVPage() {
     },
     {
       title: "Article 10 - Service client et assistance",
-      content:
-        "FreeMatch met à disposition un service client pour accompagner ses utilisateurs.",
+      content: "FreeMatch met à disposition un service client pour accompagner ses utilisateurs.",
       subsections: [
         {
           subtitle: "10.1 - Support technique",
@@ -182,8 +181,7 @@ export default function CGVPage() {
     },
     {
       title: "Article 11 - Modification des conditions",
-      content:
-        "FreeMatch se réserve le droit de modifier les présentes CGV à tout moment.",
+      content: "FreeMatch se réserve le droit de modifier les présentes CGV à tout moment.",
       items: [
         "Les utilisateurs seront informés par email des modifications substantielles",
         "Un préavis de 30 jours sera respecté avant l'application des changements",
@@ -230,27 +228,19 @@ export default function CGVPage() {
       <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-md p-8">
           <header className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Conditions Générales de Vente
-            </h1>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Conditions Générales de Vente</h1>
             <p className="text-gray-600">En vigueur au 27 décembre 2024</p>
           </header>
 
           {sections.map((section, index) => (
             <section key={index} className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                {section.title}
-              </h2>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">{section.title}</h2>
 
-              {section.content && (
-                <p className="text-gray-600 mb-4">{section.content}</p>
-              )}
+              {section.content && <p className="text-gray-600 mb-4">{section.content}</p>}
 
               {section.subsections?.map((subsection, subIndex) => (
                 <div key={subIndex} className="ml-4 mb-6">
-                  <h3 className="text-xl font-medium text-gray-700 mb-3">
-                    {subsection.subtitle}
-                  </h3>
+                  <h3 className="text-xl font-medium text-gray-700 mb-3">{subsection.subtitle}</h3>
                   {subsection.items && (
                     <ul className="list-disc list-inside text-gray-600 space-y-2">
                       {subsection.items.map((item, itemIndex) => (

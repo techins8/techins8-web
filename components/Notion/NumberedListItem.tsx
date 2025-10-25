@@ -1,4 +1,4 @@
-import {
+import type {
   NumberedListItemBlockObjectResponse,
   TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";

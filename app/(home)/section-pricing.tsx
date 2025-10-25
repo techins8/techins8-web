@@ -17,9 +17,7 @@ const PricingSection = () => {
             {pricing("free.subtitle")}
           </p>
           <button
-            onClick={() =>
-              window.location.replace("https://dashboard.freemat.ch/signin")
-            }
+            onClick={() => window.location.replace("https://dashboard.freemat.ch/signin")}
             className="py-3 px-8 rounded-md font-semibold text-base sm:text-lg bg-primary text-white hover:opacity-90 transition-opacity"
           >
             {pricing("free.cta")}

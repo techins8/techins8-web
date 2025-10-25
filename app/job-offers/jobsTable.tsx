@@ -1,5 +1,8 @@
 "use client";
 
+import { formatDistance } from "date-fns";
+import { ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
 import {
   Table,
@@ -9,10 +12,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { IJob } from "@/types/job";
-import { formatDistance } from "date-fns";
-import { ExternalLink } from "lucide-react";
-import Link from "next/link";
+import type { IJob } from "@/types/job";
 import { SourceIcon } from "./source-icon";
 
 interface JobsTableProps {
@@ -49,10 +49,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               <TableCell className="py-4">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-medium text-gray-900">
-                    <Link
-                      href={`job-offers/${job.id}`}
-                      className="flex items-center gap-2"
-                    >
+                    <Link href={`job-offers/${job.id}`} className="flex items-center gap-2">
                       <SourceIcon source={job.source} />
                       <span>{job.title || "Untitled Position"}</span>
                     </Link>
@@ -61,11 +58,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                   {job.skills && job.skills.length > 0 && (
                     <div className="flex flex-wrap gap-1">
                       {job.skills.slice(0, 3).map((skill) => (
-                        <Badge
-                          key={skill.id}
-                          variant="techins8"
-                          className="text-xs"
-                        >
+                        <Badge key={skill.id} variant="techins8" className="text-xs">
                           {skill.name}
                         </Badge>
                       ))}
@@ -106,9 +99,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               </TableCell>
 
               <TableCell>
-                <div className="flex items-center gap-1 text-gray-500">
-                  {getPublishedAt(job)}
-                </div>
+                <div className="flex items-center gap-1 text-gray-500">{getPublishedAt(job)}</div>
               </TableCell>
 
               <TableCell>
@@ -120,11 +111,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                     Details
                   </Link> */}
                   {job.sourceurl && (
-                    <Link
-                      href={job.sourceurl || ""}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <Link href={job.sourceurl || ""} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4" />
                     </Link>
                   )}

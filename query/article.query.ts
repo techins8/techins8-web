@@ -1,6 +1,5 @@
 "use server";
 
-import { notion } from "@/lib/notion";
 import type {
   BlockObjectResponse,
   DatabaseObjectResponse,
@@ -10,6 +9,7 @@ import type {
   SelectPropertyItemObjectResponse,
   TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
+import { notion } from "@/lib/notion";
 
 export type Article = {
   id: string;
@@ -67,9 +67,7 @@ export const getArticles = async (): Promise<Article[]> => {
     },
   });
 
-  const articles = response.results.map((result) =>
-    makeArticle(result as NotionArticle)
-  );
+  const articles = response.results.map((result) => makeArticle(result as NotionArticle));
 
   articles.sort((a, b) => {
     const dateA = a.publishedAt ?? a.createdTime;
@@ -89,8 +87,7 @@ const makeArticle = (notionArticle: NotionArticle): Article => {
         : notionArticle.cover.file?.url;
   }
 
-  const startDate: string | undefined =
-    notionArticle.properties.publishedAt.date?.start;
+  const startDate: string | undefined = notionArticle.properties.publishedAt.date?.start;
 
   const teaser = notionArticle.properties?.teaser.rich_text
     .map((teaser) => teaser.plain_text)

@@ -1,15 +1,15 @@
 "use client";
 
-import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { validate } from "@dahoom/disposable-email";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import { useState } from "react";
 import { toast } from "sonner";
 import { z } from "zod";
+import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { subscribeToNewsletter } from "./newsletter.action";
-import { useTranslations } from 'next-intl';
 
 interface NewsletterState {
   email: string;
@@ -22,7 +22,7 @@ const newsletterSchema = z.object({
 });
 
 export default function NewsletterForm() {
-  const t = useTranslations('HomePage.Newsletter');
+  const t = useTranslations("HomePage.Newsletter");
   const [loading, setLoading] = useState(false);
   const [state, setState] = useState<NewsletterState>({
     email: "",
@@ -39,17 +39,17 @@ export default function NewsletterForm() {
       setState({
         ...state,
         status: "error",
-        message: t('messages.invalidEmail'),
+        message: t("messages.invalidEmail"),
       });
     }
 
     // Check for disposable email
     if (!(await validate(state.email))) {
-      toast.error(t('messages.disposableEmail'));
+      toast.error(t("messages.disposableEmail"));
       setState({
         ...state,
         status: "error",
-        message: t('messages.disposableEmail'),
+        message: t("messages.disposableEmail"),
       });
 
       setTimeout(() => {
@@ -63,11 +63,11 @@ export default function NewsletterForm() {
       const response = await subscribeToNewsletter({ email: state.email });
 
       if (response.success) {
-        toast.success(t('messages.success'));
+        toast.success(t("messages.success"));
         setState({
           email: "",
           status: "success",
-          message: t('messages.success'),
+          message: t("messages.success"),
         });
       } else {
         throw new Error(response.message);
@@ -77,7 +77,7 @@ export default function NewsletterForm() {
         setState((prev) => ({ ...prev, status: "idle", message: "" }));
       }, 3000);
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : t('messages.error');
+      const errorMessage = error instanceof Error ? error.message : t("messages.error");
       toast.error(errorMessage);
       setState({
         ...state,
@@ -110,29 +110,21 @@ export default function NewsletterForm() {
 
       <div className="max-w-3xl pl-0 sm:pl-12">
         <h2 className="text-2xl sm:text-[2.25rem] font-bold text-background mb-4 max-w-2xl">
-          <span className="text-3xl sm:text-5xl text-title">{t('title.discount')}</span>{' '}
-          {t('title.text')}
+          <span className="text-3xl sm:text-5xl text-title">{t("title.discount")}</span>{" "}
+          {t("title.text")}
         </h2>
 
-        <p className="text-background text-base sm:text-lg mb-6 sm:mb-8">
-          {t('subtitle')}
-        </p>
+        <p className="text-background text-base sm:text-lg mb-6 sm:mb-8">{t("subtitle")}</p>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-4"
-          id="newsletter-form"
-        >
+        <form onSubmit={handleSubmit} className="space-y-4" id="newsletter-form">
           <div className="flex flex-col sm:flex-row gap-3 max-w-xl">
             <Input
               type="email"
-              placeholder={t('form.emailPlaceholder')}
+              placeholder={t("form.emailPlaceholder")}
               className="flex-1 !py-3 sm:py-6 bg-background opacity-80 border-0 text-title placeholder:text-muted-foreground text-sm sm:text-base"
               required
               value={state.email}
-              onChange={(e) =>
-                setState((prev) => ({ ...prev, email: e.target.value }))
-              }
+              onChange={(e) => setState((prev) => ({ ...prev, email: e.target.value }))}
               disabled={state.status === "loading"}
             />
             <Button
@@ -140,7 +132,7 @@ export default function NewsletterForm() {
               className="px-8 bg-title text-white hover:bg-slate-800 font-semibold text-sm sm:text-base whitespace-nowrap"
               disabled={state.status === "loading"}
             >
-              {loading ? t('form.submitButton.loading') : t('form.submitButton.default')}
+              {loading ? t("form.submitButton.loading") : t("form.submitButton.default")}
             </Button>
           </div>
 

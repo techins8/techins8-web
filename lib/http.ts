@@ -8,10 +8,7 @@ export interface HttpOptions {
   next?: NextFetchRequestConfig;
 }
 
-export const http = async (
-  url: string,
-  options: HttpOptions = {}
-): Promise<Response> => {
+export const http = async (url: string, options: HttpOptions = {}): Promise<Response> => {
   if (options.query) {
     url += `?${buildQuery(options.query)}`;
   }
@@ -26,9 +23,7 @@ export const http = async (
   });
 };
 
-export const buildQuery = (
-  query: Record<string, scalar | Array<scalar>>
-): string => {
+export const buildQuery = (query: Record<string, scalar | Array<scalar>>): string => {
   const params = new URLSearchParams();
 
   for (const [key, value] of Object.entries(query)) {

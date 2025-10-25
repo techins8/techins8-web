@@ -3,8 +3,8 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
 const Nav = () => {
   const t = useTranslations("HomePage.Nav");
@@ -28,7 +28,7 @@ const Nav = () => {
     }
   }, [isMenuOpen]);
 
-  const logoSrc = "/images/logo/logo-freematch-dark.svg";
+  const logoSrc = "/images/logo.svg";
 
   const closeMenu = () => setIsMenuOpen(false);
 
@@ -48,18 +48,13 @@ const Nav = () => {
       <nav className="fixed left-0 top-0 w-full flex flex-col items-center z-50">
         <div
           className={`absolute inset-0 transition-all duration-200 ease-in-out ${
-            isScrolled || isMenuOpen
-              ? "bg-white/60 backdrop-blur-md border-b "
-              : "bg-transparent"
+            isScrolled || isMenuOpen ? "bg-white/60 backdrop-blur-md border-b " : "bg-transparent"
           }`}
         />
 
         <div className="relative flex items-center justify-between w-full max-w-[1150px] px-7 py-5">
           {/* Logo */}
-          <Link
-            className="font-display flex items-center text-3xl z-50"
-            href="/"
-          >
+          <Link className="font-display flex items-center text-3xl z-50" href="/">
             <div className="flex flex-col text-secondary lg:flex-row">
               <Image
                 src={logoSrc}
@@ -125,10 +120,7 @@ const Nav = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-12">
-            <Link
-              href="/about"
-              className="text-foreground hover:text-primary transition-colors"
-            >
+            <Link href="/about" className="text-foreground hover:text-primary transition-colors">
               {t("links.about")}
             </Link>
             <Link
@@ -137,10 +129,7 @@ const Nav = () => {
             >
               {t("links.partnerships")}
             </Link>
-            <Link
-              href="/blog"
-              className="text-foreground hover:text-primary transition-colors"
-            >
+            <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
               {t("links.blog")}
             </Link>
           </div>

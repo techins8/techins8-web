@@ -1,4 +1,4 @@
-import { fetchPartnerships, Partnership } from "@/query/partnershipService";
+import { fetchPartnerships, type Partnership } from "@/query/partnershipService";
 import PartnershipCard from "./partnership-card";
 
 const PartnershipsPage = async () => {
@@ -9,8 +9,7 @@ const PartnershipsPage = async () => {
       <div className="mb-8">
         <h1 className="text-3xl font-bold">Nos Partenariats</h1>
         <p className="mt-2">
-          Découvrez nos partenaires sélectionnés pour vous aider dans votre
-          carrière
+          Découvrez nos partenaires sélectionnés pour vous aider dans votre carrière
         </p>
       </div>
 

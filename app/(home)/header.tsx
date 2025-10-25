@@ -1,7 +1,7 @@
-import Link from "next/link";
 import Image from "next/image";
-import SubHeader from "./sub-header";
+import Link from "next/link";
 import { useTranslations } from "next-intl";
+import SubHeader from "./sub-header";
 
 interface HeaderProps {
   heroTitle?: string;
@@ -16,8 +16,7 @@ const Header = ({ heroTitle, heroSubtitle }: HeaderProps) => {
     if (!title) {
       return (
         <>
-          {t.raw("titlePrefix")}{" "}
-          <span className="text-primary">{t("defaultType")}</span>
+          {t.raw("titlePrefix")} <span className="text-primary">{t("defaultType")}</span>
           {t.raw("titleSuffix")}
         </>
       );

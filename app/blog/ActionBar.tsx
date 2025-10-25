@@ -1,5 +1,8 @@
 "use client";
 
+import { Facebook, Heart, Link, Linkedin, Share2, Twitter } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,9 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Facebook, Heart, Link, Linkedin, Share2, Twitter } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 export function ActionBar() {
   const [isLiked, setIsLiked] = useState(false);

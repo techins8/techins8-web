@@ -47,10 +47,7 @@ export function Breadcrumbs({ items, className = "" }: BreadcrumbsProps) {
                 {item.name}
               </span>
             ) : (
-              <Link
-                href={item.url}
-                className="hover:text-primary transition-colors"
-              >
+              <Link href={item.url} className="hover:text-primary transition-colors">
                 {item.name}
               </Link>
             )}
@@ -68,7 +65,7 @@ function generateBreadcrumbs(pathname: string): BreadcrumbItem[] {
   const breadcrumbs: BreadcrumbItem[] = [];
 
   let currentPath = "";
-  segments.forEach((segment, index) => {
+  segments.forEach((segment, _index) => {
     currentPath += `/${segment}`;
 
     const name = segment

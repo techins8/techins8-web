@@ -1,8 +1,8 @@
 "use client";
 
-import { Article, getArticles } from "@/query/article.query";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { type Article, getArticles } from "@/query/article.query";
 import { BlogCard } from "./BlogCard";
 
 export default function BlogPage() {
@@ -17,8 +17,7 @@ export default function BlogPage() {
       <div className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Blog</h1>
         <p className="text-gray-600">
-          Découvrez nos articles pour vous aider à mieux comprendre le marché de
-          l&apos;emploi.
+          Découvrez nos articles pour vous aider à mieux comprendre le marché de l&apos;emploi.
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

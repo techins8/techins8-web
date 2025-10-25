@@ -1,5 +1,5 @@
+import type { TextRichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
 import { cn } from "@/lib/utils";
-import { TextRichTextItemResponse } from "@notionhq/client/build/src/api-endpoints";
 
 export const Text = ({ text }: { text: TextRichTextItemResponse }) => {
   const color = text.annotations.color;

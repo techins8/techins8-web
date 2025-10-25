@@ -1,5 +1,5 @@
 // pages/mentions-legales.tsx
-import { Metadata } from "next";
+import type { Metadata } from "next";
 
 // Définition des métadonnées pour le SEO
 export const metadata: Metadata = {
@@ -100,8 +100,7 @@ export default function LegalPage() {
       subsections: [
         {
           subtitle: "Consentement",
-          content:
-            "Pour les traitements basés sur votre consentement explicite :",
+          content: "Pour les traitements basés sur votre consentement explicite :",
           items: [
             "L'envoi de communications marketing",
             "L'utilisation de cookies non essentiels",
@@ -110,8 +109,7 @@ export default function LegalPage() {
         },
         {
           subtitle: "Exécution du contrat",
-          content:
-            "Pour les traitements nécessaires à la fourniture du service :",
+          content: "Pour les traitements nécessaires à la fourniture du service :",
           items: [
             "Gestion de votre compte utilisateur",
             "Traitement des paiements",
@@ -141,8 +139,7 @@ export default function LegalPage() {
         "Droit à la portabilité de vos données",
         "Droit d'opposition au traitement de vos données",
       ],
-      footer:
-        "Pour exercer ces droits, contactez notre DPO à contact@freemat.ch",
+      footer: "Pour exercer ces droits, contactez notre DPO à contact@freemat.ch",
     },
     {
       title: "Transfert de Données",
@@ -172,29 +169,19 @@ export default function LegalPage() {
       <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-lg shadow-md p-8">
           <header className="text-center mb-12">
-            <h1 className="text-3xl font-bold text-gray-900 mb-4">
-              Mentions Légales FreeMatch
-            </h1>
-            <p className="text-gray-600">
-              Dernière mise à jour : 27 décembre 2024
-            </p>
+            <h1 className="text-3xl font-bold text-gray-900 mb-4">Mentions Légales FreeMatch</h1>
+            <p className="text-gray-600">Dernière mise à jour : 27 décembre 2024</p>
           </header>
 
           {sections.map((section, index) => (
             <section key={index} className="mb-10">
-              <h2 className="text-2xl font-semibold text-gray-800 mb-4">
-                {section.title}
-              </h2>
+              <h2 className="text-2xl font-semibold text-gray-800 mb-4">{section.title}</h2>
 
-              {section.content && (
-                <p className="text-gray-600 mb-4">{section.content}</p>
-              )}
+              {section.content && <p className="text-gray-600 mb-4">{section.content}</p>}
 
               {section.subsections?.map((subsection, subIndex) => (
                 <div key={subIndex} className="ml-4 mb-6">
-                  <h3 className="text-xl font-medium text-gray-700 mb-3">
-                    {subsection.subtitle}
-                  </h3>
+                  <h3 className="text-xl font-medium text-gray-700 mb-3">{subsection.subtitle}</h3>
                   {subsection.items && (
                     <ul className="list-disc list-inside text-gray-600 space-y-2">
                       {subsection.items.map((item, itemIndex) => (

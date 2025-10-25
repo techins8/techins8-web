@@ -1,5 +1,5 @@
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 interface RelatedLink {
   title: string;
@@ -12,10 +12,7 @@ interface RelatedLinksProps {
   title?: string;
 }
 
-export function RelatedLinks({
-  links,
-  title = "Pages connexes",
-}: RelatedLinksProps) {
+export function RelatedLinks({ links, title = "Pages connexes" }: RelatedLinksProps) {
   if (links.length === 0) return null;
 
   return (
@@ -32,9 +29,7 @@ export function RelatedLinks({
               <h3 className="text-lg font-semibold text-title mb-2 group-hover:text-primary transition-colors">
                 {link.title}
               </h3>
-              <p className="text-sm text-muted-foreground mb-3">
-                {link.description}
-              </p>
+              <p className="text-sm text-muted-foreground mb-3">{link.description}</p>
               <div className="flex items-center text-primary text-sm font-medium">
                 Voir les offres
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />

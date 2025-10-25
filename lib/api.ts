@@ -1,10 +1,10 @@
 import { env } from "./env";
-import { http, HttpOptions } from "./http";
+import { type HttpOptions, http } from "./http";
 
 export const api = async (
   resource: string,
   options: HttpOptions = {},
-  apiUrl: string = env.SCRAPPER_API_URL
+  apiUrl: string = env.SCRAPPER_API_URL,
 ): Promise<Response> => {
   const url = `${apiUrl}${resource.startsWith("/") ? "" : "/"}${resource}`;
 

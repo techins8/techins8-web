@@ -1,14 +1,10 @@
-import {
+import type {
   ParagraphBlockObjectResponse,
   TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { Text } from "./Text";
 
-export const Paragraph = ({
-  paragraph,
-}: {
-  paragraph: ParagraphBlockObjectResponse;
-}) => {
+export const Paragraph = ({ paragraph }: { paragraph: ParagraphBlockObjectResponse }) => {
   return (
     <p className="mb-3">
       {paragraph.paragraph.rich_text.length === 0 && <br />}

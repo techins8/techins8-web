@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import NewsletterForm from "./(home)/newsletter-form";
 import { SEO_DATA } from "./seo";
 
@@ -44,9 +44,8 @@ const Footer = () => {
                 loading="lazy"
               />
               <p className="text-background text-sm">
-                FreeMatch est un tableau de bord destiné aux professionnels du
-                secteur technologique français, offrant un accès à diverses
-                données sur l&apos;état du marché.
+                FreeMatch est un tableau de bord destiné aux professionnels du secteur technologique
+                français, offrant un accès à diverses données sur l&apos;état du marché.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <a href="https://www.uneed.best/tool/freematch">
@@ -61,6 +60,7 @@ const Footer = () => {
                 <a
                   href="https://www.producthunt.com/posts/freematch?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-freematch"
                   target="_blank"
+                  rel="noopener"
                 >
                   <Image
                     src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680"
@@ -78,9 +78,7 @@ const Footer = () => {
               <div className="grid grid-cols-3 gap-8">
                 {/* Main Navigation */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">
-                    Navigation
-                  </h3>
+                  <h3 className="text-background text-base font-semibold">Navigation</h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {navigationLinks.map((link) => (
                       <Link
@@ -96,16 +94,10 @@ const Footer = () => {
 
                 {/* Footer Links */}
                 <div className="space-y-6">
-                  <h3 className="text-background text-base font-semibold">
-                    Liens utiles
-                  </h3>
+                  <h3 className="text-background text-base font-semibold">Liens utiles</h3>
                   <div className="flex flex-col space-y-4 text-sm">
                     {footerLinks.map((link) => (
-                      <Link
-                        key={link.href}
-                        href={link.href}
-                        className="text-background"
-                      >
+                      <Link key={link.href} href={link.href} className="text-background">
                         {link.label}
                       </Link>
                     ))}
@@ -115,9 +107,7 @@ const Footer = () => {
                 {/* Social & CTA */}
                 <div className="space-y-6">
                   <div className="flex justify-between">
-                    <h3 className="text-background text-base font-semibold">
-                      Nous suivre
-                    </h3>
+                    <h3 className="text-background text-base font-semibold">Nous suivre</h3>
                     <a
                       href="https://www.linkedin.com/company/freematch/"
                       target="_blank"
@@ -134,9 +124,7 @@ const Footer = () => {
                   </div>
                   <div className="space-y-4">
                     <div className="flex flex-col gap-4">
-                      <p className="text-background text-sm">
-                        Nous sommes là pour vous aider !
-                      </p>
+                      <p className="text-background text-sm">Nous sommes là pour vous aider !</p>
                     </div>
 
                     <Button
@@ -146,6 +134,7 @@ const Footer = () => {
                       <a
                         href="mailto:contact@freematch.com?subject=Contact_Landing"
                         target="_blank"
+                        rel="noopener"
                       >
                         NOUS CONTACTER
                       </a>
@@ -161,16 +150,10 @@ const Footer = () => {
       {/* Footer links */}
       <div className="relative bg-title pb-12">
         <div className="max-w-[1120px] mx-auto px-4">
-          <h3 className="text-background text-base font-semibold mb-4">
-            Liens internes
-          </h3>
+          <h3 className="text-background text-base font-semibold mb-4">Liens internes</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {SEO_DATA.map((link) => (
-              <Link
-                key={link.path}
-                href={link.path}
-                className=" text-xs text-background"
-              >
+              <Link key={link.path} href={link.path} className=" text-xs text-background">
                 {link.footerText}
               </Link>
             ))}

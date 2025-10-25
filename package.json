@@ -6,7 +6,10 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write ."
   },
   "dependencies": {
     "@dahoom/disposable-email": "^0.3.253",
@@ -40,6 +43,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.0",
     "@types/node": "^22.13.1",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.2",
