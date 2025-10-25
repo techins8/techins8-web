@@ -140,29 +140,11 @@
       }
     },
     "Pricing": {
-      "title": {
-        "prefix": "Rejoignez les ",
-        "highlight": "+2400 utilisateurs",
-        "suffix": " qui gagnent du temps."
-      },
-      "toggle": {
-        "annual": "Annuel",
-        "monthly": "Mensuel"
-      },
-      "promo": "Exclusive launch offer: -50% extra on FreeMatch Premium 🚀",
-      "card": {
-        "title": "Accès complet",
-        "highlight": "7 jours",
-        "avantage": [
-          "Analytics marketplace IT & tech",
-          "Analyse IA des offres",
-          "Agrégation multi-sources",
-          "Mises à jour quotidiennes"
-        ],
-        "cta": "COMMENCER L'ESSAI GRATUIT"
-      },
-      "info-pricing": "Après les 7 jours d'essai : 9,90€/mois ou 99€/an (-17%)",
-      "info-supply": "Gardez l'accès aux analytics même si vous ne vous abonnez pas"
+      "free": {
+        "title": "Notre application est gratuite",
+        "subtitle": "Accédez à toutes les fonctionnalités de FreeMatch sans aucun frais. Trouvez votre prochain emploi tech en toute simplicité.",
+        "cta": "COMMENCER GRATUITEMENT"
+      }
     },
     "SocialProof": {
       "title": {

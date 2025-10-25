@@ -105,29 +105,11 @@
       ]
     },
     "Pricing": {
-      "title": {
-        "prefix": "Join over ",
-        "highlight": "+2400 users",
-        "suffix": " who save time."
-      },
-      "toggle": {
-        "annual": "Annual",
-        "monthly": "Monthly"
-      },
-      "promo": "Exclusive launch offer: -50% extra on FreeMatch Premium 🚀",
-      "card": {
-        "title": "Full access",
-        "highlight": "7 days",
-        "avantage": [
-          "IT & tech marketplace analytics",
-          "AI job offer analysis",
-          "Multi-source aggregation",
-          "Daily updates"
-        ],
-        "cta": "START FREE TRIAL"
-      },
-      "info-pricing": "After 7-day trial: €9.90/month or €99/year (-17%)",
-      "info-supply": "Keep access to analytics even without subscription"
+      "free": {
+        "title": "Our app is free",
+        "subtitle": "Access all FreeMatch features at no cost. Find your next tech job with ease.",
+        "cta": "GET STARTED FOR FREE"
+      }
     },
     "SocialProof": {
       "title": {
