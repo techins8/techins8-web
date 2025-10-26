@@ -2,9 +2,10 @@ import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Clock } from "lucide-react";
 import type { Metadata } from "next";
-import { Block } from "@/components/Notion/Block";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
-import { getArticle } from "@/query/article.query";
+import { getArticle, getArticles } from "@/query/article.query";
 import { ActionBar } from "../ActionBar";
 
 interface PageProps {
@@ -13,7 +14,16 @@ interface PageProps {
   }>;
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateStaticParams() {
+  const articles = await getArticles();
+  return articles.map((article) => ({
+    id: article.id,
+  }));
+}
+
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { id } = await params;
   const article = await getArticle(id);
   const publishedTime = article.publishedAt ?? article.createdTime;
@@ -58,7 +68,6 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <article className="max-w-[800px] mx-auto px-8 py-8 font-sans">
-      {/* Cover image */}
       {article.imageCover && (
         <div className="mb-6">
           <div
@@ -68,14 +77,17 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       )}
 
-      {/* Author and metadata section */}
       <div className="flex items-center gap-4 mb-8">
         <div className="w-12 h-12">
           <Avatar>
             <AvatarImage
               className="rounded-full object-cover w-full h-full"
               src={`/authors/${article.author?.toLowerCase() ?? "default"}.webp`}
-              alt={article.author ? `Photo de ${article.author}` : "Auteur par défaut"}
+              alt={
+                article.author
+                  ? `Photo de ${article.author}`
+                  : "Auteur par défaut"
+              }
             />
           </Avatar>
         </div>
@@ -97,20 +109,12 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       </div>
 
-      {/* Action bar */}
       <ActionBar />
 
-      {/* Article content */}
-      <div
-        className="[&>p]:text-lg [&>p]:leading-[1.8] [&>p]:mb-4
-                      [&>ul]:ml-6 [&>ul]:mb-3 [&>ul]:space-y-3
-                      [&>ol]:ml-6 [&>ol]:mb-3 [&>ol]:space-y-3
-                      [&>img]:rounded-lg [&>img]:my-6 [&>img]:w-full
-                      [&>a]:text-[#0073e6] [&>a]:no-underline hover:[&>a]:underline"
-      >
-        {article.blocks.map((block) => (
-          <Block key={block.id} block={block} />
-        ))}
+      <div className="prose prose-lg max-w-none mt-8">
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+          {article.content}
+        </ReactMarkdown>
       </div>
     </article>
   );

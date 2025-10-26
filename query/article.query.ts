@@ -1,20 +1,12 @@
 "use server";
 
-import type {
-  BlockObjectResponse,
-  DatabaseObjectResponse,
-  DatePropertyItemObjectResponse,
-  MultiSelectPropertyItemObjectResponse,
-  NumberPropertyItemObjectResponse,
-  SelectPropertyItemObjectResponse,
-  TextRichTextItemResponse,
-} from "@notionhq/client/build/src/api-endpoints";
-import { notion } from "@/lib/notion";
+import { readFile } from "fs/promises";
+import { join } from "path";
 
 export type Article = {
   id: string;
   title: string;
-  tags: MultiSelectPropertyItemObjectResponse;
+  tags: string[];
   teaser: string;
   publishedAt?: Date | null;
   imageCover: string;
@@ -23,51 +15,45 @@ export type Article = {
   createdTime: Date;
 };
 
-export type ArticleBlocks = Article & {
-  blocks: BlockObjectResponse[];
+export type ArticleWithContent = Article & {
+  content: string;
 };
 
-type NotionArticle = DatabaseObjectResponse & {
-  properties: {
-    lang: SelectPropertyItemObjectResponse;
-    Name: {
-      title?: TextRichTextItemResponse[];
-    };
-    tags: MultiSelectPropertyItemObjectResponse;
-    teaser: { rich_text: TextRichTextItemResponse[] };
-    publishedAt: DatePropertyItemObjectResponse;
-    author: SelectPropertyItemObjectResponse;
-    readtime: NumberPropertyItemObjectResponse;
-  };
-  cover: {
-    type: "external" | "file";
-    external?: {
-      url: string;
-    };
-    file?: {
-      url: string;
-    };
-  };
+type ArticleJSON = {
+  id: string;
+  title: string;
+  tags: string[];
+  teaser: string;
+  publishedAt: string;
+  imageCover: string;
+  author: string;
+  readtime: number;
 };
+
+type ArticlesData = {
+  articles: ArticleJSON[];
+};
+
+const ARTICLES_JSON_PATH = join(process.cwd(), "data", "blog", "articles.json");
+const CONTENT_DIR = join(process.cwd(), "data", "blog", "content");
 
 export const getArticles = async (): Promise<Article[]> => {
-  const response = await notion.databases.query({
-    database_id: process.env.NOTION_BLOG_DATABASE_ID as string,
-    sorts: [
-      {
-        timestamp: "created_time",
-        direction: "descending",
-      },
-    ],
-    filter: {
-      property: "status",
-      status: {
-        equals: "Done",
-      },
-    },
-  });
+  const fileContent = await readFile(ARTICLES_JSON_PATH, "utf-8");
+  const data: ArticlesData = JSON.parse(fileContent);
 
-  const articles = response.results.map((result) => makeArticle(result as NotionArticle));
+  const articles = data.articles.map((article) => ({
+    id: article.id,
+    title: article.title,
+    tags: article.tags,
+    teaser: article.teaser,
+    publishedAt: article.publishedAt ? new Date(article.publishedAt) : null,
+    imageCover: article.imageCover,
+    author: article.author,
+    readtime: article.readtime,
+    createdTime: article.publishedAt
+      ? new Date(article.publishedAt)
+      : new Date(),
+  }));
 
   articles.sort((a, b) => {
     const dateA = a.publishedAt ?? a.createdTime;
@@ -78,47 +64,19 @@ export const getArticles = async (): Promise<Article[]> => {
   return articles;
 };
 
-const makeArticle = (notionArticle: NotionArticle): Article => {
-  let cover: string | null = "/images/default-cover.webp";
-  if (notionArticle.cover) {
-    cover =
-      notionArticle.cover.type === "external"
-        ? notionArticle.cover.external?.url
-        : notionArticle.cover.file?.url;
+export const getArticle = async (id: string): Promise<ArticleWithContent> => {
+  const articles = await getArticles();
+  const article = articles.find((a) => a.id === id);
+
+  if (!article) {
+    throw new Error(`Article not found: ${id}`);
   }
 
-  const startDate: string | undefined = notionArticle.properties.publishedAt.date?.start;
-
-  const teaser = notionArticle.properties?.teaser.rich_text
-    .map((teaser) => teaser.plain_text)
-    .join(" ");
+  const contentPath = join(CONTENT_DIR, `${id}.md`);
+  const content = await readFile(contentPath, "utf-8");
 
   return {
-    id: notionArticle.id,
-    tags: notionArticle.properties.tags,
-    teaser: teaser,
-    title: notionArticle.properties.Name.title?.[0]?.plain_text as string,
-    publishedAt: startDate ? (new Date(startDate as string) as Date) : null,
-    imageCover: cover as string,
-    author: notionArticle.properties.author?.select?.name as string,
-    readtime: notionArticle.properties.readtime.number as number,
-    createdTime: new Date(notionArticle.created_time),
-  };
-};
-
-export const getArticle = async (id: string): Promise<ArticleBlocks> => {
-  const response = await notion.pages.retrieve({
-    page_id: id,
-  });
-
-  const blocks = await notion.blocks.children.list({
-    block_id: id,
-  });
-
-  const notionArticle = response as unknown as NotionArticle;
-
-  return {
-    ...makeArticle(notionArticle),
-    blocks: blocks.results as BlockObjectResponse[],
+    ...article,
+    content,
   };
 };

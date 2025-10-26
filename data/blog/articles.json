@@ -1,0 +1,64 @@
+{
+  "articles": [
+    {
+      "id": "developpeur-full-stack-competences-salaire-2025",
+      "title": "Développeur Full Stack : Compétences et salaire en 2025",
+      "tags": ["Full Stack", "Carrière", "Salaire"],
+      "teaser": "Découvrez les compétences essentielles, les technologies incontournables et les salaires moyens pour les développeurs Full Stack en 2025. Un guide complet pour booster votre carrière.",
+      "publishedAt": "2025-01-15",
+      "imageCover": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 5
+    },
+    {
+      "id": "react-vs-angular-quel-framework-2025",
+      "title": "React vs Angular : Quel framework choisir en 2025 ?",
+      "tags": ["React", "Angular", "Frontend"],
+      "teaser": "Comparaison détaillée entre React et Angular en 2025. Performance, écosystème, courbe d'apprentissage, opportunités d'emploi : tous les critères pour faire le bon choix.",
+      "publishedAt": "2025-01-12",
+      "imageCover": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 5
+    },
+    {
+      "id": "teletravail-developpeurs-meilleurs-pays-entreprises",
+      "title": "Télétravail pour développeurs : Les meilleurs pays et entreprises",
+      "tags": ["Télétravail", "Remote", "Carrière"],
+      "teaser": "Le guide ultime du télétravail pour développeurs : pays avec les meilleures conditions, entreprises qui recrutent en remote, et conseils pour réussir votre transition vers le 100% distant.",
+      "publishedAt": "2025-01-08",
+      "imageCover": "https://images.unsplash.com/photo-1588196749597-9ff075ee6b5b?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 4
+    },
+    {
+      "id": "devops-guide-complet-debuter-carriere",
+      "title": "DevOps : Guide complet pour débuter sa carrière",
+      "tags": ["DevOps", "Carrière", "Cloud"],
+      "teaser": "Comment devenir DevOps en 2025 ? Technologies à maîtriser, certifications importantes, parcours de formation et salaires. Tout ce qu'il faut savoir pour réussir dans le DevOps.",
+      "publishedAt": "2025-01-05",
+      "imageCover": "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 5
+    },
+    {
+      "id": "salaires-developpeurs-france-2025-par-technologie",
+      "title": "Salaires développeurs en France : Guide 2025 par technologie",
+      "tags": ["Salaire", "France", "Carrière"],
+      "teaser": "Étude complète des salaires des développeurs en France en 2025. Découvrez les rémunérations par technologie, expérience et région, avec des données actualisées du marché.",
+      "publishedAt": "2025-01-02",
+      "imageCover": "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 5
+    },
+    {
+      "id": "negocier-salaire-developpeur-techniques-conseils",
+      "title": "Comment négocier son salaire en tant que développeur",
+      "tags": ["Salaire", "Négociation", "Carrière"],
+      "teaser": "Techniques et stratégies pour négocier efficacement votre salaire de développeur. Apprenez à valoriser vos compétences, préparer votre argumentaire et obtenir la rémunération que vous méritez.",
+      "publishedAt": "2024-12-28",
+      "imageCover": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=1200&h=630&fit=crop",
+      "author": "FreeMatch",
+      "readtime": 4
+    }
+  ]
+}

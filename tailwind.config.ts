@@ -1,12 +1,12 @@
+import type { Config } from "tailwindcss";
 import { fontFamily } from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+const config: Config = {
   darkMode: ["class"],
   content: ["app/**/*.{ts,tsx}", "components/**/*.{ts,tsx}"],
   theme: {
     container: {
-      center: "true",
+      center: true,
       padding: "2rem",
       screens: {
         "2xl": "1400px",
@@ -89,7 +89,113 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: "none",
+            color: "inherit",
+            a: {
+              color: "#3b82f6",
+              "&:hover": {
+                color: "#2563eb",
+              },
+            },
+            h1: {
+              fontWeight: "700",
+              marginTop: "2rem",
+              marginBottom: "1rem",
+            },
+            h2: {
+              fontWeight: "700",
+              marginTop: "2rem",
+              marginBottom: "1rem",
+            },
+            h3: {
+              fontWeight: "600",
+              marginTop: "1.5rem",
+              marginBottom: "0.75rem",
+            },
+            h4: {
+              fontWeight: "600",
+              marginTop: "1.5rem",
+              marginBottom: "0.75rem",
+            },
+            p: {
+              marginTop: "1rem",
+              marginBottom: "1rem",
+            },
+            ul: {
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              paddingLeft: "1.5rem",
+            },
+            ol: {
+              marginTop: "1rem",
+              marginBottom: "1rem",
+              paddingLeft: "1.5rem",
+            },
+            li: {
+              marginTop: "0.5rem",
+              marginBottom: "0.5rem",
+            },
+            code: {
+              backgroundColor: "#f3f4f6",
+              padding: "0.125rem 0.25rem",
+              borderRadius: "0.25rem",
+              fontWeight: "400",
+            },
+            "code::before": {
+              content: '""',
+            },
+            "code::after": {
+              content: '""',
+            },
+            pre: {
+              backgroundColor: "#f3f4f6",
+              padding: "1rem",
+              borderRadius: "0.5rem",
+              overflowX: "auto",
+            },
+            blockquote: {
+              borderLeftWidth: "4px",
+              borderLeftColor: "#3b82f6",
+              paddingLeft: "1rem",
+              fontStyle: "italic",
+              marginTop: "1.5rem",
+              marginBottom: "1.5rem",
+            },
+            table: {
+              width: "100%",
+              marginTop: "1.5rem",
+              marginBottom: "1.5rem",
+            },
+            thead: {
+              borderBottomWidth: "1px",
+            },
+            th: {
+              backgroundColor: "#f3f4f6",
+              padding: "0.75rem",
+              textAlign: "left",
+            },
+            td: {
+              padding: "0.75rem",
+              borderWidth: "1px",
+              borderColor: "#e5e7eb",
+            },
+            img: {
+              borderRadius: "0.5rem",
+              marginTop: "1.5rem",
+              marginBottom: "1.5rem",
+            },
+            strong: {
+              fontWeight: "600",
+            },
+          },
+        },
+      },
     },
   },
-  plugins: [import("tailwindcss-animate"), import("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
+
+export default config;
