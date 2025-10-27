@@ -1,11 +1,8 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import Image from "next/image";
-import Link from "next/link";
-import Script from "next/script";
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { generateFAQSchema } from "@/lib/json-ld";
 
 type FAQItem = {
@@ -81,6 +78,7 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
   return (
     <div className="bg-white rounded-lg shadow-sm mb-4">
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 px-10 flex justify-between items-center text-left gap-4"
       >
@@ -100,34 +98,6 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
           {renderAnswer()}
         </div>
       </div>
-    </div>
-  );
-};
-
-// const DiscordCard = () => {
-//   const t = useTranslations("HomePage.FAQ.discord");
-
-  return (
-    <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
-      <div className="mx-auto mb-8 flex items-center justify-center">
-        <Image
-          src="/images/logo/discord.svg"
-          alt="Discord"
-          width={104}
-          height={104}
-        />
-      </div>
-      <h3 className="text-xl font-medium mb-8 text-primary-foreground">
-        {t("title")}
-      </h3>
-      <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
-      <Link
-        href="https://discord.gg/your-invite-link"
-        target="_blank"
-        className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
-      >
-        {t("button")}
-      </Link>
     </div>
   );
 };
@@ -152,32 +122,35 @@ const SectionFaq = () => {
 
   const faqSchema = generateFAQSchema(faqItems);
 
-  return (
-    <>
-      <Script
-        id="faq-schema"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(faqSchema),
-        }}
-      />
-      <section className="w-full py-24 px-4 bg-popover">
-        <div className="max-w-[1120px] mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
-              {t("title")}
-            </h2>
-          </div>
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.type = "application/ld+json";
+    script.id = "faq-schema";
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2">
+    return () => {
+      const existingScript = document.getElementById("faq-schema");
+      if (existingScript) {
+        document.head.removeChild(existingScript);
+      }
+    };
+  }, [faqSchema]);
+
+  return (
+    <section className="w-full py-24 px-4 bg-popover">
+      <div className="max-w-[1120px] mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
+            {t("title")}
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-[950px] mx-auto">
+          <div className="lg:col-span-3">
             {faqs.map((faq) => (
               <FAQItem key={faq.id} {...faq} />
             ))}
-          </div>
-
-          <div className="lg:col-span-1">
-            <DiscordCard />
           </div>
         </div>
       </div>
