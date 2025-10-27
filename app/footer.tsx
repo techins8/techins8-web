@@ -1,8 +1,8 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import NewsletterForm from "./(home)/newsletter-form";
 import { SEO_DATA } from "./seo";
 
@@ -37,31 +37,39 @@ const Footer = () => {
             {/* Company Info */}
             <div className="md:col-span-4 space-y-6">
               <Image
-                src="/images/logo/logo-techins8-light.svg"
-                alt="TechIns8 Logo"
+                src="/images/logo/logo-light.svg"
+                alt="FreeMatch Logo"
                 width={150}
                 height={40}
                 loading="lazy"
               />
               <p className="text-background text-sm">
-                TechIns8 est un tableau de bord destiné aux professionnels du
+                FreeMatch est un tableau de bord destiné aux professionnels du
                 secteur technologique français, offrant un accès à diverses
                 données sur l&apos;état du marché.
               </p>
               <div className="flex items-center justify-center gap-4">
                 <a href="https://www.uneed.best/tool/techins8">
-                  <Image src="https://www.uneed.best/POTM1.png" 
-                  width={250} 
-                  height={54}  
-                  className="w-[180px] sm:w-[250px] h-auto" 
-                  alt="Uneed POTM1 Badge" />
+                  <Image
+                    src="https://www.uneed.best/EMBED3.png"
+                    alt="Uneed Embed Badge"
+                    width={250}
+                    height={54}
+                    className="w-[180px] sm:w-[250px] h-auto"
+                  />
                 </a>
-                <a href="https://www.producthunt.com/posts/techins8?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-techins8" target="_blank">
-                  <Image src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680" 
-                  alt="TechIns8 - The first AI-powered job board for developers." 
-                  width={250} 
-                  height={54} 
-                  className="w-[180px] sm:w-[250px] h-auto" />
+                <a
+                  href="https://www.producthunt.com/posts/techins8?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-techins8"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <Image
+                    src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=831366&theme=light&t=1738161324680"
+                    alt="FreeMatch - The first AI-powered job board for developers."
+                    width={250}
+                    height={54}
+                    className="w-[180px] sm:w-[250px] h-auto"
+                  />
                 </a>
               </div>
             </div>
@@ -112,7 +120,7 @@ const Footer = () => {
                       Nous suivre
                     </h3>
                     <a
-                      href="https://www.linkedin.com/company/techins8/"
+                      href="https://www.linkedin.com/company/freematch/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="mr-10"
@@ -137,8 +145,9 @@ const Footer = () => {
                       className="w-full font-bold text-[10px] sm:text-sm bg-accent-foreground text-primary-foreground hover:bg-[#fa471198] px-4"
                     >
                       <a
-                        href="mailto:contact@techins8.com?subject=Contact_Landing"
+                        href="mailto:contact@freematch.com?subject=Contact_Landing"
                         target="_blank"
+                        rel="noopener"
                       >
                         NOUS CONTACTER
                       </a>
@@ -179,14 +188,14 @@ const Footer = () => {
         <div className="pt-8">
           <div className="max-w-[1120px] mx-auto px-4 relative z-10">
             <p className="text-center text-sm text-muted mb-8">
-              2025 TechIns8. Tous droits réservés.
+              2025 FreeMatch. Tous droits réservés.
             </p>
           </div>
 
           <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
             <Image
               src="/images/logo/footer-icon-techins8.svg"
-              alt="TechIns8 Footer Pattern"
+              alt="FreeMatch Footer Pattern"
               width={950}
               height={200}
               loading="lazy"

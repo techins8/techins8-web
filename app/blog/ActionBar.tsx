@@ -1,5 +1,8 @@
 "use client";
 
+import { Facebook, Heart, Link, Linkedin, Share2, Twitter } from "lucide-react";
+import { useState } from "react";
+import { toast } from "sonner";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,9 +10,6 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { cn } from "@/lib/utils";
-import { Facebook, Heart, Link, Linkedin, Share2, Twitter } from "lucide-react";
-import { useState } from "react";
-import { toast } from "sonner";
 
 export function ActionBar() {
   const [isLiked, setIsLiked] = useState(false);
@@ -31,11 +31,13 @@ export function ActionBar() {
   const handleSocialShare = (platform: string) => {
     // Convertir l'URL localhost en URL de production pour le partage
     const currentUrl = window.location.href;
-    const productionUrl = currentUrl.replace('localhost:3105', 'techins8.com');
+    const productionUrl = currentUrl.replace("localhost:3105", "freemat.ch");
     const url = encodeURIComponent(productionUrl);
-    const title = encodeURIComponent(document.title || "TechIns8 - Article");
-    const description = encodeURIComponent("Découvrez cet article sur TechIns8, votre partenaire en recrutement tech");
-    const source = encodeURIComponent("TechIns8");
+    const title = encodeURIComponent(document.title || "FreeMatch - Article");
+    const description = encodeURIComponent(
+      "Découvrez cet article sur FreeMatch, votre partenaire en recrutement tech",
+    );
+    const source = encodeURIComponent("FreeMatch");
 
     let shareUrl = "";
     switch (platform) {
@@ -58,7 +60,7 @@ export function ActionBar() {
     window.open(
       shareUrl,
       "Partager",
-      `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`
+      `toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=${width}, height=${height}, top=${top}, left=${left}`,
     );
   };
 
@@ -71,7 +73,7 @@ export function ActionBar() {
             "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200",
             isLiked
               ? "bg-red-50 text-red-500 hover:bg-red-100"
-              : "bg-gray-100 hover:bg-gray-200 text-gray-700"
+              : "bg-gray-100 hover:bg-gray-200 text-gray-700",
           )}
         >
           <Heart className={cn("w-5 h-5", isLiked && "fill-current")} />

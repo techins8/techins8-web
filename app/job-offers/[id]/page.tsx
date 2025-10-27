@@ -2,11 +2,7 @@ import { notFound } from "next/navigation";
 import { getJob } from "../jobs.query";
 import JobDetail from "./job-detail";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const job = await getJob({ id });
 
@@ -29,11 +25,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function JobOfferPage({
-  params,
-}: {
-  params: Promise<{ id: string }>;
-}) {
+export default async function JobOfferPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
 
   try {

@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
-import { SEO_DATA, WEBSITE_URL } from "./seo";
 import { getArticles } from "@/query/article.query";
+import { SEO_DATA, WEBSITE_URL } from "./seo";
 
 type ChangeFrequency = "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
 
@@ -72,7 +72,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // Return all routes
     return [...baseRoutes, ...seoRoutes, ...blogRoutes] satisfies MetadataRoute.Sitemap;
   } catch (error) {
-    console.error('Error fetching blog articles for sitemap:', error);
+    console.error("Error fetching blog articles for sitemap:", error);
     // Return base routes even if blog fetching fails
     return [...baseRoutes, ...seoRoutes] satisfies MetadataRoute.Sitemap;
   }

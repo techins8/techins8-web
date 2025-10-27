@@ -1,5 +1,5 @@
-import { Card, CardContent } from "@/components/ui/card";
 import Image from "next/image";
+import { Card, CardContent } from "@/components/ui/card";
 
 const Problem = () => {
   const problems = [
@@ -9,7 +9,8 @@ const Problem = () => {
       alt: "icône sablier",
       text: (
         <>
-          <strong className="text-[#F57F59]">D&apos;inombrables heures perdues</strong> à filtrer des offres trompeuses
+          <strong className="text-[#F57F59]">D&apos;inombrables heures perdues</strong> à filtrer
+          des offres trompeuses
         </>
       ),
       size: "large",
@@ -20,7 +21,8 @@ const Problem = () => {
       alt: "icône localisation",
       text: (
         <>
-          Des offres <strong className="text-[#F57F59]">full remote</strong> qui cachent 3 jours de présentiel
+          Des offres <strong className="text-[#F57F59]">full remote</strong> qui cachent 3 jours de
+          présentiel
         </>
       ),
       size: "small",
@@ -31,7 +33,8 @@ const Problem = () => {
       alt: "icône salaire",
       text: (
         <>
-          Des <strong className="text-[#F57F59]">TJM fantaisistes</strong> variant de 100€ à 700€ par jour
+          Des <strong className="text-[#F57F59]">TJM fantaisistes</strong> variant de 100€ à 700€
+          par jour
         </>
       ),
       size: "small",
@@ -77,40 +80,84 @@ const Problem = () => {
                   </div>
                   <p className="text-lg font-heading leading-relaxed">{problems[0].text}</p>
                 </div>
-                  <ul className="space-y-3 pl-4">
-                    <li className="flex items-center gap-3 text-gray-600 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-square-x w-5 h-5 text-accent">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                        <path d="m15 9-6 6"/>
-                        <path d="m9 9 6 6"/>
-                      </svg>
-                      <span>Vous préférez passer des heures à filtrer manuellement les offres</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-square-x w-5 h-5 text-accent">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                        <path d="m15 9-6 6"/>
-                        <path d="m9 9 6 6"/>
-                      </svg>
-                      <span>Les conditions de travail floues ne vous dérangent pas</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-square-x w-5 h-5 text-accent">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                        <path d="m15 9-6 6"/>
-                        <path d="m9 9 6 6"/>
-                      </svg>
-                      <span>Vous aimez découvrir les vraies conditions en entretien</span>
-                    </li>
-                    <li className="flex items-center gap-3 text-gray-600 transition-colors">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" className="lucide lucide-square-x w-5 h-5 text-accent">
-                        <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
-                        <path d="m15 9-6 6"/>
-                        <path d="m9 9 6 6"/>
-                      </svg>
-                      <span>Vous avez du temps à perdre avec des annonces en doublon</span>
-                    </li>
-                  </ul>
+                <ul className="space-y-3 pl-4">
+                  <li className="flex items-center gap-3 text-gray-600 transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-square-x w-5 h-5 text-accent"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                      <path d="m15 9-6 6" />
+                      <path d="m9 9 6 6" />
+                    </svg>
+                    <span>Vous préférez passer des heures à filtrer manuellement les offres</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-600 transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-square-x w-5 h-5 text-accent"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                      <path d="m15 9-6 6" />
+                      <path d="m9 9 6 6" />
+                    </svg>
+                    <span>Les conditions de travail floues ne vous dérangent pas</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-600 transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-square-x w-5 h-5 text-accent"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                      <path d="m15 9-6 6" />
+                      <path d="m9 9 6 6" />
+                    </svg>
+                    <span>Vous aimez découvrir les vraies conditions en entretien</span>
+                  </li>
+                  <li className="flex items-center gap-3 text-gray-600 transition-colors">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      className="lucide lucide-square-x w-5 h-5 text-accent"
+                    >
+                      <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
+                      <path d="m15 9-6 6" />
+                      <path d="m9 9 6 6" />
+                    </svg>
+                    <span>Vous avez du temps à perdre avec des annonces en doublon</span>
+                  </li>
+                </ul>
               </div>
               <div className="w-full md:w-auto flex-shrink-0">
                 <div className="relative w-full md:w-[400px] h-[220px] rounded-xl overflow-hidden">
@@ -201,13 +248,12 @@ const Problem = () => {
               </CardContent>
             </Card>
           </div>
-
-          
         </div>
       </div>
 
       <p className="text-center text-gray-600 mt-12 font-body max-w-2xl mx-auto">
-        Le temps que vous perdez à démêler le vrai du faux pourrait être tellement mieux utilisé pour préparer vos entretiens ou améliorer vos compétences.
+        Le temps que vous perdez à démêler le vrai du faux pourrait être tellement mieux utilisé
+        pour préparer vos entretiens ou améliorer vos compétences.
       </p>
     </section>
   );

@@ -1,14 +1,14 @@
 "use client";
 
-import { getCountJobs } from "@/query/count-jobs.query";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { getCountJobs } from "@/query/count-jobs.query";
 
 const SubHeader = () => {
   const [count, setCount] = useState<number | null>(() => {
     if (typeof window !== "undefined") {
       const stored = sessionStorage.getItem("countJobs");
-      return stored ? parseInt(stored) : null;
+      return stored ? parseInt(stored, 10) : null;
     }
     return null;
   });

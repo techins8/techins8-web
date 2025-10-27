@@ -33,8 +33,7 @@ export default function NotFound() {
               Désolé, la page n&apos;existe pas
             </h2>
             <p className="font-medium">
-              La page que vous cherchez semble avoir été déplacée, supprimée ou
-              n&apos;existe pas.
+              La page que vous cherchez semble avoir été déplacée, supprimée ou n&apos;existe pas.
             </p>
 
             <div className="flex justify-center gap-2 mt-6">

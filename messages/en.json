@@ -68,7 +68,7 @@
       },
       "subtitle": {
         "prefix": "Boost your job search with",
-        "highlight": "Techins8 Premium",
+        "highlight": "FreeMatch Premium",
         "suffix": ", your AI assistant for quick and hassle-free recruitment!"
       },
       "solutions": [
@@ -105,29 +105,11 @@
       ]
     },
     "Pricing": {
-      "title": {
-        "prefix": "Join over ",
-        "highlight": "+2400 users",
-        "suffix": " who save time."
-      },
-      "toggle": {
-        "annual": "Annual",
-        "monthly": "Monthly"
-      },
-      "promo": "Exclusive launch offer: -50% extra on TechIns8 Premium 🚀",
-      "card": {
-        "title": "Full access",
-        "highlight": "7 days",
-        "avantage": [
-          "IT & tech marketplace analytics",
-          "AI job offer analysis",
-          "Multi-source aggregation",
-          "Daily updates"
-        ],
-        "cta": "START FREE TRIAL"
-      },
-      "info-pricing": "After 7-day trial: €9.90/month or €99/year (-17%)",
-      "info-supply": "Keep access to analytics even without subscription"
+      "free": {
+        "title": "Our app is free",
+        "subtitle": "Access all FreeMatch features at no cost. Find your next tech job with ease.",
+        "cta": "GET STARTED FOR FREE"
+      }
     },
     "SocialProof": {
       "title": {
@@ -139,8 +121,8 @@
       "title": "Got questions?",
       "questions": {
         "difference": {
-          "question": "What makes TechIns8 different from other job sites?",
-          "intro": "TechIns8 isn't just a job site, it's your personal job search assistant:",
+          "question": "What makes FreeMatch different from other job sites?",
+          "intro": "FreeMatch isn't just a job site, it's your personal job search assistant:",
           "points": [
             "Our AI acts as an HR expert: it detects false promises, verifies daily rates, and ensures that \"full remote\" REALLY means full remote.",
             "No more juggling between platforms: all your searches, all your offers, in one place."
@@ -159,10 +141,10 @@
           "answer": "The daily rate is calculated based on market data and information provided in the offer. Our AI verifies the consistency of advertised amounts with required skills and experience."
         },
         "linkedin": {
-          "question": "I already have alerts on LinkedIn, why pay for TechIns8?",
+          "question": "I already have alerts on LinkedIn, why pay for FreeMatch?",
           "part1": "LinkedIn and other platforms send you all offers matching your keywords, without verification.",
           "part2": "These alerts are often full of fake \"full remote\" offers, unrealistic daily rates, or worse, listings that don't match your skills at all.",
-          "part3": "Result? You waste time filtering manually. TechIns8 does this work for you, grouping offers from multiple sources and verifying their quality."
+          "part3": "Result? You waste time filtering manually. FreeMatch does this work for you, grouping offers from multiple sources and verifying their quality."
         },
         "cancel": {
           "question": "Can I cancel my subscription?",

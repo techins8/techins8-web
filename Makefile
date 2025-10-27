@@ -50,10 +50,19 @@ prisma-studio: ## Migrate prisma
 	pnpx prisma migrate dev
 
 ## —— Linters ———————————————————————————————————
-lint: ## Run all linters
+lint: ## Run Biome linter
 	$(PACKAGE_MANAGER) lint
 
-analyze: lint build ## Run all linters and tests
+lint-fix: ## Run Biome linter and fix issues
+	$(PACKAGE_MANAGER) run lint:fix
+
+format: ## Format code with Biome
+	$(PACKAGE_MANAGER) run format
+
+check: ## Check and fix code with Biome
+	$(PACKAGE_MANAGER) run check
+
+analyze: check build ## Run Biome checks and build
 
 ## —— Git ———————————————————————————————————
 git-clean-branches: ## Clean merged branches
@@ -83,4 +92,3 @@ docker-restart: docker-down docker-up
 
 docker-down:
 	@docker compose down --remove-orphans --volumes
-

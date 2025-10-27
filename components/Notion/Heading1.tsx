@@ -1,4 +1,4 @@
-import {
+import type {
   Heading1BlockObjectResponse,
   TextRichTextItemResponse,
 } from "@notionhq/client/build/src/api-endpoints";
@@ -13,9 +13,7 @@ export function Heading1({ heading }: Heading1Props) {
 
   return (
     <h1 className="text-4xl font-bold mb-6 mt-8">
-      {richText.type === "text" && (
-        <Text text={richText as TextRichTextItemResponse} />
-      )}
+      {richText.type === "text" && <Text text={richText as TextRichTextItemResponse} />}
       {richText.type === "mention" && richText.plain_text}
       {richText.type === "equation" && richText.plain_text}
     </h1>

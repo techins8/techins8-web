@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import createNextIntlPlugin from 'next-intl/plugin';
+import createNextIntlPlugin from "next-intl/plugin";
 
 const withNextIntl = createNextIntlPlugin();
 
@@ -21,10 +21,17 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "www.techins8.com",
+        hostname: "www.freemat.ch",
+      },
+      {
+        protocol: "https",
+        hostname: "api.producthunt.com",
+      },
+      {
+        protocol: "https",
+        hostname: "www.uneed.best",
       },
     ],
-    domains: ["www.techins8.com"],
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     formats: ["image/avif", "image/webp"],
@@ -34,20 +41,20 @@ const nextConfig: NextConfig = {
     ignoreBuildErrors: false,
   },
   poweredByHeader: false,
-  
+
   async headers() {
     return [
       {
         source: "/api/:path*",
         headers: [
           { key: "Access-Control-Allow-Credentials", value: "true" },
-          { 
-            key: "Access-Control-Allow-Origin", 
-            value: "https://app.loops.so"
+          {
+            key: "Access-Control-Allow-Origin",
+            value: "https://app.loops.so",
           },
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET, POST, PUT, DELETE, OPTIONS, PATCH"
+            value: "GET, POST, PUT, DELETE, OPTIONS, PATCH",
           },
           {
             key: "Access-Control-Allow-Headers",
@@ -61,21 +68,21 @@ const nextConfig: NextConfig = {
               "Content-Type",
               "Date",
               "X-Api-Version",
-              "Authorization"
-            ].join(", ")
-          }
-        ]
+              "Authorization",
+            ].join(", "),
+          },
+        ],
       },
       {
         source: "/:path*",
         headers: [
           {
             key: "Access-Control-Allow-Origin",
-            value: "*"
+            value: "*",
           },
           {
             key: "Access-Control-Allow-Methods",
-            value: "GET, POST, PUT, DELETE, OPTIONS"
+            value: "GET, POST, PUT, DELETE, OPTIONS",
           },
           {
             key: "Access-Control-Allow-Headers",
@@ -89,13 +96,13 @@ const nextConfig: NextConfig = {
               "Content-Type",
               "Date",
               "X-Api-Version",
-              "Authorization"
-            ].join(", ")
-          }
-        ]
-      }
+              "Authorization",
+            ].join(", "),
+          },
+        ],
+      },
     ];
-  }
+  },
 };
 
 export default withNextIntl(nextConfig);

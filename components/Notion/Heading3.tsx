@@ -1,4 +1,4 @@
-import { Heading3BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
+import type { Heading3BlockObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 import { Text } from "./Text";
 
 interface Heading3Props {

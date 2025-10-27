@@ -1,10 +1,12 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import Script from "next/script";
 import { useTranslations } from "next-intl";
-// import Image from "next/image";
-// import Link from "next/link";
 import { useState } from "react";
+import { generateFAQSchema } from "@/lib/json-ld";
 
 type FAQItem = {
   id: string;
@@ -82,9 +84,7 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
         onClick={() => setIsOpen(!isOpen)}
         className="w-full py-6 px-10 flex justify-between items-center text-left gap-4"
       >
-        <span className="text-lg font-semibold text-title">
-          {t(`${id}.question`)}
-        </span>
+        <span className="text-lg font-semibold text-title">{t(`${id}.question`)}</span>
         <ChevronDown
           className={`h-8 w-8 text-primary flex-shrink-0 transition-transform duration-200 ${
             isOpen ? "transform rotate-180" : ""
@@ -107,54 +107,79 @@ const FAQItem = ({ id, hasHtml }: FAQItem) => {
 // const DiscordCard = () => {
 //   const t = useTranslations("HomePage.FAQ.discord");
 
-//   return (
-//     <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
-//       <div className="mx-auto mb-8 flex items-center justify-center">
-//         <Image
-//           src="/images/logo/discord.svg"
-//           alt="Discord"
-//           width={104}
-//           height={104}
-//         />
-//       </div>
-//       <h3 className="text-xl font-medium mb-8 text-primary-foreground">
-//         {t("title")}
-//       </h3>
-//       <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
-//       <Link
-//         href="https://discord.gg/your-invite-link"
-//         target="_blank"
-//         className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
-//       >
-//         {t("button")}
-//       </Link>
-//     </div>
-//   );
-// };
+  return (
+    <div className="bg-muted rounded-lg px-14 py-12 sm:px-16 sm:py-8 text-center">
+      <div className="mx-auto mb-8 flex items-center justify-center">
+        <Image
+          src="/images/logo/discord.svg"
+          alt="Discord"
+          width={104}
+          height={104}
+        />
+      </div>
+      <h3 className="text-xl font-medium mb-8 text-primary-foreground">
+        {t("title")}
+      </h3>
+      <p className="mb-8 text-primary-foreground">{t("subtitle")}</p>
+      <Link
+        href="https://discord.gg/your-invite-link"
+        target="_blank"
+        className="inline-block bg-white text-title font-semibold px-6 py-2 rounded-md hover:bg-gray-50 transition-colors"
+      >
+        {t("button")}
+      </Link>
+    </div>
+  );
+};
 
 const SectionFaq = () => {
   const t = useTranslations("HomePage.FAQ");
 
-  return (
-    <section className="w-full py-24 px-4 bg-popover">
-      <div className="max-w-[1120px] mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
-            {t("title")}
-          </h2>
-        </div>
+  const faqItems = faqs.map((faq) => {
+    const question = t(`questions.${faq.id}.question`);
+    let answer = "";
 
-        <div className="grid grid-cols-1">
+    if (!faq.hasHtml) {
+      answer = t(`questions.${faq.id}.answer`);
+    } else if (faq.id === "difference") {
+      answer = `${t(`questions.${faq.id}.intro`)} ${t(`questions.${faq.id}.points.0`)} ${t(`questions.${faq.id}.points.1`)}`;
+    } else if (faq.id === "linkedin") {
+      answer = `${t(`questions.${faq.id}.part1`)} ${t(`questions.${faq.id}.part2`)} ${t(`questions.${faq.id}.part3`)}`;
+    }
+
+    return { question, answer };
+  });
+
+  const faqSchema = generateFAQSchema(faqItems);
+
+  return (
+    <>
+      <Script
+        id="faq-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema),
+        }}
+      />
+      <section className="w-full py-24 px-4 bg-popover">
+        <div className="max-w-[1120px] mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="font-bold text-center text-4xl text-title !leading-tight max-w-[550px] mx-auto mb-4">
+              {t("title")}
+            </h2>
+          </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2">
             {faqs.map((faq) => (
               <FAQItem key={faq.id} {...faq} />
             ))}
           </div>
 
-        </div>
-          {/* <div className="lg:col-span-1">
+          <div className="lg:col-span-1">
             <DiscordCard />
-          </div> */}
+          </div>
+        </div>
       </div>
     </section>
   );

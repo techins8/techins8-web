@@ -1,7 +1,7 @@
 "use server";
 
-import { create, ErrorResponse, LoopsUser } from "@/lib/loops";
 import { z } from "zod";
+import { create, type ErrorResponse, type LoopsUser } from "@/lib/loops";
 
 interface CreateNewsletterResponse {
   success: boolean;
@@ -14,7 +14,7 @@ const newsletterSchema = z.object({
 });
 
 export async function subscribeToNewsletter(
-  data: z.infer<typeof newsletterSchema>
+  data: z.infer<typeof newsletterSchema>,
 ): Promise<CreateNewsletterResponse> {
   try {
     const result = newsletterSchema.safeParse(data);
@@ -29,7 +29,7 @@ export async function subscribeToNewsletter(
     const requestBody: LoopsUser = {
       email: data.email,
       subscribed: true,
-      source: "landing.techins8.com",
+      source: "landing.freemat.ch",
       userGroup: "newsletter",
       mailingList: {},
     };
@@ -56,16 +56,14 @@ export async function subscribeToNewsletter(
     if (error instanceof TypeError && error.message.includes("fetch")) {
       return {
         success: false,
-        message:
-          "Impossible de se connecter au service. Veuillez vérifier votre connexion.",
+        message: "Impossible de se connecter au service. Veuillez vérifier votre connexion.",
         error: "NETWORK_ERROR",
       };
     }
 
     return {
       success: false,
-      message:
-        "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+      message: "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
       error: error instanceof Error ? error.message : "UNKNOWN_ERROR",
     };
   }

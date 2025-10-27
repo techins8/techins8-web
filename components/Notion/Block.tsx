@@ -1,4 +1,4 @@
-import {
+import type {
   BlockObjectResponse,
   Heading1BlockObjectResponse,
   Heading2BlockObjectResponse,
@@ -29,11 +29,7 @@ export const Block = ({ block }: { block: BlockObjectResponse }) => {
       return <Heading3 heading={block as Heading3BlockObjectResponse} />;
 
     case "numbered_list_item":
-      return (
-        <NumberedListItem
-          numberedListItem={block as NumberedListItemBlockObjectResponse}
-        />
-      );
+      return <NumberedListItem numberedListItem={block as NumberedListItemBlockObjectResponse} />;
 
     case "image":
       return <ImageBlock image={block as ImageBlockObjectResponse} />;

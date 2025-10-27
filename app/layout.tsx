@@ -1,11 +1,11 @@
-import { Toaster } from "@/components/ui/sonner";
-import { env } from "@/lib/env";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import type { Metadata } from "next";
-import { NextIntlClientProvider } from "next-intl";
-import { getLocale, getMessages } from "next-intl/server";
 import { Nunito_Sans, Poppins } from "next/font/google";
 import Script from "next/script";
+import { NextIntlClientProvider } from "next-intl";
+import { getLocale, getMessages } from "next-intl/server";
+import { Toaster } from "@/components/ui/sonner";
+import { env } from "@/lib/env";
 import Footer from "./footer";
 import "./globals.css";
 import Nav from "./nav";
@@ -26,39 +26,34 @@ export const nunitoSans = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://techins8.com"),
+  metadataBase: new URL("https://freemat.ch"),
   title: {
-    default: "TechIns8 - Votre partenaire en recrutement tech",
-    template: "%s | TechIns8",
+    default: "FreeMatch - Votre partenaire en recrutement tech",
+    template: "%s | FreeMatch",
   },
   description:
-    "TechIns8 est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.",
+    "FreeMatch est votre partenaire de confiance pour le recrutement tech. Trouvez les meilleurs talents ou votre prochain emploi dans la tech.",
   openGraph: {
     type: "website",
     locale: "fr_FR",
-    url: "https://techins8.com",
-    siteName: "TechIns8",
+    url: "https://freemat.ch",
+    siteName: "FreeMatch",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "TechIns8",
+        alt: "FreeMatch",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    site: "@techins8",
-    creator: "@techins8",
+    site: "@freematch",
+    creator: "@freematch",
   },
-  applicationName: "TechIns8",
-  keywords: [
-    "TechIns8",
-    "TechIns8 Statistiques",
-    "TechIns8 Data",
-    "TechIns8 Dashboard",
-  ],
+  applicationName: "FreeMatch",
+  keywords: ["FreeMatch", "FreeMatch Statistiques", "FreeMatch Data", "FreeMatch Dashboard"],
   authors: [
     {
       name: "Lucien Arbieu",
@@ -77,11 +72,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
   const messages = await getMessages();
 
@@ -118,46 +109,60 @@ export default async function RootLayout({
         />
         {/* End Google Tag Manager */}
         <Script
-          id="schema-markup"
+          id="website-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              name: "TechIns8",
-              url: "https://techins8.com",
+              name: "FreeMatch",
+              url: "https://freemat.ch",
               description:
                 "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
               potentialAction: {
-                "@type": "ViewAction",
-                target: "https://dashboard.techins8.com/",
+                "@type": "SearchAction",
+                target: {
+                  "@type": "EntryPoint",
+                  urlTemplate: "https://freemat.ch/job-offers?q={search_term_string}",
+                },
+                "query-input": "required name=search_term_string",
               },
-              offers: {
-                "@type": "AggregateOffer",
-                priceCurrency: "EUR",
-                offers: [
-                  {
-                    "@type": "Offer",
-                    name: "Gratuit",
-                    price: "0",
-                    priceCurrency: "EUR",
-                    description: "Accès limité aux fonctionnalités de base",
-                  },
-                  {
-                    "@type": "Offer",
-                    name: "Premium",
-                    description: "Accès complet à toutes les fonctionnalités",
-                  },
-                ],
-              },
-              sameAs: ["https://www.linkedin.com/company/techins8"],
+              sameAs: ["https://www.linkedin.com/company/freematch"],
             }),
           }}
         />
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "FreeMatch",
+              alternateName: "FreeMatch - Job Board Tech",
+              url: "https://freemat.ch",
+              logo: "https://freemat.ch/images/logo/logo-techins8-dark.webp",
+              description:
+                "Le premier job board boosté par l'IA pour les développeurs. Notre technologie analyse et vérifie chaque offre d'emploi pour vous faire gagner un temps précieux dans votre recherche.",
+              sameAs: ["https://www.linkedin.com/company/freematch"],
+              contactPoint: {
+                "@type": "ContactPoint",
+                email: "contact@freemat.ch",
+                contactType: "Customer Service",
+                areaServed: "FR",
+                availableLanguage: ["French", "English"],
+              },
+            }),
+          }}
+        />
+        <Script
+          defer
+          data-website-id="dfid_JqCreDQCID5kvrEFddXEA"
+          data-domain="freemat.ch"
+          src="https://datafa.st/js/script.js"
+        />
       </head>
-      <body
-        className={`${poppins.className} min-h-screen bg-background antialiased`}
-      >
+      <body className={`${poppins.className} min-h-screen bg-background antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript
           dangerouslySetInnerHTML={{
@@ -183,13 +188,7 @@ export default async function RootLayout({
               </div>
             </div>
             <SpeedInsights />
-            <Toaster
-              expand={false}
-              position="top-right"
-              closeButton
-              richColors
-              duration={2000}
-            />
+            <Toaster expand={false} position="top-right" closeButton richColors duration={2000} />
           </PostHogProvider>
         </NextIntlClientProvider>
         <Script

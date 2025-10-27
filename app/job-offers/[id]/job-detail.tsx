@@ -1,20 +1,15 @@
 "use client";
 
-import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardFooter,
-  CardHeader,
-} from "@/components/ui/card";
-import { cn } from "@/lib/utils";
-import { IJob } from "@/types/job";
 import { formatDistance } from "date-fns";
 import { fr } from "date-fns/locale";
 import { Briefcase, Building2, Clock, Euro, Globe, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { Badge } from "@/components/ui/badge";
+import { buttonVariants } from "@/components/ui/button";
+import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
+import type { IJob } from "@/types/job";
 import { SourceIcon } from "../source-icon";
 export default function JobDetails({ job }: { job: IJob }) {
   const publishedAt: string | undefined = job.publishedat ?? job.createdat;
@@ -141,9 +136,7 @@ export default function JobDetails({ job }: { job: IJob }) {
             </section>
 
             <section className="space-y-4 border-t pt-6">
-              <h2 className="text-xl font-semibold">
-                A propos de l&apos;entreprise
-              </h2>
+              <h2 className="text-xl font-semibold">A propos de l&apos;entreprise</h2>
               <div className="flex items-center gap-2 text-muted-foreground font-bold">
                 {job.company?.logo && (
                   <Image
@@ -161,9 +154,7 @@ export default function JobDetails({ job }: { job: IJob }) {
               </div>
               <p
                 className="text-muted-foreground"
-                dangerouslySetInnerHTML={createMarkup(
-                  job.company?.description ?? ""
-                )}
+                dangerouslySetInnerHTML={createMarkup(job.company?.description ?? "")}
               />
             </section>
           </div>
@@ -173,10 +164,7 @@ export default function JobDetails({ job }: { job: IJob }) {
             <Link
               href={job?.sourceurl}
               target="_blank"
-              className={cn(
-                "w-full sm:w-auto",
-                buttonVariants({ variant: "techins8" })
-              )}
+              className={cn("w-full sm:w-auto", buttonVariants({ variant: "techins8" }))}
             >
               Postuler maintenant
             </Link>

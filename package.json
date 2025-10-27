@@ -1,16 +1,22 @@
 {
-  "name": "techins8-web",
+  "name": "freematch-web",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "biome check .",
+    "lint:fix": "biome check --write .",
+    "format": "biome format --write .",
+    "check": "biome check --write ."
   },
   "dependencies": {
     "@dahoom/disposable-email": "^0.3.253",
-    "@next/third-parties": "^15.1.7",
+    "@next/third-parties": "^16.0.0",
     "@notionhq/client": "^2.2.15",
     "@radix-ui/react-avatar": "^1.1.3",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
@@ -26,12 +32,12 @@
     "dotenv": "^16.4.7",
     "env": "^0.0.2",
     "lucide-react": "^0.475.0",
-    "next": "^15.1.7",
-    "next-intl": "^3.26.3",
+    "next": "^16.0.0",
+    "next-intl": "^4.4.0",
     "next-themes": "^0.4.4",
     "posthog-js": "^1.217.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-facebook-pixel": "^1.0.4",
     "react-twc": "^1.4.2",
     "sonner": "^1.7.4",
@@ -40,9 +46,10 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.3.0",
     "@types/node": "^22.13.1",
-    "@types/react": "^19.0.8",
-    "@types/react-dom": "^19.0.3",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "autoprefixer": "^10.4.20",
     "eslint": "^9.20.1",
     "eslint-config-next": "15.0.1",
