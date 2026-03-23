@@ -1,5 +1,7 @@
 import { defineConfig, devices } from "@playwright/test";
 
+const port = process.env.PORT ?? "3105";
+
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
@@ -8,7 +10,7 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: "html",
   use: {
-    baseURL: "http://localhost:3105",
+    baseURL: `http://localhost:${port}`,
     locale: "fr-FR",
     trace: "on-first-retry",
   },
@@ -19,8 +21,8 @@ export default defineConfig({
     },
   ],
   webServer: {
-    command: "SKIP_ENV_VALIDATION=true pnpm dev -p 3105",
-    url: "http://localhost:3105",
+    command: `SKIP_ENV_VALIDATION=true next dev --turbopack`,
+    url: `http://localhost:${port}`,
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,
   },
