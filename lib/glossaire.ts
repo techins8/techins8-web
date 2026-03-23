@@ -362,10 +362,6 @@ export function getRelatedTerms(term: GlossaireTerm): GlossaireTerm[] {
     .filter((t) => t !== undefined) as GlossaireTerm[];
 }
 
-export function getTermsByCategory(category: GlossaireTerm["category"]): GlossaireTerm[] {
-  return GLOSSAIRE.filter((term) => term.category === category);
-}
-
 export const CATEGORIES = {
   statut: "Statut & Structure",
   contrat: "Conditions de travail",

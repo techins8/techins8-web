@@ -1,29 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SEO_DATA } from "@/app/seo";
+import Script from "next/script";
+import { SEO_DATA, WEBSITE_URL } from "@/app/seo";
+import { GLOSSAIRE } from "@/lib/glossaire";
+import { generateBreadcrumbSchema } from "@/lib/json-ld";
 
 export const metadata: Metadata = {
   title: "Plan du site | FreeMatch",
   description: "Retrouvez toutes les pages de FreeMatch organisées par section.",
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Accueil",
-      item: "https://freemat.ch/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Plan du site",
-      item: "https://freemat.ch/plan-du-site",
-    },
-  ],
 };
 
 interface SitemapSection {
@@ -64,11 +48,17 @@ export default function SitemapPage() {
     href: entry.path,
   }));
 
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Accueil", url: WEBSITE_URL },
+    { name: "Plan du site", url: `${WEBSITE_URL}/plan-du-site` },
+  ]);
+
   return (
     <>
-      <script
+      <Script
+        id="plan-du-site-schema"
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
       <main className="min-h-screen bg-background">
         <div className="max-w-4xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
@@ -113,6 +103,22 @@ export default function SitemapPage() {
                     </li>
                   ))}
                 </ul>
+              </section>
+
+              {/* Glossaire */}
+              <section>
+                <h2 className="text-2xl font-semibold text-title mb-6">Glossaire</h2>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                  {GLOSSAIRE.map((term) => (
+                    <Link
+                      key={term.slug}
+                      href={`/glossaire/${term.slug}`}
+                      className="text-accent-foreground hover:text-title transition-colors"
+                    >
+                      {term.term}
+                    </Link>
+                  ))}
+                </div>
               </section>
 
               {/* Développeurs par spécialité */}

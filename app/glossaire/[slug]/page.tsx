@@ -167,23 +167,29 @@ export default async function GlossaireTermPage({ params }: { params: Promise<{ 
             </Link>
 
             <div className="flex gap-2">
-              {GLOSSAIRE.findIndex((t) => t.slug === term.slug) > 0 && (
-                <Link
-                  href={`/glossaire/${GLOSSAIRE[GLOSSAIRE.findIndex((t) => t.slug === term.slug) - 1].slug}`}
-                  className="rounded-lg border border-muted bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
-                >
-                  ← Précédent
-                </Link>
-              )}
-
-              {GLOSSAIRE.findIndex((t) => t.slug === term.slug) < GLOSSAIRE.length - 1 && (
-                <Link
-                  href={`/glossaire/${GLOSSAIRE[GLOSSAIRE.findIndex((t) => t.slug === term.slug) + 1].slug}`}
-                  className="rounded-lg border border-muted bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
-                >
-                  Suivant →
-                </Link>
-              )}
+              {(() => {
+                const currentIndex = GLOSSAIRE.findIndex((t) => t.slug === term.slug);
+                return (
+                  <>
+                    {currentIndex > 0 && (
+                      <Link
+                        href={`/glossaire/${GLOSSAIRE[currentIndex - 1].slug}`}
+                        className="rounded-lg border border-muted bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
+                      >
+                        ← Précédent
+                      </Link>
+                    )}
+                    {currentIndex < GLOSSAIRE.length - 1 && (
+                      <Link
+                        href={`/glossaire/${GLOSSAIRE[currentIndex + 1].slug}`}
+                        className="rounded-lg border border-muted bg-card px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent hover:text-background"
+                      >
+                        Suivant →
+                      </Link>
+                    )}
+                  </>
+                );
+              })()}
             </div>
           </div>
         </div>

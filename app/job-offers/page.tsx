@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { buildQuery } from "@/lib/http";
+import { WEBSITE_URL } from "../seo";
+import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
+import { JobsPaginations } from "./jobs-paginations";
+import JobsTable from "./jobsTable";
 
 export const metadata: Metadata = {
   title: "Offres d'emploi tech pour développeurs freelances",
@@ -10,13 +14,9 @@ export const metadata: Metadata = {
     description:
       "Parcourez les offres d'emploi tech pour développeurs : full remote, full stack, backend, frontend, DevOps.",
     type: "website",
-    url: "https://freemat.ch/job-offers",
+    url: `${WEBSITE_URL}/job-offers`,
   },
 };
-
-import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
-import { JobsPaginations } from "./jobs-paginations";
-import JobsTable from "./jobsTable";
 
 export default async function HomePage({
   searchParams,

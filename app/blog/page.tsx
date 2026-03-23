@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getArticles } from "@/query/article.query";
+import { WEBSITE_URL } from "../seo";
 import { BlogCard } from "./BlogCard";
 
 export const metadata: Metadata = {
@@ -12,7 +13,7 @@ export const metadata: Metadata = {
     description:
       "Articles et conseils pour les développeurs freelances : marché de l'emploi tech, TJM, remote, carrière.",
     type: "website",
-    url: "https://freemat.ch/blog",
+    url: `${WEBSITE_URL}/blog`,
   },
 };
 
