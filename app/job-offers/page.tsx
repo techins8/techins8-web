@@ -1,7 +1,22 @@
+import type { Metadata } from "next";
 import { buildQuery } from "@/lib/http";
+import { WEBSITE_URL } from "../seo";
 import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
 import { JobsPaginations } from "./jobs-paginations";
 import JobsTable from "./jobsTable";
+
+export const metadata: Metadata = {
+  title: "Offres d'emploi tech pour développeurs freelances",
+  description:
+    "Parcourez les offres d'emploi tech pour développeurs : full remote, full stack, backend, frontend, DevOps. Trouvez votre prochaine mission freelance avec FreeMatch.",
+  openGraph: {
+    title: "Offres d'emploi tech - FreeMatch",
+    description:
+      "Parcourez les offres d'emploi tech pour développeurs : full remote, full stack, backend, frontend, DevOps.",
+    type: "website",
+    url: `${WEBSITE_URL}/job-offers`,
+  },
+};
 
 export default async function HomePage({
   searchParams,

@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { GLOSSAIRE } from "@/lib/glossaire";
 import { getArticles } from "@/query/article.query";
 import { SEO_DATA, WEBSITE_URL } from "./seo";
 
@@ -14,10 +15,22 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
-      url: `${WEBSITE_URL}/about-us`,
+      url: `${WEBSITE_URL}/about`,
       lastModified: new Date().toISOString(),
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.8,
+    },
+    {
+      url: `${WEBSITE_URL}/glossaire`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.7,
+    },
+    {
+      url: `${WEBSITE_URL}/plan-du-site`,
+      lastModified: new Date().toISOString(),
+      changeFrequency: "monthly" as ChangeFrequency,
+      priority: 0.3,
     },
     {
       url: `${WEBSITE_URL}/job-offers`,
@@ -59,6 +72,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.9,
   }));
 
+  // Glossaire term pages
+  const glossaireRoutes = GLOSSAIRE.map((term) => ({
+    url: `${WEBSITE_URL}/glossaire/${term.slug}`,
+    lastModified: new Date().toISOString(),
+    changeFrequency: "monthly" as ChangeFrequency,
+    priority: 0.6,
+  }));
+
   // Fetch blog articles
   try {
     const articles = await getArticles();
@@ -70,10 +91,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     }));
 
     // Return all routes
-    return [...baseRoutes, ...seoRoutes, ...blogRoutes] satisfies MetadataRoute.Sitemap;
+    return [
+      ...baseRoutes,
+      ...seoRoutes,
+      ...glossaireRoutes,
+      ...blogRoutes,
+    ] satisfies MetadataRoute.Sitemap;
   } catch (error) {
     console.error("Error fetching blog articles for sitemap:", error);
-    // Return base routes even if blog fetching fails
-    return [...baseRoutes, ...seoRoutes] satisfies MetadataRoute.Sitemap;
+    return [...baseRoutes, ...seoRoutes, ...glossaireRoutes] satisfies MetadataRoute.Sitemap;
   }
 }

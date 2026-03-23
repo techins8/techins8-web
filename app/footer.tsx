@@ -21,6 +21,8 @@ const Footer = () => {
     { href: "/", label: "Accueil" },
     { href: "/partnerships", label: "Partenariats" },
     { href: "/#testimonials", label: "Feedback" },
+    { href: "/glossaire", label: "Glossaire" },
+    { href: "/plan-du-site", label: "Plan du site" },
     { href: "/legal", label: "Mentions légales" },
     { href: "/cgv", label: "CGV" },
   ];
