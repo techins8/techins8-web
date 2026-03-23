@@ -4,7 +4,6 @@ ifneq ("$(wildcard .env.local)","")
 endif
 
 PACKAGE_MANAGER ?= pnpm
-NEXT_PORT ?= 3000
 
 .DEFAULT_GOAL := dev
 
@@ -28,7 +27,7 @@ install: ## Install dependencies
 	$(PACKAGE_MANAGER) install
 
 dev: ## Run the development server
-	$(PACKAGE_MANAGER) dev -p $(NEXT_PORT)
+	$(PACKAGE_MANAGER) dev
 
 build: install ## Build the application
 	$(PACKAGE_MANAGER) run build

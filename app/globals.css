@@ -1,16 +1,75 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  --color-border: hsl(var(--card-border));
+  --color-input: hsl(var(--card-border));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--text-primary-foreground));
+  --color-title: hsl(var(--heading-foreground));
+  --color-primary: hsl(var(--button-background));
+  --color-primary-foreground: hsl(var(--button-foreground));
+  --color-secondary: hsl(var(--accent-2-background));
+  --color-secondary-foreground: hsl(var(--accent-2-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--subtitle-foreground));
+  --color-muted-foreground: hsl(var(--text-secondary-foreground));
+  --color-accent: hsl(var(--accent-light-background));
+  --color-accent-foreground: hsl(var(--text-accent-foreground));
+  --color-popover: hsl(var(--background-2));
+  --color-popover-foreground: hsl(var(--text-primary-foreground));
+  --color-card: hsl(var(--card-background));
+  --color-card-foreground: hsl(var(--card-title-foreground));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 2rem;
+  @media (width >= 1400px) {
+    max-width: 1400px;
+  }
+}
 
 @layer base {
   html {
     font-family: var(--font-poppins), system-ui, sans-serif;
   }
-  
+
   body {
     font-family: inherit;
   }
-  
+
   :root {
     --foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
@@ -35,29 +94,30 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
 
-    --button-background: 14, 86%, 55%; /* #FF4D22 */
-    --button-foreground: 43, 35%, 96%; /* #F7F4EF */
-  
-    --text-primary-foreground: 240, 3%, 5%; /* #0D0D0E */
-    --text-accent-foreground: 14, 86%, 55%; /* #FF4D22 */
-  
-    --heading-foreground: 221, 39%, 11%, 1; /* #111827 */
-  
-    --subtitle-foreground: 220, 6%, 37%; /* #4B5563 */
-    --text-secondary-foreground: 220, 6%, 37%; /* #4B5563 */
-  
-    --accent-light-background: 14, 86%, 88%; /* #FFDED2 */
-  
-    --background: 60, 9%, 98%; /* #FAFAF9 */
-    --background-2: 60, 7%, 94%; /* #F1F1EF */
-  
-    --accent-2-background: 223, 100%, 57%, 1; /* #2361FF */
-    --accent-2-foreground: 43, 35%, 96%; /* #F7F4EF */
-  
-    --card-title-foreground: 222, 6%, 3%; /* #020915 */
-    --card-background: 0, 0%, 100%; /* #FFFFFF */
-    --card-border: 0, 0%, 90%; /* #E5E5E5 */
+    --button-background: 14, 86%, 55%;
+    --button-foreground: 43, 35%, 96%;
+
+    --text-primary-foreground: 240, 3%, 5%;
+    --text-accent-foreground: 14, 86%, 55%;
+
+    --heading-foreground: 221, 39%, 11%, 1;
+
+    --subtitle-foreground: 220, 6%, 37%;
+    --text-secondary-foreground: 220, 6%, 37%;
+
+    --accent-light-background: 14, 86%, 88%;
+
+    --background: 60, 9%, 98%;
+    --background-2: 60, 7%, 94%;
+
+    --accent-2-background: 223, 100%, 57%, 1;
+    --accent-2-foreground: 43, 35%, 96%;
+
+    --card-title-foreground: 222, 6%, 3%;
+    --card-background: 0, 0%, 100%;
+    --card-border: 0, 0%, 90%;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -84,15 +144,18 @@
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
-  
+
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading;
+    font-weight: 700;
   }
 
   p, span, li, a {
@@ -112,10 +175,6 @@ a.nav-link:hover {
   cursor: pointer;
   border-radius: calc(var(--radius) - 2px);
   background-color: hsl(var(--secondary) / .1);
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
 }
 
 .button-nav {

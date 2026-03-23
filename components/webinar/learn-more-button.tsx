@@ -8,9 +8,13 @@ interface LearnMoreButtonProps {
   variant?: "default" | "destructive" | "outline" | "secondary" | "ghost" | "link" | "techins8";
 }
 
-export function LearnMoreButton({ className, size = "lg", variant = "outline" }: LearnMoreButtonProps) {
+export function LearnMoreButton({
+  className,
+  size = "lg",
+  variant = "outline",
+}: LearnMoreButtonProps) {
   const scrollToSolution = () => {
-    document.getElementById('solution-section')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById("solution-section")?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (

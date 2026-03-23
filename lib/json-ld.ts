@@ -33,7 +33,7 @@ export interface JobPostingData {
 }
 
 export function generateJobPostingSchema(data: JobPostingData) {
-  const schema: any = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: data.title,

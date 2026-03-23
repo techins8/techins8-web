@@ -85,9 +85,3 @@ export interface IJob {
   job_data?: IJobData;
   skills?: ISkill[];
 }
-
-// Type pour la création d'un nouveau job (sans id)
-export type CreateJobDto = Omit<IJob, "id">;
-
-// Type pour la mise à jour d'un job (tous les champs optionnels)
-export type UpdateJobDto = Partial<IJob>;

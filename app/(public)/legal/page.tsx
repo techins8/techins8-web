@@ -1,5 +1,6 @@
 // pages/mentions-legales.tsx
 import type { Metadata } from "next";
+import Image from "next/image";
 
 // Définition des métadonnées pour le SEO
 export const metadata: Metadata = {
@@ -206,11 +207,23 @@ export default function LegalPage() {
             </section>
           ))}
 
-          <footer className="mt-12 pt-6 border-t border-gray-200">
+          <footer className="mt-12 pt-6 border-t border-gray-200 space-y-6">
             <div className="text-gray-600 text-center">
               <p>Pour toute question, contactez-nous à :</p>
               <p>Email : contact@freemat.ch</p>
               <p>Adresse : 60 rue François 1er, 75008 Paris</p>
+            </div>
+            <div className="flex items-center justify-center gap-2 text-gray-500 text-sm">
+              <span>Site réalisé par</span>
+              <a
+                href="https://peaklab.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:opacity-70 transition-opacity"
+              >
+                <Image src="/images/peaklab-logo.png" alt="PeakLab" width={18} height={15} />
+                <span className="underline font-medium">PeakLab</span>
+              </a>
             </div>
           </footer>
         </div>

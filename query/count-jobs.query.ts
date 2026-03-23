@@ -20,20 +20,22 @@ interface CountResponse {
   locations: string[];
 }
 
-export const getCountJobs = async (): Promise<CountResponse> => {
-  const response = await api("/jobs/count", {
-    query: {
-      publishedOnly: "0",
-      skills: [],
-    },
-    headers: {
-      "x-providers": "FreeWork, WelcomeToTheJungle",
-    },
-    next: {
-      revalidate: 3600,
-    },
-  });
-  const data = (await response.json()) as CountResponse;
-
-  return data;
+export const getCountJobs = async (): Promise<CountResponse | null> => {
+  try {
+    const response = await api("/jobs/count", {
+      query: {
+        publishedOnly: "0",
+        skills: [],
+      },
+      headers: {
+        "x-providers": "FreeWork, WelcomeToTheJungle",
+      },
+      next: {
+        revalidate: 3600,
+      },
+    });
+    return (await response.json()) as CountResponse;
+  } catch {
+    return null;
+  }
 };

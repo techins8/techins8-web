@@ -1,0 +1,18 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "entry": [
+    "app/**/{page,layout,loading,error,not-found,route,middleware}.{ts,tsx}",
+    "app/seo.ts",
+    "lib/**/*.ts",
+    "query/**/*.ts"
+  ],
+  "project": ["**/*.{ts,tsx}", "!**/*.d.ts"],
+  "ignore": ["components/ui/**"],
+  "ignoreDependencies": [
+    "@tailwindcss/typography",
+    "tailwindcss-animate",
+    "autoprefixer",
+    "dotenv",
+    "tailwindcss"
+  ]
+}

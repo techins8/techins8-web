@@ -5,20 +5,24 @@ import { useEffect, useState } from "react";
 import { getCountJobs } from "@/query/count-jobs.query";
 
 const SubHeader = () => {
-  const [count, setCount] = useState<number | null>(() => {
-    if (typeof window !== "undefined") {
-      const stored = sessionStorage.getItem("countJobs");
-      return stored ? parseInt(stored, 10) : null;
-    }
-    return null;
-  });
+  const [count, setCount] = useState<number | null>(null);
 
   useEffect(() => {
+    const stored = sessionStorage.getItem("countJobs");
+    if (stored) {
+      setCount(parseInt(stored, 10));
+    }
+
     const fetchCount = async () => {
-      const data = await getCountJobs();
-      const roundedCount = Math.round(data.total_count / 100 - 1) * 100;
-      setCount(roundedCount);
-      sessionStorage.setItem("countJobs", roundedCount.toString());
+      try {
+        const data = await getCountJobs();
+        if (!data) return;
+        const roundedCount = Math.round(data.total_count / 100 - 1) * 100;
+        setCount(roundedCount);
+        sessionStorage.setItem("countJobs", roundedCount.toString());
+      } catch {
+        // scrapper API unavailable — silently ignore
+      }
     };
     fetchCount();
   }, []);

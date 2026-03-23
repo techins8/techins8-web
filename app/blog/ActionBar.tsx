@@ -68,6 +68,7 @@ export function ActionBar() {
     <div className="flex justify-between items-center gap-2 mb-8">
       <div className="flex items-center gap-6">
         <button
+          type="button"
           onClick={handleLike}
           className={cn(
             "flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200",
@@ -82,7 +83,10 @@ export function ActionBar() {
       <div className="flex items-center gap-6">
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
-            <button className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 bg-gray-100 hover:bg-gray-200 text-gray-700">
+            <button
+              type="button"
+              className="flex items-center gap-2 px-4 py-2 rounded-lg transition-all duration-200 bg-gray-100 hover:bg-gray-200 text-gray-700"
+            >
               <Share2 className="w-5 h-5" />
               <span className="text-sm font-medium">Partager</span>
             </button>

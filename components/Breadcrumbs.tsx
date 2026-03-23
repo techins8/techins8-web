@@ -4,7 +4,7 @@ import { ChevronRight, Home } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export interface BreadcrumbItem {
+interface BreadcrumbItem {
   name: string;
   url: string;
 }

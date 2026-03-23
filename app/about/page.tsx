@@ -95,6 +95,33 @@ export default function AboutPage() {
         </div>
       </section>
 
+      {/* PeakLab Section */}
+      <section className="max-w-6xl mx-auto px-4 mb-16">
+        <a
+          href="https://peaklab.fr"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-title rounded-xl p-10 text-center space-y-4 hover:opacity-95 transition-opacity"
+        >
+          <p className="text-background/70 text-sm font-medium uppercase tracking-widest">Studio</p>
+          <Image
+            src="/images/peaklab-logo.png"
+            alt="PeakLab"
+            width={80}
+            height={65}
+            className="mx-auto"
+          />
+          <h2 className="text-2xl font-bold text-background">
+            FreeMatch est le premier projet de PeakLab
+          </h2>
+          <p className="text-background/80 max-w-xl mx-auto">
+            PeakLab est un studio tech français qui conçoit et développe des produits web innovants.
+            Nous construisons des outils qui font la différence pour les professionnels du
+            numérique.
+          </p>
+        </a>
+      </section>
+
       {/* Values Section */}
       <section className="max-w-6xl mx-auto px-4 mt-36">
         <h2 className="text-3xl font-bold text-title text-center mb-12">Nos Valeurs</h2>

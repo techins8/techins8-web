@@ -1,7 +1,8 @@
 "use server";
 
-import { readFile } from "fs/promises";
-import { join } from "path";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
+import { cache } from "react";
 
 export type Article = {
   id: string;
@@ -37,7 +38,7 @@ type ArticlesData = {
 const ARTICLES_JSON_PATH = join(process.cwd(), "data", "blog", "articles.json");
 const CONTENT_DIR = join(process.cwd(), "data", "blog", "content");
 
-export const getArticles = async (): Promise<Article[]> => {
+export const getArticles = cache(async (): Promise<Article[]> => {
   const fileContent = await readFile(ARTICLES_JSON_PATH, "utf-8");
   const data: ArticlesData = JSON.parse(fileContent);
 
@@ -50,9 +51,7 @@ export const getArticles = async (): Promise<Article[]> => {
     imageCover: article.imageCover,
     author: article.author,
     readtime: article.readtime,
-    createdTime: article.publishedAt
-      ? new Date(article.publishedAt)
-      : new Date(),
+    createdTime: article.publishedAt ? new Date(article.publishedAt) : new Date(),
   }));
 
   articles.sort((a, b) => {
@@ -62,9 +61,9 @@ export const getArticles = async (): Promise<Article[]> => {
   });
 
   return articles;
-};
+});
 
-export const getArticle = async (id: string): Promise<ArticleWithContent> => {
+export const getArticle = cache(async (id: string): Promise<ArticleWithContent> => {
   const articles = await getArticles();
   const article = articles.find((a) => a.id === id);
 
@@ -79,4 +78,4 @@ export const getArticle = async (id: string): Promise<ArticleWithContent> => {
     ...article,
     content,
   };
-};
+});
