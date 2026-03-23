@@ -168,9 +168,27 @@ const Footer = () => {
 
         <div className="pt-8">
           <div className="max-w-[1120px] mx-auto px-4 relative z-10">
-            <p className="text-center text-sm text-muted mb-8">
+            <p className="text-center text-sm text-muted mb-2">
               2025 FreeMatch. Tous droits réservés.
             </p>
+            <div className="flex items-center justify-center gap-2 mb-8">
+              <span className="text-sm text-muted">Un produit de</span>
+              <a
+                href="https://peaklab.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/peaklab-logo.png"
+                  alt="PeakLab"
+                  width={20}
+                  height={16}
+                  className="opacity-70"
+                />
+                <span className="text-sm text-muted underline">PeakLab</span>
+              </a>
+            </div>
           </div>
 
           <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
