@@ -12,9 +12,7 @@ test.describe("Home page", () => {
   });
 
   test("renders the CTA button", async ({ page }) => {
-    await expect(
-      page.getByRole("link", { name: "ESSAYER GRATUITEMENT" }).first(),
-    ).toBeVisible();
+    await expect(page.getByRole("link", { name: "ESSAYER GRATUITEMENT" }).first()).toBeVisible();
   });
 
   test("renders the newsletter form", async ({ page }) => {

@@ -6,7 +6,7 @@ import { RegisterButton } from "./register-button";
 
 export function WebinarNav() {
   const scrollToSection = (sectionId: string) => {
-    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
@@ -18,31 +18,31 @@ export function WebinarNav() {
           </Link>
         </div>
         <nav className="hidden md:flex items-center gap-6">
-          <Button 
-            variant="link" 
+          <Button
+            variant="link"
             className="text-foreground/80 hover:text-foreground"
-            onClick={() => scrollToSection('problem-section')}
+            onClick={() => scrollToSection("problem-section")}
           >
             Problème
           </Button>
-          <Button 
-            variant="link" 
+          <Button
+            variant="link"
             className="text-foreground/80 hover:text-foreground"
-            onClick={() => scrollToSection('solution-section')}
+            onClick={() => scrollToSection("solution-section")}
           >
             Solution
           </Button>
-          <Button 
-            variant="link" 
+          <Button
+            variant="link"
             className="text-foreground/80 hover:text-foreground"
-            onClick={() => scrollToSection('webinar-benefits')}
+            onClick={() => scrollToSection("webinar-benefits")}
           >
             Webinaire
           </Button>
-          <Button 
-            variant="link" 
+          <Button
+            variant="link"
             className="text-foreground/80 hover:text-foreground"
-            onClick={() => scrollToSection('faq-section')}
+            onClick={() => scrollToSection("faq-section")}
           >
             FAQ
           </Button>

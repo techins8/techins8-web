@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 
 export function RegistrationForm() {
   const [formData, setFormData] = useState({
@@ -33,10 +33,10 @@ export function RegistrationForm() {
         <label htmlFor="first-name" className="text-sm font-medium">
           Prénom
         </label>
-        <Input 
-          id="first-name" 
-          placeholder="Entrez votre prénom" 
-          required 
+        <Input
+          id="first-name"
+          placeholder="Entrez votre prénom"
+          required
           value={formData.firstName}
           onChange={handleChange}
         />
@@ -45,10 +45,10 @@ export function RegistrationForm() {
         <label htmlFor="last-name" className="text-sm font-medium">
           Nom
         </label>
-        <Input 
-          id="last-name" 
-          placeholder="Entrez votre nom" 
-          required 
+        <Input
+          id="last-name"
+          placeholder="Entrez votre nom"
+          required
           value={formData.lastName}
           onChange={handleChange}
         />
@@ -57,11 +57,11 @@ export function RegistrationForm() {
         <label htmlFor="email" className="text-sm font-medium">
           Adresse Email
         </label>
-        <Input 
-          id="email" 
-          type="email" 
-          placeholder="Entrez votre adresse email" 
-          required 
+        <Input
+          id="email"
+          type="email"
+          placeholder="Entrez votre adresse email"
+          required
           value={formData.email}
           onChange={handleChange}
         />
@@ -72,7 +72,9 @@ export function RegistrationForm() {
         </Button>
       </div>
       <p className="text-xs text-center text-muted-foreground mt-4">
-        En vous inscrivant, vous acceptez notre Politique de Confidentialité et nos Conditions d&apos;Utilisation. Nous vous enverrons occasionnellement des mises à jour concernant FreeMatch.
+        En vous inscrivant, vous acceptez notre Politique de Confidentialité et nos Conditions
+        d&apos;Utilisation. Nous vous enverrons occasionnellement des mises à jour concernant
+        FreeMatch.
       </p>
     </form>
   );

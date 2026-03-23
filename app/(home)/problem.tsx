@@ -93,6 +93,7 @@ const Problem = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-square-x w-5 h-5 text-accent"
+                      aria-hidden="true"
                     >
                       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                       <path d="m15 9-6 6" />
@@ -112,6 +113,7 @@ const Problem = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-square-x w-5 h-5 text-accent"
+                      aria-hidden="true"
                     >
                       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                       <path d="m15 9-6 6" />
@@ -131,6 +133,7 @@ const Problem = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-square-x w-5 h-5 text-accent"
+                      aria-hidden="true"
                     >
                       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                       <path d="m15 9-6 6" />
@@ -150,6 +153,7 @@ const Problem = () => {
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       className="lucide lucide-square-x w-5 h-5 text-accent"
+                      aria-hidden="true"
                     >
                       <rect width="18" height="18" x="3" y="3" rx="2" ry="2" />
                       <path d="m15 9-6 6" />

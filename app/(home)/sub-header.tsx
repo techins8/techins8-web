@@ -14,10 +14,15 @@ const SubHeader = () => {
     }
 
     const fetchCount = async () => {
-      const data = await getCountJobs();
-      const roundedCount = Math.round(data.total_count / 100 - 1) * 100;
-      setCount(roundedCount);
-      sessionStorage.setItem("countJobs", roundedCount.toString());
+      try {
+        const data = await getCountJobs();
+        if (!data) return;
+        const roundedCount = Math.round(data.total_count / 100 - 1) * 100;
+        setCount(roundedCount);
+        sessionStorage.setItem("countJobs", roundedCount.toString());
+      } catch {
+        // scrapper API unavailable — silently ignore
+      }
     };
     fetchCount();
   }, []);

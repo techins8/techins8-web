@@ -1,11 +1,11 @@
 import { describe, expect, it } from "vitest";
 import {
-  SEO_DATA,
-  WEBSITE_URL,
   getCanonicalUrl,
   getMetaDescription,
   getMetaTitle,
   getSeoDataFromSlug,
+  SEO_DATA,
+  WEBSITE_URL,
 } from "./seo";
 
 describe("getSeoDataFromSlug", () => {
@@ -35,9 +35,7 @@ describe("getSeoDataFromSlug", () => {
 
 describe("getMetaTitle", () => {
   it("appends AI verification suffix", () => {
-    expect(getMetaTitle({ title: "Offres React" })).toBe(
-      "Offres React | Offres vérifiées par IA",
-    );
+    expect(getMetaTitle({ title: "Offres React" })).toBe("Offres React | Offres vérifiées par IA");
   });
 });
 

@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import { buildQuery } from "@/lib/http";
 import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
 import { JobsPaginations } from "./jobs-paginations";
@@ -46,14 +45,12 @@ export default async function HomePage({
 
   return (
     <div className="container mx-auto py-8">
-      <Suspense fallback={<div>Loading jobs...</div>}>
-        <JobsTable initialJobs={result.jobs} />
-        <JobsPaginations
-          page={params.page}
-          totalPages={Math.ceil(result.total / params.size)}
-          getUrl={getUrl}
-        />
-      </Suspense>
+      <JobsTable initialJobs={result.jobs} />
+      <JobsPaginations
+        page={params.page}
+        totalPages={Math.ceil(result.total / params.size)}
+        getUrl={getUrl}
+      />
     </div>
   );
 }

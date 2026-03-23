@@ -21,9 +21,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { id } = await params;
   const article = await getArticle(id);
   const publishedTime = article.publishedAt ?? article.createdTime;
@@ -83,11 +81,7 @@ export default async function BlogPost({ params }: PageProps) {
             <AvatarImage
               className="rounded-full object-cover w-full h-full"
               src={`/authors/${article.author?.toLowerCase() ?? "default"}.webp`}
-              alt={
-                article.author
-                  ? `Photo de ${article.author}`
-                  : "Auteur par défaut"
-              }
+              alt={article.author ? `Photo de ${article.author}` : "Auteur par défaut"}
             />
           </Avatar>
         </div>
@@ -112,9 +106,7 @@ export default async function BlogPost({ params }: PageProps) {
       <ActionBar />
 
       <div className="prose prose-lg max-w-none mt-8">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {article.content}
-        </ReactMarkdown>
+        <ReactMarkdown remarkPlugins={[remarkGfm]}>{article.content}</ReactMarkdown>
       </div>
     </article>
   );

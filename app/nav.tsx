@@ -69,6 +69,7 @@ const Nav = () => {
 
           {/* Hamburger Menu Button */}
           <button
+            type="button"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="z-50 lg:hidden p-2 bg-primary rounded-md transition-colors"
             aria-label={t("mobileMenu.ariaLabel")}

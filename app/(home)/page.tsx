@@ -1,5 +1,4 @@
 // app/(home)/page.tsx
-import { Suspense } from "react";
 import type { SEO_DATA } from "../seo";
 import Header from "./header";
 import SectionFaq from "./section-faq";
@@ -17,14 +16,12 @@ interface HomePageProps {
 export default function HomePage({ seoData }: HomePageProps) {
   return (
     <div>
-      <Suspense fallback={<div>Loading jobs...</div>}>
-        <Header heroTitle={seoData?.heroTitle} heroSubtitle={seoData?.heroSubtitle} />
-        <SectionProblem />
-        <SectionSolution />
-        <SectionPricing />
-        <SectionSocialProof />
-        <SectionFaq />
-      </Suspense>
+      <Header heroTitle={seoData?.heroTitle} heroSubtitle={seoData?.heroSubtitle} />
+      <SectionProblem />
+      <SectionSolution />
+      <SectionPricing />
+      <SectionSocialProof />
+      <SectionFaq />
     </div>
   );
 }

@@ -11,8 +11,8 @@ vi.mock("./http", () => ({
   http: vi.fn().mockResolvedValue({ ok: true }),
 }));
 
-import { http } from "./http";
 import { api } from "./api";
+import { http } from "./http";
 
 describe("api", () => {
   beforeEach(() => {
@@ -21,18 +21,12 @@ describe("api", () => {
 
   it("builds URL with leading slash", async () => {
     await api("/jobs/count");
-    expect(http).toHaveBeenCalledWith(
-      "https://api.example.com/jobs/count",
-      expect.any(Object),
-    );
+    expect(http).toHaveBeenCalledWith("https://api.example.com/jobs/count", expect.any(Object));
   });
 
   it("builds URL without leading slash", async () => {
     await api("jobs/count");
-    expect(http).toHaveBeenCalledWith(
-      "https://api.example.com/jobs/count",
-      expect.any(Object),
-    );
+    expect(http).toHaveBeenCalledWith("https://api.example.com/jobs/count", expect.any(Object));
   });
 
   it("injects Authorization and Content-Type headers", async () => {
@@ -51,10 +45,7 @@ describe("api", () => {
 
   it("accepts a custom apiUrl override", async () => {
     await api("/endpoint", {}, "https://custom.api.com");
-    expect(http).toHaveBeenCalledWith(
-      "https://custom.api.com/endpoint",
-      expect.any(Object),
-    );
+    expect(http).toHaveBeenCalledWith("https://custom.api.com/endpoint", expect.any(Object));
   });
 
   it("merges custom headers without losing defaults", async () => {
