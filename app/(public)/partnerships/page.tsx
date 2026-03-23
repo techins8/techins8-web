@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { fetchPartnerships, type Partnership } from "@/query/partnershipService";
+
+export const metadata: Metadata = {
+  title: "Partenariats - Outils et services pour développeurs freelances",
+  description:
+    "Découvrez les partenaires sélectionnés par FreeMatch pour vous aider dans votre carrière de développeur freelance : outils, formations, services.",
+  openGraph: {
+    title: "Partenariats FreeMatch - Outils pour développeurs freelances",
+    description:
+      "Découvrez les partenaires sélectionnés par FreeMatch pour vous aider dans votre carrière de développeur freelance.",
+    type: "website",
+    url: "https://freemat.ch/partnerships",
+  },
+};
+
 import PartnershipCard from "./partnership-card";
 
 const PartnershipsPage = async () => {

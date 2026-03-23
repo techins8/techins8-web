@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getArticles } from "@/query/article.query";
 import { BlogCard } from "./BlogCard";
+
+export const metadata: Metadata = {
+  title: "Blog - Conseils pour développeurs freelances",
+  description:
+    "Articles et conseils pour les développeurs freelances : marché de l'emploi tech, TJM, remote, carrière. Restez informé avec FreeMatch.",
+  openGraph: {
+    title: "Blog FreeMatch - Conseils pour développeurs freelances",
+    description:
+      "Articles et conseils pour les développeurs freelances : marché de l'emploi tech, TJM, remote, carrière.",
+    type: "website",
+    url: "https://freemat.ch/blog",
+  },
+};
 
 export default async function BlogPage() {
   const articles = await getArticles();
