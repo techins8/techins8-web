@@ -183,7 +183,7 @@ const Footer = () => {
               >
                 <Image
                   src="/images/peaklab-logo.png"
-                  alt="Logo PeakLab, studio tech français"
+                  alt=""
                   width={20}
                   height={16}
                   className="brightness-0 invert opacity-70"
@@ -196,7 +196,7 @@ const Footer = () => {
           <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
             <Image
               src="/images/logo/footer-icon-techins8.svg"
-              alt="FreeMatch Footer Pattern"
+              alt=""
               width={950}
               height={200}
               loading="lazy"

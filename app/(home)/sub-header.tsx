@@ -35,7 +35,7 @@ const SubHeader = () => {
             <div className="-ml-[11px] sm:-mr-3 h-6 w-6 rounded-full flex items-center justify-center">
               <Image
                 src="/images/illustrations/sub-header-green-ball.svg"
-                alt="Indicateur en temps réel du nombre d'offres analysées"
+                alt=""
                 width={24}
                 height={24}
               />
