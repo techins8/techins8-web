@@ -1,0 +1,458 @@
+[
+  {
+    "slug": "tjm",
+    "term": "TJM",
+    "shortDef": "Taux Journalier Moyen : le tarif journalier qu'un freelance facture pour ses prestations, généralement calculé sur 220 jours de travail par an.",
+    "longDef": "Le TJM (Taux Journalier Moyen) est le tarif quotidien appliqué par un freelance pour facturer ses missions. Ce tarif représente le montant net que le prestataire encaisse après déduction de ses charges professionnelles et sociales.\n\nLe calcul du TJM dépend de plusieurs facteurs : l'expérience du développeur, ses compétences, la localisation, la demande du marché et la complexité des missions. Un développeur junior avec 2 ans d'expérience facturera moins qu'un senior avec 10 ans de carrière.\n\nSur le marché français, les TJM pour les développeurs varient généralement de 350€ à 1000€ par jour selon le profil. Les freelances full stack senior peuvent facturer entre 600€ et 900€, tandis que les juniors se situent plutôt entre 300€ et 450€. FreeMatch analyse et valide la cohérence entre le TJM proposé et le niveau d'expertise demandé.",
+    "relatedTerms": ["freelance-informatique", "mission-freelance", "freelance-senior"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "freelance-informatique",
+    "term": "Freelance informatique",
+    "shortDef": "Un professionnel indépendant dans le secteur IT qui propose ses services de développement, design ou expertise technique sur des missions ponctuelles.",
+    "longDef": "Un freelance informatique est un développeur ou professionnel IT exerçant en tant qu'indépendant. Il peut travailler seul ou en réseau avec d'autres freelances et entreprises, en proposant ses compétences pour des missions de courte ou longue durée.\n\nLe freelance informatique bénéficie d'une grande flexibilité : il choisit ses missions, ses clients et ses tarifs. Il dispose aussi d'une meilleure maîtrise de son temps et peut combiner plusieurs projets. En contrepartie, il doit gérer l'administratif, ses cotisations sociales et la recherche de nouvelles missions.\n\nEn France, le freelance informatique peut exercer sous plusieurs statuts : auto-entrepreneur (micro-entreprise), EURL, SASU, ou via le portage salarial. Le choix du statut impacte directement ses cotisations sociales, ses droits sociaux et la complexité administrative.",
+    "relatedTerms": ["auto-entrepreneur", "portage-salarial", "mission-freelance", "sasu"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Full remote", "href": "/developpeurs/full-remote" }
+    ],
+    "category": "statut"
+  },
+  {
+    "slug": "portage-salarial",
+    "term": "Portage salarial",
+    "shortDef": "Un statut hybride permettant à un travailleur indépendant de bénéficier de droits salariés (chômage, retraite, sécu) tout en gardant son autonomie commerciale.",
+    "longDef": "Le portage salarial est un arrangement entre trois parties : le freelance (porté), la société de portage et les clients finaux. Le freelance prospère et signe les contrats avec ses clients, mais c'est la société de portage qui devient l'employeur légal et qui facture les missions.\n\nCe statut offre les avantages du salariat (indemnités chômage, congés payés, retraite complémentaire, protection sociale) tout en conservant l'autonomie du freelance dans le choix de ses missions. C'est particulièrement intéressant pour les développeurs souhaitant la sécurité sociale sans les contraintes d'une micro-entreprise.\n\nEn France, le portage salarial représente environ 10-15% des revenus générés. Pour un TJM de 600€, le développeur porté en percevra environ 510€ net après les frais de portage. Cependant, cette option donne accès à l'indemnité chômage, ce qui représente une protection importante en intercontrat.",
+    "relatedTerms": ["freelance-informatique", "auto-entrepreneur", "intercontrat"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" }
+    ],
+    "category": "statut"
+  },
+  {
+    "slug": "auto-entrepreneur",
+    "term": "Auto-entrepreneur / Micro-entrepreneur",
+    "shortDef": "Un statut simplifié permettant de devenir indépendant avec peu de formalités administratives et un régime fiscal avantageux pour les petits revenus.",
+    "longDef": "L'auto-entrepreneur (officiellement appelé micro-entrepreneur depuis 2016) est le statut le plus simple pour se lancer comme freelance. Il permet de démarrer une activité indépendante avec un minimum de bureaucratie et un régime fiscal très avantageux.\n\nSous ce statut, le développeur paie des cotisations sociales basées sur son chiffre d'affaires (environ 45% pour la prestation de services informatiques). Un chiffre d'affaires de 1000€ génère environ 450€ de cotisations, laissant 550€ de profit avant impôt sur le revenu.\n\nLes limites principales : le chiffre d'affaires ne doit pas dépasser 77 700€ par an (TVA non récupérable), pas de possibilité de déduire les charges professionnelles, et des droits sociaux réduits. Pour les développeurs juniors ou en début d'activité, c'est souvent un bon point de départ avant de basculer en EURL ou SASU.",
+    "relatedTerms": ["freelance-informatique", "portage-salarial", "sasu", "eurl"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Développeurs juniors", "href": "/developpeurs/junior" }
+    ],
+    "category": "statut"
+  },
+  {
+    "slug": "sasu",
+    "term": "SASU",
+    "shortDef": "Société par Actions Simplifiée Unipersonnelle — la forme juridique la plus prisée des freelances IT à hauts revenus, permettant dividendes et salaire avec une protection sociale complète.",
+    "longDef": "La SASU est une société unipersonnelle (1 actionnaire) de la famille SAS. Très plébiscitée par les développeurs freelances dépassant 50 000€ de CA annuel, elle offre une grande flexibilité dans la rémunération : le dirigeant peut se verser un salaire et des dividendes, optimisant ainsi ses cotisations sociales.\n\nLes avantages de la SASU : le dirigeant est assimilé-salarié (protection sociale complète identique à un salarié, accès aux indemnités chômage sous conditions), les dividendes ne sont soumis qu'aux prélèvements sociaux (17,2%) et à l'IR ou flat tax (12,8%), et il n'y a pas de plafond de CA. La SASU est aussi transformable en SAS si on souhaite s'associer plus tard.\n\nLes inconvénients : charges sociales plus lourdes qu'en micro-entreprise, comptabilité obligatoire (coût d'un expert-comptable : 1500-3000€/an), et une gestion administrative plus complexe. Pour un développeur senior avec TJM de 700€+, la SASU est souvent le statut le plus avantageux fiscalement.",
+    "relatedTerms": ["freelance-informatique", "auto-entrepreneur", "eurl", "urssaf"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" }
+    ],
+    "category": "statut"
+  },
+  {
+    "slug": "eurl",
+    "term": "EURL",
+    "shortDef": "Entreprise Unipersonnelle à Responsabilité Limitée — une SARL à associé unique offrant une protection du patrimoine personnel et la déduction des charges réelles.",
+    "longDef": "L'EURL (Entreprise Unipersonnelle à Responsabilité Limitée) est la version unipersonnelle de la SARL. C'est une société à part entière avec un capital social (minimum 1€) et une comptabilité formelle. Le gérant est considéré comme travailleur non-salarié (TNS), cotisant à la SSI (Sécurité Sociale des Indépendants).\n\nPar rapport à la SASU, l'EURL présente des taux de cotisations sociales plus bas (environ 45% contre 75% pour la SASU), mais une protection sociale moindre : pas de cotisations chômage, retraite de base moins élevée. Le dirigeant TNS cotise à la SSI pour sa retraite et sa santé.\n\nL'EURL est intéressante pour les développeurs avec un CA stable entre 40 000€ et 100 000€. Elle permet de déduire toutes les charges réelles (matériel, logiciels, formation, frais de déplacement). La comptabilité annuelle est obligatoire. Pour aller plus loin dans l'optimisation fiscale, beaucoup basculent ensuite en SASU.",
+    "relatedTerms": ["sasu", "auto-entrepreneur", "freelance-informatique", "urssaf"],
+    "relatedPages": [{ "label": "Missions freelance", "href": "/developpeurs/freelance" }],
+    "category": "statut"
+  },
+  {
+    "slug": "urssaf",
+    "term": "URSSAF",
+    "shortDef": "Union de Recouvrement des cotisations de Sécurité Sociale et d'Allocations Familiales : l'organisme chargé de collecter les cotisations sociales des indépendants et freelances.",
+    "longDef": "L'URSSAF est l'organisme public français responsable du recouvrement des cotisations sociales des travailleurs indépendants. Pour un freelance informatique, c'est avec l'URSSAF que se font les déclarations de revenus et le paiement des cotisations sociales.\n\nPour un auto-entrepreneur, le taux de cotisation est de 45% du chiffre d'affaires (pour la prestation de services informatiques). Par exemple : 5000€ de CA = 2250€ de cotisations. Pour un freelance sous EURL ou SASU, c'est plus complexe car il y a aussi les cotisations employeur.\n\nL'URSSAF gère aussi l'accès à la sécurité sociale, la retraite de base, et les allocations familiales. C'est un interlocuteur important pour tout freelance : comprendre comment ça marche aide à optimiser sa structure et ses déclarations.",
+    "relatedTerms": ["auto-entrepreneur", "freelance-informatique", "portage-salarial", "sasu"],
+    "relatedPages": [{ "label": "Missions freelance", "href": "/developpeurs/freelance" }],
+    "category": "statut"
+  },
+  {
+    "slug": "full-remote",
+    "term": "Full Remote",
+    "shortDef": "Une situation de travail entièrement à distance, où le développeur travaille de n'importe quel lieu géographique sans jamais se déplacer au bureau de l'entreprise.",
+    "longDef": "Le full remote (travail 100% à distance) est devenu une norme pour les postes de développement, particulièrement après 2020. L'entreprise n'impose aucune présence physique : le développeur gère ses horaires depuis son lieu de travail préféré (domicile, coworking, café, etc.).\n\nLes avantages du full remote sont nombreux : gain de temps sur les trajets, flexibilité géographique (possibilité de vivre où on le souhaite), meilleur équilibre vie professionnelle-personnelle, et souvent une réduction du stress. Pour les développeurs souhaitant s'installer à la campagne ou voyager tout en travaillant, c'est une option idéale.\n\nEn contrepartie, cela nécessite une discipline personnelle, une excellente communication écrite, et une bonne connexion internet. FreeMatch valide systématiquement que les offres \"full remote\" sont bien sans contrainte de présence physique et analyse les outils de collaboration utilisés par l'équipe.",
+    "relatedTerms": ["remote-first", "teletravail-hybride", "mission-freelance"],
+    "relatedPages": [
+      { "label": "Développeurs full remote", "href": "/developpeurs/full-remote" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "contrat"
+  },
+  {
+    "slug": "remote-first",
+    "term": "Remote First",
+    "shortDef": "Une philosophie d'entreprise où le travail à distance est la norme et le bureau devient un espace optionnel pour les collaborateurs.",
+    "longDef": "Remote first diffère du full remote simple : c'est une culture d'entreprise où la distance est acceptée comme mode de fonctionnement par défaut. L'ensemble des processus, outils et communications sont pensés pour le travail distribué, plutôt que d'être une tolérance du télétravail occasionnel.\n\nDans une entreprise remote first, les réunions sont organisées de manière asynchrone quand possible, la documentation est complète et accessible à tous, et il n'y a pas de \"présence au bureau\" valorisée. Slack, Notion, Figma et les outils collaboratifs deviennent les fondations de l'organisation.\n\nLes développeurs dans des boîtes remote first rapportent généralement une meilleure inclusion (pas de deux vitesses bureau/télétravail), une meilleure documentation du code, et une vraie flexibilité d'horaires. C'est particulièrement attrayant pour les parents ou les personnes avec des contraintes personnelles.",
+    "relatedTerms": ["full-remote", "teletravail-hybride"],
+    "relatedPages": [{ "label": "Développeurs full remote", "href": "/developpeurs/full-remote" }],
+    "category": "contrat"
+  },
+  {
+    "slug": "teletravail-hybride",
+    "term": "Télétravail hybride",
+    "shortDef": "Un mode de travail combinant présence au bureau (1-3 jours/semaine) et télétravail, à mi-chemin entre le présentiel complet et le full remote.",
+    "longDef": "Le télétravail hybride est aujourd'hui le mode de travail dominant en France : selon les enquêtes, 60% des postes IT proposent un modèle hybride avec 2-3 jours de télétravail par semaine. C'est un compromis entre la culture du bureau et la flexibilité du full remote.\n\nPour un développeur, l'hybride présente des avantages : maintien du lien social avec l'équipe, accès aux outils et locaux du client, mais aussi des journées de concentration à domicile. L'inconvénient principal est la contrainte géographique : impossible de s'éloigner à plus de 1-2h du bureau.\n\nLes missions hybrides précisent généralement le rythme (ex : \"2 jours sur site à Paris, 3 jours remote\"), la localisation exacte, et parfois les transports remboursés. FreeMatch vérifie que les mentions \"hybride\" dans les offres sont bien détaillées et cohérentes avec le type de mission.",
+    "relatedTerms": ["full-remote", "remote-first", "mission-freelance"],
+    "relatedPages": [
+      { "label": "Développeurs full remote", "href": "/developpeurs/full-remote" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "contrat"
+  },
+  {
+    "slug": "mission-freelance",
+    "term": "Mission freelance",
+    "shortDef": "Un projet ou un contrat de courte à moyenne durée proposé à un freelance pour réaliser un travail spécifique dans l'IT.",
+    "longDef": "Une mission freelance est un engagement limité dans le temps (de quelques semaines à plusieurs mois) pour accomplir un objectif défini : développer une feature, refactoriser du code, construire une infrastructure, etc. Contrairement à un CDI où on s'engage sur la durée indéfinie, la mission a un scope et une date de fin.\n\nLes missions freelance offrent une grande variété pour le développeur : passage sur plusieurs projets, découverte de nouvelles stacks technologiques, apprentissage rapide. Elles permettent aussi de maintenir une certaine flexibilité : fin de mission = possibilité de refuser la suivante ou de prendre un repos (intercontrat).\n\nFreeMatch analyse chaque mission pour valider : la cohérence du TJM, la clarté du scope technique, le statut du télétravail, et les conditions contractuelles. Une bonne mission freelance doit être rentable (TJM adapté), techniquement intéressante, et contractuellement claire.",
+    "relatedTerms": ["tjm", "freelance-informatique", "intercontrat", "regie-forfait"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Offres d'emploi", "href": "/job-offers" }
+    ],
+    "category": "contrat"
+  },
+  {
+    "slug": "regie-forfait",
+    "term": "Régie et Forfait",
+    "shortDef": "Les deux modes de facturation en IT : la régie (facturation au temps passé) et le forfait (livrable défini pour un prix fixe).",
+    "longDef": "En mode régie, le développeur est rémunéré au jour ou à l'heure passée sur le projet. Le client paie pour le temps travaillé, validé par un CRA (Compte Rendu d'Activité). C'est le modèle dominant pour les missions de plus de 3 mois, car il offre de la flexibilité sur les spécifications qui évoluent souvent.\n\nEn mode forfait, le développeur s'engage à livrer un résultat défini pour un budget fixe. Le risque est supporté par le prestataire : si le projet prend plus de temps que prévu, le freelance absorbe le dépassement. En contrepartie, si le travail est fait plus vite, le taux horaire effectif est meilleur.\n\nPour un freelance, la régie est plus sécurisante pour les projets avec des spécifications floues. Le forfait est adapté aux missions bien définies où on maîtrise la complexité. FreeMatch indique systématiquement pour chaque mission si c'est régie ou forfait, car c'est un critère structurant dans l'évaluation d'une opportunité.",
+    "relatedTerms": ["mission-freelance", "cra", "tjm"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Offres d'emploi", "href": "/job-offers" }
+    ],
+    "category": "contrat"
+  },
+  {
+    "slug": "clause-non-concurrence",
+    "term": "Clause de non-concurrence",
+    "shortDef": "Une clause contractuelle limitant la possibilité d'un freelance de travailler pour des concurrents directs du client pendant et après la mission.",
+    "longDef": "La clause de non-concurrence est une disposition fréquente dans les contrats de prestation de services IT. Elle interdit au freelance de réaliser des missions similaires pour des concurrents directs du client, généralement pendant la durée de la mission plus une période après (6 à 24 mois).\n\nPour être valide en droit français, une clause de non-concurrence doit être limitée dans le temps, dans l'espace géographique, et dans le secteur d'activité. Une clause trop large (par exemple \"vous ne pouvez pas travailler dans la tech pendant 2 ans\") est souvent considérée comme nulle car disproportionnée.\n\nUn freelance doit négocier ces clauses avec attention : elles peuvent sérieusement limiter sa liberté commerciale. FreeMatch analyse les conditions contractuelles des missions pour identifier les clauses potentiellement abusives qui méritent d'être examinées par un juriste.",
+    "relatedTerms": ["mission-freelance", "freelance-informatique", "intercontrat"],
+    "relatedPages": [{ "label": "Missions freelance", "href": "/developpeurs/freelance" }],
+    "category": "contrat"
+  },
+  {
+    "slug": "cra",
+    "term": "CRA",
+    "shortDef": "Compte Rendu d'Activité : un document décrivant les tâches réalisées pendant une période, utilisé principalement en mode régie.",
+    "longDef": "Le CRA (Compte Rendu d'Activité) est un justificatif détaillé du travail réalisé, généralement hebdomadaire ou mensuel. En mode régie (développeur mis à disposition via une ESN ou agence), c'est le client qui valide le CRA pour confirmer que le travail a bien été réalisé.\n\nLe CRA est important pour deux raisons : il documente les tâches accomplies (utile pour le suivi de projet) et il valide les jours facturables. Si un développeur fait des tâches hors périmètre ou si le client refuse sa justification, cela peut impacter sa facturation.\n\nPour un freelance, le CRA n'est pas systématique : cela dépend du contrat. Certains clients exigent un CRA détaillé, d'autres se contentent d'une facture simple. En forfait, le CRA n'a pas d'importance : seul le résultat final compte. FreeMatch vérifie que les missions ne contiennent pas de clauses abusives concernant le CRA.",
+    "relatedTerms": ["mission-freelance", "esn", "regie-forfait"],
+    "relatedPages": [{ "label": "Missions freelance", "href": "/developpeurs/freelance" }],
+    "category": "pratique"
+  },
+  {
+    "slug": "esn",
+    "term": "ESN",
+    "shortDef": "Entreprise de Services du Numérique : une société qui propose des services de développement et d'intégration IT, généralement en régie ou forfait.",
+    "longDef": "Une ESN (autrefois appelée SSII, Société de Services en Ingénierie Informatique) est une entreprise proposant des services informatiques : développement, intégration, conseil. Elle embauche des développeurs qui sont mis à disposition de clients via deux modèles économiques principaux.\n\nEn mode \"régie\", le client paie le développeur à la journée, et l'ESN facture avec une marge (souvent 30-50% du TJM). En mode \"forfait\", l'ESN s'engage sur un périmètre de travail pour une somme fixe. Les grandes ESN comme Capgemini, Thales ou Sopra Steria emploient des milliers de développeurs.\n\nPour un développeur, rejoindre une ESN signifie stabilité de l'emploi et diversité de missions. Cependant, les TJM sont généralement moins élevés qu'en freelance pour le même profil, et le choix des missions peut être limité. C'est un bon point de départ pour les juniors souhaitant acquérir de l'expérience sur plusieurs projets.",
+    "relatedTerms": ["mission-freelance", "lead-tech", "sourcing"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "intercontrat",
+    "term": "Intercontrat",
+    "shortDef": "La période entre deux missions pour un freelance, pendant laquelle il n'a pas de contrat et peut chercher son prochain projet.",
+    "longDef": "L'intercontrat est l'une des réalités du freelancing : il y a des périodes entre deux missions où le freelance est sans contrat et sans revenus. Cette période peut durer quelques jours ou plusieurs semaines selon la demande du marché.\n\nBien gérer ses intercontrats est crucial pour un freelance : avoir une réserve financière pour les périodes creuses, maintenir un réseau actif pour décrocher la prochaine mission rapidement, ou réduire les cotisations sociales. Certains freelances aiment cette période pour se reposer ou apprendre une nouvelle technologie.\n\nC'est l'un des avantages du portage salarial : il offre une indemnité chômage durant l'intercontrat, ce qui sécurise financièrement le freelance. FreeMatch aide les freelances à évaluer le risque intercontrat en analysant la stabilité et la durée des missions proposées.",
+    "relatedTerms": ["freelance-informatique", "portage-salarial", "mission-freelance"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Offres d'emploi", "href": "/job-offers" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "freelance-senior",
+    "term": "Développeur senior freelance",
+    "shortDef": "Un freelance avec 8+ ans d'expérience capable de piloter des projets complexes et mentorer d'autres développeurs.",
+    "longDef": "Un développeur senior freelance cumule l'expérience d'un profil senior (8-15 ans de carrière) avec la flexibilité du freelance. C'est un profil très demandé mais relativement rare : beaucoup de seniors préfèrent la stabilité du CDI.\n\nUn senior freelance gère des responsabilités importantes : architecture de projets complexes, mentorat des juniors, prise de décisions technologiques, et négociation commerciale. Son TJM est logiquement plus élevé : 700-1200€ par jour selon la spécialité et l'expertise.\n\nLes avantages pour un senior en freelance : meilleure rémunération qu'en CDI (pour un même profil), plus de flexibilité, choix des missions. Les défis : pas de sécurité d'emploi à long terme, gestion administrative plus complexe, et besoin de discipline personnelle.",
+    "relatedTerms": [
+      "freelance-informatique",
+      "lead-tech",
+      "mission-freelance",
+      "developpeur-confirme"
+    ],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "developpeur-confirme",
+    "term": "Développeur confirmé (Médior)",
+    "shortDef": "Un profil développeur intermédiaire (3-7 ans d'expérience) entre le junior et le senior, autonome sur les tâches courantes.",
+    "longDef": "Le développeur confirmé (ou médior) est le niveau d'expérience entre junior (0-3 ans) et senior (7+ ans). Avec 3-7 ans d'expérience, il est autonome sur les tâches quotidiennes, capable de concevoir des fonctionnalités de complexité moyenne, et peut mentorer des juniors sur des points précis.\n\nLe développeur confirmé connaît les patterns standards de son langage et framework, sait prendre des décisions techniques sans supervision constante, et participe activement aux revues de code. Il n'a pas encore la vision architecturale globale du senior, mais contribue de manière significative à la qualité technique.\n\nSur le marché freelance, un développeur confirmé facture généralement entre 450€ et 650€ par jour (vs 300-450€ pour un junior et 700-1200€ pour un senior). C'est un profil très recherché car il offre un bon rapport autonomie/coût. FreeMatch analyse les missions pour vérifier que le niveau d'expertise demandé correspond au TJM proposé.",
+    "relatedTerms": ["tjm", "freelance-senior", "freelance-informatique", "lead-tech"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Développeurs juniors", "href": "/developpeurs/junior" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "sourcing",
+    "term": "Sourcing tech",
+    "shortDef": "Le processus par lequel les recruteurs et entreprises identifient et contactent proactivement des profils de développeurs adaptés à leurs besoins.",
+    "longDef": "Le sourcing est l'art de trouver les bons profils techniques avant même qu'ils ne postulent. Les recruteurs tech utilisent LinkedIn Recruiter, GitHub (pour identifier les contributeurs open source), Stack Overflow, ou les plateformes spécialisées comme Malt pour identifier les développeurs disponibles.\n\nPour un freelance, comprendre le sourcing permet d'optimiser sa visibilité : compléter son profil LinkedIn avec les bons mots-clés, maintenir un profil GitHub actif, ou s'inscrire sur les bonnes plateformes. Les recruteurs sourcent en utilisant des requêtes booléennes sur LinkedIn (ex : \"Python AND Django AND senior AND Paris\").\n\nFreeMatch inverse le paradigme traditionnel du sourcing : plutôt que les développeurs viennent à la plateforme, FreeMatch agrège les meilleures offres et les analyse pour les développeurs. Plus besoin d'être sourcé — les meilleures missions viennent à vous, filtrées et validées par l'IA.",
+    "relatedTerms": ["mission-freelance", "freelance-informatique", "esn", "intercontrat"],
+    "relatedPages": [
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" },
+      { "label": "Offres d'emploi", "href": "/job-offers" }
+    ],
+    "category": "marché"
+  },
+  {
+    "slug": "full-stack",
+    "term": "Développeur Full Stack",
+    "shortDef": "Un développeur capable de travailler sur l'ensemble de la stack technique : frontend, backend, base de données et infrastructure.",
+    "longDef": "Un développeur Full Stack a des compétences en développement frontend (interface utilisateur), backend (serveur et API) et gère souvent aussi la base de données et le déploiement. Plutôt qu'un spécialiste d'un seul domaine, c'est un généraliste capable de prendre en charge un projet de bout en bout.\n\nLes avantages du full stack : autonomie sur les projets, compréhension complète du système, moins de dépendances vis-à-vis d'autres développeurs. Les défis : il est difficile d'être expert partout, et le full stack cache souvent des déficits de profondeur technique.\n\nSur le marché, un bon full stack est très demandé, surtout dans les startups où les équipes sont petites et multi-compétentes. FreeMatch analyse la stack complète pour valider qu'elle est cohérente et moderne : pas de technos obsolètes côté front, pas d'architecture chaotique côté back.",
+    "relatedTerms": ["frontend", "backend", "stack-technique", "typescript"],
+    "relatedPages": [
+      { "label": "Développeurs full stack", "href": "/developpeurs/full-stack" },
+      { "label": "Full remote", "href": "/developpeurs/full-remote" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "frontend",
+    "term": "Développeur Frontend",
+    "shortDef": "Un développeur spécialisé dans la création d'interfaces utilisateur et l'expérience client d'une application web ou mobile.",
+    "longDef": "Un développeur frontend crée ce que l'utilisateur voit et manipule : les boutons, les formulaires, les animations, la responsive design. Il travaille avec des langages comme JavaScript/TypeScript et des frameworks comme React, Vue ou Angular.\n\nLe frontend moderne est bien plus complexe qu'avant : c'est devenu de vrai développement avec gestion d'état, tests automatisés, performance, accessibilité. Un bon frontend engineer comprend l'UX, les performances web, et sait communiquer avec le designer et le backend.\n\nSur le marché, les développeurs frontend sont très demandés. Les TJM varient de 400€ pour un junior à 700€+ pour un senior. Les missions frontend intéressantes combinent design system, perfs, et technologies modernes.",
+    "relatedTerms": ["full-stack", "stack-technique", "react", "typescript"],
+    "relatedPages": [
+      { "label": "Développeurs frontend", "href": "/developpeurs/frontend" },
+      { "label": "Développeurs React", "href": "/developpeurs/react" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "backend",
+    "term": "Développeur Backend",
+    "shortDef": "Un développeur spécialisé dans la création des serveurs, APIs et bases de données qui alimentent les applications frontend.",
+    "longDef": "Un développeur backend construit l'infrastructure logicielle invisible à l'utilisateur : les serveurs, les APIs, les bases de données, l'authentification, la sécurité. Il travaille avec des langages comme Node.js, Python, Java, Go ou Rust.\n\nLe backend moderne gère aussi l'infrastructure (cloud, containers, CI/CD), la sécurité (authentification, chiffrement), et la performance en grande charge. Un backend bien conçu est scalable, sécurisé, et facile à maintenir.\n\nLes missions backend sont très recherchées et généralement bien rémunérées : 500€ pour un junior à 800€+ pour un senior. Les challenges techniquement intéressants (big data, microservices, gestion de millions d'utilisateurs) paient premium.",
+    "relatedTerms": ["full-stack", "api", "devops", "nodejs", "python"],
+    "relatedPages": [{ "label": "Développeurs backend", "href": "/developpeurs/backend" }],
+    "category": "tech"
+  },
+  {
+    "slug": "react",
+    "term": "React.js",
+    "shortDef": "La librairie JavaScript de Meta pour créer des interfaces utilisateur modernes, composante du marché frontend la plus demandée.",
+    "longDef": "React est une bibliothèque JavaScript développée par Meta (Facebook) pour construire des interfaces utilisateur. Depuis son lancement en 2013, il est devenu le choix dominant côté frontend : en 2024, plus de 40% des offres frontend mentionnent React.\n\nReact fonctionne autour du concept de composants réutilisables et d'un Virtual DOM pour optimiser les mises à jour d'interface. Son écosystème comprend React Router (navigation), Redux/Zustand (gestion d'état), et des frameworks comme Next.js (React côté serveur avec SSR/SSG) qui optimisent les performances SEO.\n\nPour un freelance frontend, maîtriser React est quasi-indispensable. Les missions React sont nombreuses et bien rémunérées (500-800€ TJM selon le niveau). FreeMatch analyse la maturité des projets React : présence de tests, architecture des composants, et version utilisée.",
+    "relatedTerms": ["frontend", "typescript", "full-stack", "nodejs"],
+    "relatedPages": [
+      { "label": "Développeurs React", "href": "/developpeurs/react" },
+      { "label": "Développeurs frontend", "href": "/developpeurs/frontend" },
+      { "label": "React à Paris", "href": "/developpeurs/react/paris" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "nodejs",
+    "term": "Node.js",
+    "shortDef": "Un environnement d'exécution JavaScript côté serveur permettant aux développeurs de créer des backends performants avec le même langage que le frontend.",
+    "longDef": "Node.js est un environnement d'exécution JavaScript basé sur le moteur V8 de Chrome. Lancé en 2009, il permet d'écrire du code serveur en JavaScript, ce qui a révolutionné le développement web en permettant à des équipes fullstack d'utiliser un seul langage de bout en bout.\n\nNode.js est particulièrement adapté aux APIs en temps réel (chat, notifications, streaming) grâce à son modèle asynchrone non-bloquant. Son gestionnaire de paquets npm est le plus grand registre de packages open source au monde. Les frameworks les plus populaires : Express.js, Fastify, NestJS.\n\nPour un développeur, Node.js est une compétence très demandée côté backend. Elle se combine souvent avec React (stack JavaScript unifiée) ou avec TypeScript pour plus de robustesse. Les profils Node.js senior avec expertise en performances et architecture microservices se négocient entre 600€ et 800€ TJM.",
+    "relatedTerms": ["backend", "typescript", "full-stack", "api", "microservices"],
+    "relatedPages": [
+      { "label": "Développeurs backend", "href": "/developpeurs/backend" },
+      { "label": "Développeurs JavaScript", "href": "/developpeurs/javascript" },
+      { "label": "Développeurs full stack", "href": "/developpeurs/full-stack" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "typescript",
+    "term": "TypeScript",
+    "shortDef": "Un sur-ensemble typé de JavaScript développé par Microsoft, ajoutant un système de types statiques pour améliorer la qualité et la maintenabilité du code.",
+    "longDef": "TypeScript est un langage de programmation créé par Microsoft en 2012 qui étend JavaScript avec un système de types statiques. Chaque variable, paramètre et valeur de retour peut être typé, ce qui permet de détecter les erreurs à la compilation plutôt qu'à l'exécution.\n\nL'adoption de TypeScript a explosé ces dernières années : en 2024, plus de 60% des projets JavaScript utilisent TypeScript. Les avantages sont nombreux : meilleure autocomplétion dans les IDEs, refactoring plus sûr, documentation implicite du code, et réduction drastique des bugs. Les inconvénients : courbe d'apprentissage initiale et configuration plus complexe.\n\nPour un développeur, TypeScript est devenu un standard incontournable. Les offres frontend et backend mentionnent massivement TypeScript. FreeMatch considère les missions utilisant TypeScript comme des indicateurs de qualité technique, et les analyse en priorité.",
+    "relatedTerms": ["frontend", "backend", "react", "nodejs", "full-stack"],
+    "relatedPages": [
+      { "label": "Développeurs TypeScript", "href": "/developpeurs/typescript" },
+      { "label": "Développeurs frontend", "href": "/developpeurs/frontend" },
+      { "label": "Développeurs backend", "href": "/developpeurs/backend" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "python",
+    "term": "Python",
+    "shortDef": "Un langage de programmation polyvalent et lisible, dominant dans la data science, l'IA/ML et le scripting, très utilisé aussi côté backend web.",
+    "longDef": "Python est l'un des langages les plus populaires au monde, classé régulièrement numéro 1 sur l'index TIOBE. Créé en 1991, il se distingue par sa syntaxe lisible et concise. Python excelle dans trois domaines : la data science (pandas, numpy, scikit-learn), l'IA/ML (TensorFlow, PyTorch), et le développement web backend (Django, FastAPI, Flask).\n\nPour un développeur backend Python, les opportunités sont nombreuses et les TJM attractifs, surtout dans les domaines data et IA. Un data engineer ou ML engineer Python senior peut facturer entre 600€ et 900€ par jour. La forte demande crée une pénurie de profils seniors bien formés.\n\nFreeMatch identifie les offres Python selon leur domaine : backend web (Django/FastAPI), data engineering (pipelines, ETL), data science (analyse, modélisation) ou MLOps (déploiement de modèles IA). Ces sous-domaines ont des marchés distincts avec des niveaux de TJM et des cultures d'équipe différents.",
+    "relatedTerms": ["backend", "devops", "cloud", "microservices"],
+    "relatedPages": [{ "label": "Développeurs backend", "href": "/developpeurs/backend" }],
+    "category": "tech"
+  },
+  {
+    "slug": "devops",
+    "term": "DevOps",
+    "shortDef": "Un ensemble de pratiques et d'outils visant à automatiser le déploiement, la configuration et le monitoring des applications en production.",
+    "longDef": "DevOps (fusion de Development et Operations) n'est pas un rôle mais une philosophie et un ensemble de pratiques. Un DevOps engineer automatise et optimise tout ce qui touche à la production : build, tests, déploiement, monitoring, sécurité, scaling.\n\nLes outils essentiels du DevOps incluent : Docker et les conteneurs, Kubernetes pour l'orchestration, les pipelines CI/CD (Jenkins, GitLab CI, GitHub Actions), l'Infrastructure as Code (Terraform, Ansible), et les cloud providers (AWS, GCP, Azure). Le DevOps moderne maîtrise aussi les bonnes pratiques de sécurité (DevSecOps).\n\nPour un développeur, avoir des compétences DevOps est de plus en plus valorisé. Les missions DevOps bien rémunérées (600-900€ TJM) requièrent généralement 5+ ans d'expérience, une compréhension des architectures cloud, et une capacité à résoudre des problèmes complexes en production.",
+    "relatedTerms": ["ci-cd", "cloud", "docker", "kubernetes", "lead-tech"],
+    "relatedPages": [
+      { "label": "Développeurs DevOps", "href": "/developpeurs/devops" },
+      { "label": "Développeurs backend", "href": "/developpeurs/backend" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "docker",
+    "term": "Docker",
+    "shortDef": "Un outil de conteneurisation permettant d'emballer une application et ses dépendances dans un container portable, exécutable sur n'importe quelle machine.",
+    "longDef": "Docker est une plateforme de containerisation lancée en 2013 qui a transformé le déploiement applicatif. Plutôt que d'installer une application sur un serveur nu, Docker crée des \"containers\" : des environnements isolés contenant l'application et toutes ses dépendances (librairies, runtime, configuration).\n\nLes avantages de Docker sont majeurs : portabilité totale (\"ça marche sur ma machine\" devient \"ça marche partout\"), isolation des services, déploiements rapides et répétables, et facilité de scalabilité. Un fichier Dockerfile décrit l'environnement, et Docker Compose orchestre plusieurs containers en local.\n\nPour un développeur, Docker est devenu une compétence quasi-indispensable, même côté frontend. Elle s'est imposée comme standard pour les environnements de développement et la production. Les développeurs DevOps maîtrisent Docker pour préparer les images destinées à être orchestrées par Kubernetes.",
+    "relatedTerms": ["devops", "kubernetes", "ci-cd", "cloud", "microservices"],
+    "relatedPages": [{ "label": "Développeurs DevOps", "href": "/developpeurs/devops" }],
+    "category": "tech"
+  },
+  {
+    "slug": "kubernetes",
+    "term": "Kubernetes",
+    "shortDef": "Un orchestrateur de containers open source permettant de déployer, scaler et gérer des applications containerisées en production à grande échelle.",
+    "longDef": "Kubernetes (K8s) est un système d'orchestration de containers développé initialement par Google et maintenant maintenu par la CNCF (Cloud Native Computing Foundation). Là où Docker gère des containers individuels, Kubernetes gère des clusters de containers en production.\n\nKubernetes permet d'automatiser le déploiement, le scaling automatique, l'équilibrage de charge et la récupération après panne. Ses concepts clés sont les Pods, les Deployments, les Services et les Namespaces. Les cloud providers proposent leurs propres distributions managées : GKE (Google), EKS (Amazon), AKS (Azure).\n\nPour un ingénieur DevOps ou Cloud, Kubernetes est une compétence premium. Les certifications CKA (Certified Kubernetes Administrator) et CKAD sont très valorisées. Les missions K8s bien rémunérées (700-1000€ TJM) requirent généralement 3+ ans d'expérience sur des clusters de production à charge réelle.",
+    "relatedTerms": ["docker", "devops", "cloud", "ci-cd", "microservices"],
+    "relatedPages": [
+      { "label": "Développeurs DevOps", "href": "/developpeurs/devops" },
+      { "label": "Développeurs GCP", "href": "/developpeurs/gcp" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "cloud",
+    "term": "Cloud Computing",
+    "shortDef": "Utilisation de ressources informatiques (serveurs, stockage, bases de données) hébergées sur internet plutôt que sur des machines locales.",
+    "longDef": "Le cloud computing a transformé l'IT : plutôt que d'acheter et maintenir ses propres serveurs, une entreprise loue des ressources chez un fournisseur cloud. Les trois principaux providers sont AWS (Amazon), GCP (Google Cloud) et Azure (Microsoft).\n\nLes avantages du cloud : pas d'investissement matériel, scalabilité (ajouter des ressources en un clic), payez ce que vous utilisez, accès global. Les défis : coûts qui peuvent exploser si mal gérés, lock-in vendor (migration difficile), et sécurité à gérer.\n\nPour un développeur, avoir des compétences cloud est très recherché : AWS Developer ou GCP Associate sont des certifications valorisées. Les missions cloud paient généralement bien (600€+ de TJM) car elles nécessitent expertise et responsabilité.",
+    "relatedTerms": ["devops", "ci-cd", "backend", "kubernetes", "docker"],
+    "relatedPages": [
+      { "label": "Développeurs DevOps", "href": "/developpeurs/devops" },
+      { "label": "Développeurs GCP", "href": "/developpeurs/gcp" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "ci-cd",
+    "term": "CI/CD",
+    "shortDef": "Intégration Continue et Déploiement Continu : l'automatisation du test et du déploiement du code pour fiabiliser les releases.",
+    "longDef": "CI/CD englobe deux concepts : l'Intégration Continue (CI) automatise les tests à chaque push de code pour détecter les bugs tôt, et le Déploiement Continu (CD) automatise le déploiement en production une fois les tests passés.\n\nConcrètement : un développeur pousse son code sur GitHub → un pipeline (GitHub Actions, Jenkins, GitLab CI) lance automatiquement des tests → si tout passe, le code peut être déployé automatiquement. Cela remplace les déploiements manuels et réduit drastiquement les erreurs.\n\nPour une entreprise, avoir une bonne CI/CD = confiabilité, rapidité de mise à jour, et moins de bugs en prod. Pour un développeur, c'est un gain énorme de productivité. FreeMatch valide que les missions proposent une vraie CI/CD, pas juste une chaîne cassée.",
+    "relatedTerms": ["devops", "cloud", "docker", "tdd"],
+    "relatedPages": [{ "label": "Développeurs DevOps", "href": "/developpeurs/devops" }],
+    "category": "tech"
+  },
+  {
+    "slug": "api",
+    "term": "API",
+    "shortDef": "Interface de Programmation : un ensemble de règles permettant à deux applications de communiquer entre elles pour échanger de la donnée.",
+    "longDef": "Une API (Application Programming Interface) est un contrat entre deux logiciels : elle définit quelles données on peut demander et sous quel format. Exemples : l'API Google Maps permet aux apps d'afficher des cartes, l'API Stripe permet de traiter des paiements.\n\nLes APIs modernes utilisent généralement REST (requêtes HTTP avec JSON) ou GraphQL (langage de requête flexible). Un développeur backend crée des APIs que les frontends et tiers consomment. Une API bien conçue est simple à utiliser, documentée, et évolutive.\n\nPour un développeur backend, la conception d'API est une compétence clé : une API mal pensée génère des bugs et de la frustration chez les utilisateurs. FreeMatch valide que les missions backend incluent la conception d'APIs cohérentes et documentées.",
+    "relatedTerms": ["backend", "microservices", "nodejs"],
+    "relatedPages": [{ "label": "Développeurs backend", "href": "/developpeurs/backend" }],
+    "category": "tech"
+  },
+  {
+    "slug": "microservices",
+    "term": "Architecture microservices",
+    "shortDef": "Un style architectural découpant une application en services indépendants communicant via APIs, opposé à l'approche monolithique traditionnelle.",
+    "longDef": "L'architecture microservices décompose une application en petits services autonomes, chacun responsable d'une fonctionnalité métier spécifique (gestion des utilisateurs, paiements, notifications, etc.). Chaque service a sa propre base de données, peut être développé dans un langage différent, et se déploie indépendamment.\n\nLes avantages des microservices : scalabilité fine (scaler uniquement le service sous charge), déploiements indépendants sans interrompre les autres services, isolation des pannes. Les inconvénients : complexité distribuée, latence réseau entre services, débogage plus difficile, et besoin d'une orchestration (Kubernetes) et d'une observabilité solides.\n\nPour un développeur, l'expérience microservices est très valorisée dans les grandes entreprises tech et les scale-ups. Elle requiert une bonne compréhension des APIs, des messaging systems (Kafka, RabbitMQ), et des patterns distribués. FreeMatch identifie les missions microservices comme des missions à forte valeur ajoutée technique, souvent associées à des TJM premium.",
+    "relatedTerms": ["api", "cloud", "docker", "kubernetes", "backend"],
+    "relatedPages": [
+      { "label": "Développeurs backend", "href": "/developpeurs/backend" },
+      { "label": "Développeurs DevOps", "href": "/developpeurs/devops" }
+    ],
+    "category": "tech"
+  },
+  {
+    "slug": "stack-technique",
+    "term": "Stack technique",
+    "shortDef": "L'ensemble des technologies et outils utilisés pour développer et exploiter une application (langages, frameworks, bases de données, infrastructure).",
+    "longDef": "La stack technique est la combinaison des technologies qui composent une application. Elle comprend généralement : le langage de programmation (JavaScript, Python, Java, Go, etc.), le framework (React, Vue, Django, Spring, etc.), la base de données (PostgreSQL, MongoDB, Redis), et l'infrastructure (AWS, GCP, Heroku, Vercel).\n\nExemple de stack moderne : TypeScript avec React côté frontend, Node.js avec Express côté backend, PostgreSQL pour la base de données, et déploiement sur Vercel ou AWS. Une autre stack : Python/Django backend, React frontend, PostgreSQL, déployé sur Heroku.\n\nPour un développeur, l'importance de la stack est majeure : elle détermine sa courbe d'apprentissage, sa productivité et sa valeur sur le marché. Une stack moderne et cohérente est un bon signal. FreeMatch analyse que chaque stack est adaptée aux besoins et moderne (pas de technologies obsolètes).",
+    "relatedTerms": ["full-stack", "frontend", "backend", "ci-cd", "docker"],
+    "relatedPages": [{ "label": "Développeurs full stack", "href": "/developpeurs/full-stack" }],
+    "category": "tech"
+  },
+  {
+    "slug": "lead-tech",
+    "term": "Lead Tech",
+    "shortDef": "Un développeur senior responsable de l'architecture technique et du coaching des membres d'une équipe de développement.",
+    "longDef": "Un Lead Tech (Technical Lead) est un développeur expérimenté (5+ ans) avec des responsabilités d'architecture et de leadership. Il ne manage pas au sens RH, mais il guide l'équipe sur les choix technologiques, les patterns de code, et l'évolution de la stack.\n\nLes responsabilités d'un Lead Tech incluent : définir l'architecture des projets, faire la revue de code avec mentorat, guider les juniors, participer aux décisions technologiques, et assurer la qualité technique globale. C'est un rôle à mi-chemin entre le développeur pur et le manager.\n\nPour un freelance, devenir Lead Tech signifie généralement une rémunération plus élevée (TJM de 700-1000€) et un impact plus stratégique. Les missions de Lead Tech sont réservées aux profils avec une vraie expertise et une capacité à communiquer l'architecture technique aux non-techniciens.",
+    "relatedTerms": ["freelance-senior", "full-stack", "devops", "code-review"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Full stack", "href": "/developpeurs/full-stack" }
+    ],
+    "category": "pratique"
+  },
+  {
+    "slug": "agile-scrum",
+    "term": "Agile / Scrum",
+    "shortDef": "Une méthodologie de développement itérative où le travail est organisé en sprints courts, avec feedback régulier et adaptation continue.",
+    "longDef": "Agile est une philosophie de développement logiciel opposée aux approches en cascade (Waterfall). Scrum est une implémentation spécifique d'Agile avec des rôles (Product Owner, Scrum Master, développeurs), des cérémonies (dailies, plannings, rétrospectives) et des sprints de 1-4 semaines.\n\nEn Agile/Scrum, le produit est développé par petites itérations avec feedback continu du client. Cela permet d'adapter le développement rapidement aux changements de besoins, plutôt que d'être bloqué par un cahier des charges figé au départ.\n\nPour un développeur, Agile/Scrum est devenu une norme : presque toutes les entreprises modernes l'utilisent. Cependant, la qualité varie énormément : Scrum bien exécuté = équipes efficaces et prévisibles ; Scrum mal exécuté = réunions interminables et frustration. FreeMatch vérifie que les missions proposent une véritable organisation Agile.",
+    "relatedTerms": ["lead-tech", "product-owner", "code-review", "tdd"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "pratique"
+  },
+  {
+    "slug": "product-owner",
+    "term": "Product Owner",
+    "shortDef": "Le rôle Agile responsable de la vision produit, de la priorisation du backlog et de l'interface entre les parties prenantes métier et l'équipe de développement.",
+    "longDef": "Le Product Owner (PO) est un rôle clé dans la méthodologie Scrum. Il représente les intérêts du business auprès de l'équipe technique : il définit ce que le produit doit faire (vision), découpe les fonctionnalités en user stories, priorise le backlog en fonction de la valeur business, et valide que les développements réalisés correspondent aux attentes.\n\nUn bon PO est le lien indispensable entre la vision stratégique et l'exécution technique. Il doit comprendre les besoins utilisateurs, négocier avec les parties prenantes, et savoir dire non aux demandes non prioritaires. Il n'écrit pas de code, mais ses décisions influencent directement la qualité et la pertinence du produit final.\n\nPour un développeur freelance, la qualité du Product Owner est un critère important pour évaluer une mission : un PO clair dans ses spécifications et disponible facilite le travail et réduit les relivraisons. FreeMatch analyse les signaux d'organisation produit dans les offres pour évaluer la maturité des équipes.",
+    "relatedTerms": ["agile-scrum", "lead-tech", "mission-freelance"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Missions freelance", "href": "/developpeurs/freelance" }
+    ],
+    "category": "pratique"
+  },
+  {
+    "slug": "code-review",
+    "term": "Code Review",
+    "shortDef": "Un processus de revue par les pairs où des développeurs examinent le code produit par leurs collègues avant son intégration dans la branche principale.",
+    "longDef": "La code review est une pratique essentielle du développement logiciel : avant qu'une pull request soit mergée, un ou plusieurs développeurs examinent le code pour détecter bugs, mauvaises pratiques, problèmes de sécurité, et suggestions d'amélioration.\n\nUne bonne code review vérifie plusieurs dimensions : la correction fonctionnelle (le code fait ce qu'il doit faire), la lisibilité (le code est compréhensible), la sécurité (pas de vulnérabilités), les performances (pas d'algorithmes inefficaces), et la cohérence avec les conventions du projet.\n\nPour un développeur, les code reviews sont aussi un outil d'apprentissage irremplaçable : recevoir et donner du feedback sur le code accélère la montée en compétences. Les missions avec une culture forte de code review sont généralement signe d'équipes plus matures. FreeMatch identifie dans ses analyses les équipes qui pratiquent des revues de code rigoureuses.",
+    "relatedTerms": ["lead-tech", "agile-scrum", "dette-technique", "tdd"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Développeurs full stack", "href": "/developpeurs/full-stack" }
+    ],
+    "category": "pratique"
+  },
+  {
+    "slug": "tdd",
+    "term": "TDD",
+    "shortDef": "Test Driven Development : une méthode de développement où on écrit les tests avant le code fonctionnel, guidant la conception vers des solutions plus robustes.",
+    "longDef": "Le TDD (Test Driven Development) est une pratique de développement définie par Kent Beck dans les années 2000. Le cycle est simple : Red (écrire un test qui échoue) → Green (écrire le minimum de code pour que le test passe) → Refactor (améliorer le code sans casser les tests). Ce cycle se répète pour chaque fonctionnalité.\n\nLes avantages du TDD sont nombreux : meilleure conception (le code TDD est naturellement plus modulaire et testable), filet de sécurité lors des refactorings, documentation vivante via les tests, et réduction des bugs. L'inconvénient principal est la courbe d'apprentissage et le temps initial plus important.\n\nPour un développeur, pratiquer le TDD est un signe de maturité technique. Les équipes qui font du TDD sont généralement plus disciplinées et livrent du code de meilleure qualité. FreeMatch identifie les missions qui mentionnent TDD ou testing culture comme des indicateurs de qualité de l'environnement technique.",
+    "relatedTerms": ["code-review", "agile-scrum", "dette-technique", "ci-cd"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Développeurs full stack", "href": "/developpeurs/full-stack" }
+    ],
+    "category": "pratique"
+  },
+  {
+    "slug": "dette-technique",
+    "term": "Dette technique",
+    "shortDef": "L'accumulation de raccourcis, de code mal conçu ou de technologies obsolètes qui ralentissent le développement futur et coûtent cher à résorber.",
+    "longDef": "La dette technique (ou technical debt) est une métaphore économique : comme une dette financière, elle accumule des \"intérêts\" au fil du temps sous forme de coûts supplémentaires de maintenance, de bugs plus fréquents, et de développements plus lents. Elle résulte de choix techniques délibérés (aller vite au détriment de la qualité) ou involontaires (mauvaises pratiques, manque d'expérience).\n\nLa dette technique se manifeste de plusieurs façons : code difficile à modifier, tests insuffisants, dépendances obsolètes, architecture mal pensée, documentation manquante. Pour un développeur freelance, évaluer le niveau de dette technique est crucial avant d'accepter une mission : une codebase avec une dette importante ralentit la productivité et génère de la frustration.\n\nFreeMatch analyse les signaux de dette technique dans les offres : technologies mentionnées (versions obsolètes ?), durée du projet (refactoring ou greenfield ?), et contexte technique fourni. Un projet greenfield (nouveau projet de zéro) a généralement moins de dette qu'une mission de maintenance sur un legacy de 10 ans.",
+    "relatedTerms": ["code-review", "tdd", "agile-scrum", "lead-tech"],
+    "relatedPages": [
+      { "label": "Développeurs seniors", "href": "/developpeurs/senior" },
+      { "label": "Développeurs full stack", "href": "/developpeurs/full-stack" }
+    ],
+    "category": "pratique"
+  }
+]
