@@ -109,7 +109,7 @@ export default function AboutPage() {
             alt="PeakLab"
             width={80}
             height={65}
-            className="mx-auto"
+            className="mx-auto brightness-0 invert"
           />
           <h2 className="text-2xl font-bold text-background">
             FreeMatch est le premier projet de PeakLab

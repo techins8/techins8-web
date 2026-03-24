@@ -186,7 +186,7 @@ const Footer = () => {
                   alt="PeakLab"
                   width={20}
                   height={16}
-                  className="opacity-70"
+                  className="brightness-0 invert opacity-70"
                 />
                 <span className="text-sm text-muted underline">PeakLab</span>
               </a>
