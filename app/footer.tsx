@@ -196,7 +196,7 @@ const Footer = () => {
           <div className="relative bottom-0 overflow-hidden flex justify-center items-center">
             <Image
               src="/images/logo/footer-icon-techins8.svg"
-              alt="FreeMatch Footer Pattern"
+              alt=""
               width={950}
               height={200}
               loading="lazy"

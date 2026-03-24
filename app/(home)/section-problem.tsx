@@ -29,7 +29,7 @@ const Problem = () => {
                   <li key={index} className="flex items-start sm:items-center gap-3 text-muted">
                     <Image
                       src="/images/icons/orange-cross.svg"
-                      alt="Orange cross"
+                      alt=""
                       width={21}
                       height={21}
                       className="mt-1 sm:mt-0"
@@ -42,7 +42,7 @@ const Problem = () => {
             <div className="flex-1">
               <Image
                 src="/images/illustrations/problem-1.svg"
-                alt="illustration of the first problem"
+                alt="Illustration représentant la difficulté à trouver des missions freelance tech qualifiées"
                 width={500}
                 height={400}
                 className="w-full h-full object-cover"
@@ -66,7 +66,7 @@ const Problem = () => {
               <div className="relative w-full h-[180px]">
                 <Image
                   src="/images/illustrations/problem-2.svg"
-                  alt="Remote work illustration"
+                  alt="Illustration du travail à distance pour les développeurs freelances"
                   width={500}
                   height={400}
                   className="w-full h-full object-cover"

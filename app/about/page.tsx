@@ -21,7 +21,7 @@ export default function AboutPage() {
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/authors/lucien.webp"
-                alt="Lucien Arbieu"
+                alt="Photo de Lucien Arbieu, fondateur de FreeMatch"
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/authors/fahari.webp"
-                alt="Fahari"
+                alt="Photo de Fahari Hamadasidi, fondateur de FreeMatch"
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
