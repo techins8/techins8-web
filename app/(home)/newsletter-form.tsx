@@ -99,7 +99,7 @@ export default function NewsletterForm() {
         <div className="relative">
           <Image
             src="/images/icons/newsletter.svg"
-            alt="Newsletter"
+            alt="Icône newsletter FreeMatch"
             width={48}
             height={32}
             className="sm:w-[72px] sm:h-[48px]"

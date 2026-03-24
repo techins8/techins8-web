@@ -21,7 +21,7 @@ export default function AboutPage() {
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/authors/lucien.webp"
-                alt="Lucien Arbieu"
+                alt="Photo de Lucien Arbieu, fondateur de FreeMatch"
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
@@ -61,7 +61,7 @@ export default function AboutPage() {
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/authors/fahari.webp"
-                alt="Fahari"
+                alt="Photo de Fahari Hamadasidi, fondateur de FreeMatch"
                 width={80}
                 height={80}
                 className="rounded-full object-cover"
@@ -106,7 +106,7 @@ export default function AboutPage() {
           <p className="text-background/70 text-sm font-medium uppercase tracking-widest">Studio</p>
           <Image
             src="/images/peaklab-logo.png"
-            alt=""
+            alt="Logo PeakLab, studio tech français créateur de FreeMatch"
             width={80}
             height={65}
             className="mx-auto brightness-0 invert"

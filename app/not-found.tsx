@@ -12,14 +12,14 @@ export default function NotFound() {
             src="/images/logo/logo-techins8-dark.svg"
             width={300}
             height={400}
-            alt="illustration"
+            alt="Logo FreeMatch"
             className="my-10"
             loading="lazy"
           />
         </div>
         <div className="mx-auto max-w-[410px]">
           <Image
-            alt="illustration"
+            alt="Illustration page introuvable"
             loading="lazy"
             width="400"
             height="400"
