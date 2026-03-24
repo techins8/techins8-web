@@ -183,7 +183,7 @@ const Footer = () => {
               >
                 <Image
                   src="/images/peaklab-logo.png"
-                  alt="PeakLab"
+                  alt=""
                   width={20}
                   height={16}
                   className="brightness-0 invert opacity-70"

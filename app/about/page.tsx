@@ -106,7 +106,7 @@ export default function AboutPage() {
           <p className="text-background/70 text-sm font-medium uppercase tracking-widest">Studio</p>
           <Image
             src="/images/peaklab-logo.png"
-            alt="PeakLab"
+            alt=""
             width={80}
             height={65}
             className="mx-auto brightness-0 invert"
