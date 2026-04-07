@@ -161,6 +161,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           data-domain="freemat.ch"
           src="https://datafa.st/js/script.js"
         />
+        <Script
+          defer
+          src="https://umami.peaklab.fr/script.js"
+          data-website-id="6627eaf6-f5c8-4253-92d7-48970985b9dd"
+        />
       </head>
       <body className={`${poppins.className} min-h-screen bg-background antialiased`}>
         {/* Google Tag Manager (noscript) */}
