@@ -196,12 +196,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <Toaster expand={false} position="top-right" closeButton richColors duration={2000} />
           </PostHogProvider>
         </NextIntlClientProvider>
-        <Script
-          id="umami"
-          defer
-          src="https://umami.clf.techins8.com/script.js"
-          data-website-id={env.NEXT_PUBLIC_UMAMI_WEBSITE_ID}
-        />
       </body>
     </html>
   );
