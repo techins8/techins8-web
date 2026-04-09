@@ -11,7 +11,7 @@ export const SourceIcon = ({ source }: { source?: string }) => {
   if (source.toLowerCase() === "welcometothejungle")
     return (
       <Image
-        src="/images/icons/wttj.ico"
+        src="/images/icons/wttj.png"
         alt="Welcome to the jungle"
         width={16}
         height={16}
