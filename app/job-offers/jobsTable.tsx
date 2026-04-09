@@ -13,6 +13,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import { jobSlug } from "@/lib/slug";
 import type { IJob } from "@/types/job";
 import { SourceIcon } from "./source-icon";
 
@@ -51,7 +52,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
               <TableCell className="py-4">
                 <div className="flex flex-col gap-1">
                   <h3 className="font-medium text-gray-900">
-                    <Link href={`job-offers/${job.id}`} className="flex items-center gap-2">
+                    <Link href={`/job-offers/${jobSlug(job)}`} className="flex items-center gap-2">
                       <SourceIcon source={job.source} />
                       <span>{job.title || "Untitled Position"}</span>
                     </Link>

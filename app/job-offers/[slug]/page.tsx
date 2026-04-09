@@ -1,9 +1,11 @@
 import { notFound } from "next/navigation";
+import { idFromJobSlug } from "@/lib/slug";
 import { getJob } from "../jobs.query";
 import JobDetail from "./job-detail";
 
-export async function generateMetadata({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const id = idFromJobSlug(slug);
   const job = await getJob({ id });
 
   if (!job) {
@@ -25,8 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   };
 }
 
-export default async function JobOfferPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default async function JobOfferPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const id = idFromJobSlug(slug);
 
   try {
     const job = await getJob({ id });
