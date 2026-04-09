@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { buildQuery } from "@/lib/http";
 import { WEBSITE_URL } from "../seo";
 import { getJobsBrut, type IGetJobsBrutParams } from "./jobs.query";
+import { JobsFilters } from "./jobs-filters";
 import { JobsPaginations } from "./jobs-paginations";
 import JobsTable from "./jobsTable";
 
@@ -61,6 +62,7 @@ export default async function HomePage({
   return (
     <div className="container mx-auto py-8">
       <h1 className="text-2xl font-bold text-title mb-6">Offres d&apos;emploi tech</h1>
+      <JobsFilters initialSkills={skills} initialLocations={locations} />
       <JobsTable initialJobs={result.jobs} />
       <JobsPaginations
         page={params.page}
