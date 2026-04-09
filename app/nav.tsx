@@ -110,6 +110,13 @@ const Nav = () => {
                 {t("links.blog")}
               </Link>
               <Link
+                href="/job-offers"
+                className="text-foreground text-lg nav-link hover:text-primary transition-colors"
+                onClick={closeMenu}
+              >
+                {t("links.jobOffers")}
+              </Link>
+              <Link
                 href={process.env.NEXT_PUBLIC_DASHBOARD_URL ?? ""}
                 className="bg-accent-foreground text-background px-2 py-3 rounded-md transition-colors text-lg w-60 text-center hover:bg-[#fa471198]"
                 onClick={closeMenu}
@@ -132,6 +139,12 @@ const Nav = () => {
             </Link>
             <Link href="/blog" className="text-foreground hover:text-primary transition-colors">
               {t("links.blog")}
+            </Link>
+            <Link
+              href="/job-offers"
+              className="text-foreground hover:text-primary transition-colors"
+            >
+              {t("links.jobOffers")}
             </Link>
           </div>
 
