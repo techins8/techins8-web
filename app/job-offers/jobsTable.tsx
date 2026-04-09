@@ -1,6 +1,7 @@
 "use client";
 
 import { formatDistance } from "date-fns";
+import { fr } from "date-fns/locale";
 import { ExternalLink } from "lucide-react";
 import Link from "next/link";
 import { Badge } from "@/components/ui/badge";
@@ -25,6 +26,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
     if (!publishedAt) return "---";
     return formatDistance(new Date(publishedAt), new Date(), {
       addSuffix: true,
+      locale: fr,
     });
   };
 
@@ -86,15 +88,21 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
 
               <TableCell>
                 <span className="whitespace-nowrap">
-                  {job.annualsalary}
-                  {job.annualsalary && job.dailysalary && " / "}
-                  {job.dailysalary}
+                  {job.annualsalary || job.dailysalary ? (
+                    <>
+                      {job.annualsalary}
+                      {job.annualsalary && job.dailysalary && " / "}
+                      {job.dailysalary}
+                    </>
+                  ) : (
+                    "---"
+                  )}
                 </span>
               </TableCell>
 
               <TableCell>
                 <Badge variant="outline" className="capitalize">
-                  {job.jobtype || "Not specified"}
+                  {job.jobtype?.replace(/_/g, " ") || "Non précisé"}
                 </Badge>
               </TableCell>
 
@@ -111,8 +119,13 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                     Details
                   </Link> */}
                   {job.sourceurl && (
-                    <Link href={job.sourceurl || ""} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
+                    <Link
+                      href={job.sourceurl || ""}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Voir l'offre ${job.title} sur ${job.source}`}
+                    >
+                      <ExternalLink className="w-4 h-4" aria-hidden="true" />
                     </Link>
                   )}
                 </div>

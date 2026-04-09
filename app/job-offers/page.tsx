@@ -60,6 +60,7 @@ export default async function HomePage({
 
   return (
     <div className="container mx-auto py-8">
+      <h1 className="text-2xl font-bold text-title mb-6">Offres d&apos;emploi tech</h1>
       <JobsTable initialJobs={result.jobs} />
       <JobsPaginations
         page={params.page}
