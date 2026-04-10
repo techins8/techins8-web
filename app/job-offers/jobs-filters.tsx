@@ -117,7 +117,15 @@ export const JobsFilters = ({ initialSkills, initialLocations }: JobsFiltersProp
               key={skill}
               variant="techins8"
               className="flex items-center gap-1 cursor-pointer"
+              role="button"
+              tabIndex={0}
               onClick={() => removeSkill(skill)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  removeSkill(skill);
+                }
+              }}
             >
               {skill}
               <X className="w-3 h-3" />
@@ -128,7 +136,15 @@ export const JobsFilters = ({ initialSkills, initialLocations }: JobsFiltersProp
               key={loc}
               variant="outline"
               className="flex items-center gap-1 cursor-pointer"
+              role="button"
+              tabIndex={0}
               onClick={() => removeLocation(loc)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  e.preventDefault();
+                  removeLocation(loc);
+                }
+              }}
             >
               {loc}
               <X className="w-3 h-3" />

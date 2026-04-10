@@ -121,7 +121,7 @@ const JobsTable = ({ initialJobs }: JobsTableProps) => {
                   </Link> */}
                   {job.sourceurl && (
                     <Link
-                      href={job.sourceurl || ""}
+                      href={job.sourceurl}
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={`Voir l'offre ${job.title} sur ${job.source}`}

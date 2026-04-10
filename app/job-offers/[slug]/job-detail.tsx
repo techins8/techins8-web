@@ -131,6 +131,7 @@ export default function JobDetails({ job }: { job: IJob }) {
               <h2 className="text-xl font-semibold">Description du poste</h2>
               <p
                 className="text-muted-foreground"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: job description HTML from trusted API
                 dangerouslySetInnerHTML={createMarkup(job.description ?? "")}
               />
             </section>
@@ -154,6 +155,7 @@ export default function JobDetails({ job }: { job: IJob }) {
               </div>
               <p
                 className="text-muted-foreground"
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: company description HTML from trusted API
                 dangerouslySetInnerHTML={createMarkup(job.company?.description ?? "")}
               />
             </section>

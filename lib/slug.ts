@@ -15,5 +15,5 @@ export const jobSlug = (job: { slug?: string; title?: string; id: number }): str
 
 export const idFromJobSlug = (slug: string): string => {
   const parts = slug.split("-");
-  return parts[parts.length - 1];
+  return parts.at(-1) ?? slug;
 };

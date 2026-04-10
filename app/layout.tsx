@@ -82,6 +82,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* HotJar */}
         <Script
           id="hotjar"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: HotJar analytics script
           dangerouslySetInnerHTML={{
             __html: `
               (function(c,s,q,u,a,r,e){
@@ -99,6 +100,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Google Tag Manager */}
         <Script
           id="google-tag-manager"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: GTM script injection
           dangerouslySetInnerHTML={{
             __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -111,6 +113,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Script
           id="website-schema"
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -134,6 +137,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Script
           id="organization-schema"
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
@@ -170,6 +174,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body className={`${poppins.className} min-h-screen bg-background antialiased`}>
         {/* Google Tag Manager (noscript) */}
         <noscript
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: GTM noscript fallback
           dangerouslySetInnerHTML={{
             __html: `<iframe src="https://www.googletagmanager.com/ns.html?id=${env.NEXT_PUBLIC_GTM_ID}"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>`,

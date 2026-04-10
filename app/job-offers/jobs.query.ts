@@ -1,5 +1,7 @@
 "use server";
 
+import { cache } from "react";
+
 import { api } from "@/lib/api";
 import { env } from "@/lib/env";
 import type { IJob } from "@/types/job";
@@ -83,7 +85,7 @@ export const getJobsBrut = async ({
   }
 };
 
-export const getJob = async ({ id }: { id: string }) => {
+export const getJob = cache(async ({ id }: { id: string }) => {
   const response = await api(`/jobs/job-${id}`);
 
   if (!response.ok) {
@@ -94,4 +96,4 @@ export const getJob = async ({ id }: { id: string }) => {
 
   const data = (await response.json()) as IJob;
   return data;
-};
+});

@@ -104,6 +104,7 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
         <Script
           id="breadcrumb-schema"
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(breadcrumbSchema),
           }}
@@ -111,6 +112,7 @@ export default async function DynamicPage({ params }: { params: Promise<{ slug: 
         <Script
           id="job-posting-schema"
           type="application/ld+json"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD structured data
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(jobPostingSchema),
           }}
