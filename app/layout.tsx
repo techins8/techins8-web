@@ -113,7 +113,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         {/* Google Analytics (gtag.js) */}
         <Script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GA_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${env.GOOGLE_ANALYTICS_GA_ID}`}
         />
         <Script
           id="google-analytics"
@@ -122,7 +122,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             __html: `window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', '${env.NEXT_PUBLIC_GA_ID}');`,
+            gtag('config', '${env.GOOGLE_ANALYTICS_GA_ID}');`,
           }}
         />
         {/* End Google Analytics */}
