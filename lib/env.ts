@@ -14,6 +14,7 @@ export const env = createEnv({
     PROMOTE_KIT_TOKEN: z.string().min(10),
     NEXT_PUBLIC_POSTHOG_KEY: z.string().min(1),
     NEXT_PUBLIC_POSTHOG_HOST: z.string().url().min(1),
+    GOOGLE_ANALYTICS_GA_ID: z.string().min(1),
   },
 
   /**
