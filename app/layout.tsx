@@ -110,6 +110,22 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           }}
         />
         {/* End Google Tag Manager */}
+        {/* Google Analytics (gtag.js) */}
+        <Script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${env.NEXT_PUBLIC_GA_ID}`}
+        />
+        <Script
+          id="google-analytics"
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: GA gtag.js init
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${env.NEXT_PUBLIC_GA_ID}');`,
+          }}
+        />
+        {/* End Google Analytics */}
         <Script
           id="website-schema"
           type="application/ld+json"

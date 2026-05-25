@@ -24,6 +24,7 @@ export const env = createEnv({
 
   client: {
     NEXT_PUBLIC_GTM_ID: z.string().min(1),
+    NEXT_PUBLIC_GA_ID: z.string().min(1),
     NEXT_PUBLIC_UMAMI_WEBSITE_ID: z.string().min(36),
   },
 
