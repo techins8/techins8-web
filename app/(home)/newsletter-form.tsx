@@ -1,6 +1,5 @@
 "use client";
 
-import { validate } from "@dahoom/disposable-email";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useState } from "react";
@@ -16,6 +15,10 @@ interface NewsletterState {
   status: "idle" | "loading" | "success" | "error";
   message: string;
 }
+
+const errorMessages = {
+  DISPOSABLE_EMAIL: "messages.disposableEmail",
+} as const;
 
 const newsletterSchema = z.object({
   email: z.string().email(),
@@ -41,17 +44,6 @@ export default function NewsletterForm() {
         status: "error",
         message: t("messages.invalidEmail"),
       });
-    }
-
-    // Check for disposable email
-    if (!(await validate(state.email))) {
-      toast.error(t("messages.disposableEmail"));
-      setState({
-        ...state,
-        status: "error",
-        message: t("messages.disposableEmail"),
-      });
-
       setTimeout(() => {
         setState((prev) => ({ ...prev, status: "idle", message: "" }));
       }, 3000);
@@ -70,7 +62,11 @@ export default function NewsletterForm() {
           message: t("messages.success"),
         });
       } else {
-        throw new Error(response.message);
+        const message =
+          response.error && response.error in errorMessages
+            ? t(errorMessages[response.error as keyof typeof errorMessages])
+            : response.message;
+        throw new Error(message);
       }
 
       setTimeout(() => {
