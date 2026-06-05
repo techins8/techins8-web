@@ -42,4 +42,8 @@ jobs:
         run: pnpm lint
 
       - name: Build
+        env:
+          SCRAPPER_API_TOKEN: ci-token
+          NEXT_PUBLIC_POSTHOG_KEY: ci-posthog-key
+          NEXT_PUBLIC_POSTHOG_HOST: https://example.com
         run: pnpm build
