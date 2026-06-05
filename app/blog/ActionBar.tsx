@@ -1,7 +1,9 @@
 "use client";
 
-import { Facebook, Heart, Link, Linkedin, Share2, Twitter } from "lucide-react";
+import { Heart, Link, Share2 } from "lucide-react";
 import { useState } from "react";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { SiFacebook, SiX } from "react-icons/si";
 import { toast } from "sonner";
 import {
   DropdownMenu,
@@ -106,21 +108,21 @@ export function ActionBar() {
               onClick={() => handleSocialShare("twitter")}
               className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer transition-colors"
             >
-              <Twitter className="w-4 h-4" />
+              <SiX className="w-4 h-4" />
               <span>Partager sur X</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => handleSocialShare("facebook")}
               className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer transition-colors"
             >
-              <Facebook className="w-4 h-4" />
+              <SiFacebook className="w-4 h-4" />
               <span>Partager sur Facebook</span>
             </DropdownMenuItem>
             <DropdownMenuItem
               onClick={() => handleSocialShare("linkedin")}
               className="flex items-center gap-2 px-3 py-2 text-sm text-gray-600 hover:bg-gray-50 cursor-pointer transition-colors"
             >
-              <Linkedin className="w-4 h-4" />
+              <FaLinkedinIn className="w-4 h-4" />
               <span>Partager sur LinkedIn</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

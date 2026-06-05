@@ -4,12 +4,20 @@ vi.mock("@/lib/loops", () => ({
   create: vi.fn(),
 }));
 
+vi.mock("@dahoom/disposable-email", () => ({
+  validate: vi.fn(() => true),
+}));
+
+import { validate } from "@dahoom/disposable-email";
 import { create } from "@/lib/loops";
 import { subscribeToNewsletter } from "./newsletter.action";
+
+const mockedValidate = vi.mocked(validate as (email: string) => boolean);
 
 describe("subscribeToNewsletter", () => {
   beforeEach(() => {
     vi.clearAllMocks();
+    mockedValidate.mockReturnValue(true);
   });
 
   it("returns success for a valid email", async () => {
@@ -23,6 +31,14 @@ describe("subscribeToNewsletter", () => {
     const result = await subscribeToNewsletter({ email: "not-an-email" });
     expect(result.success).toBe(false);
     expect(result.message).toBe("Email invalide");
+    expect(create).not.toHaveBeenCalled();
+  });
+
+  it("returns error for a disposable email", async () => {
+    mockedValidate.mockReturnValueOnce(false);
+    const result = await subscribeToNewsletter({ email: "test@mailinator.com" });
+    expect(result.success).toBe(false);
+    expect(result.error).toBe("DISPOSABLE_EMAIL");
     expect(create).not.toHaveBeenCalled();
   });
 

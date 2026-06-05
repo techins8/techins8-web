@@ -1,5 +1,6 @@
 "use server";
 
+import { validate } from "@dahoom/disposable-email";
 import { z } from "zod";
 import { create, type ErrorResponse, type LoopsUser } from "@/lib/loops";
 
@@ -23,6 +24,14 @@ export async function subscribeToNewsletter(
       return {
         success: false,
         message: "Email invalide",
+      };
+    }
+
+    if (!validate(data.email)) {
+      return {
+        success: false,
+        message: "Veuillez utiliser une adresse email permanente.",
+        error: "DISPOSABLE_EMAIL",
       };
     }
 
